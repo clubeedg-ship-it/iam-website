@@ -29,7 +29,7 @@
             </ul>
             <div class="lang-toggle">
                 <button class="lang-btn active" hx-get="../partials/products/interactieve-zandbak-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn">EN</button>
+                    class="lang-btn" hx-get="../partials/products/interactieve-zandbak-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
             </div>
             <button class="hamburger" onclick="toggleMobileNav()"
                 aria-label="Menu"><span></span><span></span><span></span></button>
@@ -57,108 +57,1092 @@
     </div>
 
     <main>
-        <section class="hero" style="height: 60vh;">
-            <div class="hero-video-container">
-                <img src="../media/products/interactieve-zandbak.png" alt="Interactieve Zandbak"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            </div>
-            <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Interactieve Zandbak</h1>
-                <p style="font-size: 1.3rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">Augmented reality
-                    zandbak met topografische projecties</p>
+        <!-- 1. Enhanced Product Hero -->
+        <section class="product-hero">
+            <div class="product-hero-container">
+                <div class="product-hero-gallery">
+                    <div class="product-hero-main-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Interactieve Zandbak - Augmented Reality Sandbox">
+                        <div class="product-hero-badges">
+                            <span class="product-badge product-badge-bestseller">Populair</span>
+                            <span class="product-badge product-badge-eco">STEM Educatie</span>
+                        </div>
+                    </div>
+                    <div class="product-hero-thumbnails">
+                        <button class="product-thumbnail active">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Zandbak overzicht">
+                        </button>
+                        <button class="product-thumbnail">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Topografie projectie">
+                        </button>
+                        <button class="product-thumbnail">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Water simulatie">
+                        </button>
+                        <button class="product-thumbnail">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Kinderen aan het leren">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-hero-info">
+                    <h1 class="product-hero-title">Interactieve Zandbak</h1>
+                    <p class="product-hero-subtitle">Augmented Reality Sandbox met Topografische Projecties</p>
+
+                    <div class="product-hero-rating">
+                        <div class="product-rating-stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <span class="product-rating-text">4.9/5 (47 beoordelingen)</span>
+                    </div>
+
+                    <div class="product-hero-highlights">
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/>
+                            </svg>
+                            <span>3D Dieptesensor</span>
+                        </div>
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+                            </svg>
+                            <span>Vulkaan Simulatie</span>
+                        </div>
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21.98 14H22h-.02zM5.35 13c1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1 1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1v2c-1.9 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1v-2c1.9 0 2.1-1 3.33-1z"/>
+                            </svg>
+                            <span>Realtime Waterstroming</span>
+                        </div>
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                            </svg>
+                            <span>12+ Educatieve Spellen</span>
+                        </div>
+                    </div>
+
+                    <div class="product-hero-price">
+                        <div class="product-price-main">
+                            <span class="product-price-label">Vanaf</span>
+                            <span class="product-price-amount">€7.950</span>
+                        </div>
+                        <p class="product-price-note">Inclusief installatie en training</p>
+                    </div>
+
+                    <div class="product-hero-cta">
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
+                           target="_blank"
+                           class="btn btn-primary btn-large">
+                            <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Direct Offerte via WhatsApp
+                        </a>
+                        <a href="#pricing" class="btn btn-secondary btn-large">Bekijk Pakketten</a>
+                    </div>
+
+                    <div class="product-hero-trust">
+                        <div class="product-trust-item">
+                            <svg class="product-trust-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>2 jaar garantie</span>
+                        </div>
+                        <div class="product-trust-item">
+                            <svg class="product-trust-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                            </svg>
+                            <span>CE gecertificeerd</span>
+                        </div>
+                        <div class="product-trust-item">
+                            <svg class="product-trust-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+                            </svg>
+                            <span>Gratis levering NL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section section-opaque-light">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Wat is de Interactieve
-                    Zandbak?</h2>
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
-                        De Interactieve Zandbak combineert echt zand met digitale projectie. Wanneer kinderen
-                        het zand verplaatsen, verandert de projectie in realtime: bergen krijgen sneeuw,
-                        dalen vullen zich met water, vulkanen barsten uit. Een unieke manier om aardrijkskunde
-                        en natuurkunde te ontdekken.
+        <!-- 2. Benefit Strip -->
+        <section class="benefit-strip">
+            <div class="benefit-strip-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">STEM Leren</h3>
+                        <p class="benefit-description">Aardrijkskunde & natuurkunde tastbaar maken</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Creatief Spelen</h3>
+                        <p class="benefit-description">Onbeperkte mogelijkheden met echt zand</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Zintuiglijke Stimulatie</h3>
+                        <p class="benefit-description">Perfect voor sensomotorische therapie</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Realtime Reactie</h3>
+                        <p class="benefit-description">Directe visuele feedback op zandverschuivingen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Demo Video Section -->
+        <section class="demo-video-section">
+            <div class="demo-video-container">
+                <div class="demo-video-content">
+                    <h2 class="demo-video-title">Zie de Interactieve Zandbak in Actie</h2>
+                    <p class="demo-video-description">
+                        Ontdek hoe kinderen aardrijkskunde en natuurkunde leren door bergen te bouwen,
+                        vulkanen te laten uitbarsten en waterstromingen te observeren. De zandbak maakt
+                        complexe concepten tastbaar en begrijpelijk.
                     </p>
+                    <div class="demo-video-features">
+                        <div class="demo-video-feature">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Realtime topografie projectie</span>
+                        </div>
+                        <div class="demo-video-feature">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Automatische hoogtekleuren</span>
+                        </div>
+                        <div class="demo-video-feature">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Water- en lava simulatie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-video-player">
+                    <div class="demo-video-placeholder">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Interactieve Zandbak Demo">
+                        <button class="demo-video-play-btn">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-opaque-dark">
+        <!-- 4. Feature Deep Dive -->
+        <section class="feature-deep-dive">
             <div class="container">
-                <h2 class="industrial-label" style="text-align: center; color: #fff;">Kenmerken</h2>
-                <div class="specs-grid">
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
-                        </svg>
-                        <h3 class="spec-title">Topografie</h3>
-                        <p class="spec-desc">Realtime hoogtekaarten die reageren op zandverschuivingen.</p>
+                <h2 class="section-title-center">Geavanceerde Augmented Reality Technologie</h2>
+                <p class="section-subtitle-center">De Interactieve Zandbak combineert 3D-dieptesensoren met realtime projectie voor een unieke leervaring</p>
+
+                <!-- Feature 1 -->
+                <div class="feature-row">
+                    <div class="feature-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="3D Diepte Sensing Technologie">
                     </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" />
-                        </svg>
-                        <h3 class="spec-title">Vulkanen</h3>
-                        <p class="spec-desc">Maak een berg hoog genoeg en hij barst uit met lava-effecten.</p>
+                    <div class="feature-content">
+                        <h3 class="feature-title">3D Diepte Sensing</h3>
+                        <p class="feature-description">
+                            Onze geavanceerde Kinect-sensor scant het zandoppervlak 30 keer per seconde en creëert
+                            een nauwkeurige 3D-kaart. Wanneer kinderen het zand verplaatsen, detecteert het systeem
+                            onmiddellijk elke hoogteverandering en past de projectie in realtime aan.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>30 FPS scanfrequentie voor vloeiende respons</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Millimeter-nauwkeurige hoogtedetectie</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Automatische kalibratie voor perfecte projectie</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M21.98 14H22h-.02zM5.35 13c1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1 1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1v2c-1.9 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1v-2c1.9 0 2.1-1 3.33-1z" />
-                        </svg>
-                        <h3 class="spec-title">Water Simulatie</h3>
-                        <p class="spec-desc">Dalen vullen zich met water dat realistisch stroomt.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-row feature-row-reverse">
+                    <div class="feature-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Topografie Visualisatie">
                     </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-                        </svg>
-                        <h3 class="spec-title">Educatief</h3>
-                        <p class="spec-desc">Ideaal voor musea, scholen en educatieve centra.</p>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Topografie Visualisatie</h3>
+                        <p class="feature-description">
+                            Het systeem projecteert automatisch hoogtekaarten met kleurencodes op het zand.
+                            Blauwe zones voor dalen en water, groene zones voor laagland, gele en oranje zones
+                            voor heuvels, en witte zones voor bergtoppen met sneeuw. Ideaal voor aardrijkskunde-lessen.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>8 hoogtelagen met realistische kleuren</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Vloeiende kleurovergangen</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Educatieve contourlijnen optioneel</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-row">
+                    <div class="feature-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Water & Lava Simulatie">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Water & Lava Simulatie</h3>
+                        <p class="feature-description">
+                            Maak een gebaar boven het zand om water of lava te laten stromen. Het systeem
+                            simuleert realistische stromingspatronen die het landschap volgen. Water verzamelt
+                            zich in dalen en vulkanen barsten uit met lava-effecten wanneer een berg hoog genoeg is.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Realistische water-fysica simulatie</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Automatische vulkaan detectie</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Handbeweging-gestuurde watertoevoeging</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section container">
-            <div class="glass-panel"
-                style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
-                <h2 class="industrial-label" style="margin-bottom: 1rem;">Interesse?</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--color-text-muted);">Vraag een
-                    vrijblijvende offerte aan of neem contact op.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
-                        target="_blank" class="btn"
-                        style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">Offerte
-                        Aanvragen</a>
-                    <a href="../prijzen.html" class="btn" style="border-radius: 999px; padding: 1rem 2.5rem;">Bekijk
-                        Prijzen</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-opaque-light">
+        <!-- 5. Game Library Preview -->
+        <section class="game-library">
             <div class="container">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Andere Producten</h2>
-                <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
-                    <div class="pricing-card" style="text-align: center;">
-                        <h3 class="pricing-title">Interactieve Vloer</h3>
-                        <p style="color: #666; margin-bottom: 1.5rem;">Vloerprojectie voor allerlei ruimtes</p>
-                        <a href="interactieve-vloer.html" class="btn"
-                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+                <h2 class="section-title-center">12+ Educatieve Spellen & Modi</h2>
+                <p class="section-subtitle-center">Van aardrijkskunde tot natuurkunde: elke modus is ontworpen voor maximale educatieve impact</p>
+
+                <div class="game-categories">
+                    <button class="game-category-btn active" data-category="all">Alle Spellen</button>
+                    <button class="game-category-btn" data-category="education">Educatie</button>
+                    <button class="game-category-btn" data-category="creative">Creatief</button>
+                    <button class="game-category-btn" data-category="therapy">Therapie</button>
+                </div>
+
+                <div class="game-grid">
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Topografie Modus">
+                            <span class="game-card-badge">Educatie</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Topografie Modus</h3>
+                            <p class="game-card-description">Leer hoogtekaarten lezen met realtime kleurencodes op het zandlandschap.</p>
+                        </div>
                     </div>
-                    <div class="pricing-card" style="text-align: center;">
-                        <h3 class="pricing-title">Software & Maatwerk</h3>
-                        <p style="color: #666; margin-bottom: 1.5rem;">Op maat gemaakte oplossingen</p>
-                        <a href="software-maatwerk.html" class="btn"
-                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Vulkaan Simulatie">
+                            <span class="game-card-badge">Educatie</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Vulkaan Simulatie</h3>
+                            <p class="game-card-description">Bouw een vulkaan en zie hem uitbarsten met spectaculaire lava-effecten.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Water Cyclus">
+                            <span class="game-card-badge">Educatie</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Water Cyclus</h3>
+                            <p class="game-card-description">Ontdek hoe water stroomt van bergtoppen naar dalen en meren vormt.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="creative">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Zandbak Kunst">
+                            <span class="game-card-badge">Creatief</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Zandbak Kunst</h3>
+                            <p class="game-card-description">Creer kunstwerken met zand en kleurrijke projecties voor vrije expressie.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Schatzoektocht">
+                            <span class="game-card-badge">Educatie</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Schatzoektocht</h3>
+                            <p class="game-card-description">Graaf naar verborgen schatten met hints op basis van de topografie.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="therapy">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Sensorische Modus">
+                            <span class="game-card-badge">Therapie</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Sensorische Modus</h3>
+                            <p class="game-card-description">Kalme visuele effecten voor sensomotorische stimulatie en ontspanning.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-library-cta">
+                    <p>Meer dan 12 spellen beschikbaar, met regelmatige gratis updates</p>
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20volledige%20lijst%20van%20zandbak%20spellen%20ontvangen."
+                       target="_blank"
+                       class="btn btn-primary">
+                        Bekijk Volledige Spellenlijst
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Technical Specifications -->
+        <section class="tech-specs-section">
+            <div class="container">
+                <h2 class="section-title-center">Technische Specificaties</h2>
+                <p class="section-subtitle-center">Professionele hardware voor betrouwbare prestaties</p>
+
+                <div class="tech-specs-grid">
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Hardware</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">Zandbak Afmetingen</td>
+                                <td class="tech-specs-value">120 x 90 x 30 cm (standaard)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Zandinhoud</td>
+                                <td class="tech-specs-value">250 kg speelzand (inclusief)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Sensor</td>
+                                <td class="tech-specs-value">Microsoft Kinect V2 3D-dieptesensor</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Projector</td>
+                                <td class="tech-specs-value">3500 ANSI Lumen short-throw beamer</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Computer</td>
+                                <td class="tech-specs-value">Intel i5, 8GB RAM, dedicated GPU</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Frame Materiaal</td>
+                                <td class="tech-specs-value">Gepoedercoat staal, zwart</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Software & Functionaliteit</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">Besturingssysteem</td>
+                                <td class="tech-specs-value">Windows 10 Pro</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Update Frequentie</td>
+                                <td class="tech-specs-value">30 FPS realtime tracking</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Hoogte Resolutie</td>
+                                <td class="tech-specs-value">512 x 424 pixels depth data</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Aantal Spellen</td>
+                                <td class="tech-specs-value">12+ modi (met gratis updates)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Gebruikers Interface</td>
+                                <td class="tech-specs-value">Eenvoudig touchscreen paneel</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Talen</td>
+                                <td class="tech-specs-value">Nederlands, Engels, Duits</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Installatie & Onderhoud</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">Installatietijd</td>
+                                <td class="tech-specs-value">4-6 uur (inclusief kalibratie)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Ruimte Vereisten</td>
+                                <td class="tech-specs-value">2.5 x 2 x 2.5 meter (B x D x H)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Stroomverbruik</td>
+                                <td class="tech-specs-value">400W gemiddeld</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Garantie</td>
+                                <td class="tech-specs-value">2 jaar volledige dekking</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Onderhoud</td>
+                                <td class="tech-specs-value">Jaarlijks onderhoud aanbevolen</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Support</td>
+                                <td class="tech-specs-value">Telefonisch & remote support</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Veiligheid & Certificering</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">CE Certificering</td>
+                                <td class="tech-specs-value">Volledig gecertificeerd</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Veiligheidsnormen</td>
+                                <td class="tech-specs-value">EN 71 speelgoedrichtlijn</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Zandkwaliteit</td>
+                                <td class="tech-specs-value">Gewassen speelzand, stofvrij</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Brandbescherming</td>
+                                <td class="tech-specs-value">Brandvertragend frame</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Leeftijdscategorie</td>
+                                <td class="tech-specs-value">3 jaar en ouder</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Capaciteit</td>
+                                <td class="tech-specs-value">2-6 kinderen tegelijk</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tech-specs-download">
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20technische%20specificaties%20van%20de%20Interactieve%20Zandbak%20ontvangen."
+                       target="_blank"
+                       class="btn btn-secondary">
+                        <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        Download Volledige Specificaties (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Use Case Gallery -->
+        <section class="use-case-gallery">
+            <div class="container">
+                <h2 class="section-title-center">Perfect Voor Diverse Toepassingen</h2>
+                <p class="section-subtitle-center">De Interactieve Zandbak wordt succesvol ingezet in verschillende sectoren</p>
+
+                <div class="use-case-grid">
+                    <a href="../onderwijs.html" class="use-case-card">
+                        <div class="use-case-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Onderwijs Toepassing">
+                            <div class="use-case-overlay">
+                                <span class="use-case-link-text">Lees Meer →</span>
+                            </div>
+                        </div>
+                        <div class="use-case-content">
+                            <h3 class="use-case-title">Onderwijs</h3>
+                            <p class="use-case-description">
+                                Scholen gebruiken de zandbak voor aardrijkskunde- en natuurkunde-lessen.
+                                Leerlingen leren over topografie, vulkanen, watercyclus en erosie door zelf
+                                landschappen te creëren en te experimenteren.
+                            </p>
+                            <ul class="use-case-highlights">
+                                <li>STEM educatie</li>
+                                <li>Groepswerk stimuleren</li>
+                                <li>Hands-on leren</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="../zorg-revalidatie.html" class="use-case-card">
+                        <div class="use-case-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Zorg & Revalidatie">
+                            <div class="use-case-overlay">
+                                <span class="use-case-link-text">Lees Meer →</span>
+                            </div>
+                        </div>
+                        <div class="use-case-content">
+                            <h3 class="use-case-title">Zorg & Revalidatie</h3>
+                            <p class="use-case-description">
+                                Zorginstellingen zetten de zandbak in voor sensomotorische therapie en
+                                ontspanning. De combinatie van tactiele feedback en visuele stimulatie
+                                werkt kalmerend en motiveert tot beweging.
+                            </p>
+                            <ul class="use-case-highlights">
+                                <li>Sensomotorische stimulatie</li>
+                                <li>Dementiezorg</li>
+                                <li>Kinderrevalidatie</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="../parken-speelhallen.html" class="use-case-card">
+                        <div class="use-case-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Entertainment">
+                            <div class="use-case-overlay">
+                                <span class="use-case-link-text">Lees Meer →</span>
+                            </div>
+                        </div>
+                        <div class="use-case-content">
+                            <h3 class="use-case-title">Musea & Attracties</h3>
+                            <p class="use-case-description">
+                                Science centers en kindermusea gebruiken de zandbak als interactieve
+                                exhibit die bezoekers urenlang boeit. Perfect voor edutainment en het
+                                aantrekken van families met kinderen.
+                            </p>
+                            <ul class="use-case-highlights">
+                                <li>Bezoekersattractie</li>
+                                <li>Educatieve waarde</li>
+                                <li>Unieke ervaring</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title-center">Wat Klanten Zeggen</h2>
+                <p class="section-subtitle-center">Ervaringen van scholen, zorgcentra en musea</p>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "De Interactieve Zandbak is een absolute hit in ons science center. Kinderen
+                            kunnen er urenlang mee spelen en leren tegelijkertijd over aardrijkskunde.
+                            De technologie werkt feilloos en het onderhoud is minimaal."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Linda van der Berg</p>
+                                <p class="testimonial-author-title">Directeur, NEMO Science Museum</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Voor onze aardrijkskunde-lessen is de zandbak onmisbaar geworden. Leerlingen
+                            begrijpen nu eindelijk hoe hoogtekaarten werken en waarom water naar laaggelegen
+                            gebieden stroomt. Het maakt abstracte concepten tastbaar."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Mark Jansen</p>
+                                <p class="testimonial-author-title">Docent Aardrijkskunde, OSG De Hogeberg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "In onze dementieafdeling zorgt de zandbak voor rust en ontspanning. Bewoners
+                            genieten van het voelen van het zand en de visuele effecten. Het prikkelt
+                            zintuigen zonder overweldigend te zijn."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Saskia Vermeulen</p>
+                                <p class="testimonial-author-title">Activiteitenbegeleider, Zorggroep Apeldoorn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Pricing Packages -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="section-title-center">Kies Uw Pakket</h2>
+                <p class="section-subtitle-center">Alle pakketten inclusief installatie, training en 2 jaar garantie</p>
+
+                <div class="pricing-grid">
+                    <!-- Essential Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Essential</h3>
+                            <p class="pricing-subtitle">Perfect voor scholen</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">€</span>
+                            <span class="pricing-amount">7.950</span>
+                        </div>
+                        <p class="pricing-note">Eenmalige investering</p>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Standaard zandbak 120x90cm</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>3500 lumen beamer</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Kinect V2 sensor</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>8 basis spelmodi</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>250kg speelzand inclusief</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Installatie & training</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>2 jaar garantie</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20het%20Essential%20pakket%20voor%20de%20Interactieve%20Zandbak."
+                           target="_blank"
+                           class="btn btn-secondary btn-large">
+                            Vraag Offerte Aan
+                        </a>
+                    </div>
+
+                    <!-- Professional Package (Most Popular) -->
+                    <div class="pricing-card pricing-card-featured">
+                        <div class="pricing-badge">Meest Gekozen</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Professional</h3>
+                            <p class="pricing-subtitle">Voor musea & zorg</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">€</span>
+                            <span class="pricing-amount">11.950</span>
+                        </div>
+                        <p class="pricing-note">Eenmalige investering</p>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span><strong>Alle Essential features</strong></span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Extra grote zandbak 150x120cm</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>5000 lumen bright beamer</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>12+ volledige spellenbibliotheek</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Premium i7 computer</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Draadloze tablet bediening</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Uitgebreide training (halve dag)</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20het%20Professional%20pakket%20voor%20de%20Interactieve%20Zandbak."
+                           target="_blank"
+                           class="btn btn-primary btn-large">
+                            Vraag Offerte Aan
+                        </a>
+                    </div>
+
+                    <!-- Enterprise Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Enterprise</h3>
+                            <p class="pricing-subtitle">Premium oplossing</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">€</span>
+                            <span class="pricing-amount">16.950</span>
+                        </div>
+                        <p class="pricing-note">Eenmalige investering</p>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span><strong>Alle Professional features</strong></span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Op maat gemaakte afmetingen</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>6500 lumen laser beamer</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Custom brandingstickers</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Maatwerk software aanpassingen</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>3 jaar uitgebreide garantie</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20het%20Enterprise%20pakket%20voor%20de%20Interactieve%20Zandbak."
+                           target="_blank"
+                           class="btn btn-secondary btn-large">
+                            Vraag Offerte Aan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pricing-footer">
+                    <p>Alle prijzen zijn exclusief BTW. Financieringsopties beschikbaar.</p>
+                    <a href="../prijzen.html" class="pricing-compare-link">Vergelijk alle producten →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title-center">Veelgestelde Vragen</h2>
+                <p class="section-subtitle-center">Alles wat u moet weten over de Interactieve Zandbak</p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Hoeveel ruimte heb ik nodig voor de Interactieve Zandbak?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Voor de standaard zandbak (120x90cm) heeft u minimaal 2.5 x 2 meter vloeroppervlak nodig, plus 2.5 meter plafondhoogte. De projector en sensor worden boven de zandbak gemonteerd. We adviseren wat extra ruimte rondom voor gemakkelijke toegang van meerdere gebruikers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Hoe vaak moet het zand vervangen worden?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Bij normaal gebruik gaat het zand jaren mee. We gebruiken hoogwaardig gewassen speelzand dat niet verkleurt of verkruimelt. In omgevingen met intensief gebruik (zoals musea) adviseren we het zand jaarlijks te verversen en regelmatig te harken om optimale prestaties te behouden. Extra zand is eenvoudig bij te bestellen.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Kan ik zelf nieuwe spellen toevoegen of aanpassen?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Het basis systeem komt met voorgeïnstalleerde spelmodi. Reguliere software updates met nieuwe spellen zijn gratis. Voor volledig op maat gemaakte content of educatieve programma's gekoppeld aan uw lesprogramma kunnen we maatwerkoplossingen ontwikkelen. Neem contact op voor de mogelijkheden en prijzen.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Wat gebeurt er als de technologie defect raakt?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Alle pakketten komen met 2 jaar volledige garantie (Enterprise: 3 jaar). Bij technische problemen bieden we eerst remote support via telefoon of TeamViewer. Indien nodig sturen we binnen 48 uur een vervangend onderdeel of komen we langs voor reparatie. Na de garantieperiode kunt u een onderhoudscontract afsluiten.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is de zandbak geschikt voor kinderen met een beperking?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absoluut. De zandbak wordt veel gebruikt in speciale onderwijsinstellingen en revalidatiecentra. De combinatie van tactiele feedback en visuele stimulatie werkt goed bij kinderen met autisme, ADHD of motorische beperkingen. De zandbakhoogte kan aangepast worden voor rolstoeltoegankelijkheid. Vraag naar onze speciale zorgvariant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Related Products -->
+        <section class="related-products">
+            <div class="container">
+                <h2 class="section-title-center">Gerelateerde Producten</h2>
+                <p class="section-subtitle-center">Ontdek meer interactieve oplossingen</p>
+
+                <div class="related-products-grid">
+                    <div class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="../media/products/interactieve-vloer.png" alt="Interactieve Vloer">
+                            <span class="related-product-badge">Bestseller</span>
+                        </div>
+                        <div class="related-product-content">
+                            <h3 class="related-product-title">Interactieve Vloer</h3>
+                            <p class="related-product-description">
+                                Transformeer elke vloer in een interactief speelveld met bewegingsgevoelige projecties.
+                            </p>
+                            <div class="related-product-price">Vanaf €6.950</div>
+                            <a href="interactieve-vloer.html" class="btn btn-secondary btn-block">Meer Informatie</a>
+                        </div>
+                    </div>
+
+                    <div class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="../media/products/interactieve-muur.png" alt="Interactieve Muur">
+                        </div>
+                        <div class="related-product-content">
+                            <h3 class="related-product-title">Interactieve Muur</h3>
+                            <p class="related-product-description">
+                                Maak elke muur interactief met touch-responsive projecties voor educatie en entertainment.
+                            </p>
+                            <div class="related-product-price">Vanaf €5.950</div>
+                            <a href="interactieve-muur.html" class="btn btn-secondary btn-block">Meer Informatie</a>
+                        </div>
+                    </div>
+
+                    <div class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="../media/products/interactieve-klimwand.png" alt="Interactieve Klimwand">
+                        </div>
+                        <div class="related-product-content">
+                            <h3 class="related-product-title">Interactieve Klimwand</h3>
+                            <p class="related-product-description">
+                                Combineer fysieke uitdaging met digitale interactie in deze innovatieve klimoplossing.
+                            </p>
+                            <div class="related-product-price">Vanaf €14.950</div>
+                            <a href="interactieve-klimwand.html" class="btn btn-secondary btn-block">Meer Informatie</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Final CTA Section -->
+        <section class="final-cta-section">
+            <div class="final-cta-container">
+                <div class="final-cta-content">
+                    <h2 class="final-cta-title">Klaar om STEM-Educatie Tastbaar te Maken?</h2>
+                    <p class="final-cta-description">
+                        Ontdek hoe de Interactieve Zandbak aardrijkskunde en natuurkunde tot leven brengt in uw school,
+                        museum of zorginstelling. Vraag vandaag nog een vrijblijvende demonstratie aan.
+                    </p>
+                    <div class="final-cta-buttons">
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
+                           target="_blank"
+                           class="btn btn-primary btn-large">
+                            <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Start WhatsApp Chat
+                        </a>
+                        <a href="#pricing" class="btn btn-secondary btn-large">Bekijk Prijzen</a>
+                    </div>
+                    <div class="final-cta-trust">
+                        <div class="final-cta-trust-item">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>2 jaar garantie</span>
+                        </div>
+                        <div class="final-cta-trust-item">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Gratis installatie</span>
+                        </div>
+                        <div class="final-cta-trust-item">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Uitgebreide training</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 13. Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <div class="mobile-sticky-cta-content">
+            <div class="mobile-sticky-cta-text">
+                <span class="mobile-sticky-cta-title">Interactieve Zandbak</span>
+                <span class="mobile-sticky-cta-price">Vanaf €7.950</span>
+            </div>
+            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
+               target="_blank"
+               class="btn btn-primary">
+                Direct Contact
+            </a>
+        </div>
+    </div>
 
     <footer class="footer-professional">
         <div class="footer-container">

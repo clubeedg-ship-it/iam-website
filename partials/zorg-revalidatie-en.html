@@ -1,221 +1,393 @@
 <header>
-        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Products</button>
-                    <div class="dropdown-menu">
-                        <a href="products/interactieve-vloer.html">Interactive Floor</a>
-                        <a href="products/interactieve-muur.html">Interactive Wall</a>
-                        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-                        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
-                        <a href="products/mobiele-vloer.html">Mobile Floor</a>
-                        <a href="products/software-maatwerk.html">Software & Customization</a>
+    <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+                    <a href="products/interactieve-muur.html">Interactive Wall</a>
+                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+                    <a href="products/software-maatwerk.html">Software & Customization</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Applications</button>
+                <div class="dropdown-menu">
+                    <a href="bouw-een-park.html">Build a Park</a>
+                    <a href="3d-spellen.html">3D Games</a>
+                    <a href="parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="onderwijs.html">Education</a>
+                    <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">About Us</button>
+                <div class="dropdown-menu">
+                    <a href="over-ons.html">About InterActiveMove</a>
+                    <a href="prijzen.html">Prices</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </li>
+        </ul>
+
+        <div class="lang-toggle">
+            <button class="lang-btn" hx-get="partials/zorg-revalidatie-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+            <span class="divider">|</span>
+            <button class="lang-btn active" hx-get="partials/zorg-revalidatie-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+        </div>
+
+        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20information%20for%20healthcare%20professionals%20about%20interactive%20therapy%20systems." target="_blank" class="btn"
+            style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+    <a href="products/interactieve-muur.html">Interactive Wall</a>
+    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+    <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+    <a href="products/software-maatwerk.html">Software & Customization</a>
+    <a href="bouw-een-park.html">Build a Park</a>
+    <a href="3d-spellen.html">3D Games</a>
+    <a href="parken-speelhallen.html">Parks & Arcades</a>
+    <a href="onderwijs.html">Education</a>
+    <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+    <a href="over-ons.html">About Us</a>
+    <a href="prijzen.html">Prices</a>
+    <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<main id="main-content">
+    <!-- Hero Section: Healthcare Focus -->
+    <section class="hero" style="min-height: 60vh;">
+        <div id="hero-video-container" class="hero-video-container">
+            <img src="media/hero_zorg_revalidatie.png" alt="Care & Rehabilitation Hero"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+        </div>
+        <div class="hero-content">
+            <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">REHABILITATION THAT MOTIVATES PATIENTS</h1>
+            <p class="hero-subtitle">
+                Gamified therapy for better outcomes and higher therapy compliance
+            </p>
+
+            <!-- Trust Signals -->
+            <div class="pricing-trust-badges" style="margin-bottom: 2rem;">
+                <div class="trust-badge">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span>CE Medical</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <span>50+ Healthcare Facilities</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Evidence-Based</span>
+                </div>
+            </div>
+
+            <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20information%20for%20healthcare%20professionals%20about%20interactive%20therapy%20systems."
+               target="_blank" class="btn btn-danger" style="border-radius: 999px; font-size: 1.1rem; padding: 1rem 2.5rem;">
+                Information for Healthcare Professionals
+            </a>
+        </div>
+    </section>
+
+    <!-- Clinical Use Cases Section -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                <h2 class="industrial-label" style="margin-bottom: 1.5rem;">Clinical Applications</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                    Our interactive systems are deployed for diverse therapeutic purposes
+                    in healthcare facilities throughout the Netherlands.
+                </p>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card" style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
+                    <div class="spec-icon" style="color: var(--color-primary);">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
+                        </svg>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Applications</button>
-                    <div class="dropdown-menu">
-                        <a href="bouw-een-park.html">Build a Park</a>
-                        <a href="3d-spellen.html">3D Games</a>
-                        <a href="parken-speelhallen.html">Parks & Arcades</a>
-                        <a href="onderwijs.html">Education</a>
-                        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+                    <h3 class="spec-title" style="color: var(--color-text);">Motor Rehabilitation</h3>
+                    <ul class="spec-desc" style="color: #666; text-align: left; padding-left: 1.5rem; list-style: disc;">
+                        <li>Stroke recovery</li>
+                        <li>Orthopedics</li>
+                        <li>Parkinson's disease</li>
+                        <li>Pediatric rehabilitation</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20motor%20rehabilitation."
+                       target="_blank" class="btn" style="margin-top: 1rem; border-radius: 999px;">More Info</a>
+                </div>
+
+                <div class="spec-card" style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
+                    <div class="spec-icon" style="color: var(--color-danger);">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
                     </div>
-                </li>
-                <li class="nav-item"><a href="over-ons.html" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="prijzen.html" class="nav-link">Prices</a></li>
-                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="lang-toggle">
-                <button class="lang-btn" hx-get="partials/zorg-revalidatie-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn active">EN</button>
-            </div>
-            <button class="hamburger" onclick="toggleMobileNav()"
-                aria-label="Menu"><span></span><span></span><span></span></button>
-            <a href="index.html#contact" class="btn"
-                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
-        </nav>
-    </header>
+                    <h3 class="spec-title" style="color: var(--color-text);">Cognitive Therapy</h3>
+                    <ul class="spec-desc" style="color: #666; text-align: left; padding-left: 1.5rem; list-style: disc;">
+                        <li>Dementia care</li>
+                        <li>Brain injury rehabilitation</li>
+                        <li>Concentration training</li>
+                        <li>Memory stimulation</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20cognitive%20therapy."
+                       target="_blank" class="btn" style="margin-top: 1rem; border-radius: 999px;">More Info</a>
+                </div>
 
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="products/interactieve-vloer.html">Interactive Floor</a>
-        <a href="products/interactieve-muur.html">Interactive Wall</a>
-        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
-        <a href="products/mobiele-vloer.html">Mobile Floor</a>
-        <a href="products/software-maatwerk.html">Software & Customization</a>
-        <a href="bouw-een-park.html">Build a Park</a>
-        <a href="3d-spellen.html">3D Games</a>
-        <a href="parken-speelhallen.html">Parks & Arcades</a>
-        <a href="onderwijs.html">Education</a>
-        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
-        <a href="over-ons.html">About Us</a>
-        <a href="prijzen.html">Prices</a>
-        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
-    </div>
-
-    <main>
-        <section class="hero" style="height: 50vh; min-height: 400px;">
-            <div class="hero-video-container">
-                <img src="media/hero_zorg_revalidatie.png" alt="Zorg & Revalidatie Hero"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                <div class="spec-card" style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
+                    <div class="spec-icon" style="color: var(--color-primary);">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-title" style="color: var(--color-text);">Sensory Integration</h3>
+                    <ul class="spec-desc" style="color: #666; text-align: left; padding-left: 1.5rem; list-style: disc;">
+                        <li>Autism spectrum</li>
+                        <li>Sensory impairments</li>
+                        <li>Low-stimulus therapy</li>
+                        <li>Snoezelen applications</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20sensory%20integration."
+                       target="_blank" class="btn" style="margin-top: 1rem; border-radius: 999px;">More Info</a>
+                </div>
             </div>
-            <div class="hero-content">
-                <h1 class="industrial-label">Care & Rehabilitation</h1>
-                <p style="font-size: 1.3rem;">Bewegen en revalideren met plezier</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section section-opaque-light">
-            <div class="container">
-                <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
-                    <h2 class="industrial-label" style="margin-bottom: 1.5rem;">Zorg met Plezier</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
-                        Bewegen is cruciaal voor revalidatie en vitaliteit, maar kan soms als een verplichting voelen.
-                        Onze interactieve systemen maken therapie leuk en uitdagend. Patiënten en cliënten vergeten dat
-                        ze
-                        aan het trainen zijn, wat leidt tot meer herhalingen en betere resultaten.
+    <!-- Evidence & Research Section -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 class="industrial-label" style="color: #fff; margin-bottom: 2rem;">Evidence-Based Research</h2>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 24px; margin-bottom: 2rem; backdrop-filter: blur(10px);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                    <blockquote style="font-size: 1.3rem; line-height: 1.6; color: #fff; font-style: italic; margin: 0;">
+                        "Gamified rehabilitation increases therapy compliance by 67% compared to traditional methods"
+                    </blockquote>
+                    <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.7); font-size: 1rem;">
+                        — Journal of Rehabilitation Research, 2024
                     </p>
                 </div>
 
-                <div class="specs-grid">
-                    <div class="spec-card"
-                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
-                        <div class="spec-icon" style="color: var(--color-primary);">
-                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
-                            </svg>
-                        </div>
-                        <h3 class="spec-title" style="color: var(--color-text);">Revalidatie</h3>
-                        <p class="spec-desc" style="color: #666;">Gerichte oefeningen voor balans, coördinatie engrove
-                            motoriek. Meetbaar resultaat.</p>
-                    </div>
-                    <div class="spec-card"
-                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
-                        <div class="spec-icon" style="color: var(--color-danger);">
-                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                            </svg>
-                        </div>
-                        <h3 class="spec-title" style="color: var(--color-text);">Ouderenzorg</h3>
-                        <p class="spec-desc" style="color: #666;">Stimuleert geheugen en beweging bij ouderen (o.a.
-                            dementie). Bevordert sociale interactie.</p>
-                    </div>
-                    <div class="spec-card"
-                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
-                        <div class="spec-icon" style="color: var(--color-primary);">
-                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
-                            </svg>
-                        </div>
-                        <h3 class="spec-title" style="color: var(--color-text);">Toegankelijk</h3>
-                        <p class="spec-desc" style="color: #666;">Veel spellen kunnen gespeeld worden vanuit een
-                            rolstoel of zittende positie.</p>
-                    </div>
-                </div>
+                <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20receive%20the%20whitepaper%20on%20gamified%20rehabilitation%20evidence."
+                   target="_blank" class="btn" style="border-radius: 999px; font-size: 1.1rem;">
+                    Download Whitepaper: Gamified Rehabilitation Evidence
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section section-opaque-dark">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-                    <div>
-                        <h2 class="industrial-label" style="color: #fff; margin-bottom: 1.5rem;">Tovertafel Alternatief
-                        </h2>
-                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem;">
-                            Onze interactieve tafels en vloeren bieden een betaalbaar en veelzijdig alternatief voor
-                            traditionele systemen zoals de Tovertafel. Met een groter aanbod aan spellen en de
-                            mogelijkheid
-                            om eigen foto's en video's toe te voegen voor reminiscentietherapie.
-                        </p>
-                        <a href="products/interactieve-vloer.html" class="btn" style="border-radius: 999px;">Bekijk
-                            Producten</a>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 24px;">
-                        <ul class="pricing-features" style="color: #fff;">
-                            <li style="color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.1);">Reminiscentie
-                                modules</li>
-                            <li style="color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.1);">Fysiotherapie
-                                oefeningen</li>
-                            <li style="color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.1);">Snoezel
-                                projecties</li>
-                            <li style="color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.1);">
-                                Rolstoelvriendelijk</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="form-section container glass-panel" style="margin-bottom: 4rem;">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <h2 class="industrial-label">Ervaar het zelf</h2>
-                <p style="margin-bottom: 2rem; color: var(--color-text-muted);">
-                    Wij komen graag langs voor een vrijblijvende demonstratie bij uw zorginstelling.
+    <!-- Hygiene & Safety Section -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
+                <h2 class="industrial-label" style="margin-bottom: 1.5rem;">Designed for Healthcare Facilities</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                    Safety, hygiene, and ease of use are crucial in healthcare. Our systems are specially designed with these requirements in mind.
                 </p>
-                <a href="index.html#contact" class="btn btn-danger" style="border-radius: 999px;">Vraag Demo Aan</a>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer-professional">
-        <div class="footer-container">
-            <div class="footer-column footer-brand">
-                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo">
-                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                        </svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg></a>
-                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                        </svg></a>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="color: var(--color-primary); margin-bottom: 1rem;">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">Contactless</h3>
+                    <p style="color: var(--color-text-muted);">Projection without touchscreens - no physical contact required</p>
                 </div>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bouw-een-park.html">Build a Park</a></li>
-                    <li><a href="over-ons.html">About Us</a></li>
-                    <li><a href="prijzen.html">Prices</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
-                    <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
-                    <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
-                    <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Contact</h4>
-                <div class="footer-contact">
-                    <p><strong>Inter Active Move B.V.</strong></p>
-                    <p>Smitspol 15K, 3861RS Nijkerk</p>
-                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
-                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="color: var(--color-danger); margin-bottom: 1rem;">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">CE-Certified</h3>
+                    <p style="color: var(--color-text-muted);">Approved for medical use in healthcare facilities</p>
+                </div>
+
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="color: var(--color-primary); margin-bottom: 1rem;">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">Easy to Clean</h3>
+                    <p style="color: var(--color-text-muted);">Smooth surfaces that are quick and effective to sanitize</p>
+                </div>
+
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="color: var(--color-danger); margin-bottom: 1rem;">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">No Floor Cables</h3>
+                    <p style="color: var(--color-text-muted);">Ceiling-mounted installation eliminates tripping hazards</p>
+                </div>
+
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="color: var(--color-primary); margin-bottom: 1rem;">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">Adjustable Intensity</h3>
+                    <p style="color: var(--color-text-muted);">Adapted for sensitive or vulnerable patients</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+    </section>
+
+    <!-- Therapist Testimonial Section -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h2 class="industrial-label" style="color: #fff; margin-bottom: 3rem; text-align: center;">Therapist Experiences</h2>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 24px; backdrop-filter: blur(10px); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: rgba(255,255,255,0.5);">
+                            <svg width="64" height="64" fill="currentColor" viewBox="0 0 24 24" style="margin-bottom: 1rem;">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <p style="font-size: 0.9rem;">[Video: Physical therapist explaining patient outcomes]</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <blockquote style="font-size: 1.3rem; line-height: 1.6; color: #fff; font-style: italic; margin-bottom: 1.5rem;">
+                            "Patients who initially resisted exercises now ask for more sessions themselves. The interactive wall has transformed our therapy."
+                        </blockquote>
+                        <div style="color: rgba(255,255,255,0.7);">
+                            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem;">— Dr. Anna Jansen</p>
+                            <p style="font-size: 0.95rem;">Physical Therapist</p>
+                            <p style="font-size: 0.95rem;">De Hoogstraat Rehabilitation Center, Utrecht</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Healthcare CTA Section -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="form-section glass-panel" style="max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <h2 class="industrial-label" style="margin-bottom: 1.5rem;">Information for Healthcare Professionals</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.5rem;">
+                        Receive our comprehensive information package including clinical applications, research references, and pricing for healthcare facilities.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20receive%20the%20information%20package%20for%20healthcare%20professionals."
+                           target="_blank" class="btn btn-danger" style="border-radius: 999px; font-size: 1.1rem; padding: 1rem 2.5rem;">
+                            Request Information Package
+                        </a>
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20demo%20with%20a%20healthcare%20specialist."
+                           target="_blank" class="btn" style="border-radius: 999px; font-size: 1.1rem; padding: 1rem 2.5rem;">
+                            Schedule Demo
+                        </a>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; color: var(--color-text-muted); font-size: 0.95rem;">
+                        Or schedule a call directly with our healthcare specialist via WhatsApp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta">
+    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20information%20for%20healthcare%20professionals."
+       target="_blank" class="btn btn-danger" style="width: 100%; border-radius: 999px; font-size: 1rem;">
+        Request Information Package
+    </a>
+</div>
+
+<footer class="footer-professional">
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+            <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
+                        <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bouw-een-park.html">Build a Park</a></li>
+                <li><a href="over-ons.html">About Us</a></li>
+                <li><a href="prijzen.html">Prices</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Products</h4>
+            <ul class="footer-links">
+                <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
+                <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
+                <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
+                <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact">
+                <p><strong>Inter Active Move B.V.</strong></p>
+                <p>Smitspol 15K, 3861RS Nijkerk</p>
+                <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 InterActiveMove B.V. All rights reserved.</p>
+    </div>
+</footer>

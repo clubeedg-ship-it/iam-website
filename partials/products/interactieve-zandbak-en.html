@@ -29,7 +29,7 @@
             </ul>
             <div class="lang-toggle">
                 <button class="lang-btn" hx-get="../partials/products/interactieve-zandbak-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn active">EN</button>
+                    class="lang-btn active" hx-get="../partials/products/interactieve-zandbak-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
             </div>
             <button class="hamburger" onclick="toggleMobileNav()"
                 aria-label="Menu"><span></span><span></span><span></span></button>
@@ -57,108 +57,1092 @@
     </div>
 
     <main>
-        <section class="hero" style="height: 60vh;">
-            <div class="hero-video-container">
-                <img src="../media/products/interactieve-zandbak.png" alt="Interactieve Zandbak"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            </div>
-            <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Interactive Sandbox</h1>
-                <p style="font-size: 1.3rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">Augmented reality
-                    zandbak met topografische projecties</p>
+        <!-- 1. Enhanced Product Hero -->
+        <section class="product-hero">
+            <div class="product-hero-container">
+                <div class="product-hero-gallery">
+                    <div class="product-hero-main-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Interactive Sandbox - Augmented Reality Sandbox">
+                        <div class="product-hero-badges">
+                            <span class="product-badge product-badge-bestseller">Popular</span>
+                            <span class="product-badge product-badge-eco">STEM Education</span>
+                        </div>
+                    </div>
+                    <div class="product-hero-thumbnails">
+                        <button class="product-thumbnail active">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Sandbox overview">
+                        </button>
+                        <button class="product-thumbnail">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Topography projection">
+                        </button>
+                        <button class="product-thumbnail">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Water simulation">
+                        </button>
+                        <button class="product-thumbnail">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Children learning">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-hero-info">
+                    <h1 class="product-hero-title">Interactive Sandbox</h1>
+                    <p class="product-hero-subtitle">Augmented Reality Sandbox with Topographic Projections</p>
+
+                    <div class="product-hero-rating">
+                        <div class="product-rating-stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <span class="product-rating-text">4.9/5 (47 reviews)</span>
+                    </div>
+
+                    <div class="product-hero-highlights">
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/>
+                            </svg>
+                            <span>3D Depth Sensor</span>
+                        </div>
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+                            </svg>
+                            <span>Volcano Simulation</span>
+                        </div>
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21.98 14H22h-.02zM5.35 13c1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1 1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1v2c-1.9 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1v-2c1.9 0 2.1-1 3.33-1z"/>
+                            </svg>
+                            <span>Real-time Water Flow</span>
+                        </div>
+                        <div class="product-highlight-item">
+                            <svg class="product-highlight-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                            </svg>
+                            <span>12+ Educational Games</span>
+                        </div>
+                    </div>
+
+                    <div class="product-hero-price">
+                        <div class="product-price-main">
+                            <span class="product-price-label">Starting at</span>
+                            <span class="product-price-amount">€7,950</span>
+                        </div>
+                        <p class="product-price-note">Including installation and training</p>
+                    </div>
+
+                    <div class="product-hero-cta">
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Interactive%20Sandbox."
+                           target="_blank"
+                           class="btn btn-primary btn-large">
+                            <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Get Quote via WhatsApp
+                        </a>
+                        <a href="#pricing" class="btn btn-secondary btn-large">View Packages</a>
+                    </div>
+
+                    <div class="product-hero-trust">
+                        <div class="product-trust-item">
+                            <svg class="product-trust-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>2-year warranty</span>
+                        </div>
+                        <div class="product-trust-item">
+                            <svg class="product-trust-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                            </svg>
+                            <span>CE certified</span>
+                        </div>
+                        <div class="product-trust-item">
+                            <svg class="product-trust-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+                            </svg>
+                            <span>Free delivery NL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section section-opaque-light">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Wat is de Interactieve
-                    Zandbak?</h2>
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
-                        De Interactieve Zandbak combineert echt zand met digitale projectie. Wanneer kinderen
-                        het zand verplaatsen, verandert de projectie in realtime: bergen krijgen sneeuw,
-                        dalen vullen zich met water, vulkanen barsten uit. Een unieke manier om aardrijkskunde
-                        en natuurkunde te ontdekken.
+        <!-- 2. Benefit Strip -->
+        <section class="benefit-strip">
+            <div class="benefit-strip-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">STEM Learning</h3>
+                        <p class="benefit-description">Make geography & physics tangible</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Creative Play</h3>
+                        <p class="benefit-description">Unlimited possibilities with real sand</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Sensory Stimulation</h3>
+                        <p class="benefit-description">Perfect for sensorimotor therapy</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Real-time Response</h3>
+                        <p class="benefit-description">Instant visual feedback to sand movements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Demo Video Section -->
+        <section class="demo-video-section">
+            <div class="demo-video-container">
+                <div class="demo-video-content">
+                    <h2 class="demo-video-title">See the Interactive Sandbox in Action</h2>
+                    <p class="demo-video-description">
+                        Discover how children learn geography and physics by building mountains,
+                        triggering volcanic eruptions, and observing water flow patterns. The sandbox
+                        makes complex concepts tangible and understandable.
                     </p>
+                    <div class="demo-video-features">
+                        <div class="demo-video-feature">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Real-time topography projection</span>
+                        </div>
+                        <div class="demo-video-feature">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Automatic elevation colors</span>
+                        </div>
+                        <div class="demo-video-feature">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Water and lava simulation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-video-player">
+                    <div class="demo-video-placeholder">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Interactive Sandbox Demo">
+                        <button class="demo-video-play-btn">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-opaque-dark">
+        <!-- 4. Feature Deep Dive -->
+        <section class="feature-deep-dive">
             <div class="container">
-                <h2 class="industrial-label" style="text-align: center; color: #fff;">Features</h2>
-                <div class="specs-grid">
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
-                        </svg>
-                        <h3 class="spec-title">Topografie</h3>
-                        <p class="spec-desc">Realtime hoogtekaarten die reageren op zandverschuivingen.</p>
+                <h2 class="section-title-center">Advanced Augmented Reality Technology</h2>
+                <p class="section-subtitle-center">The Interactive Sandbox combines 3D depth sensors with real-time projection for a unique learning experience</p>
+
+                <!-- Feature 1 -->
+                <div class="feature-row">
+                    <div class="feature-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="3D Depth Sensing Technology">
                     </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" />
-                        </svg>
-                        <h3 class="spec-title">Vulkanen</h3>
-                        <p class="spec-desc">Maak een berg hoog genoeg en hij barst uit met lava-effecten.</p>
+                    <div class="feature-content">
+                        <h3 class="feature-title">3D Depth Sensing</h3>
+                        <p class="feature-description">
+                            Our advanced Kinect sensor scans the sand surface 30 times per second and creates
+                            an accurate 3D map. When children move the sand, the system instantly detects
+                            every elevation change and adjusts the projection in real-time.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>30 FPS scan rate for smooth response</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Millimeter-precise elevation detection</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Automatic calibration for perfect projection</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M21.98 14H22h-.02zM5.35 13c1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1 1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1v2c-1.9 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1v-2c1.9 0 2.1-1 3.33-1z" />
-                        </svg>
-                        <h3 class="spec-title">Water Simulatie</h3>
-                        <p class="spec-desc">Dalen vullen zich met water dat realistisch stroomt.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-row feature-row-reverse">
+                    <div class="feature-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Topography Visualization">
                     </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-                        </svg>
-                        <h3 class="spec-title">Educatief</h3>
-                        <p class="spec-desc">Ideaal voor musea, scholen en educatieve centra.</p>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Topography Visualization</h3>
+                        <p class="feature-description">
+                            The system automatically projects color-coded elevation maps onto the sand.
+                            Blue zones for valleys and water, green zones for lowlands, yellow and orange
+                            zones for hills, and white zones for snow-capped peaks. Perfect for geography lessons.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>8 elevation layers with realistic colors</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Smooth color transitions</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Educational contour lines optional</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-row">
+                    <div class="feature-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Water & Lava Simulation">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Water & Lava Simulation</h3>
+                        <p class="feature-description">
+                            Make a gesture above the sand to trigger water or lava flow. The system
+                            simulates realistic flow patterns that follow the landscape. Water collects
+                            in valleys and volcanoes erupt with lava effects when a mountain is tall enough.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Realistic water physics simulation</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Automatic volcano detection</span>
+                            </li>
+                            <li>
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Hand gesture-controlled water addition</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section container">
-            <div class="glass-panel"
-                style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
-                <h2 class="industrial-label" style="margin-bottom: 1rem;">Interesse?</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--color-text-muted);">Vraag een
-                    vrijblijvende offerte aan of neem contact op.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
-                        target="_blank" class="btn"
-                        style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">Offerte
-                        Aanvragen</a>
-                    <a href="../prijzen.html" class="btn" style="border-radius: 999px; padding: 1rem 2.5rem;">Bekijk
-                        Prijzen</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-opaque-light">
+        <!-- 5. Game Library Preview -->
+        <section class="game-library">
             <div class="container">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Andere Producten</h2>
-                <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
-                    <div class="pricing-card" style="text-align: center;">
-                        <h3 class="pricing-title">Interactive Floor</h3>
-                        <p style="color: #666; margin-bottom: 1.5rem;">Vloerprojectie voor allerlei ruimtes</p>
-                        <a href="interactieve-vloer.html" class="btn"
-                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+                <h2 class="section-title-center">12+ Educational Games & Modes</h2>
+                <p class="section-subtitle-center">From geography to physics: every mode is designed for maximum educational impact</p>
+
+                <div class="game-categories">
+                    <button class="game-category-btn active" data-category="all">All Games</button>
+                    <button class="game-category-btn" data-category="education">Education</button>
+                    <button class="game-category-btn" data-category="creative">Creative</button>
+                    <button class="game-category-btn" data-category="therapy">Therapy</button>
+                </div>
+
+                <div class="game-grid">
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Topography Mode">
+                            <span class="game-card-badge">Education</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Topography Mode</h3>
+                            <p class="game-card-description">Learn to read elevation maps with real-time color codes on the sand landscape.</p>
+                        </div>
                     </div>
-                    <div class="pricing-card" style="text-align: center;">
-                        <h3 class="pricing-title">Software & Customization</h3>
-                        <p style="color: #666; margin-bottom: 1.5rem;">Op maat gemaakte oplossingen</p>
-                        <a href="software-maatwerk.html" class="btn"
-                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Volcano Simulation">
+                            <span class="game-card-badge">Education</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Volcano Simulation</h3>
+                            <p class="game-card-description">Build a volcano and watch it erupt with spectacular lava effects.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Water Cycle">
+                            <span class="game-card-badge">Education</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Water Cycle</h3>
+                            <p class="game-card-description">Discover how water flows from mountain peaks to valleys and forms lakes.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="creative">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Sandbox Art">
+                            <span class="game-card-badge">Creative</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Sandbox Art</h3>
+                            <p class="game-card-description">Create artwork with sand and colorful projections for free expression.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="education">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Treasure Hunt">
+                            <span class="game-card-badge">Education</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Treasure Hunt</h3>
+                            <p class="game-card-description">Dig for hidden treasures with hints based on topography.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card" data-category="therapy">
+                        <div class="game-card-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Sensory Mode">
+                            <span class="game-card-badge">Therapy</span>
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-card-title">Sensory Mode</h3>
+                            <p class="game-card-description">Calming visual effects for sensorimotor stimulation and relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-library-cta">
+                    <p>More than 12 games available, with regular free updates</p>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20receive%20the%20complete%20list%20of%20sandbox%20games."
+                       target="_blank"
+                       class="btn btn-primary">
+                        View Complete Game List
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Technical Specifications -->
+        <section class="tech-specs-section">
+            <div class="container">
+                <h2 class="section-title-center">Technical Specifications</h2>
+                <p class="section-subtitle-center">Professional hardware for reliable performance</p>
+
+                <div class="tech-specs-grid">
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Hardware</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">Sandbox Dimensions</td>
+                                <td class="tech-specs-value">120 x 90 x 30 cm (standard)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Sand Content</td>
+                                <td class="tech-specs-value">250 kg play sand (included)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Sensor</td>
+                                <td class="tech-specs-value">Microsoft Kinect V2 3D depth sensor</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Projector</td>
+                                <td class="tech-specs-value">3500 ANSI Lumen short-throw projector</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Computer</td>
+                                <td class="tech-specs-value">Intel i5, 8GB RAM, dedicated GPU</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Frame Material</td>
+                                <td class="tech-specs-value">Powder-coated steel, black</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Software & Functionality</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">Operating System</td>
+                                <td class="tech-specs-value">Windows 10 Pro</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Update Rate</td>
+                                <td class="tech-specs-value">30 FPS real-time tracking</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Height Resolution</td>
+                                <td class="tech-specs-value">512 x 424 pixels depth data</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Number of Games</td>
+                                <td class="tech-specs-value">12+ modes (with free updates)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">User Interface</td>
+                                <td class="tech-specs-value">Simple touchscreen panel</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Languages</td>
+                                <td class="tech-specs-value">Dutch, English, German</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Installation & Maintenance</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">Installation Time</td>
+                                <td class="tech-specs-value">4-6 hours (including calibration)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Space Requirements</td>
+                                <td class="tech-specs-value">2.5 x 2 x 2.5 meters (W x D x H)</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Power Consumption</td>
+                                <td class="tech-specs-value">400W average</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Warranty</td>
+                                <td class="tech-specs-value">2-year full coverage</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Maintenance</td>
+                                <td class="tech-specs-value">Annual maintenance recommended</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Support</td>
+                                <td class="tech-specs-value">Phone & remote support</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tech-specs-category">
+                        <h3 class="tech-specs-category-title">Safety & Certification</h3>
+                        <table class="tech-specs-table">
+                            <tr>
+                                <td class="tech-specs-label">CE Certification</td>
+                                <td class="tech-specs-value">Fully certified</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Safety Standards</td>
+                                <td class="tech-specs-value">EN 71 toy directive</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Sand Quality</td>
+                                <td class="tech-specs-value">Washed play sand, dust-free</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Fire Protection</td>
+                                <td class="tech-specs-value">Fire-retardant frame</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Age Category</td>
+                                <td class="tech-specs-value">3 years and older</td>
+                            </tr>
+                            <tr>
+                                <td class="tech-specs-label">Capacity</td>
+                                <td class="tech-specs-value">2-6 children simultaneously</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tech-specs-download">
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20receive%20the%20technical%20specifications%20of%20the%20Interactive%20Sandbox."
+                       target="_blank"
+                       class="btn btn-secondary">
+                        <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        Download Full Specifications (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Use Case Gallery -->
+        <section class="use-case-gallery">
+            <div class="container">
+                <h2 class="section-title-center">Perfect For Various Applications</h2>
+                <p class="section-subtitle-center">The Interactive Sandbox is successfully deployed across different sectors</p>
+
+                <div class="use-case-grid">
+                    <a href="../onderwijs.html" class="use-case-card">
+                        <div class="use-case-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Education Application">
+                            <div class="use-case-overlay">
+                                <span class="use-case-link-text">Read More →</span>
+                            </div>
+                        </div>
+                        <div class="use-case-content">
+                            <h3 class="use-case-title">Education</h3>
+                            <p class="use-case-description">
+                                Schools use the sandbox for geography and physics lessons.
+                                Students learn about topography, volcanoes, water cycles, and erosion by
+                                creating and experimenting with landscapes themselves.
+                            </p>
+                            <ul class="use-case-highlights">
+                                <li>STEM education</li>
+                                <li>Teamwork stimulation</li>
+                                <li>Hands-on learning</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="../zorg-revalidatie.html" class="use-case-card">
+                        <div class="use-case-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Care & Rehabilitation">
+                            <div class="use-case-overlay">
+                                <span class="use-case-link-text">Read More →</span>
+                            </div>
+                        </div>
+                        <div class="use-case-content">
+                            <h3 class="use-case-title">Care & Rehabilitation</h3>
+                            <p class="use-case-description">
+                                Healthcare facilities use the sandbox for sensorimotor therapy and
+                                relaxation. The combination of tactile feedback and visual stimulation
+                                has a calming effect and motivates movement.
+                            </p>
+                            <ul class="use-case-highlights">
+                                <li>Sensorimotor stimulation</li>
+                                <li>Dementia care</li>
+                                <li>Pediatric rehabilitation</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="../parken-speelhallen.html" class="use-case-card">
+                        <div class="use-case-image">
+                            <img src="../media/products/interactieve-zandbak.png" alt="Entertainment">
+                            <div class="use-case-overlay">
+                                <span class="use-case-link-text">Read More →</span>
+                            </div>
+                        </div>
+                        <div class="use-case-content">
+                            <h3 class="use-case-title">Museums & Attractions</h3>
+                            <p class="use-case-description">
+                                Science centers and children's museums use the sandbox as an interactive
+                                exhibit that engages visitors for hours. Perfect for edutainment and
+                                attracting families with children.
+                            </p>
+                            <ul class="use-case-highlights">
+                                <li>Visitor attraction</li>
+                                <li>Educational value</li>
+                                <li>Unique experience</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title-center">What Customers Say</h2>
+                <p class="section-subtitle-center">Experiences from schools, care centers, and museums</p>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "The Interactive Sandbox is an absolute hit in our science center. Children
+                            can play with it for hours while simultaneously learning about geography.
+                            The technology works flawlessly and maintenance is minimal."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Linda van der Berg</p>
+                                <p class="testimonial-author-title">Director, NEMO Science Museum</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "For our geography lessons, the sandbox has become indispensable. Students
+                            finally understand how elevation maps work and why water flows to low-lying
+                            areas. It makes abstract concepts tangible."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Mark Jansen</p>
+                                <p class="testimonial-author-title">Geography Teacher, OSG De Hogeberg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "In our dementia ward, the sandbox provides peace and relaxation. Residents
+                            enjoy feeling the sand and the visual effects. It stimulates senses without
+                            being overwhelming."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Saskia Vermeulen</p>
+                                <p class="testimonial-author-title">Activity Coordinator, Zorggroep Apeldoorn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Pricing Packages -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="section-title-center">Choose Your Package</h2>
+                <p class="section-subtitle-center">All packages include installation, training, and 2-year warranty</p>
+
+                <div class="pricing-grid">
+                    <!-- Essential Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Essential</h3>
+                            <p class="pricing-subtitle">Perfect for schools</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">€</span>
+                            <span class="pricing-amount">7,950</span>
+                        </div>
+                        <p class="pricing-note">One-time investment</p>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Standard sandbox 120x90cm</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>3500 lumen projector</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Kinect V2 sensor</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>8 basic game modes</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>250kg play sand included</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Installation & training</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>2-year warranty</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Essential%20package%20for%20the%20Interactive%20Sandbox."
+                           target="_blank"
+                           class="btn btn-secondary btn-large">
+                            Request Quote
+                        </a>
+                    </div>
+
+                    <!-- Professional Package (Most Popular) -->
+                    <div class="pricing-card pricing-card-featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Professional</h3>
+                            <p class="pricing-subtitle">For museums & care</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">€</span>
+                            <span class="pricing-amount">11,950</span>
+                        </div>
+                        <p class="pricing-note">One-time investment</p>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span><strong>All Essential features</strong></span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Extra large sandbox 150x120cm</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>5000 lumen bright projector</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>12+ complete game library</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Premium i7 computer</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Wireless tablet control</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Extended training (half day)</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Professional%20package%20for%20the%20Interactive%20Sandbox."
+                           target="_blank"
+                           class="btn btn-primary btn-large">
+                            Request Quote
+                        </a>
+                    </div>
+
+                    <!-- Enterprise Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Enterprise</h3>
+                            <p class="pricing-subtitle">Premium solution</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">€</span>
+                            <span class="pricing-amount">16,950</span>
+                        </div>
+                        <p class="pricing-note">One-time investment</p>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span><strong>All Professional features</strong></span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Custom-made dimensions</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>6500 lumen laser projector</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Custom branding stickers</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Custom software modifications</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>3-year extended warranty</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Enterprise%20package%20for%20the%20Interactive%20Sandbox."
+                           target="_blank"
+                           class="btn btn-secondary btn-large">
+                            Request Quote
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pricing-footer">
+                    <p>All prices exclude VAT. Financing options available.</p>
+                    <a href="../prijzen.html" class="pricing-compare-link">Compare all products →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title-center">Frequently Asked Questions</h2>
+                <p class="section-subtitle-center">Everything you need to know about the Interactive Sandbox</p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How much space do I need for the Interactive Sandbox?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For the standard sandbox (120x90cm) you need a minimum of 2.5 x 2 meters floor space, plus 2.5 meters ceiling height. The projector and sensor are mounted above the sandbox. We recommend some extra space around it for easy access for multiple users.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How often does the sand need to be replaced?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>With normal use, the sand lasts for years. We use high-quality washed play sand that doesn't discolor or crumble. In environments with intensive use (like museums) we recommend refreshing the sand annually and raking it regularly to maintain optimal performance. Extra sand can be easily ordered.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I add or customize games myself?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The basic system comes with pre-installed game modes. Regular software updates with new games are free. For fully customized content or educational programs linked to your curriculum, we can develop custom solutions. Contact us for possibilities and pricing.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What happens if the technology breaks down?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>All packages come with 2-year full warranty (Enterprise: 3 years). For technical issues we first offer remote support via phone or TeamViewer. If necessary, we send a replacement part within 48 hours or visit for repairs. After the warranty period you can sign a maintenance contract.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is the sandbox suitable for children with disabilities?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. The sandbox is widely used in special education institutions and rehabilitation centers. The combination of tactile feedback and visual stimulation works well for children with autism, ADHD, or motor disabilities. The sandbox height can be adjusted for wheelchair accessibility. Ask about our special care variant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Related Products -->
+        <section class="related-products">
+            <div class="container">
+                <h2 class="section-title-center">Related Products</h2>
+                <p class="section-subtitle-center">Discover more interactive solutions</p>
+
+                <div class="related-products-grid">
+                    <div class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="../media/products/interactieve-vloer.png" alt="Interactive Floor">
+                            <span class="related-product-badge">Bestseller</span>
+                        </div>
+                        <div class="related-product-content">
+                            <h3 class="related-product-title">Interactive Floor</h3>
+                            <p class="related-product-description">
+                                Transform any floor into an interactive playground with motion-sensitive projections.
+                            </p>
+                            <div class="related-product-price">Starting at €6,950</div>
+                            <a href="interactieve-vloer.html" class="btn btn-secondary btn-block">More Information</a>
+                        </div>
+                    </div>
+
+                    <div class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="../media/products/interactieve-muur.png" alt="Interactive Wall">
+                        </div>
+                        <div class="related-product-content">
+                            <h3 class="related-product-title">Interactive Wall</h3>
+                            <p class="related-product-description">
+                                Make any wall interactive with touch-responsive projections for education and entertainment.
+                            </p>
+                            <div class="related-product-price">Starting at €5,950</div>
+                            <a href="interactieve-muur.html" class="btn btn-secondary btn-block">More Information</a>
+                        </div>
+                    </div>
+
+                    <div class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="../media/products/interactieve-klimwand.png" alt="Interactive Climbing Wall">
+                        </div>
+                        <div class="related-product-content">
+                            <h3 class="related-product-title">Interactive Climbing Wall</h3>
+                            <p class="related-product-description">
+                                Combine physical challenge with digital interaction in this innovative climbing solution.
+                            </p>
+                            <div class="related-product-price">Starting at €14,950</div>
+                            <a href="interactieve-klimwand.html" class="btn btn-secondary btn-block">More Information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Final CTA Section -->
+        <section class="final-cta-section">
+            <div class="final-cta-container">
+                <div class="final-cta-content">
+                    <h2 class="final-cta-title">Ready to Make STEM Education Tangible?</h2>
+                    <p class="final-cta-description">
+                        Discover how the Interactive Sandbox brings geography and physics to life in your school,
+                        museum, or care facility. Request a no-obligation demonstration today.
+                    </p>
+                    <div class="final-cta-buttons">
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Interactive%20Sandbox."
+                           target="_blank"
+                           class="btn btn-primary btn-large">
+                            <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Start WhatsApp Chat
+                        </a>
+                        <a href="#pricing" class="btn btn-secondary btn-large">View Pricing</a>
+                    </div>
+                    <div class="final-cta-trust">
+                        <div class="final-cta-trust-item">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>2-year warranty</span>
+                        </div>
+                        <div class="final-cta-trust-item">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Free installation</span>
+                        </div>
+                        <div class="final-cta-trust-item">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>Comprehensive training</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 13. Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <div class="mobile-sticky-cta-content">
+            <div class="mobile-sticky-cta-text">
+                <span class="mobile-sticky-cta-title">Interactive Sandbox</span>
+                <span class="mobile-sticky-cta-price">From €7,950</span>
+            </div>
+            <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Interactive%20Sandbox."
+               target="_blank"
+               class="btn btn-primary">
+                Contact Now
+            </a>
+        </div>
+    </div>
 
     <footer class="footer-professional">
         <div class="footer-container">
@@ -213,6 +1197,6 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+            <p>&copy; 2026 InterActiveMove B.V. All rights reserved.</p>
         </div>
     </footer>

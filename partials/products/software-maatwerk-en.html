@@ -1,180 +1,843 @@
 <header>
-        <a href="../index.html"><img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown"><button class="nav-link">Products</button>
-                    <div class="dropdown-menu">
-                        <a href="interactieve-vloer.html">Interactive Floor</a>
-                        <a href="interactieve-muur.html">Interactive Wall</a>
-                        <a href="interactieve-zandbak.html">Interactive Sandbox</a>
-                        <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
-                        <a href="mobiele-vloer.html">Mobile Floor</a>
-                        <a href="software-maatwerk.html" class="active">Software & Customization</a>
+    <a href="../index.html"><img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown"><button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="interactieve-vloer.html">Interactive Floor</a>
+                    <a href="interactieve-muur.html">Interactive Wall</a>
+                    <a href="interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
+                    <a href="mobiele-vloer.html">Mobile Floor</a>
+                    <a href="software-maatwerk.html" class="active">Software & Customization</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Applications</button>
+                <div class="dropdown-menu">
+                    <a href="../bouw-een-park.html">Build a Park</a>
+                    <a href="../3d-spellen.html">3D Games</a>
+                    <a href="../parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="../onderwijs.html">Education</a>
+                    <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="../over-ons.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prices</a></li>
+            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="lang-toggle"><button class="lang-btn" hx-get="../partials/products/software-maatwerk-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button class="lang-btn active" hx-get="../partials/products/software-maatwerk-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button></div>
+        <button class="hamburger" onclick="toggleMobileNav()"
+            aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+    <a href="../index.html" onclick="closeMobileNav()">Home</a>
+    <a href="interactieve-vloer.html">Interactive Floor</a>
+    <a href="interactieve-muur.html">Interactive Wall</a>
+    <a href="interactieve-zandbak.html">Interactive Sandbox</a>
+    <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
+    <a href="mobiele-vloer.html">Mobile Floor</a>
+    <a href="software-maatwerk.html">Software & Customization</a>
+    <a href="../bouw-een-park.html">Build a Park</a>
+    <a href="../3d-spellen.html">3D Games</a>
+    <a href="../parken-speelhallen.html">Parks & Arcades</a>
+    <a href="../onderwijs.html">Education</a>
+    <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+    <a href="../over-ons.html">About Us</a>
+    <a href="../prijzen.html">Prices</a>
+    <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<main>
+    <!-- 1. ENHANCED PRODUCT HERO -->
+    <section class="product-hero">
+        <div class="product-hero-grid">
+            <div class="product-hero-gallery">
+                <div class="product-hero-main-image">
+                    <img src="../media/products/software-maatwerk.png" alt="Software & Customization - Game Editor Interface">
+                </div>
+                <div class="product-hero-thumbnails">
+                    <div class="product-thumbnail active">
+                        <img src="../media/products/software-maatwerk.png" alt="Game Editor">
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Applications</button>
-                    <div class="dropdown-menu">
-                        <a href="../bouw-een-park.html">Build a Park</a>
-                        <a href="../3d-spellen.html">3D Games</a>
-                        <a href="../parken-speelhallen.html">Parks & Arcades</a>
-                        <a href="../onderwijs.html">Education</a>
-                        <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+                </div>
+            </div>
+            <div class="product-hero-info">
+                <div class="product-badge-group">
+                    <span class="product-badge badge-custom">Custom</span>
+                    <span class="product-badge badge-professional">Professional</span>
+                </div>
+                <h1 class="product-hero-title">Software & Customization</h1>
+                <div class="product-hero-rating">
+                    <div class="star-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
                     </div>
-                </li>
-                <li class="nav-item"><a href="../over-ons.html" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prices</a></li>
-                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="lang-toggle"><button class="lang-btn" hx-get="../partials/products/software-maatwerk-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn active">EN</button></div>
-            <button class="hamburger" onclick="toggleMobileNav()"
-                aria-label="Menu"><span></span><span></span><span></span></button>
-        </nav>
-    </header>
-    <div class="mobile-nav" id="mobileNav">
-        <a href="../index.html" onclick="closeMobileNav()">Home</a>
-        <a href="interactieve-vloer.html">Interactive Floor</a>
-        <a href="interactieve-muur.html">Interactive Wall</a>
-        <a href="interactieve-zandbak.html">Interactive Sandbox</a>
-        <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
-        <a href="mobiele-vloer.html">Mobile Floor</a>
-        <a href="software-maatwerk.html">Software & Customization</a>
-        <a href="../bouw-een-park.html">Build a Park</a>
-        <a href="../3d-spellen.html">3D Games</a>
-        <a href="../parken-speelhallen.html">Parks & Arcades</a>
-        <a href="../onderwijs.html">Education</a>
-        <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
-        <a href="../over-ons.html">About Us</a>
-        <a href="../prijzen.html">Prices</a>
-        <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+                    <span class="rating-text">(12 projects completed)</span>
+                </div>
+                <p class="product-hero-subtitle">Your vision, our technology. Create unique interactive experiences with our Game Editor or let us develop fully custom solutions.</p>
+                <ul class="product-hero-highlights">
+                    <li>
+                        <svg class="highlight-icon" fill="currentColor" viewBox="0 0 20 20" width="20" height="20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Game Editor: create games without programming</span>
+                    </li>
+                    <li>
+                        <svg class="highlight-icon" fill="currentColor" viewBox="0 0 20 20" width="20" height="20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Branded games with your logo and identity</span>
+                    </li>
+                    <li>
+                        <svg class="highlight-icon" fill="currentColor" viewBox="0 0 20 20" width="20" height="20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Full custom development available</span>
+                    </li>
+                    <li>
+                        <svg class="highlight-icon" fill="currentColor" viewBox="0 0 20 20" width="20" height="20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Continuous updates and technical support</span>
+                    </li>
+                </ul>
+                <div class="product-hero-price">
+                    <span class="price-label">From</span>
+                    <span class="price-amount">€2.500</span>
+                    <span class="price-note">for Game Editor license</span>
+                </div>
+                <div class="product-hero-cta">
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20software%20and%20customization." target="_blank" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Discuss Your Project
+                    </a>
+                    <a href="../prijzen.html" class="btn btn-secondary btn-lg">View Packages</a>
+                </div>
+                <div class="product-trust-signals">
+                    <div class="trust-signal">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Own IP Rights</span>
+                    </div>
+                    <div class="trust-signal">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                        </svg>
+                        <span>Free Demo</span>
+                    </div>
+                    <div class="trust-signal">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Personal Consultation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. BENEFIT STRIP -->
+    <section class="benefit-strip">
+        <div class="container">
+            <div class="benefit-strip-grid">
+                <div class="benefit-item">
+                    <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
+                    <h3>Visual Editor</h3>
+                    <p>No programming knowledge required</p>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h3>Your Branding</h3>
+                    <p>Fully branded to your requirements</p>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L5.09 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58z"/>
+                    </svg>
+                    <h3>Customization</h3>
+                    <p>Custom development available</p>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                    </svg>
+                    <h3>Content Library</h3>
+                    <p>Access to all assets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DEMO VIDEO SECTION -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="industrial-label">See the Game Editor in Action</h2>
+                <p class="section-subtitle">Create your own interactive games in minutes with our intuitive drag-and-drop editor</p>
+            </div>
+            <div class="demo-video-container">
+                <div class="video-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 400px; border-radius: var(--radius-card); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div style="text-align: center;">
+                        <svg width="80" height="80" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <p style="margin-top: 1rem; font-size: 1.2rem;">Game Editor Demo Video</p>
+                        <p style="opacity: 0.8;">See how easy it is to create your own games</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FEATURE DEEP DIVE (3 Alternating Rows) -->
+    <section class="section">
+        <div class="container">
+            <!-- Feature 1 -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); min-height: 300px; border-radius: var(--radius-card);"></div>
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Game Editor: Create Without Coding</h3>
+                    <p class="feature-description">Our visual Game Editor enables you to create professional interactive games within minutes. Drag elements, set rules, and customize the look-and-feel to your needs - all without writing a single line of code.</p>
+                    <ul class="feature-list">
+                        <li>Drag-and-drop interface</li>
+                        <li>200+ pre-made assets and animations</li>
+                        <li>Real-time preview function</li>
+                        <li>Template library with 50+ starting points</li>
+                        <li>Export to all IAM systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-row feature-row-reverse">
+                <div class="feature-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); min-height: 300px; border-radius: var(--radius-card);"></div>
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Branded Games: Your Identity First</h3>
+                    <p class="feature-description">Strengthen your brand identity with fully branded interactive experiences. We integrate your logo, colors, characters and messages into unique games that perfectly align with your organization.</p>
+                    <ul class="feature-list">
+                        <li>Complete brand identity integration</li>
+                        <li>Custom characters and illustrations</li>
+                        <li>Branded UI elements</li>
+                        <li>Custom sound effects and music</li>
+                        <li>Exclusive content rights</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); min-height: 300px; border-radius: var(--radius-card);"></div>
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Full Custom Development</h3>
+                    <p class="feature-description">Have a unique vision that standard tools can't realize? Our development team builds fully custom interactive experiences, from concept to deployment, with continuous communication and iteration.</p>
+                    <ul class="feature-list">
+                        <li>Dedicated project manager</li>
+                        <li>Agile development process</li>
+                        <li>API integrations possible</li>
+                        <li>Data analytics and reporting</li>
+                        <li>Lifetime technical support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SERVICE/CAPABILITY GRID -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="industrial-label" style="color: #fff;">Our Services</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">From DIY to full custom - we support your ambitions</p>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
+                    <h3 class="spec-title">Game Editor License</h3>
+                    <p class="spec-desc">Annual license for unlimited game creation with our editor.</p>
+                </div>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                    </svg>
+                    <h3 class="spec-title">Branded Game Package</h3>
+                    <p class="spec-desc">We create 3-5 games fully in your brand identity.</p>
+                </div>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L5.09 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58z"/>
+                    </svg>
+                    <h3 class="spec-title">Custom Development</h3>
+                    <p class="spec-desc">Fully custom game or application developed by our team.</p>
+                </div>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l-5.5 9h11z"/><circle cx="17.5" cy="17.5" r="4.5"/><path d="M3 13.5h8v8H3z"/>
+                    </svg>
+                    <h3 class="spec-title">Asset Creation</h3>
+                    <p class="spec-desc">Custom characters, animations and graphics for your projects.</p>
+                </div>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                    </svg>
+                    <h3 class="spec-title">API Integration</h3>
+                    <p class="spec-desc">Connect your systems and data to interactive experiences.</p>
+                </div>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/>
+                    </svg>
+                    <h3 class="spec-title">Training & Support</h3>
+                    <p class="spec-desc">Personal training and ongoing technical support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PROCESS/TIMELINE SECTION -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="industrial-label">From Idea to Reality</h2>
+                <p class="section-subtitle">Our structured process guarantees your success</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Intake & Consultation</h3>
+                        <p class="process-description">Free introductory meeting where we discuss your goals, requirements and budget. We advise the best approach.</p>
+                        <span class="process-duration">1-2 days</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Concept & Proposal</h3>
+                        <p class="process-description">We prepare a detailed proposal with mockups, timeline and transparent pricing.</p>
+                        <span class="process-duration">3-5 days</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Development & Iteration</h3>
+                        <p class="process-description">Agile development with regular updates. You test intermediate versions and provide feedback.</p>
+                        <span class="process-duration">2-8 weeks</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Delivery & Training</h3>
+                        <p class="process-description">Final delivery with complete documentation and personal training for your team.</p>
+                        <span class="process-duration">1 day</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Support & Updates</h3>
+                        <p class="process-description">Ongoing support, bug fixes and optional content updates during your contract.</p>
+                        <span class="process-duration">Ongoing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. USE CASE GALLERY -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="industrial-label">Completed Projects</h2>
+                <p class="section-subtitle">Examples of custom work we've developed for clients</p>
+            </div>
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <div class="use-case-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 200px;"></div>
+                    </div>
+                    <div class="use-case-content">
+                        <h3 class="use-case-title">Corporate Training Game</h3>
+                        <p class="use-case-category">Fortune 500 Company</p>
+                        <p class="use-case-description">Interactive onboarding game for new employees with company values, procedures and team-building challenges.</p>
+                        <ul class="use-case-tags">
+                            <li>Custom Development</li>
+                            <li>Branded</li>
+                            <li>Multiplayer</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); min-height: 200px;"></div>
+                    </div>
+                    <div class="use-case-content">
+                        <h3 class="use-case-title">Museum Interactive Exhibition</h3>
+                        <p class="use-case-category">National Museum</p>
+                        <p class="use-case-description">Series of educational games about Dutch history with augmented reality elements and quiz functionality.</p>
+                        <ul class="use-case-tags">
+                            <li>Educational</li>
+                            <li>AR Integration</li>
+                            <li>Multi-language</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); min-height: 200px;"></div>
+                    </div>
+                    <div class="use-case-content">
+                        <h3 class="use-case-title">Therapy Tracking Dashboard</h3>
+                        <p class="use-case-category">Rehabilitation Center</p>
+                        <p class="use-case-description">Custom admin dashboard with real-time analytics, patient progress tracking and automatic reporting.</p>
+                        <ul class="use-case-tags">
+                            <li>Data Analytics</li>
+                            <li>API Integration</li>
+                            <li>GDPR Compliant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CLIENT TESTIMONIAL -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <div class="testimonial-featured">
+                <div class="testimonial-content-large">
+                    <svg class="quote-icon" width="48" height="48" fill="currentColor" viewBox="0 0 24 24" style="opacity: 0.3;">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                    </svg>
+                    <p class="testimonial-text-large">"InterActiveMove developed a fully branded game experience for us that perfectly aligns with our educational objectives. The collaboration was professional, creative and results-driven. Our students are enthusiastic!"</p>
+                    <div class="testimonial-author-large">
+                        <div class="author-avatar">
+                            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        </div>
+                        <div class="author-info">
+                            <strong style="font-size: 1.2rem; color: #fff;">Marieke van den Berg</strong>
+                            <p style="color: rgba(255,255,255,0.7); margin: 0.25rem 0;">Director of Innovation</p>
+                            <p style="color: rgba(255,255,255,0.5); margin: 0;">Education Group Central Netherlands</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SERVICE PACKAGES -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="industrial-label">Choose Your Package</h2>
+                <p class="section-subtitle">From DIY to fully custom</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Game Editor</h3>
+                        <p class="pricing-subtitle">Create yourself</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">2.500</span>
+                        <span class="price-period">/year</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Full Editor access</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>200+ Assets & Templates</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Unlimited game creation</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Video tutorials & docs</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Email support</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>2 hours onboarding training</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20the%20Game%20Editor%20license." class="btn btn-secondary btn-block">More Information</a>
+                </div>
+
+                <div class="pricing-card pricing-card-featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Branded Games</h3>
+                        <p class="pricing-subtitle">We create for you</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">5.000</span>
+                        <span class="price-period">from</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>3-5 fully branded games</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Your logo & brand integration</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Custom graphics & animations</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Iterative design process</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dedicated project manager</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>6 months free updates</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20the%20Branded%20Games%20package." class="btn btn-primary btn-block">Start Project</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Full Custom</h3>
+                        <p class="pricing-subtitle">Custom development</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">15.000</span>
+                        <span class="price-period">from</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Fully custom application</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>API & system integrations</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Data analytics dashboard</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Agile development process</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Exclusive IP rights</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Lifetime priority support</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Full%20Custom%20development." class="btn btn-secondary btn-block">Discuss Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ ACCORDION -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header-center">
+                <h2 class="industrial-label">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about our software services</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need programming knowledge to use the Game Editor?</span>
+                        <svg class="faq-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, absolutely not! Our Game Editor is specifically designed for non-technical users. With an intuitive drag-and-drop interface, you can get started within minutes. We also offer video tutorials and personal onboarding training to familiarize you with all features.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does it take to develop a custom game?</span>
+                        <svg class="faq-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Development time varies depending on your project's complexity. A simple branded game can be ready within 2-3 weeks, while a fully custom application with API integrations can take 6-8 weeks. After the intake, we provide you with a precise schedule with milestones.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I modify the content myself later?</span>
+                        <svg class="faq-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! All games we create for you are delivered with a content management system that allows you to modify texts, images and settings yourself. For more complex adjustments to gameplay or mechanics, you can contact us or purchase a Game Editor license.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I own the IP rights to custom work?</span>
+                        <svg class="faq-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>With Full Custom packages, you retain full exclusive rights to all custom-developed content and code. With Branded Games packages, you get exclusive usage rights within your sector. The underlying IAM technology remains property of InterActiveMove. We discuss all rights clearly in the contract.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What support do I receive after delivery?</span>
+                        <svg class="faq-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All packages include at least 3-6 months of free support for bug fixes and technical questions. Full Custom packages receive lifetime priority support. Additionally, we offer optional annual maintenance contracts for ongoing updates, new features and comprehensive SLAs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. RELATED PRODUCTS -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="industrial-label">Combine with Hardware</h2>
+                <p class="section-subtitle">Our software works perfectly with all IAM systems</p>
+            </div>
+            <div class="related-products-grid">
+                <div class="related-product-card">
+                    <div class="related-product-image">
+                        <img src="../media/products/interactieve-vloer.png" alt="Interactive Floor">
+                    </div>
+                    <div class="related-product-content">
+                        <h3 class="related-product-title">Interactive Floor</h3>
+                        <p class="related-product-description">Deploy your custom games on our most popular hardware</p>
+                        <a href="interactieve-vloer.html" class="btn btn-sm btn-secondary">View Product →</a>
+                    </div>
+                </div>
+                <div class="related-product-card">
+                    <div class="related-product-image">
+                        <img src="../media/products/interactieve-muur.png" alt="Interactive Wall">
+                    </div>
+                    <div class="related-product-content">
+                        <h3 class="related-product-title">Interactive Wall</h3>
+                        <p class="related-product-description">Vertical projection for space-saving installations</p>
+                        <a href="interactieve-muur.html" class="btn btn-sm btn-secondary">View Product →</a>
+                    </div>
+                </div>
+                <div class="related-product-card">
+                    <div class="related-product-image">
+                        <img src="../media/products/interactieve-zandbak.png" alt="Interactive Sandbox">
+                    </div>
+                    <div class="related-product-content">
+                        <h3 class="related-product-title">Interactive Sandbox</h3>
+                        <p class="related-product-description">AR sandbox perfect for educational custom content</p>
+                        <a href="interactieve-zandbak.html" class="btn btn-sm btn-secondary">View Product →</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../bouw-een-park.html" class="btn btn-lg btn-primary">Build a Complete Park →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FINAL CTA SECTION -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="cta-title">Ready to Realize Your Unique Vision?</h2>
+                <p class="cta-subtitle">Discuss your ideas with our development experts and receive a no-obligation quote</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20software%20and%20customization%20options." target="_blank" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Start WhatsApp Chat
+                    </a>
+                    <a href="tel:+31623998934" class="btn btn-secondary btn-lg">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        Call Direct
+                    </a>
+                </div>
+                <p class="cta-guarantee">✓ No-obligation consultation ✓ Response within 24 hours ✓ Transparent pricing</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 13. MOBILE STICKY CTA -->
+<div class="mobile-sticky-cta">
+    <div class="mobile-sticky-content">
+        <div class="mobile-sticky-info">
+            <span class="mobile-sticky-label">Software & Customization</span>
+            <span class="mobile-sticky-price">From €2.500</span>
+        </div>
+        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20software%20and%20customization." class="btn btn-primary">Discuss Project</a>
     </div>
-    <main>
-        <section class="hero" style="height: 60vh;">
-            <div class="hero-video-container">
-                <img src="../media/products/software-maatwerk.png" alt="Software & Maatwerk"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            </div>
-            <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Software & Customization</h1>
-                <p style="font-size: 1.3rem; text-shadow: 1px 1px 0 #000;">Bouw uw eigen interactieve ervaringen</p>
-            </div>
-        </section>
-        <section class="section section-opaque-light">
-            <div class="container" style="text-align: center; max-width: 800px;">
-                <h2 class="industrial-label">Op Maat Gemaakt</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
-                    Wilt u uw eigen interactieve spellen of ervaringen creëren? Met onze Game Editor en Animator tools
-                    kunt u zonder programmeerkennis unieke content bouwen. Of laat ons team maatwerk ontwikkelen voor uw
-                    specifieke wensen.
-                </p>
-            </div>
-        </section>
-        <section class="section section-opaque-dark">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; color: #fff;">Applications</h2>
-                <div class="specs-grid">
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
-                        </svg>
-                        <h3 class="spec-title">Game Editor</h3>
-                        <p class="spec-desc">Visuele editor voor het maken van eigen spellen.</p>
-                    </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                        </svg>
-                        <h3 class="spec-title">Animator</h3>
-                        <p class="spec-desc">Creëer animaties en visuele effecten.</p>
-                    </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L5.09 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58z" />
-                        </svg>
-                        <h3 class="spec-title">Maatwerk</h3>
-                        <p class="spec-desc">Wij ontwikkelen op specificatie voor uw project.</p>
-                    </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                        </svg>
-                        <h3 class="spec-title">Support</h3>
-                        <p class="spec-desc">Training en ondersteuning bij het gebruik.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section container">
-            <div class="glass-panel"
-                style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
-                <h2 class="industrial-label" style="margin-bottom: 1rem;">Bespreek uw project</h2>
-                <p style="margin-bottom: 2rem; color: var(--color-text-muted);">Neem contact op voor een vrijblijvend
-                    gesprek over de mogelijkheden.</p>
-                <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20weten%20over%20maatwerk%20software."
-                    target="_blank" class="btn"
-                    style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">Contact
-                    Opnemen</a>
-            </div>
-        </section>
-    </main>
-    <footer class="footer-professional">
-        <div class="footer-container">
-            <div class="footer-column footer-brand">
-                <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
-                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                        </svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg></a>
-                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../bouw-een-park.html">Build a Park</a></li>
-                    <li><a href="../over-ons.html">About Us</a></li>
-                    <li><a href="../prijzen.html">Prices</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="interactieve-vloer.html">Interactive Floor</a></li>
-                    <li><a href="interactieve-muur.html">Interactive Wall</a></li>
-                    <li><a href="interactieve-zandbak.html">Interactive Sandbox</a></li>
-                    <li><a href="interactieve-klimwand.html">Interactive Climbing Wall</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Contact</h4>
-                <div class="footer-contact">
-                    <p><strong>Inter Active Move B.V.</strong></p>
-                    <p>Smitspol 15K, 3861RS Nijkerk</p>
-                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
-                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
-                </div>
+</div>
+
+<footer class="footer-professional">
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+            <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg></a>
+                <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                    </svg></a>
+                <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                        <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                    </svg></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        <div class="footer-column">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../bouw-een-park.html">Build a Park</a></li>
+                <li><a href="../over-ons.html">About Us</a></li>
+                <li><a href="../prijzen.html">Prices</a></li>
+            </ul>
         </div>
-    </footer>
+        <div class="footer-column">
+            <h4 class="footer-heading">Products</h4>
+            <ul class="footer-links">
+                <li><a href="interactieve-vloer.html">Interactive Floor</a></li>
+                <li><a href="interactieve-muur.html">Interactive Wall</a></li>
+                <li><a href="interactieve-zandbak.html">Interactive Sandbox</a></li>
+                <li><a href="interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact">
+                <p><strong>Inter Active Move B.V.</strong></p>
+                <p>Smitspol 15K, 3861RS Nijkerk</p>
+                <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 InterActiveMove B.V. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const isOpen = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't open
+            if (!isOpen) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+});
+</script>

@@ -1,219 +1,621 @@
 <header>
-        <a href="../index.html"><img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Products</button>
-                    <div class="dropdown-menu">
-                        <a href="interactieve-vloer.html">Interactive Floor</a>
-                        <a href="interactieve-muur.html">Interactive Wall</a>
-                        <a href="interactieve-zandbak.html">Interactive Sandbox</a>
-                        <a href="interactieve-klimwand.html" class="active">Interactive Climbing Wall</a>
-                        <a href="mobiele-vloer.html">Mobile Floor</a>
-                        <a href="software-maatwerk.html">Software & Customization</a>
+    <a href="../index.html">
+        <img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img">
+    </a>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="interactieve-vloer.html">Interactive Floor</a>
+                    <a href="interactieve-muur.html">Interactive Wall</a>
+                    <a href="interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="interactieve-klimwand.html" class="active">Interactive Climbing Wall</a>
+                    <a href="mobiele-vloer.html">Mobile Floor</a>
+                    <a href="software-maatwerk.html">Software & Customization</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Applications</button>
+                <div class="dropdown-menu">
+                    <a href="../bouw-een-park.html">Build a Park</a>
+                    <a href="../3d-spellen.html">3D Games</a>
+                    <a href="../parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="../onderwijs.html">Education</a>
+                    <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="../over-ons.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prices</a></li>
+            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="lang-toggle">
+            <button class="lang-btn" hx-get="../partials/products/interactieve-klimwand-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+            <span class="divider">|</span>
+            <button class="lang-btn active" hx-get="../partials/products/interactieve-klimwand-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+        </div>
+
+        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="../index.html#contact" class="btn"
+            style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+    </nav>
+</header>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="../index.html" onclick="closeMobileNav()">Home</a>
+    <a href="interactieve-vloer.html">Interactive Floor</a>
+    <a href="interactieve-muur.html">Interactive Wall</a>
+    <a href="interactieve-zandbak.html">Interactive Sandbox</a>
+    <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
+    <a href="mobiele-vloer.html">Mobile Floor</a>
+    <a href="software-maatwerk.html">Software & Customization</a>
+    <a href="../bouw-een-park.html">Build a Park</a>
+    <a href="../3d-spellen.html">3D Games</a>
+    <a href="../parken-speelhallen.html">Parks & Arcades</a>
+    <a href="../onderwijs.html">Education</a>
+    <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+    <a href="../over-ons.html">About Us</a>
+    <a href="../prijzen.html">Prices</a>
+    <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<main>
+    <!-- Enhanced Product Hero -->
+    <section class="product-hero-enhanced">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-gallery">
+                    <div class="gallery-main">
+                        <img src="../media/products/interactieve-klimwand.png" alt="Interactive Climbing Wall in action" id="mainProductImage">
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Applications</button>
-                    <div class="dropdown-menu">
-                        <a href="../bouw-een-park.html">Build a Park</a>
-                        <a href="../3d-spellen.html">3D Games</a>
-                        <a href="../parken-speelhallen.html">Parks & Arcades</a>
-                        <a href="../onderwijs.html">Education</a>
-                        <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+                    <div class="gallery-thumbs">
+                        <button class="thumb active" data-image="../media/products/interactieve-klimwand.png">
+                            <img src="../media/products/interactieve-klimwand.png" alt="Product view 1">
+                        </button>
+                        <button class="thumb" data-image="../media/products/interactieve-klimwand.png">
+                            <img src="../media/products/interactieve-klimwand.png" alt="Product view 2">
+                        </button>
+                        <button class="thumb" data-image="../media/products/interactieve-klimwand.png">
+                            <img src="../media/products/interactieve-klimwand.png" alt="Product view 3">
+                        </button>
                     </div>
-                </li>
-                <li class="nav-item"><a href="../over-ons.html" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prices</a></li>
-                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Interactive Climbing Wall</h1>
+                    <div class="product-rating">
+                        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="review-count">(32 reviews)</span>
+                    </div>
+                    <p class="product-tagline">Transform climbing into an interactive game experience with projection and touch detection on climbing holds.</p>
+                    <ul class="product-highlights">
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Touch detection on climbing holds</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Competition and race modes</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Fitness tracking and statistics</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Compatible with existing climbing walls</li>
+                    </ul>
+                    <div class="product-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">&euro;15,950</span>
+                    </div>
+                    <div class="product-ctas">
+                        <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20a%20quote%20for%20the%20Interactive%20Climbing%20Wall." class="btn btn-primary">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Request Quote
+                        </a>
+                        <a href="#demo-video" class="btn btn-secondary">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefit Strip -->
+    <section class="benefit-strip">
+        <div class="container">
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z"/>
+                    </svg>
+                    <span>Gamification</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                    </svg>
+                    <span>Race Modes</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                    <span>Multiplayer</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                    </svg>
+                    <span>Safe System</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section class="section section-opaque-light" id="demo-video">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">See the Interactive Climbing Wall in Action</h2>
+                <p class="section-subtitle">Discover how climbing becomes a game with projection and touch detection</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls poster="../media/products/interactieve-klimwand.png" preload="metadata">
+                        <source src="../media/hero-video.webm" type="video/webm">
+                        Your browser does not support video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Deep Dive -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 3rem;">Why the Interactive Climbing Wall?</h2>
+
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="../media/products/interactieve-klimwand.png" alt="Touch detection technology">
+                </div>
+                <div class="feature-content">
+                    <h3>Advanced Touch Detection</h3>
+                    <p>Detects every touch of climbing holds in real-time, enabling dynamic games that respond to every climber's movement.</p>
+                    <ul class="feature-benefits">
+                        <li>Precision touch detection on every climbing hold</li>
+                        <li>Real-time feedback and score tracking</li>
+                        <li>Compatible with existing climbing walls</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature-row feature-row-reverse">
+                <div class="feature-image">
+                    <img src="../media/products/interactieve-klimwand.png" alt="Competition modes">
+                </div>
+                <div class="feature-content">
+                    <h3>Competition & Training Modes</h3>
+                    <p>Race against friends, improve your time, or train specific routes. Ideal for climbing gyms looking to offer customers a unique experience.</p>
+                    <ul class="feature-benefits">
+                        <li>Multiplayer race modes for competition</li>
+                        <li>Time trials for personal records</li>
+                        <li>Training modes for specific skills</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="../media/products/interactieve-klimwand.png" alt="Fitness tracking">
+                </div>
+                <div class="feature-content">
+                    <h3>Fitness Tracking & Analytics</h3>
+                    <p>Track performance, progress, and fitness data. Motivate users with statistics and achievements.</p>
+                    <ul class="feature-benefits">
+                        <li>Automatic performance tracking</li>
+                        <li>Personal statistics and progress</li>
+                        <li>Leaderboards for competition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Library Preview -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Diverse Climbing Games Included</h2>
+                <p class="section-subtitle">From racing to puzzles, there's something for every skill level</p>
+            </div>
+            <div class="game-categories">
+                <button class="category-btn active" data-category="all">All Games</button>
+                <button class="category-btn" data-category="race">Race</button>
+                <button class="category-btn" data-category="training">Training</button>
+                <button class="category-btn" data-category="puzzle">Puzzle</button>
+                <button class="category-btn" data-category="multiplayer">Multiplayer</button>
+            </div>
+            <div class="game-grid">
+                <div class="game-card" data-category="race">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+                    </div>
+                    <h4>Speed Climb</h4>
+                    <span class="game-tag">Race</span>
+                </div>
+                <div class="game-card" data-category="training">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z"/></svg>
+                    </div>
+                    <h4>Route Training</h4>
+                    <span class="game-tag">Training</span>
+                </div>
+                <div class="game-card" data-category="puzzle">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h4>Sequence Challenge</h4>
+                    <span class="game-tag">Puzzle</span>
+                </div>
+                <div class="game-card" data-category="multiplayer">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+                    <h4>Head-to-Head</h4>
+                    <span class="game-tag">Multiplayer</span>
+                </div>
+                <div class="game-card" data-category="race">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h4>Time Attack</h4>
+                    <span class="game-tag">Race</span>
+                </div>
+                <div class="game-card" data-category="training">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-10 5h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    </div>
+                    <h4>Endurance Mode</h4>
+                    <span class="game-tag">Training</span>
+                </div>
+                <div class="game-card game-more">
+                    <div class="game-preview">
+                        <span class="more-count">+12</span>
+                    </div>
+                    <h4>More Games</h4>
+                    <span class="game-tag">View all</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../3d-spellen.html" class="btn btn-secondary">View All Games</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Technical Specifications</h2>
+            <div class="specs-table-container">
+                <table class="specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label">Projection Surface</td>
+                            <td class="spec-value">4m x 3m (standard climbing wall)</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Projection Technology</td>
+                            <td class="spec-value">4K Ultra Short Throw</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Touch Detection</td>
+                            <td class="spec-value">Infrared sensors</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Response Time</td>
+                            <td class="spec-value">&lt;10ms</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Brightness</td>
+                            <td class="spec-value">5000 ANSI Lumens</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Climbing Hold Detection</td>
+                            <td class="spec-value">Up to 50 touch points</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Lamp Lifetime</td>
+                            <td class="spec-value">20,000 hours</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Power Consumption</td>
+                            <td class="spec-value">400W</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Certifications</td>
+                            <td class="spec-value">CE, RoHS, FCC</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Compatibility</td>
+                            <td class="spec-value">All standard climbing walls</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Case Gallery -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Where Is the Interactive Climbing Wall Used?</h2>
+                <p class="section-subtitle">Discover versatile applications across various sectors</p>
+            </div>
+            <div class="use-case-grid">
+                <a href="../parken-speelhallen.html" class="use-case-card">
+                    <div class="use-case-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Climbing Gyms & Sport Centers</h3>
+                    <p>Unique gaming experience for recreational climbers</p>
+                </a>
+                <a href="../onderwijs.html" class="use-case-card">
+                    <div class="use-case-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                    </div>
+                    <h3>Schools & PE Classes</h3>
+                    <p>Gamified climbing activities for students</p>
+                </a>
+                <a href="../zorg-revalidatie.html" class="use-case-card">
+                    <div class="use-case-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
+                    </div>
+                    <h3>Fitness & Training</h3>
+                    <p>Motivating workouts with tracking</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product-Specific Testimonial -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <div class="testimonial-featured">
+                <div class="testimonial-content">
+                    <svg class="quote-icon" width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    <blockquote>
+                        "The interactive climbing wall has transformed our climbing gym. Customers are climbing longer, competition among members has increased enormously, and we see many more families coming to climb together. The leaderboards and race modes have become absolute crowd-pullers."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Mark Peters</strong>
+                            <span>Owner, Boulder Central Amsterdam</span>
+                            <span class="location">Amsterdam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Choose Your Package</h2>
+                <p class="section-subtitle">Flexible options for every climbing gym and budget</p>
+            </div>
+            <div class="pricing-packages">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Essential</h3>
+                        <p class="package-subtitle">Ideal to get started</p>
+                    </div>
+                    <div class="package-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">&euro;15,950</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Projector + sensor system</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 10 climbing games included</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 1 year warranty</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Email support</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Essential%20package%20for%20the%20Interactive%20Climbing%20Wall." class="btn btn-outline">More Information</a>
+                </div>
+                <div class="package-card package-popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Professional</h3>
+                        <p class="package-subtitle">Complete solution</p>
+                    </div>
+                    <div class="package-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">&euro;24,950</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Projector + sensor system</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 20+ climbing games included</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 2 year warranty</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Professional installation</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Training for your team</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Phone support</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20a%20quote%20for%20the%20Professional%20package%20for%20the%20Interactive%20Climbing%20Wall." class="btn btn-primary">Request Quote</a>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Enterprise</h3>
+                        <p class="package-subtitle">Maximum support</p>
+                    </div>
+                    <div class="package-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">&euro;34,950</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Projector + sensor system</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> All games + new releases</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 5 year warranty</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Professional installation</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Extensive training</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Custom games possible</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Priority support 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20more%20information%20about%20the%20Enterprise%20package%20for%20the%20Interactive%20Climbing%20Wall." class="btn btn-outline">More Information</a>
+                </div>
+            </div>
+            <p class="pricing-help">Not sure which package? <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20advice%20about%20the%20best%20package%20for%20my%20situation.">We're happy to advise!</a></p>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            <div class="accordion" style="max-width: 800px; margin: 0 auto;">
+                <details class="accordion-item">
+                    <summary>Does this work with my existing climbing wall?</summary>
+                    <div class="accordion-content">
+                        Yes! The interactive climbing wall is designed to work with virtually all existing climbing walls. The system projects onto the wall and detects touches on the holds. No modifications to the climbing wall itself are needed.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>How does touch detection work?</summary>
+                    <div class="accordion-content">
+                        We use advanced infrared sensors that can detect every touch of a climbing hold. The system recognizes in real-time which holds are being touched and adapts the game accordingly.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>Is this safe for users?</summary>
+                    <div class="accordion-content">
+                        Absolutely. The interactive climbing wall is completely contactless - it's a projection system that requires no physical modifications to the climbing wall. All standard climbing safety remains intact. The system is CE-certified.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>Can I program my own routes?</summary>
+                    <div class="accordion-content">
+                        Yes! With the Professional and Enterprise packages, you can create your own routes and games via our intuitive software. Ideal for climbing gyms that want to offer specific training routes.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>How much space do I need?</summary>
+                    <div class="accordion-content">
+                        The standard projection surface is 4x3 meters, suitable for an average climbing wall. We can also serve larger surfaces with multiple projectors. The projector is installed approximately 1.5 meters from the wall.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Combine with Other Products</h2>
+                <p class="section-subtitle">Build a complete interactive sports center with our other systems</p>
+            </div>
+            <div class="related-products">
+                <a href="interactieve-muur.html" class="related-product-card">
+                    <div class="related-product-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
+                    </div>
+                    <h3>Interactive Wall</h3>
+                    <p>Wall projection for sports and education</p>
+                    <span class="product-link">View product</span>
+                </a>
+                <a href="interactieve-vloer.html" class="related-product-card">
+                    <div class="related-product-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M2 21h20v-2H2v2zm0-4h20v-2H2v2zm0-4h20v-2H2v2zm0-4h20V7H2v2zm0-6v2h20V3H2z"/></svg>
+                    </div>
+                    <h3>Interactive Floor</h3>
+                    <p>Floor projection for all spaces</p>
+                    <span class="product-link">View product</span>
+                </a>
+                <a href="software-maatwerk.html" class="related-product-card">
+                    <div class="related-product-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    </div>
+                    <h3>Software & Customization</h3>
+                    <p>Custom games and branding</p>
+                    <span class="product-link">View product</span>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../bouw-een-park.html" class="btn btn-secondary">Build Your Own Park</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Upgrade Your Climbing Gym?</h2>
+                <p>Schedule a free consultation with our experts and discover the possibilities</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20consultation%20about%20the%20Interactive%20Climbing%20Wall." class="btn btn-primary btn-large">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp Contact
+                    </a>
+                    <a href="tel:+31623998934" class="btn btn-secondary btn-large">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        Call Directly
+                    </a>
+                </div>
+                <p class="cta-reassurance">Free consultation - Response within 24 hours</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta">
+    <span class="sticky-price">Interactive Climbing Wall</span>
+    <a href="https://wa.me/31623998934?text=Hello%2C%20I%20would%20like%20a%20quote%20for%20the%20Interactive%20Climbing%20Wall." class="btn btn-primary btn-sticky">Quote</a>
+</div>
+
+<footer class="footer-professional">
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+            <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../bouw-een-park.html">Build a Park</a></li>
+                <li><a href="../over-ons.html">About Us</a></li>
+                <li><a href="../prijzen.html">Prices</a></li>
             </ul>
-            <div class="lang-toggle">
-                <button class="lang-btn" hx-get="../partials/products/interactieve-klimwand-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn active">EN</button>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Products</h4>
+            <ul class="footer-links">
+                <li><a href="interactieve-vloer.html">Interactive Floor</a></li>
+                <li><a href="interactieve-muur.html">Interactive Wall</a></li>
+                <li><a href="interactieve-zandbak.html">Interactive Sandbox</a></li>
+                <li><a href="interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact">
+                <p><strong>Inter Active Move B.V.</strong></p>
+                <p>Smitspol 15K, 3861RS Nijkerk</p>
+                <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
             </div>
-            <button class="hamburger" onclick="toggleMobileNav()"
-                aria-label="Menu"><span></span><span></span><span></span></button>
-            <a href="../index.html#contact" class="btn"
-                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
-        </nav>
-    </header>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="../index.html">Home</a>
-        <a href="interactieve-vloer.html">Interactive Floor</a>
-        <a href="interactieve-muur.html">Interactive Wall</a>
-        <a href="interactieve-zandbak.html">Interactive Sandbox</a>
-        <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
-        <a href="mobiele-vloer.html">Mobile Floor</a>
-        <a href="software-maatwerk.html">Software & Customization</a>
-        <a href="../bouw-een-park.html">Build a Park</a>
-        <a href="../3d-spellen.html">3D Games</a>
-        <a href="../parken-speelhallen.html">Parks & Arcades</a>
-        <a href="../onderwijs.html">Education</a>
-        <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
-        <a href="../over-ons.html">About Us</a>
-        <a href="../prijzen.html">Prices</a>
-        <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+        </div>
     </div>
-
-    <main>
-        <section class="hero" style="height: 60vh;">
-            <div class="hero-video-container">
-                <img src="../media/products/interactieve-klimwand.png" alt="Interactieve Klimwand"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            </div>
-            <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Interactive Climbing Wall</h1>
-                <p style="font-size: 1.3rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">Klimmen wordt een game
-                    met interactieve projectie</p>
-            </div>
-        </section>
-
-        <section class="section section-opaque-light">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Wat is de Interactieve
-                    Klimwand?</h2>
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
-                        De Interactieve Klimwand projecteert games en uitdagingen direct op de klimgrepen.
-                        Klimmers volgen routes, verzamelen punten of spelen tegen de klok.
-                        Perfect voor klimhallen, sportcentra en scholen die klimmen aantrekkelijker willen maken.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-opaque-dark">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; color: #fff;">Features</h2>
-                <div class="specs-grid">
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z" />
-                        </svg>
-                        <h3 class="spec-title">Gamification</h3>
-                        <p class="spec-desc">Klimmen wordt een spel met punten, levels en uitdagingen.</p>
-                    </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
-                        </svg>
-                        <h3 class="spec-title">Tijdsuitdagingen</h3>
-                        <p class="spec-desc">Race tegen de klok of versla je eigen records.</p>
-                    </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-                        </svg>
-                        <h3 class="spec-title">Multiplayer</h3>
-                        <p class="spec-desc">Klim tegen vrienden of andere bezoekers.</p>
-                    </div>
-                    <div class="spec-card">
-                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-                        </svg>
-                        <h3 class="spec-title">Veilig</h3>
-                        <p class="spec-desc">Gecombineerd met standaard klimveiligheid.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section container">
-            <div class="glass-panel"
-                style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
-                <h2 class="industrial-label" style="margin-bottom: 1rem;">Interesse?</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--color-text-muted);">Vraag een
-                    vrijblijvende offerte aan of neem contact op.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Klimwand."
-                        target="_blank" class="btn"
-                        style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">Offerte
-                        Aanvragen</a>
-                    <a href="../prijzen.html" class="btn" style="border-radius: 999px; padding: 1rem 2.5rem;">Bekijk
-                        Prijzen</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-opaque-light">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Andere Producten</h2>
-                <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
-                    <div class="pricing-card" style="text-align: center;">
-                        <h3 class="pricing-title">Interactive Wall</h3>
-                        <p style="color: #666; margin-bottom: 1.5rem;">Wandprojectie voor sport en educatie</p>
-                        <a href="interactieve-muur.html" class="btn"
-                            style="width: 100%; border-radius: 999px;">Bekijk</a>
-                    </div>
-                    <div class="pricing-card" style="text-align: center;">
-                        <h3 class="pricing-title">Interactive Floor</h3>
-                        <p style="color: #666; margin-bottom: 1.5rem;">Vloerprojectie voor allerlei ruimtes</p>
-                        <a href="interactieve-vloer.html" class="btn"
-                            style="width: 100%; border-radius: 999px;">Bekijk</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer-professional">
-        <div class="footer-container">
-            <div class="footer-column footer-brand">
-                <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
-                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                        </svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg></a>
-                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../bouw-een-park.html">Build a Park</a></li>
-                    <li><a href="../over-ons.html">About Us</a></li>
-                    <li><a href="../prijzen.html">Prices</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="interactieve-vloer.html">Interactive Floor</a></li>
-                    <li><a href="interactieve-muur.html">Interactive Wall</a></li>
-                    <li><a href="interactieve-zandbak.html">Interactive Sandbox</a></li>
-                    <li><a href="interactieve-klimwand.html">Interactive Climbing Wall</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Contact</h4>
-                <div class="footer-contact">
-                    <p><strong>Inter Active Move B.V.</strong></p>
-                    <p>Smitspol 15K, 3861RS Nijkerk</p>
-                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
-                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+        <p>&copy; 2026 InterActiveMove B.V. All rights reserved.</p>
+    </div>
+</footer>

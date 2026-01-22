@@ -1,218 +1,515 @@
 <header>
-        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Products</button>
-                    <div class="dropdown-menu">
-                        <a href="products/interactieve-vloer.html">Interactive Floor</a>
-                        <a href="products/interactieve-muur.html">Interactive Wall</a>
-                        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-                        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
-                        <a href="products/mobiele-vloer.html">Mobile Floor</a>
-                        <a href="products/software-maatwerk.html">Software & Customization</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Applications</button>
-                    <div class="dropdown-menu">
-                        <a href="bouw-een-park.html">Build a Park</a>
-                        <a href="3d-spellen.html">3D Games</a>
-                        <a href="parken-speelhallen.html">Parks & Arcades</a>
-                        <a href="onderwijs.html">Education</a>
-                        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="over-ons.html" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="prijzen.html" class="nav-link">Prices</a></li>
-                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="lang-toggle">
-                <button class="lang-btn" hx-get="partials/parken-speelhallen-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn active">EN</button>
-            </div>
-            <button class="hamburger" onclick="toggleMobileNav()"
-                aria-label="Menu"><span></span><span></span><span></span></button>
-            <a href="index.html#contact" class="btn"
-                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
-        </nav>
-    </header>
+    <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+                    <a href="products/interactieve-muur.html">Interactive Wall</a>
+                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+                    <a href="products/software-maatwerk.html">Software & Customization</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Applications</button>
+                <div class="dropdown-menu">
+                    <a href="bouw-een-park.html">Build a Park</a>
+                    <a href="3d-spellen.html">3D Games</a>
+                    <a href="parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="onderwijs.html">Education</a>
+                    <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="over-ons.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="prijzen.html" class="nav-link">Prices</a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="lang-toggle">
+            <button class="lang-btn" hx-get="partials/parken-speelhallen-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
+                class="lang-btn active" hx-get="partials/parken-speelhallen-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+        </div>
+        <button class="hamburger" onclick="toggleMobileNav()"
+            aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="index.html#contact" class="btn"
+            style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+    </nav>
+</header>
 
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="products/interactieve-vloer.html">Interactive Floor</a>
-        <a href="products/interactieve-muur.html">Interactive Wall</a>
-        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
-        <a href="products/mobiele-vloer.html">Mobile Floor</a>
-        <a href="products/software-maatwerk.html">Software & Customization</a>
-        <a href="bouw-een-park.html">Build a Park</a>
-        <a href="3d-spellen.html">3D Games</a>
-        <a href="parken-speelhallen.html">Parks & Arcades</a>
-        <a href="onderwijs.html">Education</a>
-        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
-        <a href="over-ons.html">About Us</a>
-        <a href="prijzen.html">Prices</a>
-        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+    <a href="products/interactieve-muur.html">Interactive Wall</a>
+    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+    <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+    <a href="products/software-maatwerk.html">Software & Customization</a>
+    <a href="bouw-een-park.html">Build a Park</a>
+    <a href="3d-spellen.html">3D Games</a>
+    <a href="parken-speelhallen.html">Parks & Arcades</a>
+    <a href="onderwijs.html">Education</a>
+    <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+    <a href="over-ons.html">About Us</a>
+    <a href="prijzen.html">Prices</a>
+    <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<main>
+    <!-- Hero Section: Entertainment Focus -->
+    <section class="hero" style="min-height: 60vh; position: relative;">
+        <img src="media/hero_parken_speelhallen.png" alt="Parks & Arcades - Interactive Attractions"
+            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; position: absolute; top: 0; left: 0;">
+        <div class="hero-content" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; text-align: center;">
+            <h1 class="industrial-label" style="font-size: 4rem; margin-bottom: 1rem;">Attractions that Bring Visitors Back</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Interactive systems that differentiate your entertainment venue from the rest
+            </p>
+
+            <!-- ROI Focus Stats -->
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                <div class="roi-stat-badge" style="background: rgba(254, 186, 4, 0.95); color: #000; padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: 1rem;">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 0.5rem;">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                    +35% Return Visitors
+                </div>
+                <div class="roi-stat-badge" style="background: rgba(254, 186, 4, 0.95); color: #000; padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: 1rem;">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 0.5rem;">
+                        <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                    </svg>
+                    2.5 Year ROI
+                </div>
+                <div class="roi-stat-badge" style="background: rgba(254, 186, 4, 0.95); color: #000; padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: 1rem;">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 0.5rem;">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                    </svg>
+                    Low Maintenance
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="bouw-een-park.html" class="btn btn-danger" style="border-radius: 999px; padding: 1rem 2rem; font-size: 1.1rem;">
+                    Build Your Own Park →
+                </a>
+                <a href="#roi-calculator" class="btn" style="border-radius: 999px; padding: 1rem 2rem; font-size: 1.1rem; background: var(--color-primary); color: #000;">
+                    ROI Calculator
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attraction Portfolio -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; margin-bottom: 1rem;">Popular Attraction Packages</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Ready-to-use packages that deliver immediate results
+            </p>
+
+            <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Starter Park -->
+                <div class="pricing-card" style="background: #fff; border: 2px solid rgba(0,0,0,0.08); border-radius: 24px; padding: 2rem; position: relative;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-text);">Starter Park</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Perfect for small play areas</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                1x Interactive Floor
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                50+ Games included
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0.5rem;"><strong>Ideal for:</strong></p>
+                        <p style="color: var(--color-text-muted);">Small playroom, waiting area</p>
+                    </div>
+                    <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--color-text);">From €9,950</p>
+                    <a href="https://wa.me/31623998934?text=I%20would%20like%20a%20quote%20for%20the%20Starter%20Park%20package" class="btn" style="width: 100%; text-align: center; border-radius: 999px; background: var(--color-primary); color: #000;">
+                        Request Quote
+                    </a>
+                </div>
+
+                <!-- Premium Park - Bestseller -->
+                <div class="pricing-card" style="background: linear-gradient(135deg, #feba04 0%, #f59e0b 100%); border: 2px solid #feba04; border-radius: 24px; padding: 2rem; position: relative; transform: scale(1.05); box-shadow: 0 10px 40px rgba(254, 186, 4, 0.3);">
+                    <div style="position: absolute; top: -15px; right: 20px; background: var(--color-danger); color: #fff; padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 700;">
+                        ★ BESTSELLER
+                    </div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #000;">Premium Park</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: rgba(0,0,0,0.8); margin-bottom: 1rem;">Complete attraction experience</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #000; margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                1x Interactive Floor XL
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #000; margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                1x Interactive Wall
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #000; margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                1x Interactive Climbing Wall
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #000; margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                100+ Games + Monthly updates
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: rgba(0,0,0,0.8); margin-bottom: 0.5rem;"><strong>Ideal for:</strong></p>
+                        <p style="color: rgba(0,0,0,0.8);">Medium indoor playground, trampoline park</p>
+                    </div>
+                    <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: #000;">From €24,950</p>
+                    <a href="https://wa.me/31623998934?text=I%20would%20like%20a%20quote%20for%20the%20Premium%20Park%20package" class="btn btn-danger" style="width: 100%; text-align: center; border-radius: 999px;">
+                        Request Quote
+                    </a>
+                </div>
+
+                <!-- Mega Park -->
+                <div class="pricing-card" style="background: #fff; border: 2px solid rgba(0,0,0,0.08); border-radius: 24px; padding: 2rem; position: relative;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-text);">Mega Park</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">The ultimate play paradise experience</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                2x Interactive Floor XL
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                2x Interactive Wall
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                1x Interactive Climbing Wall
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-right: 0.75rem; flex-shrink: 0;">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                1x Interactive Sandbox
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0.5rem;"><strong>Ideal for:</strong></p>
+                        <p style="color: var(--color-text-muted);">Large parks, entertainment centers</p>
+                    </div>
+                    <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--color-text);">On request</p>
+                    <a href="https://wa.me/31623998934?text=I%20would%20like%20more%20information%20about%20the%20Mega%20Park%20package" class="btn" style="width: 100%; text-align: center; border-radius: 999px; background: var(--color-primary); color: #000;">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section id="roi-calculator" class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 1rem;">Calculate Your Return on Investment</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Discover how quickly an interactive system pays for itself in your park
+            </p>
+
+            <div class="glass-panel" style="max-width: 700px; margin: 0 auto; padding: 3rem;">
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                        Average number of visitors per month:
+                    </label>
+                    <input type="number" id="visitors-input" placeholder="E.g. 2000" style="width: 100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 1.1rem;" value="2000">
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                        Entrance fee increase with IAM system:
+                    </label>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #fff; font-size: 1.3rem;">€</span>
+                        <input type="number" id="price-input" step="0.50" style="width: 100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 1.1rem;" value="2.50">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                        Estimated increase in return visitors:
+                    </label>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="number" id="repeat-input" min="0" max="100" style="width: 100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 1.1rem;" value="20">
+                        <span style="color: #fff; font-size: 1.3rem;">%</span>
+                    </div>
+                </div>
+
+                <div style="border-top: 2px solid rgba(255,255,255,0.2); padding-top: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary);">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem;">Estimated Payback Time</h3>
+                        <p id="roi-result" style="font-size: 3rem; font-weight: 800; color: var(--color-primary); margin-bottom: 1.5rem;">18 months</p>
+
+                        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem;">Additional Annual Revenue</h3>
+                        <p id="revenue-result" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 2rem;">€60,000</p>
+                    </div>
+
+                    <a href="https://wa.me/31623998934?text=I%20would%20like%20to%20receive%20a%20complete%20ROI%20analysis%20for%20my%20park" class="btn" style="width: 100%; text-align: center; border-radius: 999px; padding: 1rem 2rem; font-size: 1.1rem; background: var(--color-primary); color: #000; font-weight: 700;">
+                        Receive Full ROI Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Park Owner Testimonial -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; margin-bottom: 3rem;">Success Stories from Park Owners</h2>
+
+            <div class="glass-panel" style="max-width: 900px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                    <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; font-weight: 600;">
+                        <div style="text-align: center;">
+                            <svg width="64" height="64" fill="currentColor" viewBox="0 0 24 24" style="margin-bottom: 1rem; opacity: 0.8;">
+                                <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            </svg>
+                            <p>Video Testimonial</p>
+                            <p style="font-size: 0.9rem; opacity: 0.7;">(Placeholder)</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 1.3rem; line-height: 1.8; color: var(--color-text); margin-bottom: 2rem; font-style: italic;">
+                            "The investment paid for itself within 2 years. Parents tell friends about 'that amazing floor' and book birthday parties specifically for this attraction."
+                        </p>
+                        <div style="border-left: 4px solid var(--color-primary); padding-left: 1rem;">
+                            <p style="font-weight: 700; font-size: 1.1rem; color: var(--color-text); margin-bottom: 0.25rem;">Peter de Groot</p>
+                            <p style="color: var(--color-text-muted);">Owner, Monkey Town Amsterdam</p>
+                        </div>
+                        <a href="https://wa.me/31623998934?text=I%20would%20like%20to%20receive%20more%20case%20studies%20and%20success%20stories" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">
+                            View Case Study
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Updates -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 1rem;">Always New Content</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Visitors never get bored thanks to regular updates
+            </p>
+
+            <div class="specs-grid" style="max-width: 1000px; margin: 0 auto;">
+                <div class="spec-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+                    <div class="spec-icon" style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 1rem;">
+                        🎮
+                    </div>
+                    <h3 class="spec-title" style="color: #fff; font-size: 1.3rem;">New Games</h3>
+                    <p class="spec-desc" style="color: rgba(255,255,255,0.7);">Monthly additions to our library of 100+ games</p>
+                </div>
+
+                <div class="spec-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+                    <div class="spec-icon" style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 1rem;">
+                        🎄
+                    </div>
+                    <h3 class="spec-title" style="color: #fff; font-size: 1.3rem;">Seasonal Themes</h3>
+                    <p class="spec-desc" style="color: rgba(255,255,255,0.7);">Christmas, Easter, Summer, Halloween - automatically updated</p>
+                </div>
+
+                <div class="spec-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+                    <div class="spec-icon" style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 1rem;">
+                        🎂
+                    </div>
+                    <h3 class="spec-title" style="color: #fff; font-size: 1.3rem;">Party Modes</h3>
+                    <p class="spec-desc" style="color: rgba(255,255,255,0.7);">Special modes for birthdays and school trips</p>
+                </div>
+
+                <div class="spec-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+                    <div class="spec-icon" style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 1rem;">
+                        🏆
+                    </div>
+                    <h3 class="spec-title" style="color: #fff; font-size: 1.3rem;">Competition Options</h3>
+                    <p class="spec-desc" style="color: rgba(255,255,255,0.7);">Leaderboards, tournaments, and multiplayer challenges</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="3d-spellen.html" class="btn" style="border-radius: 999px; padding: 1rem 2rem; font-size: 1.1rem; background: var(--color-primary); color: #000;">
+                    View Game Library →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entertainment CTA -->
+    <section class="form-section container glass-panel" style="margin-bottom: 4rem;">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <h2 class="industrial-label" style="margin-bottom: 1rem;">Make Your Park Unforgettable</h2>
+            <p style="margin-bottom: 2rem; color: var(--color-text-muted); font-size: 1.1rem;">
+                We'd love to visit for a no-obligation consultation about the best setup for your location.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="bouw-een-park.html" class="btn" style="border-radius: 999px; padding: 1rem 2rem; font-size: 1.1rem; background: var(--color-primary); color: #000;">
+                    Build Your Park Configurator
+                </a>
+                <a href="https://wa.me/31623998934?text=I%20would%20like%20a%20consultation%20about%20interactive%20attractions%20for%20my%20park" class="btn btn-danger" style="border-radius: 999px; padding: 1rem 2rem; font-size: 1.1rem;">
+                    Call Our Sales Team
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Mobile Sticky CTA -->
+<div style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(29, 30, 34, 0.98); backdrop-filter: blur(10px); padding: 1rem; z-index: 999; display: none; box-shadow: 0 -5px 20px rgba(0,0,0,0.3);" id="mobile-cta">
+    <div class="container" style="max-width: 100%;">
+        <a href="https://wa.me/31623998934?text=I%20would%20like%20more%20information%20about%20interactive%20attractions%20for%20my%20park" class="btn" style="width: 100%; text-align: center; border-radius: 999px; padding: 1rem; font-size: 1rem; background: var(--color-primary); color: #000; font-weight: 700;">
+            Start Your Park Transformation →
+        </a>
     </div>
+</div>
 
-    <main>
-        <section class="hero" style="height: 50vh; min-height: 400px;">
-            <img src="media/hero_parken_speelhallen.png" alt="Parken & Speelhallen Hero"
-                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            <div class="hero-content">
-                <h1 class="industrial-label">Parks & Arcades</h1>
-                <p style="font-size: 1.3rem;">Complete entertainment oplossingen voor uw locatie</p>
-            </div>
-        </section>
-
-        <section class="section section-opaque-light">
-            <div class="container">
-                <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
-                    <h2 class="industrial-label" style="margin-bottom: 1.5rem;">Innovatief Entertainment</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
-                        Onderscheid uw locatie met unieke interactieve belevingen. Onze systemen zijn ontworpen voor
-                        intensief commercieel gebruik, bieden een hoge entertainmentwaarde en trekken gegarandeerd
-                        de aandacht. Van complete interactieve parken tot losse units voor in de wachtruimte.
-                    </p>
-                </div>
-
-                <div class="specs-grid">
-                    <div class="spec-card"
-                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
-                        <div class="spec-icon" style="color: var(--color-primary);">
-                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
-                            </svg>
-                        </div>
-                        <h3 class="spec-title" style="color: var(--color-text);">Hoge Doorloop</h3>
-                        <p class="spec-desc" style="color: #666;">Korte, intensieve spelsessies zorgen voor een snelle
-                            doorstroom van bezoekers.</p>
-                    </div>
-                    <div class="spec-card"
-                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
-                        <div class="spec-icon" style="color: var(--color-danger);">
-                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-                            </svg>
-                        </div>
-                        <h3 class="spec-title" style="color: var(--color-text);">Robuust & Veilig</h3>
-                        <p class="spec-desc" style="color: #666;">Hardware veilig weggewerkt in het plafond of wand.
-                            Geen losse onderdelen.</p>
-                    </div>
-                    <div class="spec-card"
-                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
-                        <div class="spec-icon" style="color: var(--color-primary);">
-                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </div>
-                        <h3 class="spec-title" style="color: var(--color-text);">Wow-Factor</h3>
-                        <p class="spec-desc" style="color: #666;">Visueel indrukwekkende projecties die social media
-                            sharing stimuleren.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-opaque-dark">
-            <div class="container">
-                <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 3rem;">Toepassingen
-                </h2>
-                <div class="pricing-grid">
-                    <div class="pricing-card"
-                        style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1);">
-                        <h3 style="color: var(--color-primary);">Indoor Speelparadijs</h3>
-                        <p style="color: rgba(255,255,255,0.7);">Verander een saaie muur of vloer in de populairste
-                            attractie van uw park.</p>
-                    </div>
-                    <div class="pricing-card"
-                        style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1);">
-                        <h3 style="color: var(--color-primary);">Horeca & Wachtruimte</h3>
-                        <p style="color: rgba(255,255,255,0.7);">Houd kinderen vermaakt terwijl ouders rustig kunnen
-                            eten of wachten.</p>
-                    </div>
-                    <div class="pricing-card"
-                        style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1);">
-                        <h3 style="color: var(--color-primary);">Trampolinepark</h3>
-                        <p style="color: rgba(255,255,255,0.7);">Voeg gamification toe aan springen met de interactieve
-                            muur.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="form-section container glass-panel" style="margin-bottom: 4rem;">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <h2 class="industrial-label">Klaar om te innoveren?</h2>
-                <p style="margin-bottom: 2rem; color: var(--color-text-muted);">
-                    Wij adviseren graag over de beste opstelling voor uw locatie.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <a href="index.html#contact" class="btn btn-danger" style="border-radius: 999px;">Vraag Advies</a>
-                    <a href="bouw-een-park.html" class="btn"
-                        style="border-radius: 999px; background: var(--color-primary); color: #000;">Bouw uw Park</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer-professional">
-        <div class="footer-container">
-            <div class="footer-column footer-brand">
-                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo">
-                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                        </svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg></a>
-                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bouw-een-park.html">Build a Park</a></li>
-                    <li><a href="over-ons.html">About Us</a></li>
-                    <li><a href="prijzen.html">Prices</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
-                    <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
-                    <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
-                    <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Contact</h4>
-                <div class="footer-contact">
-                    <p><strong>Inter Active Move B.V.</strong></p>
-                    <p>Smitspol 15K, 3861RS Nijkerk</p>
-                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
-                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
-                </div>
+<footer class="footer-professional">
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+            <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg></a>
+                <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                    </svg></a>
+                <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                        <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                    </svg></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        <div class="footer-column">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bouw-een-park.html">Build a Park</a></li>
+                <li><a href="over-ons.html">About Us</a></li>
+                <li><a href="prijzen.html">Prices</a></li>
+            </ul>
         </div>
-    </footer>
+        <div class="footer-column">
+            <h4 class="footer-heading">Products</h4>
+            <ul class="footer-links">
+                <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
+                <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
+                <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
+                <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact">
+                <p><strong>Inter Active Move B.V.</strong></p>
+                <p>Smitspol 15K, 3861RS Nijkerk</p>
+                <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 InterActiveMove B.V. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+// Simple ROI Calculator
+document.addEventListener('DOMContentLoaded', function() {
+    const visitorsInput = document.getElementById('visitors-input');
+    const priceInput = document.getElementById('price-input');
+    const repeatInput = document.getElementById('repeat-input');
+    const roiResult = document.getElementById('roi-result');
+    const revenueResult = document.getElementById('revenue-result');
+
+    function calculateROI() {
+        const visitors = parseInt(visitorsInput.value) || 2000;
+        const priceIncrease = parseFloat(priceInput.value) || 2.50;
+        const repeatIncrease = parseInt(repeatInput.value) || 20;
+
+        // Simple calculation
+        const monthlyRevenue = visitors * priceIncrease;
+        const yearlyRevenue = monthlyRevenue * 12;
+        const bonusRevenue = (visitors * (repeatIncrease / 100)) * 10 * 12; // Avg €10 per visit
+        const totalYearlyRevenue = yearlyRevenue + bonusRevenue;
+
+        // Assume average system cost of €20,000
+        const systemCost = 20000;
+        const paybackMonths = Math.ceil(systemCost / (totalYearlyRevenue / 12));
+
+        roiResult.textContent = paybackMonths + ' months';
+        revenueResult.textContent = '€' + totalYearlyRevenue.toLocaleString('en-US');
+    }
+
+    visitorsInput.addEventListener('input', calculateROI);
+    priceInput.addEventListener('input', calculateROI);
+    repeatInput.addEventListener('input', calculateROI);
+
+    // Mobile sticky CTA
+    const mobileCTA = document.getElementById('mobile-cta');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (window.innerWidth <= 768) {
+            if (scrollTop > 500 && scrollTop > lastScrollTop) {
+                mobileCTA.style.display = 'block';
+            } else if (scrollTop < lastScrollTop - 50) {
+                mobileCTA.style.display = 'none';
+            }
+        } else {
+            mobileCTA.style.display = 'none';
+        }
+
+        lastScrollTop = scrollTop;
+    });
+});
+</script>

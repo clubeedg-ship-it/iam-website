@@ -1,165 +1,618 @@
 <header>
-        <a href="../index.html"><img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown"><button class="nav-link">Producten</button>
-                    <div class="dropdown-menu">
-                        <a href="interactieve-vloer.html">Interactieve Vloer</a>
-                        <a href="interactieve-muur.html">Interactieve Muur</a>
-                        <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
-                        <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
-                        <a href="mobiele-vloer.html" class="active">Mobiele Vloer</a>
-                        <a href="software-maatwerk.html">Software & Maatwerk</a>
+    <a href="../index.html">
+        <img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img">
+    </a>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Producten</button>
+                <div class="dropdown-menu">
+                    <a href="interactieve-vloer.html">Interactieve Vloer</a>
+                    <a href="interactieve-muur.html">Interactieve Muur</a>
+                    <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+                    <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
+                    <a href="mobiele-vloer.html" class="active">Mobiele Vloer</a>
+                    <a href="software-maatwerk.html">Software & Maatwerk</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Mogelijkheden</button>
+                <div class="dropdown-menu">
+                    <a href="../bouw-een-park.html">Bouw een Park</a>
+                    <a href="../3d-spellen.html">3D Spellen</a>
+                    <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
+                    <a href="../onderwijs.html">Onderwijs</a>
+                    <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="../over-ons.html" class="nav-link">Over Ons</a></li>
+            <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prijzen</a></li>
+            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="lang-toggle">
+            <button class="lang-btn active" hx-get="../partials/products/mobiele-vloer-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+            <span class="divider">|</span>
+            <button class="lang-btn" hx-get="../partials/products/mobiele-vloer-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+        </div>
+
+        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="../index.html#contact" class="btn"
+            style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+    </nav>
+</header>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="../index.html" onclick="closeMobileNav()">Home</a>
+    <a href="interactieve-vloer.html">Interactieve Vloer</a>
+    <a href="interactieve-muur.html">Interactieve Muur</a>
+    <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+    <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
+    <a href="mobiele-vloer.html">Mobiele Vloer</a>
+    <a href="software-maatwerk.html">Software & Maatwerk</a>
+    <a href="../bouw-een-park.html">Bouw een Park</a>
+    <a href="../3d-spellen.html">3D Spellen</a>
+    <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
+    <a href="../onderwijs.html">Onderwijs</a>
+    <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+    <a href="../over-ons.html">Over Ons</a>
+    <a href="../prijzen.html">Prijzen</a>
+    <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<main>
+    <!-- Enhanced Product Hero -->
+    <section class="product-hero-enhanced">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-gallery">
+                    <div class="gallery-main">
+                        <img src="../media/products/mobiele-vloer.png" alt="Mobiele Interactieve Vloer in actie" id="mainProductImage">
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="nav-link">Mogelijkheden</button>
-                    <div class="dropdown-menu">
-                        <a href="../bouw-een-park.html">Bouw een Park</a>
-                        <a href="../3d-spellen.html">3D Spellen</a>
-                        <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
-                        <a href="../onderwijs.html">Onderwijs</a>
-                        <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+                    <div class="gallery-thumbs">
+                        <button class="thumb active" data-image="../media/products/mobiele-vloer.png">
+                            <img src="../media/products/mobiele-vloer.png" alt="Productweergave 1">
+                        </button>
+                        <button class="thumb" data-image="../media/products/mobiele-vloer.png">
+                            <img src="../media/products/mobiele-vloer.png" alt="Productweergave 2">
+                        </button>
+                        <button class="thumb" data-image="../media/products/mobiele-vloer.png">
+                            <img src="../media/products/mobiele-vloer.png" alt="Productweergave 3">
+                        </button>
                     </div>
-                </li>
-                <li class="nav-item"><a href="../over-ons.html" class="nav-link">Over Ons</a></li>
-                <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prijzen</a></li>
-                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Mobiele Interactieve Vloer</h1>
+                    <div class="product-rating">
+                        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="review-count">(32 reviews)</span>
+                    </div>
+                    <p class="product-tagline">De complete interactieve vloer in een verrijdbare koffer - klaar voor elk evenement binnen 10 minuten.</p>
+                    <ul class="product-highlights">
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Plug & Play - opgebouwd in 10 minuten</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Verrijdbare flightcase - eenvoudig transport</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 100+ spellen - identiek aan vaste vloer</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Huur of koop - flexibele opties</li>
+                    </ul>
+                    <div class="product-price">
+                        <span class="price-label">Verhuur vanaf</span>
+                        <span class="price-amount">€495/dag</span>
+                    </div>
+                    <div class="product-ctas">
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20Mobiele%20Vloer%20huren." class="btn btn-primary">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Reserveer Nu
+                        </a>
+                        <a href="#demo-video" class="btn btn-secondary">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            Bekijk Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefit Strip -->
+    <section class="benefit-strip">
+        <div class="container">
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                    <span>Mobiel</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                    <span>Snelle Setup</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span>Alles Inbegrepen</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="benefit-icon" width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                    </svg>
+                    <span>Verzekerd</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section class="section section-opaque-light" id="demo-video">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Zie de Mobiele Vloer in Actie</h2>
+                <p class="section-subtitle">Van koffer tot speelklaar in 10 minuten - perfect voor elk evenement</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls poster="../media/products/mobiele-vloer.png" preload="metadata">
+                        <source src="../media/hero-video.webm" type="video/webm">
+                        Uw browser ondersteunt geen video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Deep Dive -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 3rem;">Waarom de Mobiele Vloer?</h2>
+
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="../media/products/mobiele-vloer.png" alt="Verrijdbare flightcase">
+                </div>
+                <div class="feature-content">
+                    <h3>Professionele Flightcase</h3>
+                    <p>Alles veilig opgeborgen in een robuuste, verrijdbare flightcase. De projector, sensoren, kabels en accessoires zijn perfect beschermd tijdens transport.</p>
+                    <ul class="feature-benefits">
+                        <li>Wielen voor eenvoudig transport</li>
+                        <li>Beschermt tegen stoten en vocht</li>
+                        <li>Alle componenten overzichtelijk opgeborgen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature-row feature-row-reverse">
+                <div class="feature-image">
+                    <img src="../media/products/mobiele-vloer.png" alt="Snelle installatie">
+                </div>
+                <div class="feature-content">
+                    <h3>10 Minuten Setup</h3>
+                    <p>Dankzij het doordachte ontwerp staat de interactieve vloer binnen 10 minuten speelklaar. Perfect voor evenementen met korte opbouwtijden.</p>
+                    <ul class="feature-benefits">
+                        <li>Plug & Play - geen technische kennis nodig</li>
+                        <li>Geïntegreerd kabelmanagementsysteem</li>
+                        <li>Inclusief snelstartgids met foto's</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="../media/products/mobiele-vloer.png" alt="Identieke software">
+                </div>
+                <div class="feature-content">
+                    <h3>Volledige Game Bibliotheek</h3>
+                    <p>Dezelfde 100+ spellen als de vaste interactieve vloer. Geen compromissen op kwaliteit of speelmogelijkheden.</p>
+                    <ul class="feature-benefits">
+                        <li>100+ professionele spellen</li>
+                        <li>Educatie, sport én entertainment</li>
+                        <li>Regelmatige gratis content updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Library Preview -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">100+ Spellen Inbegrepen</h2>
+                <p class="section-subtitle">Dezelfde uitgebreide spellenbibliotheek als de vaste interactieve vloer</p>
+            </div>
+            <div class="game-categories">
+                <button class="category-btn active" data-category="all">Alle Spellen</button>
+                <button class="category-btn" data-category="educatief">Educatief</button>
+                <button class="category-btn" data-category="sport">Sport & Beweging</button>
+                <button class="category-btn" data-category="creatief">Creatief</button>
+                <button class="category-btn" data-category="sensorisch">Sensorisch</button>
+            </div>
+            <div class="game-grid">
+                <div class="game-card" data-category="educatief">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h4>Reken Safari</h4>
+                    <span class="game-tag">Educatief</span>
+                </div>
+                <div class="game-card" data-category="sport">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h4>Voetbal Challenge</h4>
+                    <span class="game-tag">Sport</span>
+                </div>
+                <div class="game-card" data-category="creatief">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"/></svg>
+                    </div>
+                    <h4>Creatief Tekenen</h4>
+                    <span class="game-tag">Creatief</span>
+                </div>
+                <div class="game-card" data-category="sensorisch">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    </div>
+                    <h4>Kleurenbad</h4>
+                    <span class="game-tag">Sensorisch</span>
+                </div>
+                <div class="game-card" data-category="educatief">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                    </div>
+                    <h4>Taal Avontuur</h4>
+                    <span class="game-tag">Educatief</span>
+                </div>
+                <div class="game-card" data-category="sport">
+                    <div class="game-preview">
+                        <svg width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
+                    </div>
+                    <h4>Dans Mee</h4>
+                    <span class="game-tag">Sport</span>
+                </div>
+                <div class="game-card game-more">
+                    <div class="game-preview">
+                        <span class="more-count">+94</span>
+                    </div>
+                    <h4>Meer Spellen</h4>
+                    <span class="game-tag">Bekijk alle</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../3d-spellen.html" class="btn btn-secondary">Bekijk Alle Spellen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Technische Specificaties</h2>
+            <div class="specs-table-container">
+                <table class="specs-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label">Projectieoppervlak</td>
+                            <td class="spec-value">3m x 2.5m</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Projectietechnologie</td>
+                            <td class="spec-value">4K Ultra Short Throw</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Touch Punten</td>
+                            <td class="spec-value">20 simultaan</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Responstijd</td>
+                            <td class="spec-value">&lt;8ms</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Helderheid</td>
+                            <td class="spec-value">4000 ANSI Lumens</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Gewicht Flightcase</td>
+                            <td class="spec-value">45kg (inclusief inhoud)</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Afmetingen Case</td>
+                            <td class="spec-value">120 x 80 x 60cm</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Setup Tijd</td>
+                            <td class="spec-value">10-15 minuten</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Stroomverbruik</td>
+                            <td class="spec-value">350W (230V)</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Minimale plafondhoogte</td>
+                            <td class="spec-value">2.7m</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Case Gallery -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Waar Wordt de Mobiele Vloer Gebruikt?</h2>
+                <p class="section-subtitle">Perfecte oplossing voor tijdelijke installaties en evenementen</p>
+            </div>
+            <div class="use-case-grid">
+                <a href="../parken-speelhallen.html" class="use-case-card">
+                    <div class="use-case-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    </div>
+                    <h3>Evenementen & Beurzen</h3>
+                    <p>Eyecatcher voor stands en publieksevenementen</p>
+                </a>
+                <a href="../onderwijs.html" class="use-case-card">
+                    <div class="use-case-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                    </div>
+                    <h3>Scholen & Workshops</h3>
+                    <p>Flexibele inzet voor tijdelijke projecten</p>
+                </a>
+                <a href="../zorg-revalidatie.html" class="use-case-card">
+                    <div class="use-case-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 00-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
+                    </div>
+                    <h3>Verhuur Business</h3>
+                    <p>Start uw eigen verhuurbedrijf met de Mobiele Vloer</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product-Specific Testimonial -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <div class="testimonial-featured">
+                <div class="testimonial-content">
+                    <svg class="quote-icon" width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    <blockquote>
+                        "Wij verhuren de Mobiele Vloer al 2 jaar en het is een absolute topper! Klanten zijn altijd enthousiast, de setup is supersnel en we hebben hem al honderden keren ingezet zonder problemen. Een fantastische investering die zichzelf terugverdient."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Mark Jansen</strong>
+                            <span>Eigenaar, EventPro Verhuur</span>
+                            <span class="location">Rotterdam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Huur of Koop</h2>
+                <p class="section-subtitle">Flexibele opties voor evenementen en verhuurbedrijven</p>
+            </div>
+            <div class="pricing-packages">
+                <div class="package-card package-popular">
+                    <div class="popular-badge">Meest Populair</div>
+                    <div class="package-header">
+                        <h3>Verhuur Met Begeleiding</h3>
+                        <p class="package-subtitle">Volledig verzorgd evenement</p>
+                    </div>
+                    <div class="package-price">
+                        <span class="price-label">Vanaf</span>
+                        <span class="price-amount">€495</span>
+                        <span class="price-period">/dagdeel</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Transport heen en terug</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Professionele opbouw & afbouw</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Spelbegeleiding tijdens evenement</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Alle 100+ spellen beschikbaar</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Verzekering inbegrepen</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20Mobiele%20Vloer%20huren%20met%20begeleiding." class="btn btn-primary">Reserveer Nu</a>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Verhuur Zelfstandig</h3>
+                        <p class="package-subtitle">Zelf opbouwen en bedienen</p>
+                    </div>
+                    <div class="package-price">
+                        <span class="price-label">Vanaf</span>
+                        <span class="price-amount">€295</span>
+                        <span class="price-period">/dagdeel</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Transport heen en terug</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Uitleg bij aflevering</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Alle 100+ spellen beschikbaar</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Basisverzekering inbegrepen</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Telefonische ondersteuning</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20Mobiele%20Vloer%20zelfstandig%20huren." class="btn btn-outline">Reserveer</a>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Koop of Lease</h3>
+                        <p class="package-subtitle">Voor verhuurbedrijven</p>
+                    </div>
+                    <div class="package-price">
+                        <span class="price-label">Koop</span>
+                        <span class="price-amount">€18.950</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Complete set in flightcase</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Alle 100+ spellen + updates</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 2 jaar garantie</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Training voor uw team</li>
+                        <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Lease vanaf €449/maand</li>
+                    </ul>
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20een%20offerte%20voor%20aankoop%20van%20de%20Mobiele%20Vloer." class="btn btn-outline">Offerte Aanvragen</a>
+                </div>
+            </div>
+            <p class="pricing-help">Weekendpakket (vr-ma) €750 | Extra dagdeel +€150 | Niet zeker? <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20advies%20over%20verhuur%20van%20de%20Mobiele%20Vloer.">Wij adviseren graag!</a></p>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section section-opaque-dark">
+        <div class="container">
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Veelgestelde Vragen</h2>
+            <div class="accordion" style="max-width: 800px; margin: 0 auto;">
+                <details class="accordion-item">
+                    <summary>Hoe lang duurt de setup echt?</summary>
+                    <div class="accordion-content">
+                        Met de meegeleverde snelstartgids kan iedereen de Mobiele Vloer binnen 10-15 minuten opbouwen. De flightcase is slim ingericht zodat alle componenten in de juiste volgorde liggen. Projectie en sensoren worden simpelweg op het statief gemonteerd, kabels aangesloten en het systeem start automatisch op.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>Wat zit er allemaal in de flightcase?</summary>
+                    <div class="accordion-content">
+                        De flightcase bevat: 4K projector met mount, sensorsysteem, in-hoogte verstelbaar statief, alle benodigde kabels, mini-PC met software, afstandsbediening, handleiding en reserveonderdelen. Alles is veilig opgeborgen in schuim en direct gebruiksklaar.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>Kan ik de Mobiele Vloer ook buiten gebruiken?</summary>
+                    <div class="accordion-content">
+                        De Mobiele Vloer werkt het beste binnenshuis. Bij overdekte buitenlocaties zonder direct zonlicht is gebruik mogelijk, maar houd rekening met verminderde zichtbaarheid. Wij adviseren altijd een indoor locatie voor optimale spelervaring.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>Is de Mobiele Vloer hetzelfde als de vaste vloer?</summary>
+                    <div class="accordion-content">
+                        Ja! De hardware en software zijn identiek aan de vaste interactieve vloer. Het enige verschil is de verpakking: alles zit in een verrijdbare flightcase in plaats van een vaste montage. U krijgt dezelfde kwaliteit, dezelfde spellen en hetzelfde projectieoppervlak.
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary>Wat gebeurt er als iets kapot gaat tijdens verhuur?</summary>
+                    <div class="accordion-content">
+                        Bij verhuur met begeleiding is alle schade gedekt door onze verzekering. Bij zelfstandige verhuur is normale slijtage gedekt door de basisverzekering, maar adviseren wij een aanvullende evenementenverzekering voor volledige dekking. Kleine technische problemen lossen we vaak telefonisch op.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section section-opaque-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="industrial-label">Ook Interessant</h2>
+                <p class="section-subtitle">Bekijk onze andere interactieve producten</p>
+            </div>
+            <div class="related-products">
+                <a href="interactieve-vloer.html" class="related-product-card">
+                    <div class="related-product-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
+                    </div>
+                    <h3>Interactieve Vloer</h3>
+                    <p>Vaste installatie voor permanente locaties</p>
+                    <span class="product-link">Bekijk product</span>
+                </a>
+                <a href="interactieve-muur.html" class="related-product-card">
+                    <div class="related-product-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
+                    </div>
+                    <h3>Interactieve Muur</h3>
+                    <p>Wandprojectie voor sport en educatie</p>
+                    <span class="product-link">Bekijk product</span>
+                </a>
+                <a href="software-maatwerk.html" class="related-product-card">
+                    <div class="related-product-image">
+                        <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    </div>
+                    <h3>Software & Maatwerk</h3>
+                    <p>Eigen spellen en branding</p>
+                    <span class="product-link">Bekijk product</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Maak Uw Evenement Onvergetelijk</h2>
+                <p>Reserveer de Mobiele Vloer en geef uw gasten een unieke interactieve ervaring</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20Mobiele%20Vloer%20reserveren." class="btn btn-primary btn-large">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Reserveer via WhatsApp
+                    </a>
+                    <a href="tel:+31623998934" class="btn btn-secondary btn-large">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        Bel Direct
+                    </a>
+                </div>
+                <p class="cta-reassurance">Vrijblijvend advies - Beschikbaarheid binnen 1 uur</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta">
+    <span class="sticky-price">Vanaf €495/dag</span>
+    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20Mobiele%20Vloer%20reserveren." class="btn btn-primary btn-sticky">Reserveer</a>
+</div>
+
+<footer class="footer-professional">
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+            <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../bouw-een-park.html">Bouw een Park</a></li>
+                <li><a href="../over-ons.html">Over Ons</a></li>
+                <li><a href="../prijzen.html">Prijzen</a></li>
             </ul>
-            <div class="lang-toggle"><button class="lang-btn active" hx-get="../partials/products/mobiele-vloer-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
-                    class="lang-btn">EN</button></div>
-            <button class="hamburger" onclick="toggleMobileNav()"
-                aria-label="Menu"><span></span><span></span><span></span></button>
-        </nav>
-    </header>
-    <div class="mobile-nav" id="mobileNav">
-        <a href="../index.html" onclick="closeMobileNav()">Home</a>
-        <a href="interactieve-vloer.html">Interactieve Vloer</a>
-        <a href="interactieve-muur.html">Interactieve Muur</a>
-        <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
-        <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
-        <a href="mobiele-vloer.html">Mobiele Vloer</a>
-        <a href="software-maatwerk.html">Software & Maatwerk</a>
-        <a href="../bouw-een-park.html">Bouw een Park</a>
-        <a href="../3d-spellen.html">3D Spellen</a>
-        <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
-        <a href="../onderwijs.html">Onderwijs</a>
-        <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
-        <a href="../over-ons.html">Over Ons</a>
-        <a href="../prijzen.html">Prijzen</a>
-        <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Producten</h4>
+            <ul class="footer-links">
+                <li><a href="interactieve-vloer.html">Interactieve Vloer</a></li>
+                <li><a href="interactieve-muur.html">Interactieve Muur</a></li>
+                <li><a href="interactieve-zandbak.html">Interactieve Zandbak</a></li>
+                <li><a href="interactieve-klimwand.html">Interactieve Klimwand</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact">
+                <p><strong>Inter Active Move B.V.</strong></p>
+                <p>Smitspol 15K, 3861RS Nijkerk</p>
+                <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+            </div>
+        </div>
     </div>
-    <main>
-        <section class="hero" style="height: 60vh;">
-            <div class="hero-video-container">
-                <img src="../media/products/mobiele-vloer.png" alt="Mobiele Interactieve Vloer"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            </div>
-            <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Mobiele Vloer</h1>
-                <p style="font-size: 1.3rem; text-shadow: 1px 1px 0 #000;">Verhuur voor evenementen - wij verzorgen
-                    alles</p>
-            </div>
-        </section>
-        <section class="section section-opaque-light">
-            <div class="container" style="text-align: center; max-width: 800px;">
-                <h2 class="industrial-label">Verhuurpakketten</h2>
-                <div class="pricing-grid" style="margin-top: 2rem;">
-                    <div class="pricing-card">
-                        <h3 class="pricing-title">Zelf Ontdekken</h3>
-                        <div class="pricing-cost">€295</div>
-                        <p style="color: #666;">per dagdeel (max 4 uur)</p>
-                        <ul class="pricing-features">
-                            <li>Transport</li>
-                            <li>Opbouw & Uitleg</li>
-                            <li>Basisverzekering</li>
-                        </ul>
-                        <a href="https://wa.me/31623998934?text=Reservering%20Zelf%20Ontdekken" target="_blank"
-                            class="btn" style="width: 100%; border-radius: 999px;">Reserveer</a>
-                    </div>
-                    <div class="pricing-card popular">
-                        <div class="popular-badge">Populairst</div>
-                        <h3 class="pricing-title">Met Begeleider</h3>
-                        <div class="pricing-cost">€495</div>
-                        <p style="color: #666;">per dagdeel (max 4 uur)</p>
-                        <ul class="pricing-features">
-                            <li>Alles in basisoptie</li>
-                            <li>Spelbegeleiding</li>
-                            <li>Volledig verzorgd</li>
-                        </ul>
-                        <a href="https://wa.me/31623998934?text=Reservering%20Met%20Begeleider" target="_blank"
-                            class="btn btn-danger" style="width: 100%; border-radius: 999px;">Reserveer</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3 class="pricing-title">Weekendpakket</h3>
-                        <div class="pricing-cost">€750</div>
-                        <p style="color: #666;">per weekend (Za-Zo)</p>
-                        <ul class="pricing-features">
-                            <li>Alles in basisoptie</li>
-                            <li>Opbouw vrijdag</li>
-                            <li>Afbouw maandag</li>
-                        </ul>
-                        <a href="https://wa.me/31623998934?text=Reservering%20Weekendpakket" target="_blank" class="btn"
-                            style="width: 100%; border-radius: 999px;">Reserveer</a>
-                    </div>
-                </div>
-                <p style="margin-top: 2rem; color: var(--color-text-muted);">Prijzen excl. btw. Extra dagdeel: +€150</p>
-            </div>
-        </section>
-    </main>
-    <footer class="footer-professional">
-        <div class="footer-container">
-            <div class="footer-column footer-brand">
-                <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
-                <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                        </svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg></a>
-                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../bouw-een-park.html">Bouw een Park</a></li>
-                    <li><a href="../over-ons.html">Over Ons</a></li>
-                    <li><a href="../prijzen.html">Prijzen</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Producten</h4>
-                <ul class="footer-links">
-                    <li><a href="interactieve-vloer.html">Interactieve Vloer</a></li>
-                    <li><a href="interactieve-muur.html">Interactieve Muur</a></li>
-                    <li><a href="interactieve-zandbak.html">Interactieve Zandbak</a></li>
-                    <li><a href="interactieve-klimwand.html">Interactieve Klimwand</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Contact</h4>
-                <div class="footer-contact">
-                    <p><strong>Inter Active Move B.V.</strong></p>
-                    <p>Smitspol 15K, 3861RS Nijkerk</p>
-                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
-                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+        <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+    </div>
+</footer>
