@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactieve Vloer | InterActiveMove</title>
+    <meta name="description"
+        content="De Interactieve Vloer van IAM reageert op beweging en maakt elke ruimte tot een speelwereld. Perfect voor scholen, BSO's en events.">
+    <link rel="icon" href="../media/icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css?v=1.2">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Global Background Canvas -->
+    <div id="global-canvas-container">
+        <canvas id="projector-canvas"></canvas>
+    </div>
+
+    <div id="page-wrapper">
+<header>
+        <a href="../index.html">
+            <img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Producten</button>
+                    <div class="dropdown-menu">
+                        <a href="interactieve-vloer.html" class="active">Interactieve Vloer</a>
+                        <a href="interactieve-muur.html">Interactieve Muur</a>
+                        <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+                        <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
+                        <a href="mobiele-vloer.html">Mobiele Vloer</a>
+                        <a href="software-maatwerk.html">Software & Maatwerk</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Mogelijkheden</button>
+                    <div class="dropdown-menu">
+                        <a href="../bouw-een-park.html">Bouw een Park</a>
+                        <a href="../3d-spellen.html">3D Spellen</a>
+                        <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
+                        <a href="../onderwijs.html">Onderwijs</a>
+                        <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../over-ons.html" class="nav-link">Over Ons</a></li>
+                <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prijzen</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="lang-toggle">
+                <button class="lang-btn active" hx-get="../partials/products/interactieve-vloer-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+                <span class="divider">|</span>
+                <button class="lang-btn" hx-get="../partials/products/interactieve-vloer-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+            </div>
+
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../index.html" onclick="closeMobileNav()">Home</a>
+        <a href="interactieve-vloer.html">Interactieve Vloer</a>
+        <a href="interactieve-muur.html">Interactieve Muur</a>
+        <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+        <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
+        <a href="mobiele-vloer.html">Mobiele Vloer</a>
+        <a href="software-maatwerk.html">Software & Maatwerk</a>
+        <a href="../bouw-een-park.html">Bouw een Park</a>
+        <a href="../3d-spellen.html">3D Spellen</a>
+        <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
+        <a href="../onderwijs.html">Onderwijs</a>
+        <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+        <a href="../over-ons.html">Over Ons</a>
+        <a href="../prijzen.html">Prijzen</a>
+        <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <main>
+        <!-- Product Hero with Image -->
+        <section class="product-hero">
+            <div class="container">
+                <div class="product-hero-content">
+                    <div class="product-hero-text">
+                        <h1 class="industrial-label">Interactieve Vloer</h1>
+                        <p>Transformeer elke ruimte in een dynamische speelwereld. Onze geavanceerde
+                            projectietechnologie reageert direct op beweging - ideaal voor scholen,
+                            BSO's, zorginstellingen en evenementen.</p>
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Vloer."
+                            class="btn" style="background: var(--color-primary); color: #000; border-radius: 999px;">
+                            Offerte Aanvragen
+                        </a>
+                    </div>
+                    <div class="product-hero-image">
+                        <img src="../media/products/interactieve-vloer.png"
+                            alt="Kinderen spelen op de Interactieve Vloer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Description (OPAQUE LIGHT) -->
+        <section class="section section-opaque-light">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Wat is de Interactieve
+                    Vloer?</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                        De Interactieve Vloer transformeert elke vloer tot een dynamische speelondergrond.
+                        Met geavanceerde projectietechnologie en bewegingssensoren reageert de vloer direct
+                        op elke stap, sprong of beweging. Ideaal voor scholen, BSO's, speelhallen,
+                        zorginstellingen en evenementen.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features (OPAQUE DARK) -->
+        <section class="section section-opaque-dark">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; color: #fff;">Kenmerken</h2>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        <h3 class="spec-title">Plug & Play</h3>
+                        <p class="spec-desc">Binnen enkele minuten gebruiksklaar. Geen complexe installatie nodig.</p>
+                    </div>
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 3H3v18h18V3zm-2 16l-7-8v8H5l7-8V5h7v14z" />
+                        </svg>
+                        <h3 class="spec-title">60+ Spellen</h3>
+                        <p class="spec-desc">Een ruime keuze uit educatieve en recreatieve interactieve spellen.</p>
+                    </div>
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                        </svg>
+                        <h3 class="spec-title">Alle Leeftijden</h3>
+                        <p class="spec-desc">Geschikt voor kinderen van 3-12 jaar en volwassenen.</p>
+                    </div>
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                        </svg>
+                        <h3 class="spec-title">Veilig & Hygiënisch</h3>
+                        <p class="spec-desc">Geen fysiek contact met schermen nodig. Spelend bewegen zonder zorgen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion Section -->
+        <section class="section section-opaque-light">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Veelgestelde Vragen</h2>
+                <div class="accordion" style="max-width: 800px; margin: 0 auto;">
+                    <details class="accordion-item">
+                        <summary>Wat is de interactieve vloer precies?</summary>
+                        <div class="accordion-content">
+                            De interactieve vloer is een projectiesysteem dat beelden op de grond projecteert
+                            die reageren op beweging. Met infrarood sensoren detecteren we elke stap, sprong
+                            of aanraking, waardoor het spelbeeld real-time aanpast.
+                        </div>
+                    </details>
+                    <details class="accordion-item">
+                        <summary>Hoe groot is het projectiegebied?</summary>
+                        <div class="accordion-content">
+                            Het standaard projectiegebied is ongeveer 3x2,5 meter. Dit biedt voldoende ruimte
+                            voor 4-6 kinderen om tegelijkertijd te spelen. Grotere oppervlaktes zijn mogelijk
+                            met meerdere systemen.
+                        </div>
+                    </details>
+                    <details class="accordion-item">
+                        <summary>Hoeveel spellen zijn er beschikbaar?</summary>
+                        <div class="accordion-content">
+                            Met onze interactieve vloer krijgt u toegang tot meer dan 60 kant-en-klare spellen,
+                            variërend van educatieve oefeningen tot actieve bewegingsspellen. Regelmatig
+                            voegen we nieuwe content toe via updates.
+                        </div>
+                    </details>
+                    <details class="accordion-item">
+                        <summary>Is installatie moeilijk?</summary>
+                        <div class="accordion-content">
+                            Nee! Het systeem is volledig plug-and-play. Binnen 10-15 minuten is alles
+                            aangesloten en speelklaar. Geen speciale technische kennis vereist.
+                        </div>
+                    </details>
+                    <details class="accordion-item">
+                        <summary>Voor welke leeftijden is het geschikt?</summary>
+                        <div class="accordion-content">
+                            De interactieve vloer is ontworpen voor kinderen van 3 tot 12 jaar, maar ook
+                            volwassenen genieten ervan! Er zijn spellen beschikbaar voor specifieke
+                            leeftijdsgroepen en vaardigheidsniveaus.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing CTA (Glass) -->
+        <section class="section container">
+            <div class="glass-panel"
+                style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
+                <h2 class="industrial-label" style="margin-bottom: 1rem;">Interesse?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--color-text-muted);">
+                    Vraag een vrijblijvende offerte aan of neem contact op voor meer informatie.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Vloer."
+                        target="_blank" class="btn"
+                        style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">
+                        Offerte Aanvragen
+                    </a>
+                    <a href="../prijzen.html" class="btn" style="border-radius: 999px; padding: 1rem 2.5rem;">
+                        Bekijk Prijzen
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products (OPAQUE LIGHT) -->
+        <section class="section section-opaque-light">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Andere Producten</h2>
+                <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
+                    <div class="pricing-card" style="text-align: center;">
+                        <h3 class="pricing-title">Interactieve Muur</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem;">Wandprojectie voor sport en educatie</p>
+                        <a href="interactieve-muur.html" class="btn"
+                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+                    </div>
+                    <div class="pricing-card" style="text-align: center;">
+                        <h3 class="pricing-title">Mobiele Vloer</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem;">Verhuur voor evenementen</p>
+                        <a href="mobiele-vloer.html" class="btn" style="width: 100%; border-radius: 999px;">Bekijk</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+                <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../bouw-een-park.html">Bouw een Park</a></li>
+                    <li><a href="../over-ons.html">Over Ons</a></li>
+                    <li><a href="../prijzen.html">Prijzen</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Producten</h4>
+                <ul class="footer-links">
+                    <li><a href="interactieve-vloer.html">Interactieve Vloer</a></li>
+                    <li><a href="interactieve-muur.html">Interactieve Muur</a></li>
+                    <li><a href="interactieve-zandbak.html">Interactieve Zandbak</a></li>
+                    <li><a href="interactieve-klimwand.html">Interactieve Klimwand</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+</div>
+
+    <script>
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('active');
+        }
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+        }
+    </script>
+    <script src="../projector.js"></script>
+
+    <script>
+        // Check URL on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang');
+            if (lang === 'en') {
+                htmx.ajax('GET', '../partials/products/interactieve-vloer-en.html', '#page-wrapper');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

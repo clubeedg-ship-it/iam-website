@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterActiveMove | Interactieve oplossingen voor beweging, leren en spelen</title>
+    <meta name="description"
+        content="IAM ontwikkelt interactieve producten die kinderen en volwassenen stimuleren om te bewegen en cognitief te groeien. Onderwijs, sport en revalidatiezorg.">
+    <link rel="icon" href="media/icon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=1.1">
+    <!-- HTMX via CDN -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Global Background Canvas -->
+    <div id="global-canvas-container">
+        <canvas id="projector-canvas"></canvas>
+    </div>
+
+    <div id="page-wrapper">
+        <header>
+            <img src="media/logo-final.png" alt="InterActiveMove" class="logo-img">
+            <nav>
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Producten</button>
+                        <div class="dropdown-menu">
+                            <a href="products/interactieve-vloer.html">Interactieve Vloer</a>
+                            <a href="products/interactieve-muur.html">Interactieve Muur</a>
+                            <a href="products/interactieve-zandbak.html">Interactieve Zandbak</a>
+                            <a href="products/interactieve-klimwand.html">Interactieve Klimwand</a>
+                            <a href="products/mobiele-vloer.html">Mobiele Vloer</a>
+                            <a href="products/software-maatwerk.html">Software & Maatwerk</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Mogelijkheden</button>
+                        <div class="dropdown-menu">
+                            <a href="bouw-een-park.html">Bouw een Park</a>
+                            <a href="3d-spellen.html">3D Spellen</a>
+                            <a href="parken-speelhallen.html">Parken & Speelhallen</a>
+                            <a href="onderwijs.html">Onderwijs</a>
+                            <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Over Ons</button>
+                        <div class="dropdown-menu">
+                            <a href="over-ons.html">Over InterActiveMove</a>
+                            <a href="prijzen.html">Prijzen</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="lang-toggle">
+                    <button class="lang-btn active" hx-get="partials/index-nl.html" hx-target="#page-wrapper"
+                        hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+                    <span class="divider">|</span>
+                    <button class="lang-btn" hx-get="partials/index-en.html" hx-target="#page-wrapper"
+                        hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+                </div>
+
+                <!-- Hamburger Button (Mobile) -->
+                <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="#contact" class="btn"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#" onclick="closeMobileNav()">Home</a>
+            <a href="products/interactieve-vloer.html">Interactieve Vloer</a>
+            <a href="products/interactieve-muur.html">Interactieve Muur</a>
+            <a href="products/interactieve-zandbak.html">Interactieve Zandbak</a>
+            <a href="products/interactieve-klimwand.html">Interactieve Klimwand</a>
+            <a href="products/mobiele-vloer.html">Mobiele Vloer</a>
+            <a href="products/software-maatwerk.html">Software & Maatwerk</a>
+            <a href="bouw-een-park.html">Bouw een Park</a>
+            <a href="3d-spellen.html">3D Spellen</a>
+            <a href="parken-speelhallen.html">Parken & Speelhallen</a>
+            <a href="onderwijs.html">Onderwijs</a>
+            <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
+            <a href="over-ons.html">Over Ons</a>
+            <a href="prijzen.html">Prijzen</a>
+            <a href="#contact" onclick="closeMobileNav()">Contact</a>
+        </div>
+
+        <main id="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div id="hero-video-container" class="hero-video-container">
+                    <video autoplay muted loop playsinline
+                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                        <source src="media/hero-video.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="hero-content">
+                    <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">INTER ACTIVE MOVE</h1>
+                    <p style="font-size: 1.5rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">Interactieve
+                        oplossingen
+                        voor beweging, leren en spelen</p>
+                    <a href="#products" class="btn" style="border-radius: 999px;">Ontdek onze producten</a>
+                </div>
+            </section>
+
+            <!-- Playground Section -->
+            <section id="playground" class="container">
+                <div class="content-wrapper">
+                    <h2 class="industrial-label">Interactieve Speelplaats</h2>
+                    <p style="font-size: 1.2rem; margin: 0;">Beweeg uw cursor om de projectie te beïnvloeden.</p>
+                </div>
+                <div class="cursor-demo"></div>
+            </section>
+
+            <!-- Why Choose IAM Section (OPAQUE DARK - No particles visible) -->
+            <section class="section section-opaque-dark">
+                <div class="container">
+                    <h2 class="industrial-label" style="color: #fff;">Waarom kiezen voor InterActiveMove</h2>
+
+                    <div class="specs-grid">
+                        <!-- 1. Innovatieve Technologie -->
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            <h3 class="spec-title">Innovatieve Technologie</h3>
+                            <p class="spec-desc">Geavanceerde interactieve systemen die beweging detecteren en direct
+                                reageren.</p>
+                        </div>
+
+                        <!-- 2. Onderwijs & Revalidatie -->
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                            </svg>
+                            <h3 class="spec-title">Onderwijs & Revalidatie</h3>
+                            <p class="spec-desc">Ingezet in scholen, zorginstellingen en revalidatiecentra.</p>
+                        </div>
+
+                        <!-- 3. Voor Alle Leeftijden -->
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                            </svg>
+                            <h3 class="spec-title">Voor Alle Leeftijden</h3>
+                            <p class="spec-desc">Geschikt voor kinderen én volwassenen, van 3 tot 100 jaar.</p>
+                        </div>
+
+                        <!-- 4. Maatwerk Oplossingen -->
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L5.09 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+                            </svg>
+                            <h3 class="spec-title">Maatwerk Oplossingen</h3>
+                            <p class="spec-desc">Wij bouwen interactieve parken en software op maat.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section (OPAQUE LIGHT - No particles visible) -->
+            <section id="products" class="section section-opaque-light">
+                <div class="container">
+                    <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Onze Producten</h2>
+                    <div class="pricing-grid">
+                        <!-- Interactieve Vloer -->
+                        <div class="pricing-card">
+                            <div class="practical-icon" style="margin: 0 auto 1.5rem;">
+                                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 5v14h18V5H3zm16 12H5V7h14v10z" />
+                                </svg>
+                            </div>
+                            <h3 class="pricing-title" style="text-align: center;">Interactieve Vloer</h3>
+                            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Projectie op de grond die
+                                reageert
+                                op beweging. Perfect voor scholen en speelhallen.</p>
+                            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Vloer."
+                                target="_blank" class="btn"
+                                style="width: 100%; text-align: center; border-radius: 999px;">Meer
+                                info</a>
+                        </div>
+
+                        <!-- Interactieve Muur -->
+                        <div class="pricing-card popular">
+                            <div class="popular-badge">Populair</div>
+                            <div class="practical-icon" style="margin: 0 auto 1.5rem;">
+                                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
+                                </svg>
+                            </div>
+                            <h3 class="pricing-title" style="text-align: center;">Interactieve Muur</h3>
+                            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Wandprojectie voor sport,
+                                educatie
+                                en entertainment. Speel, leer en beweeg!</p>
+                            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Muur."
+                                target="_blank" class="btn btn-danger"
+                                style="width: 100%; text-align: center; border-radius: 999px;">Meer info</a>
+                        </div>
+
+                        <!-- Interactieve Zandbak -->
+                        <div class="pricing-card">
+                            <div class="practical-icon" style="margin: 0 auto 1.5rem;">
+                                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                </svg>
+                            </div>
+                            <h3 class="pricing-title" style="text-align: center;">Interactieve Zandbak</h3>
+                            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Augmented reality zandbak
+                                met
+                                topografische projecties. Leren door spelen.</p>
+                            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
+                                target="_blank" class="btn"
+                                style="width: 100%; text-align: center; border-radius: 999px;">Meer
+                                info</a>
+                        </div>
+
+                        <!-- Interactieve Klimwand -->
+                        <div class="pricing-card">
+                            <div class="practical-icon" style="margin: 0 auto 1.5rem;">
+                                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z" />
+                                </svg>
+                            </div>
+                            <h3 class="pricing-title" style="text-align: center;">Interactieve Klimwand</h3>
+                            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Klimmen wordt een game!
+                                Projectie
+                                op klimwanden voor extra uitdaging.</p>
+                            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Klimwand."
+                                target="_blank" class="btn"
+                                style="width: 100%; text-align: center; border-radius: 999px;">Meer
+                                info</a>
+                        </div>
+
+                        <!-- Mobiele Vloer -->
+                        <div class="pricing-card">
+                            <div class="practical-icon" style="margin: 0 auto 1.5rem;">
+                                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                                </svg>
+                            </div>
+                            <h3 class="pricing-title" style="text-align: center;">Mobiele Vloer</h3>
+                            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Verhuur voor evenementen.
+                                Wij
+                                verzorgen transport en installatie.</p>
+                            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20de%20Mobiele%20Vloer%20huren."
+                                target="_blank" class="btn"
+                                style="width: 100%; text-align: center; border-radius: 999px;">Offerte aanvragen</a>
+                        </div>
+
+                        <!-- Software & Maatwerk -->
+                        <div class="pricing-card">
+                            <div class="practical-icon" style="margin: 0 auto 1.5rem;">
+                                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                                </svg>
+                            </div>
+                            <h3 class="pricing-title" style="text-align: center;">Software & Maatwerk</h3>
+                            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Bouw uw eigen interactieve
+                                spellen
+                                met onze Game Editor en Animator tools.</p>
+                            <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20weten%20over%20maatwerk%20software."
+                                target="_blank" class="btn"
+                                style="width: 100%; text-align: center; border-radius: 999px;">Meer
+                                info</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section (OPAQUE LIGHT - No particles visible) -->
+            <section id="about" class="section section-opaque-light">
+                <div class="container">
+                    <div class="practical-info-section">
+                        <h2 class="industrial-label" style="text-align: center; margin-bottom: 1rem;">Over
+                            InterActiveMove
+                        </h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                            <div style="padding: 2rem;">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Onze Missie</h3>
+                                <p>We willen mensen inspireren om op een actieve en speelse manier te bewegen en te
+                                    leren.
+                                    Door
+                                    interactieve technologieën te integreren, creëren we nieuwe mogelijkheden voor
+                                    onderwijs,
+                                    revalidatie, sport en entertainment.</p>
+                            </div>
+                            <div style="padding: 2rem;">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Onze Visie</h3>
+                                <p>IAM ziet een wereld voor zich waarin beweging en technologie naadloos samenkomen. We
+                                    ontwikkelen oplossingen die niet alleen fysiek aantrekkelijk zijn, maar ook mentaal
+                                    stimulerend en sociaal interactief.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practical Info Section -->
+            <section id="practical" class="container section">
+                <div class="practical-info-section">
+                    <h2 class="industrial-label" style="text-align: center; margin-bottom: 1rem;">Praktische informatie
+                    </h2>
+                    <div class="practical-grid">
+                        <!-- Sectors -->
+                        <div class="practical-item">
+                            <div class="practical-icon">
+                                <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                                </svg>
+                            </div>
+                            <div class="practical-text">
+                                Onderwijs<br>& Scholen
+                            </div>
+                        </div>
+                        <!-- Healthcare -->
+                        <div class="practical-item">
+                            <div class="practical-icon">
+                                <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
+                                </svg>
+                            </div>
+                            <div class="practical-text">
+                                Zorg &<br>Revalidatie
+                            </div>
+                        </div>
+                        <!-- Entertainment -->
+                        <div class="practical-item">
+                            <div class="practical-icon">
+                                <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+                                </svg>
+                            </div>
+                            <div class="practical-text">
+                                Entertainment<br>& Events
+                            </div>
+                        </div>
+                        <!-- Sport -->
+                        <div class="practical-item">
+                            <div class="practical-icon">
+                                <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7" />
+                                </svg>
+                            </div>
+                            <div class="practical-text">
+                                Sport &<br>Fitness
+                            </div>
+                        </div>
+                        <!-- Worldwide -->
+                        <div class="practical-item">
+                            <div class="practical-icon">
+                                <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                </svg>
+                            </div>
+                            <div class="practical-text">
+                                Wereldwijd<br>Actief
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Accordion Section -->
+            <section class="section section-opaque-dark">
+                <div class="container">
+                    <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">
+                        Veelgestelde
+                        Vragen</h2>
+                    <div class="accordion" style="max-width: 800px; margin: 0 auto;">
+                        <details class="accordion-item">
+                            <summary>Wat is een interactief projectiesysteem?</summary>
+                            <div class="accordion-content">
+                                Een interactief projectiesysteem combineert een projector met bewegingssensoren.
+                                Het projecteert beelden op vloeren, muren of andere oppervlakken die reageren
+                                op beweging, aanraking of gebaren. Dit maakt actief spelen en leren mogelijk.
+                            </div>
+                        </details>
+                        <details class="accordion-item">
+                            <summary>Voor welke doelgroepen is dit geschikt?</summary>
+                            <div class="accordion-content">
+                                Onze systemen zijn geschikt voor kinderen (3-12 jaar), volwassenen en senioren.
+                                Ze worden ingezet in onderwijs, kinderopvang, zorginstellingen, revalidatiecentra,
+                                speelhallen, evenementen en sportfaciliteiten.
+                            </div>
+                        </details>
+                        <details class="accordion-item">
+                            <summary>Hoe moeilijk is de installatie?</summary>
+                            <div class="accordion-content">
+                                Onze systemen zijn plug-and-play. Binnen 15-30 minuten is alles opgesteld en
+                                speelklaar. Geen technische kennis vereist. Voor vaste installaties bieden wij
+                                professionele montageservice aan.
+                            </div>
+                        </details>
+                        <details class="accordion-item">
+                            <summary>Kan ik de systemen huren voor een evenement?</summary>
+                            <div class="accordion-content">
+                                Ja! Onze Mobiele Vloer is speciaal ontworpen voor verhuur. Wij verzorgen
+                                transport, opbouw en begeleiding. Perfect voor bedrijfsfeesten, festivals,
+                                open dagen en kinderevenementen.
+                            </div>
+                        </details>
+                        <details class="accordion-item">
+                            <summary>Hoeveel spellen zijn er beschikbaar?</summary>
+                            <div class="accordion-content">
+                                Er zijn meer dan 60 kant-en-klare spellen beschikbaar, variërend van
+                                educatieve oefeningen tot actieve bewegingsspellen. Met onze Game Editor
+                                kunt u ook eigen spellen maken.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="form-section container glass-panel" style="margin-bottom: 4rem;">
+                <h2 class="industrial-label">Neem contact op</h2>
+                <form onsubmit="sendToWhatsapp(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" name="name" placeholder="Naam" aria-label="Naam" required>
+                        <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
+                    </div>
+                    <input type="text" name="company" placeholder="Bedrijf / Organisatie" aria-label="Bedrijf"
+                        style="width: 100%;">
+                    <textarea name="details" rows="4" placeholder="Waar kunnen wij u mee helpen?"
+                        aria-label="Details"></textarea>
+                    <button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 999px;">VERSTUUR
+                        BERICHT</button>
+                </form>
+                <div style="margin-top: 2rem; text-align: center; color: var(--color-text-muted);">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934" style="color: var(--color-primary);">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl"
+                            style="color: var(--color-primary);">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 1rem;">KvK: 96157895</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Professional Footer -->
+        <footer class="footer-professional">
+            <div class="footer-container">
+                <div class="footer-column footer-brand">
+                    <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+                    <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg></a>
+                        <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg></a>
+                        <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                                <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="bouw-een-park.html">Bouw een Park</a></li>
+                        <li><a href="over-ons.html">Over Ons</a></li>
+                        <li><a href="prijzen.html">Prijzen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Producten</h4>
+                    <ul class="footer-links">
+                        <li><a href="products/interactieve-vloer.html">Interactieve Vloer</a></li>
+                        <li><a href="products/interactieve-muur.html">Interactieve Muur</a></li>
+                        <li><a href="products/interactieve-zandbak.html">Interactieve Zandbak</a></li>
+                        <li><a href="products/interactieve-klimwand.html">Interactieve Klimwand</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact</h4>
+                    <div class="footer-contact">
+                        <p><strong>Inter Active Move B.V.</strong></p>
+                        <p>Smitspol 15K, 3861RS Nijkerk</p>
+                        <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                        <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a>
+                        </p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // WhatsApp Integration
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.querySelector('input[name="name"]').value;
+            const email = form.querySelector('input[name="email"]').value;
+            const company = form.querySelector('input[name="company"]').value;
+            const details = form.querySelector('textarea[name="details"]').value;
+
+            const text = `Hallo, ik ben ${name} van ${company} (${email}).\n\n${details}`;
+            const url = `https://wa.me/31623998934?text=${encodeURIComponent(text)}`;
+
+            window.open(url, '_blank');
+        }
+
+        // Active State Toggle Logic
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === lang);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        // Check URL on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang');
+            if (lang === 'en') {
+                htmx.ajax('GET', 'partials/index-en.html', '#page-wrapper');
+            }
+        });
+
+        // Mobile Navigation Toggle
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+    </script>
+    <script src="projector.js"></script>
+</body>
+
+</html>

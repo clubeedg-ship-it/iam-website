@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Spellen | InterActiveMove</title>
+    <meta name="description" content="Ontdek onze uitgebreide collectie interactieve 3D spellen.">
+    <link rel="icon" href="media/icon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=1.2">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="global-canvas-container"><canvas id="projector-canvas"></canvas></div>
+
+    <div id="page-wrapper">
+<header>
+        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Producten</button>
+                    <div class="dropdown-menu">
+                        <a href="products/interactieve-vloer.html">Interactieve Vloer</a>
+                        <a href="products/interactieve-muur.html">Interactieve Muur</a>
+                        <a href="products/interactieve-zandbak.html">Interactieve Zandbak</a>
+                        <a href="products/interactieve-klimwand.html">Interactieve Klimwand</a>
+                        <a href="products/mobiele-vloer.html">Mobiele Vloer</a>
+                        <a href="products/software-maatwerk.html">Software & Maatwerk</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Mogelijkheden</button>
+                    <div class="dropdown-menu">
+                        <a href="bouw-een-park.html">Bouw een Park</a>
+                        <a href="3d-spellen.html">3D Spellen</a>
+                        <a href="parken-speelhallen.html">Parken & Speelhallen</a>
+                        <a href="onderwijs.html">Onderwijs</a>
+                        <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="over-ons.html" class="nav-link">Over Ons</a></li>
+                <li class="nav-item"><a href="prijzen.html" class="nav-link">Prijzen</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn active" hx-get="partials/3d-spellen-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
+                    class="lang-btn">EN</button>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()"
+                aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="products/interactieve-vloer.html">Interactieve Vloer</a>
+        <a href="products/interactieve-muur.html">Interactieve Muur</a>
+        <a href="products/interactieve-zandbak.html">Interactieve Zandbak</a>
+        <a href="products/interactieve-klimwand.html">Interactieve Klimwand</a>
+        <a href="products/mobiele-vloer.html">Mobiele Vloer</a>
+        <a href="products/software-maatwerk.html">Software & Maatwerk</a>
+        <a href="bouw-een-park.html">Bouw een Park</a>
+        <a href="3d-spellen.html">3D Spellen</a>
+        <a href="parken-speelhallen.html">Parken & Speelhallen</a>
+        <a href="onderwijs.html">Onderwijs</a>
+        <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
+        <a href="over-ons.html">Over Ons</a>
+        <a href="prijzen.html">Prijzen</a>
+        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <main>
+        <section class="hero" style="height: 50vh; min-height: 400px;">
+            <div class="hero-video-container">
+                <img src="media/hero_3d_spellen.png" alt="3D Spellen Hero"
+                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+            </div>
+            <div class="hero-content">
+                <h1 class="industrial-label">3D Spellen</h1>
+                <p style="font-size: 1.3rem;">Ontdek onze uitgebreide collectie interactieve 3D games</p>
+            </div>
+        </section>
+
+        <section class="section section-opaque-light">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 class="industrial-label" style="margin-bottom: 1.5rem;">Een Wereld aan Mogelijkheden</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                        Onze bibliotheek bevat meer dan 60 interactieve spellen, variërend van educatieve reken- en
+                        taaloefeningen tot
+                        actieve sportgames en betoverende visuele effecten. Er is voor elke doelgroep en elke
+                        gelegenheid
+                        een passend aanbod.
+                    </p>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-card"
+                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
+                        <div class="spec-icon" style="color: var(--color-primary);">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2.48-1.35L12 3zm1 14.5l-4-2.18v-4.36L12 13l5 2.73v4.36l-4 2.18zm6-8l-4 2.18L7 9l5-2.73 6 2.73z" />
+                            </svg>
+                        </div>
+                        <h3 class="spec-title" style="color: var(--color-text);">Educatief</h3>
+                        <p class="spec-desc" style="color: #666;">Spelenderwijs leren rekenen, spellen en topografie.
+                            Perfect voor het basisonderwijs.</p>
+                    </div>
+                    <div class="spec-card"
+                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
+                        <div class="spec-icon" style="color: var(--color-danger);">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7" />
+                            </svg>
+                        </div>
+                        <h3 class="spec-title" style="color: var(--color-text);">Sport & Actie</h3>
+                        <p class="spec-desc" style="color: #666;">Beweeggames die de hartslag verhogen. Voetbal, tennis
+                            en reactiespellen.</p>
+                    </div>
+                    <div class="spec-card"
+                        style="background: #fff; border: 1px solid rgba(0,0,0,0.05); color: var(--color-text);">
+                        <div class="spec-icon" style="color: var(--color-primary);">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </div>
+                        <h3 class="spec-title" style="color: var(--color-text);">Samenwerking</h3>
+                        <p class="spec-desc" style="color: #666;">Multiplayer spellen die samenwerking en sociale
+                            interactie stimuleren.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-opaque-dark">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div>
+                        <h2 class="industrial-label" style="color: #fff; margin-bottom: 1.5rem;">Zelf Spellen Maken?
+                        </h2>
+                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem;">
+                            Met onze unieke Game Editor software kunt u eenvoudig uw eigen content creëren.
+                            Upload uw eigen logo, afbeeldingen of thema's en maak in een handomdraai een
+                            gepersonaliseerd spel. Ideaal voor merkactivaties of themaweken.
+                        </p>
+                        <a href="products/software-maatwerk.html" class="btn" style="border-radius: 999px;">Ontdek
+                            Software</a>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 24px; text-align: center;">
+                        <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            style="color: var(--color-primary);">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                            </path>
+                        </svg>
+                        <h3 style="color: #fff; margin-top: 1rem;">Game Editor</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section container glass-panel" style="margin-bottom: 4rem;">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 class="industrial-label">Ontdek de mogelijkheden</h2>
+                <p style="margin-bottom: 2rem; color: var(--color-text-muted);">
+                    Benieuwd naar de volledige catalogus of een demo op locatie? Neem contact op.
+                </p>
+                <a href="index.html#contact" class="btn btn-danger" style="border-radius: 999px;">Vraag brochure aan</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+                <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bouw-een-park.html">Bouw een Park</a></li>
+                    <li><a href="over-ons.html">Over Ons</a></li>
+                    <li><a href="prijzen.html">Prijzen</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Producten</h4>
+                <ul class="footer-links">
+                    <li><a href="products/interactieve-vloer.html">Interactieve Vloer</a></li>
+                    <li><a href="products/interactieve-muur.html">Interactieve Muur</a></li>
+                    <li><a href="products/interactieve-zandbak.html">Interactieve Zandbak</a></li>
+                    <li><a href="products/interactieve-klimwand.html">Interactieve Klimwand</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+</div>
+    <script>function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('active'); } function closeMobileNav() { document.getElementById('mobileNav').classList.remove('active'); }</script>
+    <script src="projector.js"></script>
+
+    <script>
+        // Check URL on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang');
+            if (lang === 'en') {
+                htmx.ajax('GET', 'partials/3d-spellen-en.html', '#page-wrapper');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

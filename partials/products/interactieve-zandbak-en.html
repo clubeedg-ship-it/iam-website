@@ -1,0 +1,218 @@
+<header>
+        <a href="../index.html"><img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Products</button>
+                    <div class="dropdown-menu">
+                        <a href="interactieve-vloer.html">Interactive Floor</a>
+                        <a href="interactieve-muur.html">Interactive Wall</a>
+                        <a href="interactieve-zandbak.html" class="active">Interactive Sandbox</a>
+                        <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
+                        <a href="mobiele-vloer.html">Mobile Floor</a>
+                        <a href="software-maatwerk.html">Software & Customization</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Applications</button>
+                    <div class="dropdown-menu">
+                        <a href="../bouw-een-park.html">Build a Park</a>
+                        <a href="../3d-spellen.html">3D Games</a>
+                        <a href="../parken-speelhallen.html">Parks & Arcades</a>
+                        <a href="../onderwijs.html">Education</a>
+                        <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../over-ons.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prices</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn" hx-get="../partials/products/interactieve-zandbak-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span class="divider">|</span><button
+                    class="lang-btn active">EN</button>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()"
+                aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="../index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../index.html">Home</a>
+        <a href="interactieve-vloer.html">Interactive Floor</a>
+        <a href="interactieve-muur.html">Interactive Wall</a>
+        <a href="interactieve-zandbak.html">Interactive Sandbox</a>
+        <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
+        <a href="mobiele-vloer.html">Mobile Floor</a>
+        <a href="software-maatwerk.html">Software & Customization</a>
+        <a href="../bouw-een-park.html">Build a Park</a>
+        <a href="../3d-spellen.html">3D Games</a>
+        <a href="../parken-speelhallen.html">Parks & Arcades</a>
+        <a href="../onderwijs.html">Education</a>
+        <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
+        <a href="../over-ons.html">About Us</a>
+        <a href="../prijzen.html">Prices</a>
+        <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <main>
+        <section class="hero" style="height: 60vh;">
+            <div class="hero-video-container">
+                <img src="../media/products/interactieve-zandbak.png" alt="Interactieve Zandbak"
+                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+            </div>
+            <div class="hero-content">
+                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Interactive Sandbox</h1>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">Augmented reality
+                    zandbak met topografische projecties</p>
+            </div>
+        </section>
+
+        <section class="section section-opaque-light">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Wat is de Interactieve
+                    Zandbak?</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                        De Interactieve Zandbak combineert echt zand met digitale projectie. Wanneer kinderen
+                        het zand verplaatsen, verandert de projectie in realtime: bergen krijgen sneeuw,
+                        dalen vullen zich met water, vulkanen barsten uit. Een unieke manier om aardrijkskunde
+                        en natuurkunde te ontdekken.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-opaque-dark">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; color: #fff;">Features</h2>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
+                        </svg>
+                        <h3 class="spec-title">Topografie</h3>
+                        <p class="spec-desc">Realtime hoogtekaarten die reageren op zandverschuivingen.</p>
+                    </div>
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" />
+                        </svg>
+                        <h3 class="spec-title">Vulkanen</h3>
+                        <p class="spec-desc">Maak een berg hoog genoeg en hij barst uit met lava-effecten.</p>
+                    </div>
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M21.98 14H22h-.02zM5.35 13c1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1 1.19 0 1.42 1 3.33 1 1.95 0 2.09-1 3.33-1v2c-1.9 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1-1.19 0-1.42-1-3.33-1-1.95 0-2.1 1-3.33 1v-2c1.9 0 2.1-1 3.33-1z" />
+                        </svg>
+                        <h3 class="spec-title">Water Simulatie</h3>
+                        <p class="spec-desc">Dalen vullen zich met water dat realistisch stroomt.</p>
+                    </div>
+                    <div class="spec-card">
+                        <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                        </svg>
+                        <h3 class="spec-title">Educatief</h3>
+                        <p class="spec-desc">Ideaal voor musea, scholen en educatieve centra.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="glass-panel"
+                style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
+                <h2 class="industrial-label" style="margin-bottom: 1rem;">Interesse?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--color-text-muted);">Vraag een
+                    vrijblijvende offerte aan of neem contact op.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Zandbak."
+                        target="_blank" class="btn"
+                        style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">Offerte
+                        Aanvragen</a>
+                    <a href="../prijzen.html" class="btn" style="border-radius: 999px; padding: 1rem 2.5rem;">Bekijk
+                        Prijzen</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-opaque-light">
+            <div class="container">
+                <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Andere Producten</h2>
+                <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
+                    <div class="pricing-card" style="text-align: center;">
+                        <h3 class="pricing-title">Interactive Floor</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem;">Vloerprojectie voor allerlei ruimtes</p>
+                        <a href="interactieve-vloer.html" class="btn"
+                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+                    </div>
+                    <div class="pricing-card" style="text-align: center;">
+                        <h3 class="pricing-title">Software & Customization</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem;">Op maat gemaakte oplossingen</p>
+                        <a href="software-maatwerk.html" class="btn"
+                            style="width: 100%; border-radius: 999px;">Bekijk</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../bouw-een-park.html">Build a Park</a></li>
+                    <li><a href="../over-ons.html">About Us</a></li>
+                    <li><a href="../prijzen.html">Prices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="interactieve-vloer.html">Interactive Floor</a></li>
+                    <li><a href="interactieve-muur.html">Interactive Wall</a></li>
+                    <li><a href="interactieve-zandbak.html">Interactive Sandbox</a></li>
+                    <li><a href="interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
