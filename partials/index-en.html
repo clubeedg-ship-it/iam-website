@@ -673,7 +673,7 @@
     <!-- Contact Section -->
     <section id="contact" class="form-section container glass-panel" style="margin-bottom: 4rem;">
         <h2 class="industrial-label">Contact us</h2>
-        <form onsubmit="sendToWhatsapp(event)">
+        <form onsubmit="sendToWhatsapp(event)" id="contactForm">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <input type="text" name="name" placeholder="Name" aria-label="Name" required>
                 <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
@@ -681,6 +681,18 @@
             <input type="text" name="company" placeholder="Company / Organization" aria-label="Company"
                 style="width: 100%;">
             <textarea name="details" rows="4" placeholder="How can we help you?" aria-label="Details"></textarea>
+            <!-- GDPR Consent Checkbox -->
+            <div class="form-consent">
+                <input type="checkbox" id="privacy-consent" name="privacy_consent" required>
+                <label for="privacy-consent">
+                    I agree to the processing of my data as described in the
+                    <a href="privacybeleid.html" target="_blank">privacy policy</a>. *
+                </label>
+            </div>
+            <p class="whatsapp-privacy-notice">
+                By contacting us via WhatsApp, your data will be processed by Meta (USA).
+                <a href="privacybeleid.html#whatsapp">More information</a>.
+            </p>
             <button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 999px;">SEND
                 MESSAGE</button>
         </form>
@@ -726,12 +738,11 @@
             </ul>
         </div>
         <div class="footer-column">
-            <h4 class="footer-heading">Products</h4>
+            <h4 class="footer-heading">Legal</h4>
             <ul class="footer-links">
-                <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
-                <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
-                <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
-                <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                <li><a href="privacybeleid.html">Privacy Policy</a></li>
+                <li><a href="cookiebeleid.html">Cookie Policy</a></li>
+                <li><a href="#" onclick="resetCookieConsent(); return false;">Cookie Settings</a></li>
             </ul>
         </div>
         <div class="footer-column">
@@ -739,13 +750,13 @@
             <div class="footer-contact">
                 <p><strong>Inter Active Move B.V.</strong></p>
                 <p>Smitspol 15K, 3861RS Nijkerk</p>
-                <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                <p>Tel: <a href="tel:+31623998934">+31 6 23 99 89 34</a></p>
                 <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
                 <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 InterActiveMove B.V. All rights reserved.</p>
+        <p>&copy; 2026 Inter Active Move B.V. All rights reserved.</p>
     </div>
 </footer>

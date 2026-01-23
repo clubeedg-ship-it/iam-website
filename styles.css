@@ -1,3 +1,36 @@
+/* Self-hosted Inter font for GDPR compliance */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/media/fonts/Inter-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/media/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/media/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/media/fonts/Inter-ExtraBold.woff2') format('woff2');
+}
+
 :root {
     /* PRESERVED PALETTE */
     --color-bg: #ffffff;
@@ -5084,4 +5117,285 @@ textarea:invalid:not(:placeholder-shown) {
         transition: opacity 0.3s ease, visibility 0.3s ease;
         transform: none !important;
     }
+}
+
+/* ============================================
+   LEGAL PAGES (Privacy Policy, Cookie Policy)
+   ============================================ */
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--color-bg);
+    border-radius: var(--radius-card);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.legal-content h1 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.legal-updated {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.legal-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.legal-content h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.legal-content h3 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.legal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.legal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.legal-content ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.legal-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.legal-content a:hover {
+    color: #e5a800;
+}
+
+.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.95rem;
+}
+
+.legal-table th,
+.legal-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+}
+
+.legal-table th {
+    background: var(--color-surface);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.legal-table td {
+    background: var(--color-bg);
+}
+
+.legal-table tr:nth-child(even) td {
+    background: var(--color-surface);
+}
+
+@media (max-width: 768px) {
+    .legal-content {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .legal-table {
+        font-size: 0.85rem;
+    }
+
+    .legal-table th,
+    .legal-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* ============================================
+   COOKIE CONSENT BANNER
+   ============================================ */
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+    padding: 1.5rem;
+    z-index: 9999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.cookie-consent.show {
+    transform: translateY(0);
+}
+
+.cookie-consent-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cookie-consent-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cookie-consent-text h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cookie-consent-text p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.cookie-consent-text a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.cookie-btn-accept {
+    background: var(--color-primary);
+    color: var(--color-text);
+}
+
+.cookie-btn-accept:hover {
+    background: #e5a800;
+    transform: translateY(-2px);
+}
+
+.cookie-btn-reject {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-reject:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cookie-btn-settings {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.cookie-btn-settings:hover {
+    background: var(--color-primary);
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .cookie-consent {
+        padding: 1rem;
+    }
+
+    .cookie-consent-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-consent-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cookie-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+/* ============================================
+   FORM CONSENT CHECKBOX
+   ============================================ */
+
+.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--color-surface);
+    border-radius: 12px;
+}
+
+.form-consent input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.15rem;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.form-consent label {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+
+.form-consent label a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.whatsapp-privacy-notice {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+.whatsapp-privacy-notice a {
+    color: var(--color-primary);
 }
