@@ -26,6 +26,17 @@
     --radius-btn: 999px;
 }
 
+/* Smooth Scroll Behavior (Phase 4 Polish) */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -1779,6 +1790,107 @@ nav {
 
     .stat-label {
         font-size: 0.8rem;
+    }
+}
+
+/* Client Logo Wall Section */
+.client-logos-section {
+    background: var(--color-surface);
+    padding: 2.5rem 0;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logos-label {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.logos-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-item {
+    flex: 0 0 auto;
+}
+
+.logo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo-placeholder:hover {
+    color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo-placeholder svg {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.logo-placeholder:hover svg {
+    opacity: 1;
+}
+
+.logo-placeholder span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .logos-carousel {
+        gap: 1rem;
+    }
+
+    .logo-placeholder {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo-placeholder svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-placeholder span {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logos-carousel {
+        gap: 0.75rem;
+    }
+
+    .logo-item {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+
+    .logo-placeholder {
+        width: 100%;
     }
 }
 
@@ -4718,5 +4830,258 @@ textarea:invalid:not(:placeholder-shown) {
 
     .specs-table .spec-label {
         width: 50%;
+    }
+}
+
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS (Phase 3)
+   ========================================== */
+
+/* Base animation classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade variants */
+.reveal-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-fade-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-fade-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-fade-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-fade-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-fade-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale variants */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger delays for grid items */
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 500ms; }
+.reveal-stagger > *:nth-child(7) { transition-delay: 600ms; }
+.reveal-stagger > *:nth-child(8) { transition-delay: 700ms; }
+
+/* Counter animation for stats */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item.animate {
+    animation: countUp 0.6s ease-out forwards;
+}
+
+/* Section reveal */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card hover enhancements with scale */
+.pricing-card.reveal,
+.testimonial-card.reveal,
+.spec-card.reveal {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pricing-card.reveal.revealed,
+.testimonial-card.reveal.revealed,
+.spec-card.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Case Study Cards */
+.case-study-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.case-study-card.revealed,
+.reveal-stagger .case-study-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.case-study-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.case-studies-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .case-studies-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 400px;
+    }
+}
+
+/* Logo carousel reveal */
+.logo-item.reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.logo-item.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Step items reveal */
+.step-item.reveal {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.step-item.reveal.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-fade-up,
+    .reveal-fade-left,
+    .reveal-fade-right,
+    .reveal-scale,
+    .section-reveal,
+    .pricing-card.reveal,
+    .testimonial-card.reveal,
+    .spec-card.reveal,
+    .logo-item.reveal,
+    .step-item.reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .reveal-stagger > * {
+        transition-delay: 0ms !important;
+    }
+}
+
+/* ==========================================
+   BACK TO TOP BUTTON (Phase 4 Polish)
+   ========================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 900;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #e5a800;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Adjust position when mobile sticky CTA is visible */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 5.5rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        transform: none !important;
     }
 }

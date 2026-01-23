@@ -245,3 +245,265 @@ document.body.addEventListener('htmx:beforeSwap', (evt) => {
         }
     }
 });
+
+// ==========================================
+// SCROLL REVEAL ANIMATIONS (Phase 3)
+// ==========================================
+
+function initScrollReveal() {
+    // Select all elements with reveal classes
+    const revealElements = document.querySelectorAll('.reveal, .reveal-fade-up, .reveal-fade-left, .reveal-fade-right, .reveal-scale, .section-reveal');
+
+    if (revealElements.length === 0) return;
+
+    // Check if IntersectionObserver is supported
+    if (!('IntersectionObserver' in window)) {
+        // Fallback: show all elements immediately
+        revealElements.forEach(el => el.classList.add('revealed'));
+        return;
+    }
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+
+                // Handle stagger children
+                if (entry.target.classList.contains('reveal-stagger')) {
+                    const children = entry.target.children;
+                    Array.from(children).forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('revealed');
+                        }, index * 100);
+                    });
+                }
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+}
+
+// Animate stat counters when visible
+function initStatCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+
+    if (statNumbers.length === 0) return;
+
+    if (!('IntersectionObserver' in window)) {
+        return; // Stats already show their values
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const start = 0;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Easing function (ease-out)
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(start + (target - start) * easeOut);
+
+                    el.textContent = current;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        el.textContent = target;
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(el => {
+        counterObserver.observe(el);
+    });
+}
+
+// Initialize scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+    initStatCounters();
+    initROICalculator();
+});
+
+// Reinitialize after HTMX swaps
+document.body.addEventListener('htmx:afterSwap', () => {
+    initScrollReveal();
+    initStatCounters();
+    initROICalculator();
+});
+
+// ==========================================
+// ROI CALCULATOR (Phase 3)
+// ==========================================
+
+function initROICalculator() {
+    const visitorsInput = document.getElementById('visitors-input');
+    const priceInput = document.getElementById('price-input');
+    const repeatInput = document.getElementById('repeat-input');
+    const roiResult = document.getElementById('roi-result');
+    const revenueResult = document.getElementById('revenue-result');
+
+    // Exit if calculator elements don't exist on this page
+    if (!visitorsInput || !priceInput || !repeatInput) return;
+
+    // Average system investment cost (used for ROI calculation)
+    const SYSTEM_COST = 15000; // Base cost estimate
+
+    function calculateROI() {
+        const visitors = parseFloat(visitorsInput.value) || 0;
+        const priceIncrease = parseFloat(priceInput.value) || 0;
+        const repeatIncrease = parseFloat(repeatInput.value) || 0;
+
+        // Monthly extra revenue from price increase
+        const priceRevenue = visitors * priceIncrease;
+
+        // Monthly extra revenue from repeat visitors (additional visits)
+        // Assumes 15% of visitors normally return, now increased
+        const baseReturnRate = 0.15;
+        const newReturnRate = baseReturnRate + (repeatIncrease / 100);
+        const additionalVisits = visitors * (newReturnRate - baseReturnRate);
+        const avgTicketPrice = 12; // Assumed average entry price
+        const repeatRevenue = additionalVisits * avgTicketPrice;
+
+        // Total monthly extra revenue
+        const monthlyRevenue = priceRevenue + repeatRevenue;
+
+        // Yearly revenue
+        const yearlyRevenue = monthlyRevenue * 12;
+
+        // ROI in months
+        const roiMonths = monthlyRevenue > 0 ? Math.ceil(SYSTEM_COST / monthlyRevenue) : 0;
+
+        // Detect language from URL or page
+        const isEnglish = window.location.search.includes('lang=en') ||
+                         document.documentElement.lang === 'en' ||
+                         document.querySelector('[hx-get*="-en.html"].active');
+        const monthsSuffix = isEnglish ? ' months' : ' maanden';
+
+        // Update results with animation
+        animateValue(roiResult, roiMonths, monthsSuffix);
+        animateValue(revenueResult, yearlyRevenue, '', '€', true);
+    }
+
+    function animateValue(element, target, suffix = '', prefix = '', isCurrency = false) {
+        if (!element) return;
+
+        const duration = 500;
+        const start = 0;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + (target - start) * easeOut);
+
+            if (isCurrency) {
+                element.textContent = prefix + current.toLocaleString('nl-NL');
+            } else {
+                element.textContent = prefix + current + suffix;
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                if (isCurrency) {
+                    element.textContent = prefix + target.toLocaleString('nl-NL');
+                } else {
+                    element.textContent = prefix + target + suffix;
+                }
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    // Add event listeners
+    visitorsInput.addEventListener('input', calculateROI);
+    priceInput.addEventListener('input', calculateROI);
+    repeatInput.addEventListener('input', calculateROI);
+
+    // Initial calculation
+    calculateROI();
+}
+
+// ==========================================
+// BACK TO TOP BUTTON (Phase 4)
+// ==========================================
+
+function initBackToTop() {
+    // Check if button already exists to avoid duplicates
+    let backToTopBtn = document.querySelector('.back-to-top');
+
+    // Create the button if it doesn't exist
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.innerHTML = `
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+        `;
+        document.body.appendChild(backToTopBtn);
+    }
+
+    // Show/hide based on scroll position
+    function toggleBackToTop() {
+        const scrollThreshold = 400;
+        if (window.scrollY > scrollThreshold) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    }
+
+    // Scroll to top on click
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Listen for scroll events with throttling
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                toggleBackToTop();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial check
+    toggleBackToTop();
+}
+
+// Initialize back to top button
+document.addEventListener('DOMContentLoaded', initBackToTop);
