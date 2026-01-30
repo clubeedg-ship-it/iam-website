@@ -2224,25 +2224,25 @@ nav {
     content: "→";
 }
 
-/* WhatsApp CTA Enhancement */
+/* Primary CTA Enhancement */
 .cta-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #e5a800 100%);
+    color: var(--color-bg-dark);
     padding: 1rem 2rem;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 14px rgba(254, 186, 4, 0.4);
 }
 
 .cta-whatsapp:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    color: #fff;
+    box-shadow: 0 6px 24px rgba(254, 186, 4, 0.5);
+    color: var(--color-bg-dark);
 }
 
 .cta-whatsapp .cta-icon {
