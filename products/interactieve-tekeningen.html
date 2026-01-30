@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactieve Tekeningen | Inter Active Move</title>
+    <meta name="description"
+        content="Interactieve Tekeningen - teken en zie je creaties tot leven komen! Stimuleert creativiteit, leren en beweging.">
+    <link rel="icon" href="../media/icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css?v=1.3">
+    <script src="/js/htmx.min.js"></script>
+</head>
+
+<body>
+    <div id="global-canvas-container"><canvas id="projector-canvas"></canvas></div>
+
+    <div id="page-wrapper">
+        <header>
+            <a href="../index.html"><img src="../media/logo-final.png" alt="Inter Active Move" class="logo-img"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Producten</button>
+                        <div class="dropdown-menu">
+                            <a href="interactieve-vloer.html">Interactieve Vloer</a>
+                            <a href="interactieve-muur.html">Interactieve Muur</a>
+                            <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+                            <a href="interactieve-tekeningen.html" class="active">Interactieve Tekeningen</a>
+                            <a href="mobiele-vloer.html">Mobiele Vloer</a>
+                            <a href="software-maatwerk.html">Software & Maatwerk</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Mogelijkheden</button>
+                        <div class="dropdown-menu">
+                            <a href="../bouw-een-park.html">Bouw een Park</a>
+                            <a href="../3d-spellen.html">3D Spellen</a>
+                            <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
+                            <a href="../onderwijs.html">Onderwijs</a>
+                            <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../over-ons.html" class="nav-link">Over Ons</a></li>
+                    <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prijzen</a></li>
+                    <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" hx-get="../partials/products/interactieve-tekeningen-nl.html"
+                        hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span
+                        class="divider">|</span><button class="lang-btn"
+                        hx-get="../partials/products/interactieve-tekeningen-en.html" hx-target="#page-wrapper"
+                        hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+                </div>
+                <button class="hamburger" onclick="toggleMobileNav()"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+                <a href="../index.html#contact" class="btn"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+            </nav>
+        </header>
+
+        <div class="mobile-nav" id="mobileNav">
+            <a href="../index.html">Home</a>
+            <a href="interactieve-vloer.html">Interactieve Vloer</a>
+            <a href="interactieve-muur.html">Interactieve Muur</a>
+            <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+            <a href="interactieve-tekeningen.html">Interactieve Tekeningen</a>
+            <a href="mobiele-vloer.html">Mobiele Vloer</a>
+            <a href="software-maatwerk.html">Software & Maatwerk</a>
+            <a href="../bouw-een-park.html">Bouw een Park</a>
+            <a href="../3d-spellen.html">3D Spellen</a>
+            <a href="../parken-speelhallen.html">Parken & Speelhallen</a>
+            <a href="../onderwijs.html">Onderwijs</a>
+            <a href="../zorg-revalidatie.html">Zorg & Revalidatie</a>
+            <a href="../over-ons.html">Over Ons</a>
+            <a href="../prijzen.html">Prijzen</a>
+            <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+        </div>
+
+        <main>
+            <section class="hero" style="height: 60vh;">
+                <div class="hero-video-container">
+                    <div
+                        style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="200" height="200" fill="rgba(255,255,255,0.9)" viewBox="0 0 24 24">
+                            <path
+                                d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a.996.996 0 00-1.41 0L9 12.25 11.75 15l8.96-8.96a.996.996 0 000-1.41z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Interactieve Tekeningen</h1>
+                    <p style="font-size: 1.3rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">Teken, speel en zie
+                        je creaties tot leven komen!</p>
+                </div>
+            </section>
+
+            <section class="section section-opaque-light">
+                <div class="container">
+                    <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Wat zijn Interactieve
+                        Tekeningen?</h2>
+                    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                            Bij Inter Active Move combineren we creativiteit en technologie met onze Interactieve
+                            Geanimeerde Tekeningen.
+                            Met deze baanbrekende functie kunnen gebruikers tekenen, interageren en hun creaties tot
+                            leven zien komen.
+                            Perfect voor scholen, speelruimtes en evenementen – ontworpen om leren, bewegen en spelen te
+                            inspireren voor gebruikers van alle leeftijden.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-opaque-dark">
+                <div class="container">
+                    <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">
+                        Toepassingen</h2>
+                    <div class="specs-grid">
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                            </svg>
+                            <h3 class="spec-title">IAM Learning</h3>
+                            <p class="spec-desc">Maak van leren een spannende ervaring! Kinderen tekenen personages en
+                                scènes die tot leven komen. Stimuleert creativiteit en storytelling.</p>
+                        </div>
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7" />
+                            </svg>
+                            <h3 class="spec-title">IAM Moving</h3>
+                            <p class="spec-desc">Maak bewegen leuk! Gebruikers kunnen met hun geanimeerde creaties
+                                interageren door te gebaren, springen of wijzen. Ideaal voor scholen en revalidatie.</p>
+                        </div>
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            <h3 class="spec-title">IAM Playing</h3>
+                            <p class="spec-desc">Ontketen de verbeelding! Teken dieren, voertuigen of fantasiewezens en
+                                zie ze tot leven komen in spellen en uitdagingen. Perfect voor speelruimtes.</p>
+                        </div>
+                        <div class="spec-card">
+                            <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a.996.996 0 00-1.41 0L9 12.25 11.75 15l8.96-8.96a.996.996 0 000-1.41z" />
+                            </svg>
+                            <h3 class="spec-title">Creatief & Educatief</h3>
+                            <p class="spec-desc">Brengt handgetekende creaties tot leven met levendige animaties.
+                                Stimuleert creativiteit, leren en storytelling.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <div class="glass-panel"
+                    style="padding: 4rem; text-align: center; border-radius: var(--radius-card); background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);">
+                    <h2 class="industrial-label" style="margin-bottom: 1rem;">Interesse?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--color-text-muted);">Vraag een
+                        vrijblijvende offerte aan of neem contact op.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/31623998934?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20de%20Interactieve%20Tekeningen."
+                            target="_blank" class="btn"
+                            style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 1rem 2.5rem;">Offerte
+                            Aanvragen</a>
+                        <a href="../prijzen.html" class="btn" style="border-radius: 999px; padding: 1rem 2.5rem;">Bekijk
+                            Prijzen</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-opaque-light">
+                <div class="container">
+                    <h2 class="industrial-label" style="text-align: center; margin-bottom: 2rem;">Andere Producten</h2>
+                    <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
+                        <div class="pricing-card" style="text-align: center;">
+                            <h3 class="pricing-title">Interactieve Muur</h3>
+                            <p style="color: #666; margin-bottom: 1.5rem;">Wandprojectie voor sport en educatie</p>
+                            <a href="interactieve-muur.html" class="btn"
+                                style="width: 100%; border-radius: 999px;">Bekijk</a>
+                        </div>
+                        <div class="pricing-card" style="text-align: center;">
+                            <h3 class="pricing-title">Interactieve Vloer</h3>
+                            <p style="color: #666; margin-bottom: 1.5rem;">Vloerprojectie voor allerlei ruimtes</p>
+                            <a href="interactieve-vloer.html" class="btn"
+                                style="width: 100%; border-radius: 999px;">Bekijk</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-professional">
+            <div class="footer-container">
+                <div class="footer-column footer-brand">
+                    <img src="../media/logo-final.png" alt="Inter Active Move" class="footer-logo">
+                    <p class="footer-tagline">Beweeg, Leer en Speel met Inter Active Move</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg></a>
+                        <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg></a>
+                        <a href="#" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                                <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../bouw-een-park.html">Bouw een Park</a></li>
+                        <li><a href="../over-ons.html">Over Ons</a></li>
+                        <li><a href="../prijzen.html">Prijzen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Producten</h4>
+                    <ul class="footer-links">
+                        <li><a href="interactieve-vloer.html">Interactieve Vloer</a></li>
+                        <li><a href="interactieve-muur.html">Interactieve Muur</a></li>
+                        <li><a href="interactieve-zandbak.html">Interactieve Zandbak</a></li>
+                        <li><a href="interactieve-tekeningen.html">Interactieve Tekeningen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact</h4>
+                    <div class="footer-contact">
+                        <p><strong>Inter Active Move B.V.</strong></p>
+                        <p>Smitspol 15K, 3861RS Nijkerk</p>
+                        <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                        <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a>
+                        </p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Inter Active Move B.V. Alle rechten voorbehouden.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('active'); }
+        function closeMobileNav() { document.getElementById('mobileNav').classList.remove('active'); }
+    </script>
+    <script src="../projector.js"></script>
+
+    <script>
+        // Check URL on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang');
+            if (lang === 'en') {
+                htmx.ajax('GET', '../partials/products/interactieve-tekeningen-en.html', '#page-wrapper');
+            }
+        });
+    </script>
+
+    <!-- Cookie Consent (GDPR Compliance) -->
+    <script src="/js/cookie-consent.js"></script>
+</body>
+
+</html>
