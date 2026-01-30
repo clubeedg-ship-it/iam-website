@@ -1,7 +1,8 @@
 import os
 import re
 
-ROOT_DIR = '/Users/ottogen/Projects/Misc-Projects/flyer-iam/iam-website'
+# Dynamically determine project root (parent of 'tools' directory)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PARTIALS_DIR = os.path.join(ROOT_DIR, 'partials')
 
 # Translation Dictionary for automated replacement in EN partials

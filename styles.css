@@ -1,3 +1,30 @@
+/*! 
+ * InterActiveMove Website Stylesheet
+ * Version: 2.0
+ * Last Updated: 2026-01-30
+ * 
+ * TABLE OF CONTENTS
+ * =================
+ * 1. FONTS (Self-hosted for GDPR compliance)
+ * 2. CSS CUSTOM PROPERTIES (Design Tokens)
+ * 3. GLOBAL RESET & HTML BASE
+ * 4. TYPOGRAPHY
+ * 5. LAYOUT (Container, Sections)
+ * 6. HEADER & NAVIGATION
+ * 7. HERO SECTIONS
+ * 8. BUTTONS & INTERACTIVE ELEMENTS
+ * 9. CARDS (Pricing, Pattern, Product)
+ * 10. FORMS
+ * 11. FOOTER
+ * 12. PAGE-SPECIFIC STYLES
+ * 13. ANIMATIONS & TRANSITIONS
+ * 14. ACCESSIBILITY & REDUCED MOTION
+ * 15. RESPONSIVE BREAKPOINTS
+ */
+
+/* ===========================================================
+   1. FONTS - Self-hosted Inter font for GDPR compliance
+   =========================================================== */
 /* Self-hosted Inter font for GDPR compliance */
 @font-face {
     font-family: 'Inter';
@@ -59,11 +86,9 @@
     --radius-btn: 999px;
 }
 
-/* Smooth Scroll Behavior (Phase 4 Polish) */
-html {
-    scroll-behavior: smooth;
-}
-
+/* ===========================================================
+   GLOBAL RESET & HTML BASE
+   =========================================================== */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -2290,12 +2315,19 @@ nav {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateX(-50%) translateY(0);
     }
+
     40% {
         transform: translateX(-50%) translateY(-10px);
     }
+
     60% {
         transform: translateX(-50%) translateY(-5px);
     }
@@ -2525,6 +2557,7 @@ textarea:focus-visible {
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -2620,6 +2653,7 @@ textarea:invalid:not(:placeholder-shown) {
 
 /* Touch target minimum size */
 @media (pointer: coarse) {
+
     .btn,
     .btn-primary,
     .btn-secondary,
@@ -2667,7 +2701,8 @@ textarea:invalid:not(:placeholder-shown) {
 .video-placeholder {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     background: var(--color-bg-dark);
     border-radius: var(--radius-card);
     overflow: hidden;
@@ -2709,7 +2744,8 @@ textarea:invalid:not(:placeholder-shown) {
     width: 32px;
     height: 32px;
     fill: #000;
-    margin-left: 4px; /* Optical centering for play icon */
+    margin-left: 4px;
+    /* Optical centering for play icon */
 }
 
 .video-placeholder:hover .video-play-button {
@@ -2718,9 +2754,12 @@ textarea:invalid:not(:placeholder-shown) {
 }
 
 @keyframes pulse-play {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 4px 20px rgba(254, 186, 4, 0.5);
     }
+
     50% {
         box-shadow: 0 4px 30px rgba(254, 186, 4, 0.8);
     }
@@ -4235,7 +4274,7 @@ textarea:invalid:not(:placeholder-shown) {
     direction: rtl;
 }
 
-.feature-row-reverse > * {
+.feature-row-reverse>* {
     direction: ltr;
 }
 
@@ -4706,7 +4745,7 @@ textarea:invalid:not(:placeholder-shown) {
     margin-bottom: 1rem;
 }
 
-.cta-content > p {
+.cta-content>p {
     color: var(--color-text-on-dark);
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -4929,14 +4968,37 @@ textarea:invalid:not(:placeholder-shown) {
 }
 
 /* Stagger delays for grid items */
-.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
-.reveal-stagger > *:nth-child(2) { transition-delay: 100ms; }
-.reveal-stagger > *:nth-child(3) { transition-delay: 200ms; }
-.reveal-stagger > *:nth-child(4) { transition-delay: 300ms; }
-.reveal-stagger > *:nth-child(5) { transition-delay: 400ms; }
-.reveal-stagger > *:nth-child(6) { transition-delay: 500ms; }
-.reveal-stagger > *:nth-child(7) { transition-delay: 600ms; }
-.reveal-stagger > *:nth-child(8) { transition-delay: 700ms; }
+.reveal-stagger>*:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.reveal-stagger>*:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.reveal-stagger>*:nth-child(3) {
+    transition-delay: 200ms;
+}
+
+.reveal-stagger>*:nth-child(4) {
+    transition-delay: 300ms;
+}
+
+.reveal-stagger>*:nth-child(5) {
+    transition-delay: 400ms;
+}
+
+.reveal-stagger>*:nth-child(6) {
+    transition-delay: 500ms;
+}
+
+.reveal-stagger>*:nth-child(7) {
+    transition-delay: 600ms;
+}
+
+.reveal-stagger>*:nth-child(8) {
+    transition-delay: 700ms;
+}
 
 /* Counter animation for stats */
 @keyframes countUp {
@@ -4944,6 +5006,7 @@ textarea:invalid:not(:placeholder-shown) {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -5038,6 +5101,7 @@ textarea:invalid:not(:placeholder-shown) {
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
+
     .reveal,
     .reveal-fade-up,
     .reveal-fade-left,
@@ -5054,7 +5118,7 @@ textarea:invalid:not(:placeholder-shown) {
         transition: none;
     }
 
-    .reveal-stagger > * {
+    .reveal-stagger>* {
         transition-delay: 0ms !important;
     }
 }
@@ -5398,4 +5462,51 @@ textarea:invalid:not(:placeholder-shown) {
 
 .whatsapp-privacy-notice a {
     color: var(--color-primary);
+}
+
+/* ===========================================================
+   HTMX LOADING STATES
+   =========================================================== */
+
+/* Language toggle loading indicator */
+.lang-btn.htmx-request {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.lang-btn.htmx-request::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 2px solid transparent;
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: htmx-spinner 0.6s linear infinite;
+}
+
+@keyframes htmx-spinner {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+/* Smooth transition during content swap */
+.htmx-request #page-wrapper,
+#page-wrapper.htmx-swapping {
+    opacity: 0.7;
+    transition: opacity 0.15s ease-out;
+}
+
+#page-wrapper {
+    transition: opacity 0.15s ease-in;
+}
+
+/* Settling state after swap complete */
+.htmx-settling {
+    opacity: 1;
 }
