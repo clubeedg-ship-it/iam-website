@@ -507,3 +507,60 @@ function initBackToTop() {
 
 // Initialize back to top button
 document.addEventListener('DOMContentLoaded', initBackToTop);
+
+// ==========================================
+// ROADMAP SCROLL ANIMATION (Interactive Steps)
+// ==========================================
+
+function initRoadmapScrollAnimation() {
+    const roadmapSection = document.querySelector('.how-it-works.scroll-animated');
+    if (!roadmapSection) return;
+
+    const stepItems = roadmapSection.querySelectorAll('.step-item');
+    if (stepItems.length === 0) return;
+
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        stepItems.forEach(step => step.classList.add('step-visible'));
+        roadmapSection.classList.add('steps-complete');
+        return;
+    }
+
+    let animationTriggered = false;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -20% 0px',
+        threshold: 0.3
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animationTriggered) {
+                animationTriggered = true;
+                
+                // Reveal steps sequentially
+                stepItems.forEach((step, index) => {
+                    setTimeout(() => {
+                        step.classList.add('step-visible');
+                        
+                        // After last step, add complete class for the connecting line
+                        if (index === stepItems.length - 1) {
+                            setTimeout(() => {
+                                roadmapSection.classList.add('steps-complete');
+                            }, 300);
+                        }
+                    }, index * 250); // 250ms between each step
+                });
+
+                // Unobserve after triggering
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sectionObserver.observe(roadmapSection);
+}
+
+// Initialize roadmap animation
+document.addEventListener('DOMContentLoaded', initRoadmapScrollAnimation);

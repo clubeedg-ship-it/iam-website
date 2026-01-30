@@ -2424,6 +2424,98 @@ nav {
     }
 }
 
+/* Scroll-triggered Step Animation */
+.how-it-works.scroll-animated {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.how-it-works.scroll-animated .step-item {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.how-it-works.scroll-animated .step-item.step-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.how-it-works.scroll-animated .step-number {
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.how-it-works.scroll-animated .step-item.step-visible .step-number {
+    transform: scale(1);
+}
+
+/* Animated connecting line */
+.how-it-works.scroll-animated .steps-container::before {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.how-it-works.scroll-animated.steps-complete .steps-container::before {
+    transform: scaleX(1);
+}
+
+/* Pulse effect when step becomes visible */
+@keyframes stepPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(254, 186, 4, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(254, 186, 4, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(254, 186, 4, 0);
+    }
+}
+
+.how-it-works.scroll-animated .step-item.step-visible .step-number {
+    animation: stepPulse 0.8s ease-out;
+}
+
+/* Stagger delays for each step */
+.how-it-works.scroll-animated .step-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(1) .step-number {
+    transition-delay: 0.1s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(2) .step-number {
+    transition-delay: 0.25s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(3) .step-number {
+    transition-delay: 0.4s;
+}
+
+.how-it-works.scroll-animated .step-item:nth-child(4) .step-number {
+    transition-delay: 0.55s;
+}
+
 /* Final CTA Section */
 .final-cta-section {
     background: linear-gradient(135deg, var(--color-bg-dark) 0%, #2a2b30 100%);
