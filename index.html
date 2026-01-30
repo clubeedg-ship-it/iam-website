@@ -756,8 +756,8 @@
     <script src="projector.js"></script>
     <script>
         // Scroll-triggered animations using Intersection Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check if user prefers reduced motion
+        // Extracted into function so it can run after HTMX content swaps
+        function initScrollAnimations() {
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             if (!prefersReducedMotion) {
@@ -774,16 +774,16 @@
                     });
                 }, observerOptions);
 
-                // Add animation class to elements
-                const animateElements = document.querySelectorAll('.stat-item, .testimonial-card, .step-item, .pricing-card, .spec-card');
+                // Add animation class to elements that haven't been processed yet
+                const animateElements = document.querySelectorAll('.stat-item:not(.animate-on-scroll), .testimonial-card:not(.animate-on-scroll), .step-item:not(.animate-on-scroll), .pricing-card:not(.animate-on-scroll), .spec-card:not(.animate-on-scroll)');
                 animateElements.forEach(el => {
                     el.classList.add('animate-on-scroll');
                     observer.observe(el);
                 });
             }
 
-            // Animated number counter for stats
-            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+            // Animated number counter for stats (only unprocessed ones)
+            const statNumbers = document.querySelectorAll('.stat-number[data-target]:not([data-counted])');
 
             const countObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -812,13 +812,20 @@
                         if (!prefersReducedMotion) {
                             requestAnimationFrame(updateCount);
                         }
+                        entry.target.setAttribute('data-counted', 'true');
                         countObserver.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.5 });
 
             statNumbers.forEach(stat => countObserver.observe(stat));
-        });
+        }
+
+        // Run on initial page load
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+        // Re-run after HTMX swaps content (this is the key fix!)
+        document.body.addEventListener('htmx:afterSettle', initScrollAnimations);
     </script>
     <!-- Cookie Consent (GDPR Compliance) -->
     <script src="/js/cookie-consent.js"></script>
