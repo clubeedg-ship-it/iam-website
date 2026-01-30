@@ -759,30 +759,60 @@
         // Extracted into function so it can run after HTMX content swaps
         function initScrollAnimations() {
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
 
-            if (!prefersReducedMotion) {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
+            // === ROADMAP SECTION ANIMATION ===
+            // Uses 'step-visible' class with stagger delays defined in CSS
+            const roadmapSection = document.querySelector('.how-it-works.scroll-animated:not([data-observed])');
+            if (roadmapSection) {
+                roadmapSection.setAttribute('data-observed', 'true');
+                
+                const roadmapObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.classList.add('animate-in');
+                            // Add step-visible to each step-item with stagger
+                            const steps = entry.target.querySelectorAll('.step-item');
+                            steps.forEach((step, index) => {
+                                setTimeout(() => {
+                                    step.classList.add('step-visible');
+                                }, index * 150); // 150ms stagger
+                            });
+                            
+                            // Trigger line animation after all steps visible
+                            setTimeout(() => {
+                                entry.target.classList.add('steps-complete');
+                            }, steps.length * 150);
+                            
+                            roadmapObserver.unobserve(entry.target);
                         }
                     });
-                }, observerOptions);
-
-                // Add animation class to elements that haven't been processed yet
-                const animateElements = document.querySelectorAll('.stat-item:not(.animate-on-scroll), .testimonial-card:not(.animate-on-scroll), .step-item:not(.animate-on-scroll), .pricing-card:not(.animate-on-scroll), .spec-card:not(.animate-on-scroll)');
-                animateElements.forEach(el => {
-                    el.classList.add('animate-on-scroll');
-                    observer.observe(el);
-                });
+                }, { threshold: 0.2 });
+                
+                roadmapObserver.observe(roadmapSection);
             }
 
-            // Animated number counter for stats (only unprocessed ones)
+            // === GENERAL SCROLL ANIMATIONS ===
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Add animation class to elements (exclude step-items - handled above)
+            const animateElements = document.querySelectorAll('.stat-item:not(.animate-on-scroll), .testimonial-card:not(.animate-on-scroll), .pricing-card:not(.animate-on-scroll), .spec-card:not(.animate-on-scroll)');
+            animateElements.forEach(el => {
+                el.classList.add('animate-on-scroll');
+                observer.observe(el);
+            });
+
+            // === ANIMATED NUMBER COUNTER ===
             const statNumbers = document.querySelectorAll('.stat-number[data-target]:not([data-counted])');
 
             const countObserver = new IntersectionObserver((entries) => {
@@ -795,8 +825,6 @@
                         function updateCount(currentTime) {
                             const elapsed = currentTime - startTime;
                             const progress = Math.min(elapsed / duration, 1);
-
-                            // Easing function for smooth animation
                             const easeOut = 1 - Math.pow(1 - progress, 3);
                             const current = Math.floor(target * easeOut);
 
@@ -809,9 +837,7 @@
                             }
                         }
 
-                        if (!prefersReducedMotion) {
-                            requestAnimationFrame(updateCount);
-                        }
+                        requestAnimationFrame(updateCount);
                         entry.target.setAttribute('data-counted', 'true');
                         countObserver.unobserve(entry.target);
                     }
