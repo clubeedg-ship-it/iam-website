@@ -1,38 +1,3 @@
-<!DOCTYPE html>
-<html lang="nl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacybeleid | InterActiveMove</title>
-    <meta name="description"
-        content="Privacybeleid van Inter Active Move B.V. Lees hoe wij omgaan met uw persoonsgegevens.">
-    <link rel="icon" href="media/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=1.4">
-    <script src="/js/htmx.min.js"></script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KPX78C22');</script>
-<!-- End Google Tag Manager -->
-</head>
-
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPX78C22"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Ga naar inhoud</a>
-
-    <!-- Global Background Canvas -->
-    <div id="global-canvas-container">
-        <canvas id="projector-canvas"></canvas>
-    </div>
-
-    <div id="page-wrapper">
         <header>
             <a href="index.html">
                 <img src="media/logo-final.png" alt="InterActiveMove" class="logo-img">
@@ -289,37 +254,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>&copy; 2026 Inter Active Move B.V. Alle rechten voorbehouden.</p>
             </div>
         </footer>
-    </div>
-
-    <script>
-        function toggleMobileNav() {
-            document.getElementById('mobileNav').classList.toggle('active');
-        }
-        function closeMobileNav() {
-            document.getElementById('mobileNav').classList.remove('active');
-        }
-
-        function syncLang(lang) {
-            document.querySelectorAll('[data-nl][data-en]').forEach(el => {
-                el.textContent = el.getAttribute('data-' + lang) || el.textContent;
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const lang = new URLSearchParams(window.location.search).get('lang');
-            if (lang === 'en') {
-                htmx.ajax('GET', 'partials/privacybeleid-en.html', '#page-wrapper');
-                syncLang('en');
-            }
-        });
-
-        document.body.addEventListener('htmx:pushedIntoHistory', () => {
-            const lang = new URLSearchParams(window.location.search).get('lang') || 'nl';
-            syncLang(lang);
-        });
-    </script>
-    <script src="projector.js"></script>
-    <script src="/js/contact-form.js"></script>
-</body>
-
-</html>

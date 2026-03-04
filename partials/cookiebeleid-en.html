@@ -1,0 +1,242 @@
+<header>
+        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+        <nav>
+                    <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+                    <a href="products/interactieve-muur.html">Interactive Wall</a>
+                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="products/interactieve-tekeningen.html">Interactive Drawings</a>
+                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+                    <a href="products/software-maatwerk.html">Software & Custom</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Solutions</button>
+                <div class="dropdown-menu">
+                    <a href="bouw-een-park.html">Build a Park</a>
+                    <a href="3d-spellen.html">3D Games</a>
+                    <a href="parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="onderwijs.html">Education</a>
+                    <a href="zorg-revalidatie.html">Healthcare & Rehab</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">About Us</button>
+                <div class="dropdown-menu">
+                    <a href="over-ons.html">About Inter Active Move</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="products/mobiele-vloer.html" class="nav-link">Rental</a>
+            </li>
+            <li class="nav-item">
+                <a href="prijzen.html" class="nav-link">Prices</a>
+            </li>
+        </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn" hx-get="partials/cookiebeleid-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+                <span class="divider">|</span>
+                <button class="lang-btn active" hx-get="partials/cookiebeleid-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+            </div>
+
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="closeMobileNav()">Home</a>
+        <a href="products/interactieve-vloer.html">Interactive Floor</a>
+        <a href="products/interactieve-muur.html">Interactive Wall</a>
+        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+        <a href="products/mobiele-vloer.html">Mobile Floor</a>
+        <a href="products/software-maatwerk.html">Software & Customization</a>
+        <a href="bouw-een-park.html">Build a Park</a>
+        <a href="3d-spellen.html">3D Games</a>
+        <a href="parken-speelhallen.html">Parks & Arcades</a>
+        <a href="onderwijs.html">Education</a>
+        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+        <a href="over-ons.html">About Us</a>
+        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <main id="main-content">
+            <section class="section section-opaque-light" style="padding-top: 120px;">
+                <div class="container">
+                    <article class="legal-content">
+                        <h1 class="industrial-label">Cookie Policy</h1>
+                        <p class="legal-updated"><strong>Last updated:</strong> January 2026</p>
+
+                        <h2>What are cookies?</h2>
+                        <p>
+                            Cookies are small text files stored on your device when you visit our website.
+                            They help us make the website function properly and improve it.
+                        </p>
+
+                        <h2>Which cookies do we use?</h2>
+
+                        <h3>Necessary cookies</h3>
+                        <p>These cookies are essential for the website to function and cannot be disabled.</p>
+                        <table class="legal-table">
+                            <thead>
+                                <tr>
+                                    <th>Cookie</th>
+                                    <th>Purpose</th>
+                                    <th>Retention period</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>iam_consent</td>
+                                    <td>Remembers your cookie preferences</td>
+                                    <td>1 year</td>
+                                </tr>
+                                <tr>
+                                    <td>lang</td>
+                                    <td>Remembers your language preference (NL/EN)</td>
+                                    <td>1 year</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Analytical cookies</h3>
+                        <p>
+                            <strong>We currently do not use analytical cookies.</strong>
+                        </p>
+                        <p>
+                            Should we add analytics in the future, we will ask for your consent first.
+                            These cookies help us understand how visitors use our website.
+                        </p>
+
+                        <h3>Marketing cookies</h3>
+                        <p>
+                            <strong>We do not use marketing cookies.</strong>
+                        </p>
+                        <p>
+                            We do not place cookies for advertisements or tracking of your browsing
+                            behavior on other websites.
+                        </p>
+
+                        <h2>External services</h2>
+                        <p>
+                            To protect your privacy, we have taken the following measures:
+                        </p>
+                        <ul>
+                            <li><strong>Fonts:</strong> We host all fonts locally (no Google Fonts)</li>
+                            <li><strong>Scripts:</strong> HTMX is hosted locally (no external CDN)</li>
+                            <li><strong>Analytics:</strong> Currently not in use</li>
+                            <li><strong>Advertisements:</strong> We do not display advertisements</li>
+                        </ul>
+
+                        <h2>WhatsApp</h2>
+                        <p>
+                            When you click a WhatsApp link, you will be redirected to WhatsApp
+                            (owned by Meta). Meta may place cookies according to their own policy.
+                            We have no control over this. See the
+                            <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">
+                                WhatsApp privacy policy
+                            </a> for more information.
+                        </p>
+
+                        <h2>Managing cookies</h2>
+                        <p>
+                            You can change your cookie preferences at any time by clicking the
+                            "Cookie settings" button at the bottom of the page.
+                        </p>
+                        <p>
+                            You can also block or delete cookies through your browser settings:
+                        </p>
+                        <ul>
+                            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+                            <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+                            <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+                            <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+                        </ul>
+                        <p>
+                            <strong>Please note:</strong> Disabling necessary cookies may limit the
+                            functionality of the website.
+                        </p>
+
+                        <h2>Changes</h2>
+                        <p>
+                            We may change this cookie policy. The most recent version is always
+                            available on this page with the date of the last modification.
+                        </p>
+
+                        <h2>Contact</h2>
+                        <p>
+                            Questions about cookies? Contact us at
+                            <a href="mailto:privacy@interactivemove.nl">privacy@interactivemove.nl</a>.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
+                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bouw-een-park.html">Build a Park</a></li>
+                    <li><a href="over-ons.html">About Us</a></li>
+                    <li><a href="prijzen.html">Prices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
+                    <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
+                    <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
+                    <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>

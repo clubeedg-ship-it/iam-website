@@ -1,0 +1,276 @@
+<header>
+        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+        <nav>
+                    <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+                    <a href="products/interactieve-muur.html">Interactive Wall</a>
+                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="products/interactieve-tekeningen.html">Interactive Drawings</a>
+                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+                    <a href="products/software-maatwerk.html">Software & Custom</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Solutions</button>
+                <div class="dropdown-menu">
+                    <a href="bouw-een-park.html">Build a Park</a>
+                    <a href="3d-spellen.html">3D Games</a>
+                    <a href="parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="onderwijs.html">Education</a>
+                    <a href="zorg-revalidatie.html">Healthcare & Rehab</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">About Us</button>
+                <div class="dropdown-menu">
+                    <a href="over-ons.html">About Inter Active Move</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="products/mobiele-vloer.html" class="nav-link">Rental</a>
+            </li>
+            <li class="nav-item">
+                <a href="prijzen.html" class="nav-link">Prices</a>
+            </li>
+        </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn" hx-get="partials/privacybeleid-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+                <span class="divider">|</span>
+                <button class="lang-btn active" hx-get="partials/privacybeleid-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+            </div>
+
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="closeMobileNav()">Home</a>
+        <a href="products/interactieve-vloer.html">Interactive Floor</a>
+        <a href="products/interactieve-muur.html">Interactive Wall</a>
+        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+        <a href="products/mobiele-vloer.html">Mobile Floor</a>
+        <a href="products/software-maatwerk.html">Software & Customization</a>
+        <a href="bouw-een-park.html">Build a Park</a>
+        <a href="3d-spellen.html">3D Games</a>
+        <a href="parken-speelhallen.html">Parks & Arcades</a>
+        <a href="onderwijs.html">Education</a>
+        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+        <a href="over-ons.html">About Us</a>
+        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <main id="main-content">
+            <section class="section section-opaque-light" style="padding-top: 120px;">
+                <div class="container">
+                    <article class="legal-content">
+                        <h1 class="industrial-label">Privacy Policy</h1>
+                        <p class="legal-updated"><strong>Last updated:</strong> January 2026</p>
+
+                        <h2>1. Who are we?</h2>
+                        <p>
+                            <strong>Inter Active Move B.V.</strong><br>
+                            Smitspol 15K<br>
+                            3861RS Nijkerk<br>
+                            The Netherlands<br><br>
+                            Chamber of Commerce: 96157895<br>
+                            Email: <a href="mailto:privacy@interactivemove.nl">privacy@interactivemove.nl</a>
+                        </p>
+
+                        <h2>2. What personal data do we process?</h2>
+
+                        <h3>2.1 Data you provide to us</h3>
+                        <ul>
+                            <li>Name</li>
+                            <li>Email address</li>
+                            <li>Phone number</li>
+                            <li>Company name</li>
+                            <li>Content of your message</li>
+                        </ul>
+
+                        <h3>2.2 Data collected automatically</h3>
+                        <ul>
+                            <li>IP address (anonymized)</li>
+                            <li>Browser type and version</li>
+                            <li>Device type</li>
+                            <li>Pages visited</li>
+                            <li>Date and time of visit</li>
+                        </ul>
+
+                        <h2>3. What do we use your data for?</h2>
+                        <table class="legal-table">
+                            <thead>
+                                <tr>
+                                    <th>Purpose</th>
+                                    <th>Legal basis</th>
+                                    <th>Retention period</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Answering questions</td>
+                                    <td>Consent / Legitimate interest</td>
+                                    <td>2 years after last contact</td>
+                                </tr>
+                                <tr>
+                                    <td>Creating quotations</td>
+                                    <td>Performance of contract</td>
+                                    <td>7 years (fiscal retention obligation)</td>
+                                </tr>
+                                <tr>
+                                    <td>Sending newsletters</td>
+                                    <td>Consent</td>
+                                    <td>Until withdrawal of consent</td>
+                                </tr>
+                                <tr>
+                                    <td>Improving the website</td>
+                                    <td>Consent (analytics)</td>
+                                    <td>26 months</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>4. Do we share your data?</h2>
+                        <p>We share your data with:</p>
+                        <ul>
+                            <li><strong>WhatsApp/Meta</strong> (for communication via WhatsApp) - see section 4.1</li>
+                            <li><strong>Hosting provider</strong> (website hosting within the EU)</li>
+                        </ul>
+                        <p>We conclude data processing agreements with these parties.</p>
+
+                        <h3>4.1 WhatsApp communication</h3>
+                        <p>
+                            When you contact us via WhatsApp, your messages and contact details are
+                            processed by Meta Platforms Inc. (US). Meta processes this data according to their
+                            privacy policy and based on the Standard Contractual Clauses of the European Commission.
+                        </p>
+
+                        <h2>5. Your rights</h2>
+                        <p>You have the following rights under the GDPR:</p>
+                        <ul>
+                            <li><strong>Access:</strong> You can request which data we hold about you</li>
+                            <li><strong>Rectification:</strong> You can have incorrect data corrected</li>
+                            <li><strong>Erasure:</strong> You can request deletion of your data</li>
+                            <li><strong>Restriction:</strong> You can request restriction of processing</li>
+                            <li><strong>Objection:</strong> You can object to processing</li>
+                            <li><strong>Portability:</strong> You can receive your data in a digital format</li>
+                        </ul>
+                        <p>
+                            Contact us at <a href="mailto:privacy@interactivemove.nl">privacy@interactivemove.nl</a>.
+                            We will respond to your request within 30 days.
+                        </p>
+
+                        <h2>6. Security</h2>
+                        <p>We take appropriate measures to protect your data:</p>
+                        <ul>
+                            <li>SSL/TLS encryption on our website</li>
+                            <li>Limited access to personal data</li>
+                            <li>Regular security updates</li>
+                            <li>No external tracking services or fonts (self-hosted)</li>
+                        </ul>
+
+                        <h2>7. Cookies</h2>
+                        <p>
+                            See our <a href="cookiebeleid.html">Cookie Policy</a> for information about cookies
+                            we use.
+                        </p>
+
+                        <h2>8. Changes</h2>
+                        <p>
+                            We may change this privacy policy. The most recent version is always
+                            available on this page with the date of the last modification.
+                        </p>
+
+                        <h2>9. Complaints</h2>
+                        <p>
+                            Do you have a complaint about how we handle your data? Contact us at
+                            <a href="mailto:privacy@interactivemove.nl">privacy@interactivemove.nl</a>.
+                        </p>
+                        <p>
+                            You can also file a complaint with the Dutch Data Protection Authority:<br>
+                            <a href="https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap" target="_blank" rel="noopener">
+                                autoriteitpersoonsgegevens.nl
+                            </a>
+                        </p>
+
+                        <h2>10. Contact</h2>
+                        <p>
+                            <strong>Inter Active Move B.V.</strong><br>
+                            Smitspol 15K<br>
+                            3861RS Nijkerk<br>
+                            The Netherlands<br><br>
+                            Email: <a href="mailto:privacy@interactivemove.nl">privacy@interactivemove.nl</a><br>
+                            Phone: <a href="tel:+31623998934">+31 6 23 99 89 34</a>
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
+                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bouw-een-park.html">Build a Park</a></li>
+                    <li><a href="over-ons.html">About Us</a></li>
+                    <li><a href="prijzen.html">Prices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
+                    <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
+                    <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
+                    <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>

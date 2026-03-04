@@ -55,9 +55,9 @@
             return;
         }
 
-        const isNL = document.documentElement.lang === 'nl' ||
-                     window.location.search.includes('lang=nl') ||
-                     !window.location.search.includes('lang=');
+        const isNL = !(window.location.search.includes('lang=en') ||
+                      document.documentElement.lang === 'en' ||
+                      document.querySelector('.lang-btn.active')?.textContent?.trim() === 'EN');
 
         const texts = isNL ? {
             title: 'Wij respecteren uw privacy',
@@ -134,10 +134,13 @@
         return getConsent();
     };
 
-    // Initialize on DOM ready
+    // Initialize after a short delay so HTMX can push ?lang= into URL first
+    function init() {
+        setTimeout(showBanner, 500);
+    }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', showBanner);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        showBanner();
+        init();
     }
 })();
