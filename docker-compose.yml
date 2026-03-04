@@ -29,6 +29,7 @@ services:
       database__connection__user: ghost
       database__connection__password: ${GHOST_DB_PASSWORD}
       database__connection__database: ghost
+      mail__from: noreply@interactivemove.nl
       privacy__useRpcPing: "false"
       privacy__useUpdateCheck: "false"
     volumes:

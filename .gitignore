@@ -26,3 +26,6 @@ venv/
 
 # Logs
 *.log
+
+# Docker environment
+.env.docker
