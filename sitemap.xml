@@ -66,6 +66,18 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Partner & Game Editor Pages -->
+  <url>
+    <loc>https://interactivemove.nl/word-partner.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interactivemove.nl/maak-je-spel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Company Pages -->
   <url>
     <loc>https://interactivemove.nl/over-ons.html</loc>

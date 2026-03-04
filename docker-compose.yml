@@ -1,0 +1,67 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: iam-nginx
+    restart: unless-stopped
+    ports:
+      - "3007:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - ghost
+    networks:
+      - iam-net
+
+  ghost:
+    image: ghost:6-alpine
+    container_name: iam-ghost
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      url: http://localhost:3007
+      database__client: mysql
+      database__connection__host: mysql
+      database__connection__port: 3306
+      database__connection__user: ghost
+      database__connection__password: ${GHOST_DB_PASSWORD}
+      database__connection__database: ghost
+      privacy__useRpcPing: "false"
+      privacy__useUpdateCheck: "false"
+    volumes:
+      - ghost-content:/var/lib/ghost/content
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - iam-net
+
+  mysql:
+    image: mysql:8.0
+    container_name: iam-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ghost
+      MYSQL_USER: ghost
+      MYSQL_PASSWORD: ${GHOST_DB_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - iam-net
+
+volumes:
+  ghost-content:
+  mysql-data:
+
+networks:
+  iam-net:
+    driver: bridge

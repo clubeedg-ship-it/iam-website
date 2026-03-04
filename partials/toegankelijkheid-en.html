@@ -1,0 +1,217 @@
+<header>
+        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+        <nav>
+                    <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <button class="nav-link">Products</button>
+                <div class="dropdown-menu">
+                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
+                    <a href="products/interactieve-muur.html">Interactive Wall</a>
+                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+                    <a href="products/interactieve-tekeningen.html">Interactive Drawings</a>
+                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
+                    <a href="products/software-maatwerk.html">Software & Custom</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">Solutions</button>
+                <div class="dropdown-menu">
+                    <a href="bouw-een-park.html">Build a Park</a>
+                    <a href="3d-spellen.html">3D Games</a>
+                    <a href="parken-speelhallen.html">Parks & Arcades</a>
+                    <a href="onderwijs.html">Education</a>
+                    <a href="zorg-revalidatie.html">Healthcare & Rehab</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="nav-link">About Us</button>
+                <div class="dropdown-menu">
+                    <a href="over-ons.html">About Inter Active Move</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="products/mobiele-vloer.html" class="nav-link">Rental</a>
+            </li>
+            <li class="nav-item">
+                <a href="prijzen.html" class="nav-link">Prices</a>
+            </li>
+        </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn" hx-get="partials/toegankelijkheid-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+                <span class="divider">|</span>
+                <button class="lang-btn active" hx-get="partials/toegankelijkheid-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+            </div>
+
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="closeMobileNav()">Home</a>
+        <a href="products/interactieve-vloer.html">Interactive Floor</a>
+        <a href="products/interactieve-muur.html">Interactive Wall</a>
+        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
+        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
+        <a href="products/mobiele-vloer.html">Mobile Floor</a>
+        <a href="products/software-maatwerk.html">Software & Customization</a>
+        <a href="bouw-een-park.html">Build a Park</a>
+        <a href="3d-spellen.html">3D Games</a>
+        <a href="parken-speelhallen.html">Parks & Arcades</a>
+        <a href="onderwijs.html">Education</a>
+        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
+        <a href="over-ons.html">About Us</a>
+        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <main id="main-content">
+            <section class="section section-opaque-light" style="padding-top: 120px;">
+                <div class="container">
+                    <article class="legal-content">
+                        <h1 class="industrial-label">Accessibility Statement</h1>
+                        <p class="legal-updated"><strong>Last updated:</strong> January 2026</p>
+
+                        <h2>Our commitment</h2>
+                        <p>
+                            Inter Active Move B.V. strives to make this website accessible to everyone,
+                            including people with disabilities. We believe that the web should be available
+                            to everyone, regardless of physical or cognitive limitations.
+                        </p>
+
+                        <h2>Accessibility standard</h2>
+                        <p>
+                            We aim for conformity with the <strong>Web Content Accessibility Guidelines
+                            (WCAG) 2.1 level AA</strong>. These guidelines help make web content more accessible
+                            to people with various disabilities, including:
+                        </p>
+                        <ul>
+                            <li>Visual impairments (blindness, low vision, color blindness)</li>
+                            <li>Hearing impairments (deafness, hard of hearing)</li>
+                            <li>Motor impairments</li>
+                            <li>Cognitive impairments</li>
+                        </ul>
+
+                        <h2>Measures we have taken</h2>
+                        <ul>
+                            <li><strong>Keyboard navigation:</strong> The website is fully navigable with the keyboard</li>
+                            <li><strong>Skip link:</strong> A "Skip to content" link is available for screen readers</li>
+                            <li><strong>Language attribute:</strong> Pages have the correct language attribute (nl/en)</li>
+                            <li><strong>Alt texts:</strong> Images have descriptive alternative texts</li>
+                            <li><strong>Contrast:</strong> We strive for sufficient color contrast</li>
+                            <li><strong>Forms:</strong> Form fields have clear labels</li>
+                            <li><strong>Responsive design:</strong> The website works on various screen sizes</li>
+                            <li><strong>Reduced motion:</strong> Animations respect the "prefers-reduced-motion" setting</li>
+                        </ul>
+
+                        <h2>Known limitations</h2>
+                        <p>
+                            Despite our efforts, some parts of the website may not yet be fully accessible:
+                        </p>
+                        <ul>
+                            <li>Some older images may lack detailed alt texts</li>
+                            <li>The interactive canvas background is decorative and not accessible, but contains no essential information</li>
+                            <li>Videos currently do not include subtitles</li>
+                        </ul>
+                        <p>
+                            We are continuously working on improving accessibility.
+                        </p>
+
+                        <h2>Compatibility</h2>
+                        <p>This website is designed to be compatible with:</p>
+                        <ul>
+                            <li>Modern browsers (Chrome, Firefox, Safari, Edge)</li>
+                            <li>Screen readers (NVDA, JAWS, VoiceOver)</li>
+                            <li>Mobile devices and tablets</li>
+                        </ul>
+
+                        <h2>Feedback and contact</h2>
+                        <p>
+                            Are you experiencing accessibility issues on our website? We would love to hear from you.
+                            Your feedback helps us improve the website.
+                        </p>
+                        <p>
+                            <strong>Contact us:</strong><br>
+                            Email: <a href="mailto:toegankelijkheid@interactivemove.nl">toegankelijkheid@interactivemove.nl</a><br>
+                            Phone: <a href="tel:+31623998934">+31 6 23 99 89 34</a>
+                        </p>
+                        <p>
+                            We aim to respond to accessibility inquiries within 5 business days.
+                        </p>
+
+                        <h2>Enforcement procedure</h2>
+                        <p>
+                            If you are not satisfied with our response to your accessibility complaint,
+                            you can contact:
+                        </p>
+                        <p>
+                            <strong>Netherlands Institute for Human Rights</strong><br>
+                            <a href="https://www.mensenrechten.nl" target="_blank" rel="noopener">www.mensenrechten.nl</a>
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
+                <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bouw-een-park.html">Build a Park</a></li>
+                    <li><a href="over-ons.html">About Us</a></li>
+                    <li><a href="prijzen.html">Prices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
+                    <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
+                    <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
+                    <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
