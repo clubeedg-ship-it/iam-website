@@ -635,6 +635,31 @@
         </div>
     </section>
 
+    <!-- Blog Preview Carousel -->
+    <section class="section section-opaque-dark" id="blog-preview" style="padding: 4rem 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 class="industrial-label" style="margin-bottom: 0;">Laatste Nieuws</h2>
+                <a href="blog.html" style="color: var(--primary, #00d4ff); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                    Bekijk alle artikelen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="blog-carousel-wrapper" style="position: relative;">
+                <button class="blog-carousel-btn blog-carousel-prev" onclick="scrollBlogCarousel(-1)" aria-label="Vorige">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div class="blog-carousel" id="blog-carousel">
+                </div>
+                <button class="blog-carousel-btn blog-carousel-next" onclick="scrollBlogCarousel(1)" aria-label="Volgende">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+            <div id="blog-carousel-empty" style="display:none; text-align:center; padding:2rem; color:rgba(255,255,255,0.4);">
+                Binnenkort: artikelen over interactieve technologie en onderwijs.
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="final-cta-section">
         <div class="container">

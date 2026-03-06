@@ -391,9 +391,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
 
                 <div class="lang-toggle">
-                    <button class="lang-btn active">NL</button>
+                    <button class="lang-btn active" onclick="setBlogLang('nl')">NL</button>
                     <span class="divider">|</span>
-                    <button class="lang-btn">EN</button>
+                    <button class="lang-btn" onclick="setBlogLang('en')">EN</button>
                 </div>
 
                 <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
@@ -456,7 +456,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <section class="hero blog-hero">
                     <div class="hero-content">
                         <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Blog</h1>
-                        <p>Inzichten over interactieve technologie, onderwijs en innovatie</p>
+                        <p data-nl="Inzichten over interactieve technologie, onderwijs en innovatie" data-en="Insights on interactive technology, education and innovation">Inzichten over interactieve technologie, onderwijs en innovatie</p>
                     </div>
                 </section>
 
@@ -480,8 +480,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="empty-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                             </div>
-                            <h3>Binnenkort beschikbaar</h3>
-                            <p>We werken aan interessante artikelen over interactieve technologie en onderwijs.</p>
+                            <h3 data-nl="Binnenkort beschikbaar" data-en="Coming soon">Binnenkort beschikbaar</h3>
+                            <p data-nl="We werken aan interessante artikelen over interactieve technologie en onderwijs." data-en="We're working on interesting articles about interactive technology and education.">We werken aan interessante artikelen over interactieve technologie en onderwijs.</p>
                         </div>
                     </div>
                 </div>
@@ -662,7 +662,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function closeMobileNav() {
             document.getElementById('mobileNav').classList.remove('open');
             document.querySelector('.hamburger').classList.remove('open');
+            document.querySelectorAll('.mobile-dropdown').forEach(d => d.classList.remove('open'));
         }
+
+        function toggleMobileDropdown(btn) {
+            btn.parentElement.classList.toggle('open');
+        }
+
+        // Language switcher
+        function setBlogLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === lang);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Translate static elements
+            document.querySelectorAll('[data-nl][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+            });
+
+            // Update dynamic content labels
+            window._blogLang = lang;
+
+            // Update "Terug naar blog" links
+            document.querySelectorAll('.post-back').forEach(el => {
+                const svg = el.querySelector('svg');
+                const text = lang === 'en' ? ' Back to blog' : ' Terug naar blog';
+                if (svg) { el.innerHTML = ''; el.appendChild(svg); el.append(text); }
+                else el.textContent = lang === 'en' ? '← Back to blog' : '← Terug naar blog';
+            });
+
+            // Update reading time labels
+            document.querySelectorAll('.read-time-label').forEach(el => {
+                el.textContent = lang === 'en' ? 'min read' : 'min lezen';
+            });
+        }
+
+        // Check URL for lang param
+        if (urlParams.get('lang') === 'en') setBlogLang('en');
     </script>
     <script src="/js/cookie-consent.js"></script>
 </body>
