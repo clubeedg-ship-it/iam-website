@@ -1087,7 +1087,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         async function loadBlogCarousel() {
             try {
-                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&fields=id,title,slug,feature_image,custom_excerpt,excerpt,published_at&limit=6`);
+                const isEn = new URLSearchParams(window.location.search).get('lang') === 'en';
+                const langFilter = isEn ? '&filter=tag:hash-en' : '&filter=tag:hash-nl';
+                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&fields=id,title,slug,feature_image,custom_excerpt,excerpt,published_at&limit=6${langFilter}`);
                 const data = await res.json();
                 const carousel = document.getElementById('blog-carousel');
                 if (!carousel) return;

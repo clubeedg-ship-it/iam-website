@@ -525,6 +525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         const GHOST_API = '/ghost/api/content';
         const GHOST_KEY = 'b8903092a7c9a8b54d7378f5a1';
+        let currentLang = 'nl';
 
         function formatDate(d) {
             return new Date(d).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -545,7 +546,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         async function loadPosts() {
             try {
-                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&limit=20&formats=html`);
+                const langFilter = currentLang === 'en' ? '&filter=tag:hash-en' : '&filter=tag:hash-nl';
+                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&limit=20&formats=html${langFilter}`);
                 const data = await res.json();
 
                 document.getElementById('blog-loading').style.display = 'none';
@@ -684,6 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Language switcher
         function setBlogLang(lang) {
+            currentLang = lang;
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === lang);
             if (activeBtn) activeBtn.classList.add('active');
@@ -693,8 +696,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 el.textContent = el.getAttribute('data-' + lang) || el.textContent;
             });
 
-            // Update dynamic content labels
-            window._blogLang = lang;
+            // Reload posts in the selected language
+            showList();
+            document.getElementById('blog-featured').innerHTML = '';
+            document.getElementById('blog-grid').innerHTML = '';
+            document.getElementById('blog-loading').style.display = 'grid';
+            document.getElementById('blog-empty').style.display = 'none';
+            loadPosts();
 
             // Update "Terug naar blog" links
             document.querySelectorAll('.post-back').forEach(el => {
