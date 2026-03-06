@@ -606,7 +606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         async function loadPost(slug) {
             try {
-                const res = await fetch(`${GHOST_API}/posts/slug/${slug}/?key=${GHOST_KEY}&include=tags`);
+                const res = await fetch(`${GHOST_API}/posts/slug/${slug}/?key=${GHOST_KEY}&include=tags&formats=html`);
                 const data = await res.json();
                 const post = data.posts[0];
                 const tag = post.tags && post.tags[0] ? post.tags[0].name : '';
@@ -629,7 +629,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     ${post.feature_image ? `<img class="post-feature-img" src="${post.feature_image}" alt="${post.title}">` : ''}
-                    <div class="post-content">${post.html}</div>
+                    <div class="post-content">${post.html || "<p>Inhoud kon niet worden geladen.</p>"}</div>
                     <hr class="post-divider">
                     <a href="#" class="post-back" onclick="showList(event)" style="margin-top:0;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
