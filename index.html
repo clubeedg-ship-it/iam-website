@@ -9,6 +9,127 @@
         content="IAM ontwikkelt interactieve producten die kinderen en volwassenen stimuleren om te bewegen en cognitief te groeien. Onderwijs, sport en revalidatiezorg.">
     <link rel="icon" href="media/icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css?v=1.4">
+    <style>
+        .blog-carousel-wrapper { position: relative; }
+        .blog-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 0.5rem 0 1rem;
+        }
+        .blog-carousel::-webkit-scrollbar { display: none; }
+        .blog-carousel-card {
+            flex: 0 0 340px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-carousel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+            border-color: rgba(0,212,255,0.25);
+        }
+        .blog-carousel-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+        .blog-carousel-card .card-placeholder {
+            height: 190px;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a1f2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .blog-carousel-card .card-placeholder svg { opacity: 0.15; }
+        .blog-carousel-card .card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+        .blog-carousel-card .card-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary, #00d4ff);
+            background: rgba(0,212,255,0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.6rem;
+        }
+        .blog-carousel-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .blog-carousel-card .card-excerpt {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        .blog-carousel-card .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.78rem;
+        }
+        .blog-carousel-card .card-meta .read-more {
+            margin-left: auto;
+            color: var(--primary, #00d4ff);
+            font-weight: 500;
+            font-size: 0.82rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .blog-carousel-card:hover .card-meta .read-more { opacity: 1; }
+        .blog-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, border-color 0.2s;
+            backdrop-filter: blur(8px);
+        }
+        .blog-carousel-btn:hover {
+            background: rgba(0,212,255,0.2);
+            border-color: rgba(0,212,255,0.4);
+        }
+        .blog-carousel-prev { left: -16px; }
+        .blog-carousel-next { right: -16px; }
+        @media (max-width: 768px) {
+            .blog-carousel-card { flex: 0 0 280px; }
+            .blog-carousel-btn { display: none; }
+        }
+    </style>
     <!-- HTMX (self-hosted for GDPR compliance) -->
     <script src="/js/htmx.min.js"></script>
     <!-- Fonts: Self-hosted Inter for GDPR compliance (no external requests) -->
@@ -69,6 +190,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <a href="#contact">Contact</a>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link" style="cursor:pointer;">Blog</a>
+                    </li>
                 </ul>
 
                 <div class="lang-toggle">
@@ -107,6 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
             <a href="over-ons.html">Over Ons</a>
             <a href="prijzen.html">Prijzen</a>
+        <a href="blog.html">Blog</a>
             <a href="#contact" onclick="closeMobileNav()">Contact</a>
         </div>
 
@@ -570,6 +695,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </section>
 
             <!-- Final CTA Section -->
+            <!-- Blog Preview Carousel -->
+            <section class="section section-opaque-dark" id="blog-preview" style="padding: 4rem 0;">
+                <div class="container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2 class="industrial-label" style="margin-bottom: 0;">Laatste Nieuws</h2>
+                        <a href="blog.html" style="color: var(--primary, #00d4ff); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                            Bekijk alle artikelen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="blog-carousel-wrapper" style="position: relative;">
+                        <button class="blog-carousel-btn blog-carousel-prev" onclick="scrollBlogCarousel(-1)" aria-label="Vorige">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <div class="blog-carousel" id="blog-carousel">
+                            <!-- Loaded dynamically from Ghost -->
+                        </div>
+                        <button class="blog-carousel-btn blog-carousel-next" onclick="scrollBlogCarousel(1)" aria-label="Volgende">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                    <div id="blog-carousel-empty" style="display:none; text-align:center; padding:2rem; color:rgba(255,255,255,0.4);">
+                        Binnenkort: artikelen over interactieve technologie en onderwijs.
+                    </div>
+                </div>
+            </section>
+
             <section class="final-cta-section">
                 <div class="container">
                     <h2 class="industrial-label">Klaar om uw ruimte te transformeren?</h2>
@@ -871,6 +1022,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Re-run after HTMX swaps content (this is the key fix!)
         document.body.addEventListener('htmx:afterSettle', initScrollAnimations);
+    </script>
+    <!-- Blog Carousel -->
+    <script>
+    (function() {
+        const GHOST_API = '/ghost/api/content';
+        const GHOST_KEY = 'b8903092a7c9a8b54d7378f5a1';
+
+        async function loadBlogCarousel() {
+            try {
+                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&fields=id,title,slug,feature_image,custom_excerpt,excerpt,published_at&limit=6`);
+                const data = await res.json();
+                const carousel = document.getElementById('blog-carousel');
+                if (!carousel) return;
+
+                if (!data.posts || data.posts.length === 0) {
+                    document.getElementById('blog-carousel-empty').style.display = 'block';
+                    carousel.style.display = 'none';
+                    return;
+                }
+
+                carousel.innerHTML = data.posts.map(post => {
+                    const date = new Date(post.published_at).toLocaleDateString('nl-NL', {
+                        year: 'numeric', month: 'short', day: 'numeric'
+                    });
+                    const excerpt = post.custom_excerpt || post.excerpt || '';
+                    const tag = post.tags && post.tags[0] ? post.tags[0].name : 'Nieuws';
+                    const img = post.feature_image
+                        ? `<img src="${post.feature_image}" alt="${post.title}" loading="lazy">`
+                        : `<div class="card-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-5z"/></svg></div>`;
+                    return `
+                        <a href="blog.html?post=${post.slug}" class="blog-carousel-card">
+                            ${img}
+                            <div class="card-body">
+                                <span class="card-tag">${tag}</span>
+                                <h3>${post.title}</h3>
+                                <p class="card-excerpt">${excerpt.substring(0, 120)}${excerpt.length > 120 ? '...' : ''}</p>
+                                <div class="card-meta">
+                                    <span>${date}</span>
+                                    <span class="read-more">Lees meer →</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            } catch (e) {
+                const empty = document.getElementById('blog-carousel-empty');
+                if (empty) empty.style.display = 'block';
+            }
+        }
+
+        window.scrollBlogCarousel = function(dir) {
+            const c = document.getElementById('blog-carousel');
+            if (c) c.scrollBy({ left: dir * 360, behavior: 'smooth' });
+        };
+
+        document.addEventListener('DOMContentLoaded', loadBlogCarousel);
+        document.body.addEventListener('htmx:afterSettle', loadBlogCarousel);
+    })();
     </script>
     <!-- Cookie Consent (GDPR Compliance) -->
     <script src="/js/cookie-consent.js"></script>

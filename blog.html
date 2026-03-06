@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | InterActiveMove</title>
+    <meta name="description"
+        content="Nieuws, inzichten en updates over interactieve technologie, onderwijs en beweging van InterActiveMove.">
+    <link rel="icon" href="media/icon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=1.4">
+    <script src="/js/htmx.min.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KPX78C22');</script>
+<!-- End Google Tag Manager -->
+    <style>
+        /* ===== Blog List View ===== */
+        .blog-hero {
+            min-height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .blog-hero p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.15rem;
+            margin-top: 0.75rem;
+        }
+
+        /* Featured post (first/large) */
+        .blog-featured {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-featured:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+        .blog-featured img {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            object-fit: cover;
+        }
+        .blog-featured .featured-body {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .blog-featured .featured-tag {
+            display: inline-block;
+            width: fit-content;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary, #00d4ff);
+            background: rgba(0,212,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .blog-featured h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+        .blog-featured .featured-excerpt {
+            color: rgba(255,255,255,0.55);
+            line-height: 1.65;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .blog-featured .featured-meta {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .blog-featured .featured-meta .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Grid of posts */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .blog-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.35s, border-color 0.35s;
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+            border-color: rgba(0,212,255,0.2);
+        }
+        .blog-card .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .blog-card:hover .card-img { transform: scale(1.03); }
+        .blog-card .img-wrap {
+            overflow: hidden;
+            height: 200px;
+        }
+        .blog-card .card-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #0d1117, #161b22, #1a1f2e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .blog-card .card-placeholder svg { opacity: 0.12; }
+        .blog-card .card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+        .blog-card .card-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary, #00d4ff);
+            background: rgba(0,212,255,0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.6rem;
+        }
+        .blog-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .blog-card .card-excerpt {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.88rem;
+            line-height: 1.55;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        .blog-card .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.78rem;
+        }
+        .blog-card .card-footer .arrow {
+            color: var(--primary, #00d4ff);
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .blog-card:hover .card-footer .arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== Single Post View ===== */
+        .post-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .post-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        .post-back:hover { color: var(--primary, #00d4ff); }
+        .post-header {
+            margin-bottom: 2.5rem;
+        }
+        .post-header .post-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary, #00d4ff);
+            margin-bottom: 1rem;
+        }
+        .post-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .post-header .post-meta {
+            color: rgba(255,255,255,0.35);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .post-feature-img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+        .post-content {
+            color: rgba(255,255,255,0.82);
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+        .post-content h2 { font-size: 1.6rem; margin: 2rem 0 1rem; color: #fff; }
+        .post-content h3 { font-size: 1.3rem; margin: 1.5rem 0 0.75rem; color: #fff; }
+        .post-content p { margin-bottom: 1.25rem; }
+        .post-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .post-content blockquote {
+            border-left: 3px solid var(--primary, #00d4ff);
+            margin: 1.5rem 0;
+            padding: 0.75rem 1.5rem;
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+        }
+        .post-content a { color: var(--primary, #00d4ff); }
+        .post-content ul, .post-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        .post-content li { margin-bottom: 0.4rem; }
+        .post-content code {
+            background: rgba(255,255,255,0.06);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .post-content pre {
+            background: rgba(0,0,0,0.4);
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .post-content pre code {
+            background: none;
+            padding: 0;
+        }
+        .post-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin: 3rem 0;
+        }
+
+        /* Empty state */
+        .blog-empty-state {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        .blog-empty-state .empty-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0,212,255,0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .blog-empty-state h3 {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.5rem;
+        }
+        .blog-empty-state p {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.95rem;
+        }
+
+        /* Loading skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        @media (max-width: 768px) {
+            .blog-featured { grid-template-columns: 1fr; }
+            .blog-featured img { min-height: 200px; }
+            .blog-featured .featured-body { padding: 1.5rem; }
+            .blog-featured h2 { font-size: 1.4rem; }
+            .blog-hero h1 { font-size: 2rem; }
+            .post-header h1 { font-size: 1.8rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPX78C22"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Global Background Canvas -->
+    <div id="global-canvas-container">
+        <canvas id="projector-canvas"></canvas>
+    </div>
+
+    <div id="page-wrapper">
+        <header>
+            <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Producten</button>
+                        <div class="dropdown-menu">
+                            <a href="products/interactieve-vloer.html">Interactieve Vloer</a>
+                            <a href="products/interactieve-muur.html">Interactieve Muur</a>
+                            <a href="products/interactieve-zandbak.html">Interactieve Zandbak</a>
+                            <a href="products/interactieve-klimwand.html">Interactieve Klimwand</a>
+                            <a href="products/mobiele-vloer.html">Mobiele Vloer</a>
+                            <a href="products/software-maatwerk.html">Software & Maatwerk</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Mogelijkheden</button>
+                        <div class="dropdown-menu">
+                            <a href="bouw-een-park.html">Bouw een Park</a>
+                            <a href="3d-spellen.html">3D Spellen</a>
+                            <a href="parken-speelhallen.html">Parken & Speelhallen</a>
+                            <a href="onderwijs.html">Onderwijs</a>
+                            <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link">Over Ons</button>
+                        <div class="dropdown-menu">
+                            <a href="over-ons.html">Over InterActiveMove</a>
+                            <a href="prijzen.html">Prijzen</a>
+                            <a href="index.html#contact">Contact</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link" style="cursor:pointer;">Blog</a>
+                    </li>
+                </ul>
+
+                <div class="lang-toggle">
+                    <button class="lang-btn active">NL</button>
+                    <span class="divider">|</span>
+                    <button class="lang-btn">EN</button>
+                </div>
+
+                <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="index.html#contact" class="btn"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMobileNav()">Home</a>
+            <a href="products/interactieve-vloer.html">Interactieve Vloer</a>
+            <a href="products/interactieve-muur.html">Interactieve Muur</a>
+            <a href="products/interactieve-zandbak.html">Interactieve Zandbak</a>
+            <a href="products/interactieve-klimwand.html">Interactieve Klimwand</a>
+            <a href="products/mobiele-vloer.html">Mobiele Vloer</a>
+            <a href="products/software-maatwerk.html">Software & Maatwerk</a>
+            <a href="bouw-een-park.html">Bouw een Park</a>
+            <a href="3d-spellen.html">3D Spellen</a>
+            <a href="parken-speelhallen.html">Parken & Speelhallen</a>
+            <a href="onderwijs.html">Onderwijs</a>
+            <a href="zorg-revalidatie.html">Zorg & Revalidatie</a>
+            <a href="over-ons.html">Over Ons</a>
+            <a href="prijzen.html">Prijzen</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+        </div>
+
+        <main id="main-content">
+            <!-- Blog List View -->
+            <div id="blog-list">
+                <!-- Hero -->
+                <section class="hero blog-hero">
+                    <div class="hero-content">
+                        <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Blog</h1>
+                        <p>Inzichten over interactieve technologie, onderwijs en innovatie</p>
+                    </div>
+                </section>
+
+                <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem;">
+                    <!-- Featured Post -->
+                    <div id="blog-featured"></div>
+
+                    <!-- Grid -->
+                    <div class="blog-grid" id="blog-grid"></div>
+
+                    <!-- Loading skeleton -->
+                    <div id="blog-loading" class="blog-grid">
+                        <div class="blog-card"><div class="skeleton" style="height:200px;"></div><div style="padding:1.25rem;"><div class="skeleton" style="height:14px;width:60px;margin-bottom:10px;"></div><div class="skeleton" style="height:20px;width:80%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:100%;margin-bottom:6px;"></div><div class="skeleton" style="height:14px;width:60%;"></div></div></div>
+                        <div class="blog-card"><div class="skeleton" style="height:200px;"></div><div style="padding:1.25rem;"><div class="skeleton" style="height:14px;width:60px;margin-bottom:10px;"></div><div class="skeleton" style="height:20px;width:80%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:100%;margin-bottom:6px;"></div><div class="skeleton" style="height:14px;width:60%;"></div></div></div>
+                        <div class="blog-card"><div class="skeleton" style="height:200px;"></div><div style="padding:1.25rem;"><div class="skeleton" style="height:14px;width:60px;margin-bottom:10px;"></div><div class="skeleton" style="height:20px;width:80%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:100%;margin-bottom:6px;"></div><div class="skeleton" style="height:14px;width:60%;"></div></div></div>
+                    </div>
+
+                    <!-- Empty state -->
+                    <div id="blog-empty" style="display:none;">
+                        <div class="blog-empty-state">
+                            <div class="empty-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                            </div>
+                            <h3>Binnenkort beschikbaar</h3>
+                            <p>We werken aan interessante artikelen over interactieve technologie en onderwijs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Post View -->
+            <div id="blog-post" style="display:none;">
+                <div style="max-width: 1100px; margin: 0 auto; padding-top: 2rem;">
+                    <div class="post-container" id="blog-post-inner"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer-professional" style="margin-top: 2rem;">
+            <div class="footer-container" style="text-align:center; padding: 2rem;">
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem;">&copy; 2026 InterActiveMove. Alle rechten voorbehouden.</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="privacybeleid.html" style="color: rgba(255,255,255,0.35); font-size: 0.8rem; margin: 0 0.5rem;">Privacybeleid</a>
+                    <a href="cookiebeleid.html" style="color: rgba(255,255,255,0.35); font-size: 0.8rem; margin: 0 0.5rem;">Cookiebeleid</a>
+                    <a href="toegankelijkheid.html" style="color: rgba(255,255,255,0.35); font-size: 0.8rem; margin: 0 0.5rem;">Toegankelijkheid</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="projector.js"></script>
+    <script>
+        const GHOST_API = '/ghost/api/content';
+        const GHOST_KEY = 'b8903092a7c9a8b54d7378f5a1';
+
+        function formatDate(d) {
+            return new Date(d).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function readingTime(html) {
+            const text = html ? html.replace(/<[^>]+>/g, '') : '';
+            const words = text.split(/\s+/).length;
+            return Math.max(1, Math.round(words / 200));
+        }
+
+        function cardImage(post) {
+            if (post.feature_image) {
+                return `<div class="img-wrap"><img class="card-img" src="${post.feature_image}" alt="${post.title}" loading="lazy"></div>`;
+            }
+            return `<div class="card-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.12"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-5z"/></svg></div>`;
+        }
+
+        async function loadPosts() {
+            try {
+                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&limit=20`);
+                const data = await res.json();
+
+                document.getElementById('blog-loading').style.display = 'none';
+
+                if (!data.posts || data.posts.length === 0) {
+                    document.getElementById('blog-empty').style.display = 'block';
+                    return;
+                }
+
+                const posts = data.posts;
+
+                // Featured post (first one)
+                const feat = posts[0];
+                const featTag = feat.tags && feat.tags[0] ? feat.tags[0].name : 'Nieuws';
+                const featExcerpt = feat.custom_excerpt || feat.excerpt || '';
+                const featMin = readingTime(feat.html);
+                document.getElementById('blog-featured').innerHTML = `
+                    <div class="blog-featured" onclick="loadPost('${feat.slug}')">
+                        ${feat.feature_image ? `<img src="${feat.feature_image}" alt="${feat.title}">` : `<div style="background:linear-gradient(135deg,#0d1117,#1a1f2e);min-height:340px;"></div>`}
+                        <div class="featured-body">
+                            <span class="featured-tag">${featTag}</span>
+                            <h2>${feat.title}</h2>
+                            <p class="featured-excerpt">${featExcerpt.substring(0, 200)}${featExcerpt.length > 200 ? '...' : ''}</p>
+                            <div class="featured-meta">
+                                <span>${formatDate(feat.published_at)}</span>
+                                <span class="read-time">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                    ${featMin} min lezen
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Rest of posts in grid
+                if (posts.length > 1) {
+                    const grid = document.getElementById('blog-grid');
+                    grid.innerHTML = posts.slice(1).map(post => {
+                        const tag = post.tags && post.tags[0] ? post.tags[0].name : 'Nieuws';
+                        const excerpt = post.custom_excerpt || post.excerpt || '';
+                        const min = readingTime(post.html);
+                        return `
+                            <div class="blog-card" onclick="loadPost('${post.slug}')">
+                                ${cardImage(post)}
+                                <div class="card-body">
+                                    <span class="card-tag">${tag}</span>
+                                    <h3>${post.title}</h3>
+                                    <p class="card-excerpt">${excerpt.substring(0, 130)}${excerpt.length > 130 ? '...' : ''}</p>
+                                    <div class="card-footer">
+                                        <span>${formatDate(post.published_at)} · ${min} min</span>
+                                        <span class="arrow">→</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            } catch (e) {
+                document.getElementById('blog-loading').style.display = 'none';
+                document.getElementById('blog-empty').style.display = 'block';
+            }
+        }
+
+        async function loadPost(slug) {
+            try {
+                const res = await fetch(`${GHOST_API}/posts/slug/${slug}/?key=${GHOST_KEY}&include=tags`);
+                const data = await res.json();
+                const post = data.posts[0];
+                const tag = post.tags && post.tags[0] ? post.tags[0].name : '';
+                const min = readingTime(post.html);
+
+                document.getElementById('blog-list').style.display = 'none';
+                document.getElementById('blog-post').style.display = 'block';
+                document.getElementById('blog-post-inner').innerHTML = `
+                    <a href="#" class="post-back" onclick="showList(event)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Terug naar blog
+                    </a>
+                    <div class="post-header">
+                        ${tag ? `<span class="post-tag">${tag}</span>` : ''}
+                        <h1>${post.title}</h1>
+                        <div class="post-meta">
+                            <span>${formatDate(post.published_at)}</span>
+                            <span>·</span>
+                            <span>${min} min lezen</span>
+                        </div>
+                    </div>
+                    ${post.feature_image ? `<img class="post-feature-img" src="${post.feature_image}" alt="${post.title}">` : ''}
+                    <div class="post-content">${post.html}</div>
+                    <hr class="post-divider">
+                    <a href="#" class="post-back" onclick="showList(event)" style="margin-top:0;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Terug naar blog
+                    </a>
+                `;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState({ slug }, post.title, `?post=${slug}`);
+            } catch (e) {
+                console.error('Failed to load post:', e);
+            }
+        }
+
+        function showList(e) {
+            if (e) e.preventDefault();
+            document.getElementById('blog-list').style.display = 'block';
+            document.getElementById('blog-post').style.display = 'none';
+            history.pushState({}, 'Blog', 'blog.html');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.slug) loadPost(e.state.slug);
+            else showList();
+        });
+
+        // Init
+        const urlParams = new URLSearchParams(window.location.search);
+        const postSlug = urlParams.get('post');
+        if (postSlug) loadPost(postSlug);
+        loadPosts();
+
+        // Mobile nav
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('open');
+            document.querySelector('.hamburger').classList.remove('open');
+        }
+    </script>
+    <script src="/js/cookie-consent.js"></script>
+</body>
+</html>
