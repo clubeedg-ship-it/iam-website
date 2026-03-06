@@ -2134,26 +2134,21 @@ nav {
 
 .mobile-sticky-cta .cta-dismiss {
     position: absolute;
-    top: -28px;
-    right: 12px;
-    background: rgba(10, 10, 20, 0.9);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.5);
-    width: 28px;
-    height: 28px;
-    border-radius: 8px 8px 0 0;
-    font-size: 1.1rem;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    width: 44px;
+    height: 100%;
+    font-size: 1.4rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    transition: color 0.2s;
-}
-
-.mobile-sticky-cta .cta-dismiss:hover {
-    color: #fff;
+    z-index: 10;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-sticky-cta .cta-content {
@@ -2163,6 +2158,7 @@ nav {
     gap: 0.75rem;
     max-width: 600px;
     margin: 0 auto;
+    padding-right: 2.5rem;
 }
 
 .mobile-sticky-cta .cta-buttons {
