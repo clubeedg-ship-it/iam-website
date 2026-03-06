@@ -22,7 +22,7 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      url: http://localhost:3007
+      url: https://iam.zenithcred.com
       database__client: mysql
       database__connection__host: mysql
       database__connection__port: 3306
