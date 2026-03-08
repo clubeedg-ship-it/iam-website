@@ -790,13 +790,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <section id="contact" class="form-section container glass-panel" style="margin-bottom: 4rem;">
                 <h2 class="industrial-label">Neem contact op</h2>
                 <form onsubmit="sendContactEmail(event)" id="contactForm">
+                    <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <input type="text" name="name" placeholder="Naam" aria-label="Naam" required>
+                        <input type="text" name="firstname" placeholder="Naam" aria-label="Naam" required>
                         <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
                     </div>
                     <input type="text" name="company" placeholder="Bedrijf / Organisatie" aria-label="Bedrijf"
                         style="width: 100%;">
-                    <textarea name="details" rows="4" placeholder="Waar kunnen wij u mee helpen?"
+                    <textarea name="message" rows="4" placeholder="Waar kunnen wij u mee helpen?"
                         aria-label="Details"></textarea>
                     <!-- GDPR Consent Checkbox -->
                     <div class="form-consent">
@@ -880,6 +881,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Inter Active Move B.V. Alle rechten voorbehouden.</p>
+                <p style="margin-top:8px;font-size:.75rem;opacity:.5"><a href="https://oopuo.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Made and managed by oopuo.com</a></p>
             </div>
         </footer>
     </div>
@@ -1142,6 +1144,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Cookie Consent (GDPR Compliance) -->
     <script src="/js/cookie-consent.js"></script>
     <script src="/js/contact-form.js"></script>
+    <!-- HubSpot Tracking Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49291889.js"></script>
 </body>
 
 </html>

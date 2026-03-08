@@ -330,13 +330,21 @@
 <!-- Contact Section -->
 <section id="contact" class="form-section container glass-panel" style="margin-bottom: 4rem;">
     <h2 class="industrial-label">Neem contact op</h2>
-    <form onsubmit="sendContactEmail(event)">
+    <form onsubmit="sendContactEmail(event)" id="contactForm">
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <input type="text" name="name" placeholder="Naam" aria-label="Naam" required>
+            <input type="text" name="firstname" placeholder="Naam" aria-label="Naam" required>
             <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
         </div>
         <input type="text" name="company" placeholder="Bedrijf / Organisatie" aria-label="Bedrijf" style="width: 100%;">
-        <textarea name="details" rows="4" placeholder="Waar kunnen wij u mee helpen?" aria-label="Details"></textarea>
+        <textarea name="message" rows="4" placeholder="Waar kunnen wij u mee helpen?" aria-label="Details"></textarea>
+        <div class="form-consent">
+            <input type="checkbox" id="privacy-consent" name="privacy_consent" required>
+            <label for="privacy-consent">
+                Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het
+                <a href="privacybeleid.html" target="_blank">privacybeleid</a>. *
+            </label>
+        </div>
         <button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 999px;">VERSTUUR
             BERICHT</button>
     </form>
