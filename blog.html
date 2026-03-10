@@ -391,13 +391,11 @@
                             <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <button class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></button>
-                        <div class="dropdown-menu">
-                            <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                            <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                            <a href="index.html#contact">Contact</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="over-ons.html" class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="prijzen.html" class="nav-link"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
                     </li>
                     <li class="nav-item">
                         <a href="blog.html" class="nav-link">Blog</a>
@@ -444,16 +442,8 @@
                     <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                 </div>
             </div>
-            <div class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                    <span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-                </button>
-                <div class="mobile-dropdown-items">
-                    <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                    <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                    <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
-                </div>
-            </div>
+            <a href="over-ons.html" onclick="closeMobileNav()"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+            <a href="prijzen.html" onclick="closeMobileNav()"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
             <a href="blog.html">Blog</a>
             <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
         </div>
