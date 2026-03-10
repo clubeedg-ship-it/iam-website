@@ -2257,7 +2257,10 @@ nav {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     text-align: center;
 }
 
