@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-in-1 Interactieve Vloer & Muur | InterActiveMove</title>
+    <meta name="description"
+        content="Het 2-in-1 systeem van IAM combineert een interactieve vloer en muur in één apparaat. Twee ervaringen, één investering. Perfect voor scholen, zorg en entertainment.">
+    <link rel="icon" href="../media/icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css?v=1.4">
+    <script src="/js/htmx.min.js"></script>
+</head>
+
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Ga naar inhoud</a>
+
+    <!-- Global Background Canvas -->
+    <div id="global-canvas-container">
+        <canvas id="projector-canvas"></canvas>
+    </div>
+
+    <div id="page-wrapper">
+<header>
+        <a href="../index.html">
+            <img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Producten</button>
+                    <div class="dropdown-menu">
+                        <a href="2-in-1-vloer-muur.html" class="active">2-in-1 Vloer &amp; Muur</a>
+                        <a href="interactieve-vloer.html">Interactieve Vloer</a>
+                        <a href="interactieve-muur.html">Interactieve Muur</a>
+                        <a href="interactieve-zandbak.html">Interactieve Zandbak</a>
+                        <a href="interactieve-klimwand.html">Interactieve Klimwand</a>
+                        <a href="mobiele-vloer.html">Mobiele Vloer</a>
+                        <a href="software-maatwerk.html">Software &amp; Maatwerk</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="nav-link">Mogelijkheden</button>
+                    <div class="dropdown-menu">
+                        <a href="../bouw-een-park.html">Bouw een Park</a>
+                        <a href="../3d-spellen.html">3D Spellen</a>
+                        <a href="../parken-speelhallen.html">Parken &amp; Speelhallen</a>
+                        <a href="../onderwijs.html">Onderwijs</a>
+                        <a href="../zorg-revalidatie.html">Zorg &amp; Revalidatie</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../over-ons.html" class="nav-link">Over Ons</a></li>
+                <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prijzen</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                        <a href="../blog.html" class="nav-link" style="cursor:pointer;">Blog</a>
+                    </li>
+                </ul>
+
+            <div class="lang-toggle">
+                <button class="lang-btn active" hx-get="../partials/products/2-in-1-vloer-muur-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
+                <span class="divider">|</span>
+                <button class="lang-btn" hx-get="../partials/products/2-in-1-vloer-muur-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
+            </div>
+
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html#contact" class="btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobileNav">
+            <a href="../index.html" onclick="closeMobileNav()">Home</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                    Producten <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="mobile-dropdown-items">
+                    <a href="../products/2-in-1-vloer-muur.html">2-in-1 Vloer &amp; Muur</a>
+                    <a href="../products/interactieve-vloer.html">Interactieve Vloer</a>
+                    <a href="../products/interactieve-muur.html">Interactieve Muur</a>
+                    <a href="../products/interactieve-zandbak.html">Interactieve Zandbak</a>
+                    <a href="../products/interactieve-klimwand.html">Interactieve Klimwand</a>
+                    <a href="../products/mobiele-vloer.html">Mobiele Vloer</a>
+                    <a href="../products/software-maatwerk.html">Software &amp; Maatwerk</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                    Mogelijkheden <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="mobile-dropdown-items">
+                    <a href="../bouw-een-park.html">Bouw een Park</a>
+                    <a href="../3d-spellen.html">3D Spellen</a>
+                    <a href="../parken-speelhallen.html">Parken &amp; Speelhallen</a>
+                    <a href="../onderwijs.html">Onderwijs</a>
+                    <a href="../zorg-revalidatie.html">Zorg &amp; Revalidatie</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                    Over Ons <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="mobile-dropdown-items">
+                    <a href="../over-ons.html">Over InterActiveMove</a>
+                    <a href="../prijzen.html">Prijzen</a>
+                    <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+                </div>
+            </div>
+            <a href="../blog.html">Blog</a>
+            <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
+        </div>
+    <main id="main-content">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb container" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#products">Producten</a></li>
+                <li aria-current="page">2-in-1 Vloer &amp; Muur</li>
+            </ol>
+        </nav>
+
+        <!-- Content loaded from NL partial by default (duplicated in shell for initial load) -->
+        <!-- Enhanced Product Hero -->
+        <section class="product-hero-enhanced">
+            <div class="container">
+                <div class="product-hero-grid">
+                    <div class="product-gallery">
+                        <div class="gallery-main">
+                            <video autoplay muted loop playsinline style="width: 100%; border-radius: var(--radius-card);">
+                                <source src="../media/video/2-in-1-floor-wall.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-badge" style="display: inline-block; background: var(--color-primary); color: #000; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Vlaggenschip</span>
+                        <h1 class="product-title">2-in-1 Interactieve Vloer &amp; Muur</h1>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="review-count">(52 reviews)</span>
+                        </div>
+                        <p class="product-tagline">Twee interactieve ervaringen in één systeem. Projecteer op de vloer én de muur — bespaar ruimte, verdubbel de mogelijkheden.</p>
+                        <ul class="product-highlights">
+                            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Vloer- én muurprojectie in één systeem</li>
+                            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 100+ interactieve spellen inbegrepen</li>
+                            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Plug &amp; Play — binnen 15 minuten klaar</li>
+                            <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 2 jaar garantie &amp; gratis updates</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-label">Vanaf</span>
+                            <span class="price-amount">Op aanvraag</span>
+                        </div>
+                        <div class="product-ctas">
+                            <a href="mailto:info@interactivemove.nl" class="btn btn-primary">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                                Offerte Aanvragen
+                            </a>
+                            <a href="#demo-video" class="btn btn-secondary">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                Bekijk Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-professional">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo">
+                <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg></a>
+                    <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Quick links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../bouw-een-park.html">Bouw een Park</a></li>
+                    <li><a href="../over-ons.html">Over Ons</a></li>
+                    <li><a href="../prijzen.html">Prijzen</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Producten</h4>
+                <ul class="footer-links">
+                    <li><a href="2-in-1-vloer-muur.html">2-in-1 Vloer &amp; Muur</a></li>
+                    <li><a href="interactieve-vloer.html">Interactieve Vloer</a></li>
+                    <li><a href="interactieve-muur.html">Interactieve Muur</a></li>
+                    <li><a href="interactieve-zandbak.html">Interactieve Zandbak</a></li>
+                    <li><a href="interactieve-klimwand.html">Interactieve Klimwand</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-contact">
+                    <p><strong>Inter Active Move B.V.</strong></p>
+                    <p>Smitspol 15K, 3861RS Nijkerk</p>
+                    <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
+                    <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+    <!-- Product Mobile Sticky CTA -->
+    <div class="product-sticky-cta">
+        <div class="cta-inner">
+            <div class="price-info">
+                <div class="price-label">Vanaf</div>
+                <div class="price-value">Op aanvraag</div>
+            </div>
+            <div class="cta-actions">
+                <a href="mailto:info@interactivemove.nl"
+                   target="_blank" class="btn-cta-primary">Offerte</a>
+                <a href="tel:+31623998934" class="btn-cta-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('active');
+        }
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+        }
+        function toggleMobileDropdown(btn) {
+            const dropdown = btn.parentElement;
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <script src="../projector.js"></script>
+
+    <script>
+        // Check URL on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang');
+            if (lang === 'en') {
+                htmx.ajax('GET', '../partials/products/2-in-1-vloer-muur-en.html', '#page-wrapper');
+            } else {
+                htmx.ajax('GET', '../partials/products/2-in-1-vloer-muur-nl.html', '#page-wrapper');
+            }
+        });
+    </script>
+
+    <!-- Cookie Consent (GDPR Compliance) -->
+    <script src="/js/cookie-consent.js"></script>
+    <script src="/js/contact-form.js"></script>
+    <!-- HubSpot Tracking Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49291889.js"></script>
+</body>
+
+</html>
