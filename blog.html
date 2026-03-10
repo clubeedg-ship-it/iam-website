@@ -581,7 +581,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         const GHOST_API = '/ghost/api/content';
         const GHOST_KEY = 'b8903092a7c9a8b54d7378f5a1';
-        let currentLang = 'nl';
+        let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('iam-lang') || 'nl';
+        if (currentLang === 'en') {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const enBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === 'en');
+            if (enBtn) enBtn.classList.add('active');
+            document.querySelectorAll('[data-nl][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-en') || el.textContent;
+            });
+        }
 
         function formatDate(d) {
             return new Date(d).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -743,6 +751,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Language switcher
         function setBlogLang(lang) {
             currentLang = lang;
+            localStorage.setItem('iam-lang', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === lang);
             if (activeBtn) activeBtn.classList.add('active');
