@@ -4964,9 +4964,28 @@ table tbody tr:hover th * {
 }
 
 .product-link {
+    display: inline-block;
     color: var(--color-primary);
     font-weight: 600;
     font-size: 0.9rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 999px;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 0.5rem;
+}
+
+.related-product-card:hover .product-link {
+    background: var(--color-primary);
+    color: #1d1e22;
+}
+
+.related-product-card,
+.related-product-card:hover,
+.related-product-card h3,
+.related-product-card p {
+    text-decoration: none !important;
 }
 
 /* CTA Section */
