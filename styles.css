@@ -369,6 +369,12 @@ header {
     border: 2px solid #fff;
 }
 
+header nav .btn:hover {
+    background: #fff;
+    color: #1d1e22;
+    border-color: #fff;
+}
+
 .btn-danger {
     background: var(--color-danger);
     color: #fff;
@@ -1046,6 +1052,12 @@ nav {
     /* Hide Contact Button in Header */
     header nav .btn {
         display: none;
+    }
+
+    header nav .btn:hover {
+        background: #fff;
+        color: #1d1e22;
+        border-color: #fff;
     }
 
     .lang-toggle {
