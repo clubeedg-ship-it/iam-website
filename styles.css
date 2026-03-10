@@ -2242,9 +2242,9 @@ nav {
 }
 
 .btn-primary:hover {
-    background: transparent;
+    background: #fff;
     border: 2px solid #feba04;
-    color: #fff;
+    color: #1d1e22;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(254, 186, 4, 0.5);
 }
