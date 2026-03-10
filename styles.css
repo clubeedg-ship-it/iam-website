@@ -2979,6 +2979,11 @@ textarea:invalid:not(:placeholder-shown) {
 
 .specs-table tbody tr:hover {
     background: var(--color-surface);
+    color: #1d1e22;
+}
+
+.specs-table tbody tr:hover td {
+    color: #1d1e22;
 }
 
 .spec-label {
