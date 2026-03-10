@@ -5703,3 +5703,8 @@ table tbody tr:hover th {
 .htmx-settling {
     opacity: 1;
 }
+/* === Bilingual Nav Toggle === */
+[data-lang="nl"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-nl { display: none !important; }
+[data-lang="nl"] .lang-nl { display: inline; }
+[data-lang="en"] .lang-en { display: inline; }
