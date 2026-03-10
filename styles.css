@@ -3405,6 +3405,18 @@ textarea:invalid:not(:placeholder-shown) {
 
 .comparison-table tbody tr:hover {
     background: var(--color-surface);
+    color: #1d1e22;
+}
+
+.comparison-table tbody tr:hover td,
+.comparison-table tbody tr:hover th {
+    color: #1d1e22;
+}
+
+/* Universal table hover: dark text on white bg */
+table tbody tr:hover td,
+table tbody tr:hover th {
+    color: #1d1e22 !important;
 }
 
 .comparison-table tbody tr:last-child td {
