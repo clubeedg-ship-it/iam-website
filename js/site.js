@@ -74,6 +74,32 @@ function observeRevealElements() {
     });
 }
 
+// === Stagger Animations (steps, roadmap) ===
+function initStaggerAnimations() {
+    var section = document.querySelector('.how-it-works.scroll-animated:not([data-observed])');
+    if (!section) return;
+    section.setAttribute('data-observed', 'true');
+
+    var staggerObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var steps = entry.target.querySelectorAll('.step-item');
+                steps.forEach(function(step, index) {
+                    setTimeout(function() {
+                        step.classList.add('step-visible');
+                    }, index * 150);
+                });
+                setTimeout(function() {
+                    entry.target.classList.add('steps-complete');
+                }, steps.length * 150);
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    staggerObserver.observe(section);
+}
+
 // === Init on DOMContentLoaded ===
 document.addEventListener('DOMContentLoaded', function() {
     // Determine language
@@ -96,11 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Init reveal observer
     observeRevealElements();
+
+    // Init stagger animations
+    initStaggerAnimations();
 });
 
 // === HTMX afterSwap hook ===
 document.body.addEventListener('htmx:afterSwap', function() {
-    setTimeout(observeRevealElements, 50);
+    setTimeout(function() {
+        observeRevealElements();
+        initStaggerAnimations();
+    }, 50);
 });
 
 // === Desktop dropdown close on outside click ===
