@@ -786,7 +786,22 @@ nav {
 .section-opaque-light {
     position: relative;
     background: var(--color-bg);
+    color: var(--color-text);
     z-index: 1;
+}
+
+/* Ensure light-section children with light bg always have dark text */
+.section-opaque-light h2,
+.section-opaque-light h3 {
+    color: var(--color-text);
+}
+
+.section-opaque-light .spec-title {
+    color: var(--color-text);
+}
+
+.section-opaque-light .spec-desc {
+    color: var(--color-text-muted);
 }
 
 .section-opaque-dark {
@@ -801,7 +816,8 @@ nav {
     color: #fff;
 }
 
-.section-opaque-dark p {
+.section-opaque-dark p,
+.section-opaque-dark .section-subtitle {
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -3401,6 +3417,7 @@ textarea:invalid:not(:placeholder-shown) {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--color-surface);
     vertical-align: middle;
+    color: var(--color-text);
 }
 
 .comparison-table tbody tr:hover {
@@ -3744,6 +3761,7 @@ table tbody tr:hover th * {
 .guarantee-card h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    color: var(--color-text);
 }
 
 .guarantee-card p {
