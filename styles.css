@@ -155,17 +155,26 @@ h4,
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
 
 h2 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     margin-bottom: var(--spacing-md);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+p, li {
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .industrial-label {
@@ -531,14 +540,12 @@ header nav .btn:hover {
 }
 
 .spec-title {
-    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #fff;
 }
 
 .spec-desc {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.95rem;
 }
 
 /* Pricing Grid */
@@ -571,7 +578,6 @@ header nav .btn:hover {
 /* popular-badge styles consolidated below (line ~4670) */
 
 .pricing-title {
-    font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
 }
@@ -1065,11 +1071,15 @@ nav {
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
     }
 
     .hero-content {
@@ -1574,7 +1584,6 @@ nav {
 
 .footer-heading {
     color: #fff;
-    font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     position: relative;
@@ -2497,11 +2506,9 @@ nav {
 .step-title {
     font-weight: 700;
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
 }
 
 .step-desc {
-    font-size: 0.9rem;
     color: var(--color-text-muted);
     max-width: 150px;
 }
@@ -2643,9 +2650,12 @@ nav {
     margin-bottom: 1rem;
 }
 
+.subtitle {
+    font-size: 1.15rem;
+}
+
 .final-cta-section .subtitle {
     color: var(--color-text-on-dark);
-    font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
