@@ -364,8 +364,9 @@ header {
 }
 
 .btn:hover {
-    background: var(--color-text);
+    background: transparent;
     color: #fff;
+    border: 2px solid #fff;
 }
 
 .btn-danger {
@@ -2241,9 +2242,11 @@ nav {
 }
 
 .btn-primary:hover {
+    background: transparent;
+    border: 2px solid #feba04;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(254, 186, 4, 0.5);
-    color: #000;
 }
 
 .btn-secondary {
