@@ -8,7 +8,7 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 const PORT = process.env.CHAT_PROXY_PORT || 3860;
 const API_KEY = process.env.OPENROUTER_API_KEY;
-const MODEL = process.env.CHAT_MODEL || 'qwen/qwen3.5-397b-a17b';
+const MODEL = process.env.CHAT_MODEL || 'qwen/qwen3.5-35b-a3b';
 
 if (!API_KEY) {
   console.error('OPENROUTER_API_KEY env var required');
