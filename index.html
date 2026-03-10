@@ -197,10 +197,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
 
                 <div class="lang-toggle">
-                    <button class="lang-btn active" hx-get="partials/index-nl.html" hx-target="#page-wrapper"
+                    <button class="lang-btn active" onclick="localStorage.setItem('iam-lang','nl')" hx-get="partials/index-nl.html" hx-target="#page-wrapper"
                         hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
                     <span class="divider">|</span>
-                    <button class="lang-btn" hx-get="partials/index-en.html" hx-target="#page-wrapper"
+                    <button class="lang-btn" onclick="localStorage.setItem('iam-lang','en')" hx-get="partials/index-en.html" hx-target="#page-wrapper"
                         hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
                 </div>
 
@@ -925,6 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Active State Toggle Logic
         function setLang(lang) {
+            localStorage.setItem('iam-lang', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === lang);
             if (activeBtn) activeBtn.classList.add('active');
@@ -944,8 +945,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Check URL on load
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const lang = params.get('lang');
+            const lang = params.get('lang') || localStorage.getItem('iam-lang');
             if (lang === 'en') {
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                const enBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText === 'EN');
+                if (enBtn) enBtn.classList.add('active');
                 htmx.ajax('GET', 'partials/index-en.html', '#page-wrapper');
                 syncLang('en');
             }

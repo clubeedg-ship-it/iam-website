@@ -50,9 +50,9 @@
                     </li>
                 </ul>
                 <div class="lang-toggle">
-                    <button class="lang-btn active" hx-get="../partials/products/interactieve-tekeningen-nl.html"
+                    <button class="lang-btn active" onclick="localStorage.setItem('iam-lang','nl')" hx-get="../partials/products/interactieve-tekeningen-nl.html"
                         hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button><span
-                        class="divider">|</span><button class="lang-btn"
+                        class="divider">|</span><button class="lang-btn" onclick="localStorage.setItem('iam-lang','en')"
                         hx-get="../partials/products/interactieve-tekeningen-en.html" hx-target="#page-wrapper"
                         hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
                 </div>
@@ -294,8 +294,11 @@
         // Check URL on load
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const lang = params.get('lang');
+            const lang = params.get('lang') || localStorage.getItem('iam-lang');
             if (lang === 'en') {
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                const enBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText === 'EN');
+                if (enBtn) enBtn.classList.add('active');
                 htmx.ajax('GET', '../partials/products/interactieve-tekeningen-en.html', '#page-wrapper');
             }
         });
