@@ -174,27 +174,13 @@ ${typeof IAM_KNOWLEDGE_BASE !== 'undefined' ? IAM_KNOWLEDGE_BASE : ''}`;
     conversationHistory.push({ role: 'user', content: text });
     showTyping();
 
-    const config = window.IAM_CHAT_CONFIG || {};
-    const apiKey = config.apiKey || '';
-    const model = config.model || 'qwen/qwen3-235b-a22b';
-
-    if (!apiKey || apiKey === 'REPLACE_WITH_OPENROUTER_API_KEY') {
-      hideTyping();
-      addMessage('⚠️ Chat is nog niet geconfigureerd. Neem contact op via info@interactivemove.nl', 'bot');
-      return;
-    }
+    const apiUrl = (window.IAM_CHAT_CONFIG && window.IAM_CHAT_CONFIG.apiUrl) || '/api/chat';
 
     try {
-      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      const res = await fetch(apiUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + apiKey,
-          'HTTP-Referer': window.location.origin,
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: model,
-          stream: true,
           messages: [
             { role: 'system', content: systemPrompt },
             ...conversationHistory.slice(-10)

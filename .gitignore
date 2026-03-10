@@ -31,3 +31,4 @@ venv/
 
 # Docker environment
 .env.docker
+api/.env
