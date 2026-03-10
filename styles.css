@@ -3413,9 +3413,11 @@ textarea:invalid:not(:placeholder-shown) {
     color: #1d1e22;
 }
 
-/* Universal table hover: dark text on white bg */
+/* Universal table hover: dark text on white bg (all descendants) */
 table tbody tr:hover td,
-table tbody tr:hover th {
+table tbody tr:hover th,
+table tbody tr:hover td *,
+table tbody tr:hover th * {
     color: #1d1e22 !important;
 }
 
