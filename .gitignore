@@ -21,6 +21,8 @@ __pycache__/
 *.py[cod]
 *.pyo
 .env
+.env.docker
+api/.env
 venv/
 
 # Reference/Development files (optional cleanup)
