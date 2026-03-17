@@ -3865,7 +3865,7 @@ table tbody tr:hover th * {
 }
 
 .financing-card h3 {
-    color: #fff;
+    color: #111;
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
@@ -3878,13 +3878,32 @@ table tbody tr:hover th * {
 }
 
 .financing-highlight {
-    color: var(--color-primary);
+    color: #111;
     font-weight: 600;
     display: block;
     margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
+    .flagship-product-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .flagship-product-copy {
+        padding: 2rem !important;
+        text-align: center;
+    }
+
+    .flagship-product-visual-wrap {
+        order: -1;
+        padding: 1.5rem 2rem 2rem !important;
+    }
+
+    .flagship-product-visual {
+        width: min(100%, 260px);
+        margin: 0 auto;
+    }
+
     .financing-grid {
         grid-template-columns: 1fr;
         max-width: 400px;

@@ -1,25 +1,21 @@
-// Blog carousel — loads posts from Ghost API into #blog-carousel
+// Blog carousel — loads posts from local data
 (function() {
-    const GHOST_API = '/ghost/api/content';
-    const GHOST_KEY = 'b8903092a7c9a8b54d7378f5a1';
-
-    async function loadBlogCarousel() {
+    function loadBlogCarousel() {
         try {
             const isEn = new URLSearchParams(window.location.search).get('lang') === 'en';
-            const langFilter = isEn ? '&filter=tag:hash-en' : '&filter=tag:hash-nl';
-            const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&fields=id,title,slug,feature_image,custom_excerpt,excerpt,published_at&limit=6${langFilter}`);
-            const data = await res.json();
+            const posts = isEn ? BLOG_LOCAL_DATA_EN : BLOG_LOCAL_DATA;
             const carousel = document.getElementById('blog-carousel');
             if (!carousel) return;
 
-            if (!data.posts || data.posts.length === 0) {
+            if (!posts || posts.length === 0) {
                 var empty = document.getElementById('blog-carousel-empty');
                 if (empty) empty.style.display = 'block';
                 carousel.style.display = 'none';
                 return;
             }
 
-            carousel.innerHTML = data.posts.map(function(post) {
+            // Show up to 6 posts
+            carousel.innerHTML = posts.slice(0, 6).map(function(post) {
                 var date = new Date(post.published_at).toLocaleDateString(isEn ? 'en-GB' : 'nl-NL', {
                     year: 'numeric', month: 'short', day: 'numeric'
                 });
@@ -40,6 +36,7 @@
                     '</div></div></a>';
             }).join('');
         } catch (e) {
+            console.error('Carousel error:', e);
             var empty = document.getElementById('blog-carousel-empty');
             if (empty) empty.style.display = 'block';
         }

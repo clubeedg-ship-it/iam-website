@@ -45,6 +45,8 @@
                 btn.textContent = en ? 'Message sent!' : 'Bericht verzonden!';
                 btn.style.background = '#28a745';
                 btn.style.color = '#fff';
+                // Success message or redirect
+                alert(en ? 'Thank you! We will contact you soon.' : 'Bedankt! We nemen snel contact met u op.');
                 setTimeout(function () {
                     btn.textContent = btn.dataset.originalText || (en ? 'SEND MESSAGE' : 'VERSTUUR BERICHT');
                     btn.style.background = '';
@@ -126,6 +128,7 @@
         _hsq.push(['trackPageView']);
 
         // 2. Submit via HubSpot's collected forms endpoint
+        // 3. Fallback: mailto if HubSpot fail (simplified for static)
         submitToHubSpot({
             email: email,
             firstname: nameParts.first,
@@ -140,7 +143,11 @@
                 setButtonState(btn, 'success', en);
                 form.reset();
             } else {
-                setButtonState(btn, 'error', en);
+                // Final fallback: open mailto
+                const body = `Naam: ${fullName}%0AEmail: ${email}%0ABedrijf: ${company}%0A%0ABericht:%0A${message}`;
+                window.location.href = `mailto:klantcontact@interactivemove.nl?subject=Contact via website (${getPageName()})&body=${body}`;
+                setButtonState(btn, 'success', en);
+                form.reset();
             }
         });
     };

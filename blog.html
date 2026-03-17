@@ -6,7 +6,8 @@
     <title>Blog | InterActiveMove</title>
     <meta name="description" content="IAM ontwikkelt interactieve producten die kinderen en volwassenen stimuleren om te bewegen en cognitief te groeien. Onderwijs, sport en revalidatiezorg.">
     <link rel="icon" href="media/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260312b">
+    <script src="js/blog-local-data.js"></script>
     <script src="/js/htmx.min.js"></script>
 <style>
         /* ===== Blog List View ===== */
@@ -551,8 +552,6 @@
 
     <script src="projector.js"></script>
     <script>
-        const GHOST_API = '/ghost/api/content';
-        const GHOST_KEY = 'b8903092a7c9a8b54d7378f5a1';
         let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('iam-lang') || 'nl';
         if (currentLang === 'en') {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -564,7 +563,7 @@
         }
 
         function formatDate(d) {
-            return new Date(d).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
+            return new Date(d).toLocaleDateString(currentLang === 'en' ? 'en-GB' : 'nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
         }
 
         function readingTime(html) {
@@ -580,20 +579,16 @@
             return `<div class="card-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.12"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-5z"/></svg></div>`;
         }
 
-        async function loadPosts() {
+        function loadPosts() {
             try {
-                const langFilter = currentLang === 'en' ? '&filter=tag:hash-en' : '&filter=tag:hash-nl';
-                const res = await fetch(`${GHOST_API}/posts/?key=${GHOST_KEY}&include=tags&limit=20&formats=html${langFilter}`);
-                const data = await res.json();
+                const posts = currentLang === 'en' ? BLOG_LOCAL_DATA_EN : BLOG_LOCAL_DATA;
 
                 document.getElementById('blog-loading').style.display = 'none';
 
-                if (!data.posts || data.posts.length === 0) {
+                if (!posts || posts.length === 0) {
                     document.getElementById('blog-empty').style.display = 'block';
                     return;
                 }
-
-                const posts = data.posts;
 
                 // Featured post (first one)
                 const feat = posts[0];
@@ -611,7 +606,7 @@
                                 <span>${formatDate(feat.published_at)}</span>
                                 <span class="read-time">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                                    ${featMin} min lezen
+                                    ${featMin} ${currentLang === 'en' ? 'min read' : 'min lezen'}
                                 </span>
                             </div>
                         </div>
@@ -619,8 +614,8 @@
                 `;
 
                 // Rest of posts in grid
+                const grid = document.getElementById('blog-grid');
                 if (posts.length > 1) {
-                    const grid = document.getElementById('blog-grid');
                     grid.innerHTML = posts.slice(1).map(post => {
                         const tag = post.tags && post.tags[0] ? post.tags[0].name : 'Nieuws';
                         const excerpt = post.custom_excerpt || post.excerpt || '';
@@ -640,6 +635,8 @@
                             </div>
                         `;
                     }).join('');
+                } else {
+                    grid.innerHTML = '';
                 }
             } catch (e) {
                 document.getElementById('blog-loading').style.display = 'none';
@@ -647,11 +644,12 @@
             }
         }
 
-        async function loadPost(slug) {
+        function loadPost(slug) {
             try {
-                const res = await fetch(`${GHOST_API}/posts/slug/${slug}/?key=${GHOST_KEY}&include=tags&formats=html`);
-                const data = await res.json();
-                const post = data.posts[0];
+                const posts = currentLang === 'en' ? BLOG_LOCAL_DATA_EN : BLOG_LOCAL_DATA;
+                const post = posts.find(p => p.slug === slug);
+                if (!post) return;
+                
                 const tag = post.tags && post.tags[0] ? post.tags[0].name : '';
                 const min = readingTime(post.html);
 
@@ -660,7 +658,7 @@
                 document.getElementById('blog-post-inner').innerHTML = `
                     <a href="#" class="post-back" onclick="showList(event)">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                        Terug naar blog
+                        ${currentLang === 'en' ? 'Back to blog' : 'Terug naar blog'}
                     </a>
                     <div class="post-header">
                         ${tag ? `<span class="post-tag">${tag}</span>` : ''}
@@ -668,7 +666,7 @@
                         <div class="post-meta">
                             <span>${formatDate(post.published_at)}</span>
                             <span>·</span>
-                            <span>${min} min lezen</span>
+                            <span>${min} min ${currentLang === 'en' ? 'read' : 'lezen'}</span>
                         </div>
                     </div>
                     ${post.feature_image ? `<img class="post-feature-img" src="${post.feature_image}" alt="${post.title}">` : ''}
@@ -676,7 +674,7 @@
                     <hr class="post-divider">
                     <a href="#" class="post-back" onclick="showList(event)" style="margin-top:0;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                        Terug naar blog
+                        ${currentLang === 'en' ? 'Back to blog' : 'Terug naar blog'}
                     </a>
                 `;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
