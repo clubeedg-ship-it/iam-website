@@ -323,6 +323,18 @@ header {
     background: #000;
 }
 
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.85));
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero-video-container video {
     width: 100%;
     height: 100%;
