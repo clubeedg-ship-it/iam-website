@@ -3,7 +3,7 @@
     function loadBlogCarousel() {
         try {
             const isEn = new URLSearchParams(window.location.search).get('lang') === 'en';
-            const posts = isEn ? BLOG_LOCAL_DATA_EN : BLOG_LOCAL_DATA;
+            const posts = BLOG_LOCAL_DATA;
             const carousel = document.getElementById('blog-carousel');
             if (!carousel) return;
 
