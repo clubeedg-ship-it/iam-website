@@ -3,21 +3,10 @@
     <section class="product-hero-enhanced">
         <div class="container">
             <div class="product-hero-grid">
-                <div class="product-gallery">
-                    <div class="gallery-main">
-                        <img src="../media/products/mobiele-vloer.png" alt="Mobiele Interactieve Vloer in actie" id="mainProductImage">
-                    </div>
-                    <div class="gallery-thumbs">
-                        <button class="thumb active" data-image="../media/products/mobiele-vloer.png">
-                            <img src="../media/products/mobiele-vloer.png" alt="Productweergave 1">
-                        </button>
-                        <button class="thumb" data-image="../media/products/mobiele-vloer.png">
-                            <img src="../media/products/mobiele-vloer.png" alt="Productweergave 2">
-                        </button>
-                        <button class="thumb" data-image="../media/products/mobiele-vloer.png">
-                            <img src="../media/products/mobiele-vloer.png" alt="Productweergave 3">
-                        </button>
-                    </div>
+                <div style="width: 100%; margin-bottom: 2rem;">
+                    <video autoplay muted loop playsinline style="width: 100%; border-radius: var(--radius-card); display: block;">
+                        <source src="../media/hero-video.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="product-info">
                     <h1 class="product-title">Mobiele Interactieve Vloer</h1>
@@ -107,48 +96,27 @@
         <div class="container">
             <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 3rem;">Waarom de Mobiele Vloer?</h2>
 
-            <div class="feature-row">
-                <div class="feature-image">
-                    <img src="../media/products/mobiele-vloer.png" alt="Verrijdbare flightcase">
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                    <h3 class="spec-title">Professionele Flightcase</h3>
+                    <p class="spec-desc">Alles veilig opgeborgen in een robuuste, verrijdbare flightcase. De projector, sensoren, kabels en accessoires zijn perfect beschermd tijdens transport.</p>
                 </div>
-                <div class="feature-content">
-                    <h3>Professionele Flightcase</h3>
-                    <p>Alles veilig opgeborgen in een robuuste, verrijdbare flightcase. De projector, sensoren, kabels en accessoires zijn perfect beschermd tijdens transport.</p>
-                    <ul class="feature-benefits">
-                        <li>Wielen voor eenvoudig transport</li>
-                        <li>Beschermt tegen stoten en vocht</li>
-                        <li>Alle componenten overzichtelijk opgeborgen</li>
-                    </ul>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                    <h3 class="spec-title">10 Minuten Setup</h3>
+                    <p class="spec-desc">Dankzij het doordachte ontwerp staat de interactieve vloer binnen 10 minuten speelklaar. Plug & Play, geen technische kennis nodig.</p>
                 </div>
-            </div>
-
-            <div class="feature-row feature-row-reverse">
-                <div class="feature-image">
-                    <img src="../media/products/mobiele-vloer.png" alt="Snelle installatie">
-                </div>
-                <div class="feature-content">
-                    <h3>10 Minuten Setup</h3>
-                    <p>Dankzij het doordachte ontwerp staat de interactieve vloer binnen 10 minuten speelklaar. Perfect voor evenementen met korte opbouwtijden.</p>
-                    <ul class="feature-benefits">
-                        <li>Plug & Play - geen technische kennis nodig</li>
-                        <li>Geïntegreerd kabelmanagementsysteem</li>
-                        <li>Inclusief snelstartgids met foto's</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="feature-row">
-                <div class="feature-image">
-                    <img src="../media/products/mobiele-vloer.png" alt="Identieke software">
-                </div>
-                <div class="feature-content">
-                    <h3>Volledige Game Bibliotheek</h3>
-                    <p>Dezelfde 100+ spellen als de vaste interactieve vloer. Geen compromissen op kwaliteit of speelmogelijkheden.</p>
-                    <ul class="feature-benefits">
-                        <li>100+ professionele spellen</li>
-                        <li>Educatie, sport én entertainment</li>
-                        <li>Regelmatige gratis content updates</li>
-                    </ul>
+                <div class="spec-card">
+                    <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 3H3v18h18V3zm-2 16l-7-8v8H5l7-8V5h7v14z"/>
+                    </svg>
+                    <h3 class="spec-title">Volledige Game Bibliotheek</h3>
+                    <p class="spec-desc">Dezelfde 100+ spellen als de vaste interactieve vloer voor educatie, sport en entertainment. Inclusief regelmatige gratis updates.</p>
                 </div>
             </div>
         </div>
@@ -513,7 +481,7 @@
             <div class="footer-social">
                 <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
                 <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.668-.072-4.948c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/></svg></a>
+                <a href="https://www.youtube.com/@IAM-InterActiveMove" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
             </div>
         </div>
         <div class="footer-column">

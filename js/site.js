@@ -132,7 +132,30 @@ document.body.addEventListener('htmx:afterSwap', function() {
     setTimeout(function() {
         observeRevealElements();
         initStaggerAnimations();
+        initProductGallery();
     }, 50);
+});
+
+// === Product Gallery ===
+function initProductGallery() {
+    document.querySelectorAll('.thumb[data-image]').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            var gallery = this.closest('.product-gallery');
+            var mainImg = gallery ? gallery.querySelector('#mainProductImage') : null;
+            if (mainImg) {
+                mainImg.src = this.getAttribute('data-image');
+                gallery.querySelectorAll('.thumb').forEach(function(t) {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+            }
+        });
+    });
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded', function() {
+    initProductGallery();
 });
 
 // === Desktop dropdown close on outside click ===
