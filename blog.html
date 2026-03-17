@@ -449,6 +449,7 @@
 
         <!-- Content Area (swapped by HTMX on lang change) -->
         <main id="content-area">
+<div id="blog-list">
 <section class="hero blog-hero">
                     <div class="hero-content">
                         <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Blog</h1>
@@ -481,7 +482,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
+            </div><!-- /blog-list -->
 
             <!-- Single Post View -->
             <div id="blog-post" style="display:none;">
@@ -550,6 +552,7 @@
             </div>
         </footer>
 
+    <script src="/js/site.js"></script>
     <script src="projector.js"></script>
     <script>
         let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('iam-lang') || 'nl';
