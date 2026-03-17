@@ -91,7 +91,7 @@
             <div class="cookie-consent-container">
                 <div class="cookie-consent-text">
                     <h3 id="cookie-title">${texts.title}</h3>
-                    <p>${texts.description} <a href="/cookiebeleid.html">${texts.learnMore}</a>.</p>
+                    <p>${texts.description} <a href="/cookies">${texts.learnMore}</a>.</p>
                 </div>
                 <div class="cookie-consent-buttons">
                     <button class="cookie-btn cookie-btn-reject" id="cookieReject">${texts.rejectAll}</button>

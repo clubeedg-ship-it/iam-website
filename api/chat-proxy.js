@@ -1,86 +1,77 @@
-// Simple Express proxy for OpenRouter chat API
-// Keeps API key server-side, rate-limits clients
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const rateLimit = require('express-rate-limit');
+// Simple Proxy for OpenRouter chat API
+// Standalone version (no Express)
+const http = require('http');
+const https = require('https');
 
-const app = express();
-const PORT = process.env.CHAT_PROXY_PORT || 3860;
+const PORT = process.env.CHAT_PORT || 3860;
 const API_KEY = process.env.OPENROUTER_API_KEY;
-const MODEL = process.env.CHAT_MODEL || 'qwen/qwen3.5-35b-a3b';
+const MODEL = process.env.CHAT_MODEL || 'google/gemini-2.0-flash-001';
 
 if (!API_KEY) {
   console.error('OPENROUTER_API_KEY env var required');
   process.exit(1);
 }
 
-app.use(cors({ origin: /interactivemove\.nl$/ }));
-app.use(express.json({ limit: '16kb' }));
+const server = http.createServer((req, res) => {
+  // CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-// Rate limit: 20 requests per minute per IP
-const limiter = rateLimit({
-  windowMs: 60 * 1000,
-  max: 20,
-  message: { error: 'Too many requests, try again later' }
-});
-app.use('/chat', limiter);
-
-app.post('/chat', async (req, res) => {
-  const { messages } = req.body;
-  if (!Array.isArray(messages) || messages.length === 0 || messages.length > 30) {
-    return res.status(400).json({ error: 'Invalid messages' });
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    return res.end();
   }
 
-  // Sanitize: only allow role user/assistant/system, string content
-  const clean = messages.filter(m =>
-    ['user', 'assistant', 'system'].includes(m.role) &&
-    typeof m.content === 'string' &&
-    m.content.length < 4000
-  );
+  if (req.method === 'POST' && req.url === '/chat') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const { messages } = JSON.parse(body);
+        
+        const postData = JSON.stringify({
+          model: MODEL,
+          messages: messages,
+          stream: true
+        });
 
-  try {
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${API_KEY}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://interactivemove.nl',
-        'X-Title': 'IAM Support Chat'
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        messages: clean,
-        stream: true,
-        max_tokens: 1024
-      })
+        const options = {
+          hostname: 'openrouter.ai',
+          path: '/api/v1/chat/completions',
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json',
+            'X-Title': 'IAM Support Chat'
+          }
+        };
+
+        const proxyReq = https.request(options, (proxyRes) => {
+          res.writeHead(proxyRes.statusCode, proxyRes.headers);
+          proxyRes.pipe(res);
+        });
+
+        proxyReq.on('error', (err) => {
+          console.error(err);
+          res.writeHead(500);
+          res.end('Proxy Error');
+        });
+
+        proxyReq.write(postData);
+        proxyReq.end();
+
+      } catch (e) {
+        res.writeHead(400);
+        res.end('Invalid JSON');
+      }
     });
-
-    if (!response.ok) {
-      const err = await response.text();
-      return res.status(502).json({ error: 'Upstream error', status: response.status });
-    }
-
-    // Stream SSE through to client
-    res.setHeader('Content-Type', 'text/event-stream');
-    res.setHeader('Cache-Control', 'no-cache');
-    res.setHeader('Connection', 'keep-alive');
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      res.write(decoder.decode(value, { stream: true }));
-    }
-    res.end();
-  } catch (err) {
-    console.error('Proxy error:', err.message);
-    res.status(500).json({ error: 'Internal error' });
+  } else {
+    res.writeHead(404);
+    res.end('Not Found');
   }
 });
 
-app.listen(PORT, '127.0.0.1', () => {
-  console.log(`Chat proxy on :${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Chat proxy running on port ${PORT}`);
 });
