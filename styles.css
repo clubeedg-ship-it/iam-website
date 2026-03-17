@@ -351,6 +351,7 @@ header {
 
 /* Frosted glass hero content for solution pages */
 .hero-glass .hero-content h1,
+.hero-glass .hero-content > p,
 .hero-glass .hero-content .hero-subtitle,
 .hero-glass .hero-content .pricing-trust-badges,
 .hero-glass .hero-content .hero-cta-group {
