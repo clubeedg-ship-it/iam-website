@@ -49,8 +49,15 @@ function switchLang(lang) {
     }
 
     // 6. Swap content via HTMX
-    if (typeof htmx !== 'undefined') {
+    if (typeof htmx !== 'undefined' && document.getElementById('content-area')) {
         htmx.ajax('GET', partialPath, '#content-area');
+    }
+
+    // 6b. Re-render blog if present
+    if (typeof initBlog === 'function') {
+        initBlog();
+    } else if (typeof window.reRenderBlog === 'function') {
+        window.reRenderBlog();
     }
 
     // 7. Close mobile nav
