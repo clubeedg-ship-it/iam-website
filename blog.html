@@ -626,10 +626,15 @@
             btn.parentElement.classList.toggle('open');
         }
 
-        // Language switcher (called from site.js / nav buttons)
+        // Override site.js switchLang for blog page — no HTMX partial swap
+        function switchLang(lang) {
+            setBlogLang(lang);
+        }
+
         function setBlogLang(lang) {
             currentLang = lang;
             localStorage.setItem('iam-lang', lang);
+            document.documentElement.setAttribute('data-lang', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.innerText.toLowerCase() === lang);
             if (activeBtn) activeBtn.classList.add('active');
