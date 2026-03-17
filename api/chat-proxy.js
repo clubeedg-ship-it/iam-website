@@ -8,8 +8,7 @@ const API_KEY = process.env.OPENROUTER_API_KEY;
 const MODEL = process.env.CHAT_MODEL || 'google/gemini-2.0-flash-001';
 
 if (!API_KEY) {
-  console.error('OPENROUTER_API_KEY env var required');
-  process.exit(1);
+  console.warn('OPENROUTER_API_KEY not set — chat proxy disabled');
 }
 
 const server = http.createServer((req, res) => {
