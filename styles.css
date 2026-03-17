@@ -349,6 +349,37 @@ header {
     max-width: 900px;
 }
 
+/* Frosted glass hero content for solution pages */
+.hero-glass .hero-content h1,
+.hero-glass .hero-content .hero-subtitle,
+.hero-glass .hero-content .pricing-trust-badges,
+.hero-glass .hero-content .hero-cta-group {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-glass .hero-content h1 {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+}
+
+.hero-glass .hero-content .pricing-trust-badges {
+    border-radius: 999px;
+    padding: 0.5rem 1.5rem;
+}
+
+.hero-glass .hero-content .hero-cta-group {
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
 /* Buttons (Modern) */
 .btn {
     display: inline-block;
