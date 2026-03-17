@@ -676,5 +676,36 @@
     <script src="../js/iam-knowledge-base.js"></script>
     <script src="../js/chat-config.js"></script>
     <script src="../js/chat-widget.js"></script>
+    <script>
+        // Game Category Filtering Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const gameCards = document.querySelectorAll('.game-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 1. Remove .active class from all buttons, add it to the clicked one
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // 2. Get the data-category from the button
+                    const targetCategory = button.getAttribute('data-category');
+
+                    // 3. Loop through all .game-card elements
+                    gameCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        // 4. If the button's category is 'all' or matches the card's data-category, show the card
+                        // 5. Otherwise, hide the card
+                        if (targetCategory === 'all' || cardCategory === targetCategory) {
+                            card.style.display = 'flex'; // Using flex to match the grid item layout
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
