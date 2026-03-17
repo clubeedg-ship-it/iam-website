@@ -159,7 +159,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                             Offerte Aanvragen
                         </a>
-                        <a href="#demo-video" class="btn btn-secondary">
+                        <a href="javascript:void(0)" onclick="document.querySelectorAll('.climb-slide').forEach(s=>{s.style.display='none';s.classList.remove('active')}); document.querySelectorAll('.climb-slide')[1].style.display='block'; document.querySelectorAll('.climb-slide')[1].classList.add('active');" class="btn btn-secondary">
                             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             Bekijk Demo
                         </a>
@@ -202,17 +202,6 @@
     </section>
 
     <!-- Demo Video Section -->
-    <section class="section section-opaque-light" id="demo-video">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="industrial-label">Zie de Klimwand in Actie</h2>
-                <p class="section-subtitle">Ontdek hoe interactieve projectie klimmen naar een nieuw niveau tilt</p>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: var(--radius-card);">
-                <img src="../media/hero_interactieve_klimwand.png" alt="Interactieve Klimwand demo" style="width: 100%; display: block;">
-            </div>
-        </div>
-    </section>
 
     <!-- Three Use Cases: IAM Moving, IAM Learning, IAM Playing -->
     <section class="section section-opaque-dark">
