@@ -259,6 +259,28 @@ export const blogPosts: BlogPost[] = [...]
 export const translations = { nl: {...}, en: {...} }
 ```
 
+### Integrations (MUST include)
+
+**Google Tag Manager:**
+- GTM ID: `GTM-KPX78C22`
+- Load in `<head>`: `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KPX78C22');</script>`
+- Noscript fallback in `<body>`: `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPX78C22" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`
+- **GDPR**: GTM should only load AFTER cookie consent is granted (wrap in consent check)
+
+**HubSpot:**
+- HubSpot Portal ID: `49291889`
+- Load before `</body>`: `<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49291889.js"></script>`
+- This enables HubSpot tracking, forms, and the chat widget
+- Should also be gated behind cookie consent for GDPR compliance
+
+**Cookie Consent Banner:**
+- GDPR-compliant cookie consent banner at the bottom of the page
+- Must appear on first visit, with "Accept All" and "Reject" options
+- On "Accept All": load GTM + HubSpot scripts
+- On "Reject": do not load any tracking scripts
+- Store consent choice in `localStorage` so it persists
+- Show a "Cookie Settings" link in the footer to allow users to change their choice
+
 ### Important Notes
 - No backend. Everything is static/client-side
 - No database. Blog posts are in a TS data file
