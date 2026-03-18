@@ -273,6 +273,20 @@ export const translations = { nl: {...}, en: {...} }
 - This enables HubSpot tracking, forms, and the chat widget
 - Should also be gated behind cookie consent for GDPR compliance
 
+**AI Support Chat Widget:**
+- Bottom-right floating chat bubble (amber `#feba04` circle, 60px, chat icon)
+- On click: opens a 400x550px chat window with rounded corners and shadow
+- The chat sends user messages to `/api/chat` (a server-side proxy to an AI API)
+- The AI has access to a comprehensive **knowledge base** (`js/iam-knowledge-base.js`) containing:
+  - All product specs, prices, projection sizes, installation requirements
+  - FAQ answers for general, education, healthcare, pricing questions
+  - Company info, contact details, financing options
+  - Use cases and target audiences
+- The knowledge base is injected as system context so the AI can answer product questions accurately in both NL and EN
+- Chat UI: message bubbles (user = amber, bot = light gray), typing indicator, scrollable message area
+- Header: "IAM Support" with close button
+- The knowledge base file must be preserved and included in the build — it's curated data from interactivemove.nl
+
 **Cookie Consent Banner:**
 - GDPR-compliant cookie consent banner at the bottom of the page
 - Must appear on first visit, with "Accept All" and "Reject" options
@@ -280,6 +294,19 @@ export const translations = { nl: {...}, en: {...} }
 - On "Reject": do not load any tracking scripts
 - Store consent choice in `localStorage` so it persists
 - Show a "Cookie Settings" link in the footer to allow users to change their choice
+
+### Existing Assets to Preserve
+These files from the current codebase contain real data and should be migrated into the new project:
+
+- **`js/iam-knowledge-base.js`** — Curated product knowledge base (194 lines) with all specs, FAQs, prices in NL+EN. Used by the AI chat widget.
+- **`js/blog-local-data.js`** — 11 real blog posts with full HTML content in NL+EN, slugs, feature images, tags, excerpts. Convert to TypeScript data file.
+- **`media/blog/`** — 11 blog feature images (real photos/graphics, not AI-generated)
+- **`media/logo-final.png`** — The actual IAM logo
+- **`media/climb1.jpg`**, **`media/sandbox1.jpg`**, **`media/sandbox2.jpg`** — Real product photos
+- **`media/*.mp4`** — Real product demo videos (hero-home-page.mp4, climb-video.mp4, sandbox-video.mp4, education-page-video.mp4, etc.)
+- **`media/video/2-in-1-floor-wall.mp4`** — 2-in-1 product video
+- **`robots.txt`** and **`sitemap.xml`** — Current SEO files (update URLs after refactor)
+- **`SEO-AI-STRATEGY.md`** — SEO strategy document for reference
 
 ### Important Notes
 - No backend. Everything is static/client-side
