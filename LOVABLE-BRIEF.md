@@ -12,21 +12,49 @@ Build a complete, production-ready website for **InterActiveMove** (interactivem
 - Fully static-exportable (no server-side logic — this will later be wrapped in Next.js with `output: 'export'`)
 - shadcn/ui components where appropriate
 
-### Design Direction
-- **Bold, clean, premium B2B industrial aesthetic** — think Groq.com meets Apple product pages
-- Dark header/footer, light content sections, high contrast
-- Big typography, generous whitespace
-- Smooth scroll animations (fade-in on scroll, parallax-light effects)
-- Responsive: mobile-first, perfect on phones
-- Primary brand color: `#feba04` (golden amber — this is the IAM brand color, do NOT change it)
-- Danger/accent: `#d23234`
+### Design Direction — THIS IS THE SOUL OF THE SITE, DO NOT CHANGE
+
+**The #1 signature element is the interactive particle background with frosted glass UI.** This is non-negotiable and must be implemented exactly:
+
+#### Interactive Particle Background (Canvas)
+- A **full-screen fixed canvas** behind all content (`position: fixed; z-index: -1; pointer-events: none`)
+- Background color: `#f0f2f5` (light warm gray)
+- **25 large floating particles** (15px–45px radius) that drift with Brownian motion
+- **Particle colors** (industrial palette): `#d23234` (red), `#feba04` (golden amber), `#333333`, `#4d4d4d`, `#2a2a2a` (dark grays/blacks)
+- **Mouse interaction**: particles are repelled from the cursor within a 300px radius (fluid physics feel)
+- **Connection lines**: faint cyan lines (`rgba(0, 188, 212, 0.2)`) between particles within 200px of each other (constellation effect)
+- **Trail effect**: semi-transparent fill (`rgba(240, 244, 248, 0.3)`) each frame instead of clearRect, creating soft motion trails
+- Touch support (mobile)
+- Canvas renders behind EVERYTHING — all page content sits on top
+
+#### Frosted Glass UI Panels
+- All content sections use **glassmorphism** — `backdrop-filter: blur(16px–24px)` with semi-transparent backgrounds
+- Light glass panels: `rgba(255, 255, 255, 0.8)` with `backdrop-filter: blur(16px)` and subtle border `rgba(255, 255, 255, 0.4)`
+- Dark glass panels: `rgba(29, 30, 34, 0.85)` with `backdrop-filter: blur(24px)`
+- The particles are visible through the frosted glass, creating depth and movement
+- Header: dark frosted glass (`backdrop-filter: blur(20px)`)
+- Cards/sections float on glass over the particle background
+
+#### Typography & Colors
+- **Bold, Swiss-style typography** — tight letter-spacing (`-0.03em`), font-weight 800 for headings
+- Font: system sans-serif stack
+- Big type: h1 at 3.5rem, confident and bold
+- Primary brand color: `#feba04` (golden amber — **DO NOT change this**)
+- Danger/accent: `#d23234` (red)
 - Dark background: `#1d1e22`
 - Dark surface: `#2a2b30`
 - Light background: `#ffffff`
 - Light surface: `#f8f9fa`
+- Canvas background: `#f0f2f5`
 - Text: `#1d1e22` on light, `#f0f0f0` on dark
 - Text muted: `#666666`
-- Font: system sans-serif (the site currently uses system fonts)
+
+#### Overall Aesthetic
+- Think **Apple product page meets Swiss industrial design**
+- Generous whitespace, bold confident layout
+- Responsive: mobile-first, perfect on phones
+- Scroll animations (fade-in on scroll)
+- The particle background + frosted glass is what makes this site unique — it simulates an interactive floor projector, which IS the product being sold
 
 ### Bilingual (NL/EN)
 - Language toggle (NL | EN) in the nav bar
