@@ -49,12 +49,61 @@ Build a complete, production-ready website for **InterActiveMove** (interactivem
 - Text: `#1d1e22` on light, `#f0f0f0` on dark
 - Text muted: `#666666`
 
+#### UI Component Patterns — Didactic, Monochrome, Icon-Driven
+
+The current site has a very strong visual language for presenting information. Replicate these patterns:
+
+**Spec Cards (`.spec-card`):**
+- Used everywhere to explain features, benefits, "Why choose X"
+- Glass card: `rgba(255, 255, 255, 0.03)` bg, `1px solid rgba(255, 255, 255, 0.05)` border, `border-radius: 16px`, `padding: 2rem`
+- On hover: `background: rgba(255, 255, 255, 0.08)`, `scale(1.02)`
+- Each card has: monochrome SVG icon (40x40, colored in `var(--color-primary)` amber), bold title, muted description
+- Grid: `repeat(auto-fit, minmax(280px, 1fr))`
+- On light sections: same layout but white bg with shadow instead of glass
+
+**Benefit Strip:**
+- Horizontal row of icon + text pairs (e.g. "✓ 100+ Games", "✓ 2 Year Warranty")
+- Clean, inline-flex, monochrome icons, `font-weight: 500`
+
+**Category Filter Pills (`.category-btn`):**
+- Pill-shaped buttons (`border-radius: 999px`) for filtering content
+- Default: transparent bg, `2px solid` border, bold text
+- Active/hover: filled with `var(--color-primary)` amber, black text
+- Used for filtering game grids, blog categories, etc.
+
+**Game Cards:**
+- White cards with subtle shadow, centered layout
+- Monochrome SVG icon placeholder (48x48) in a light circular background
+- Title, optional description, category tag pill
+- Grid: `repeat(auto-fill, minmax(150px, 1fr))`
+- Hover: `translateY(-5px)` lift effect
+
+**FAQ Accordions:**
+- Glass cards: `rgba(255, 255, 255, 0.7)`, `backdrop-filter: blur(16px)`, `border-radius: 16px`
+- Uses native `<details>/<summary>` for progressive enhancement
+- Bold summary text, chevron rotates on open
+- Hover: shadow lifts
+
+**Section Layering System:**
+Sections alternate between transparent (particles visible through glass), opaque-light (white, solid), and opaque-dark (near-black, solid). This creates visual rhythm:
+- `.section-dark-glass` — dark translucent over particles: `rgba(29, 30, 34, 0.9)`, `backdrop-filter: blur(24px)`, white text
+- `.section-opaque-light` — solid white: `background: #fff`, dark text, no particles visible
+- `.section-opaque-dark` — solid dark: `background: #1d1e22`, white text, no particles visible
+- Default sections — transparent, particles visible through frosted glass content cards
+
+**Icon Style:**
+- ALL icons are inline SVGs — no icon libraries, no font-awesome
+- Monochrome, single-color fills (usually `currentColor` or `var(--color-primary)`)
+- Consistent sizing: 20-24px for nav/inline, 32-40px for cards, 48-80px for hero features
+- Style: clean, geometric, minimal — similar to Material Icons or Lucide but custom paths
+
 #### Overall Aesthetic
 - Think **Apple product page meets Swiss industrial design**
 - Generous whitespace, bold confident layout
 - Responsive: mobile-first, perfect on phones
-- Scroll animations (fade-in on scroll)
+- Scroll animations (fade-in on scroll with IntersectionObserver)
 - The particle background + frosted glass is what makes this site unique — it simulates an interactive floor projector, which IS the product being sold
+- Every section is either floating on glass over particles, or a solid opaque block — never bare HTML on a plain background
 
 ### Bilingual (NL/EN)
 - Language toggle (NL | EN) in the nav bar
