@@ -174,7 +174,7 @@ Preserve and migrate from the current codebase (use placeholders until real asse
 - **Name**: Inter Active Move B.V.
 - **Address**: Smitspol 15K, 3861RS Nijkerk, Netherlands
 - **Phone**: +31 6 2399 8934
-- **Email**: info@interactivemove.nl
+- **Email**: klantcontact@interactivemove.nl
 - **KvK**: 96157895
 - **Website**: interactivemove.nl
 - **YouTube**: youtube.com/@IAM-InterActiveMove
