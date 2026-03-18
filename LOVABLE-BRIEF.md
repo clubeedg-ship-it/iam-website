@@ -1,5 +1,9 @@
 # Enhanced Lovable Brief — InterActiveMove Website Revamp
 
+## Source / Reference
+
+**This is a refactor of the existing website at https://iam.zenithcred.com**. All content, copy, product data, blog posts, media assets and design language are already live there. Use it as the primary reference for structure, content and visual style. The goal is to rebuild it with a proper React component architecture while preserving everything that works and fixing what doesn't.
+
 ## Purpose and Audience
 
 InterActiveMove sells high-end interactive projection systems for schools, healthcare and entertainment venues. The website must convert B2B decision-makers by conveying trust, innovation and playful energy. Visitors should quickly understand what IAM offers, why it's superior and how to get in touch. Every section should guide users towards the next action — learning more about a product, booking a demo or contacting sales.
