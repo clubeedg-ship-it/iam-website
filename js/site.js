@@ -48,8 +48,8 @@ function switchLang(lang) {
         partialPath = basePath + 'partials/' + slug + '-' + lang + '.html';
     }
 
-    // 6. Swap content via HTMX
-    if (typeof htmx !== 'undefined' && document.getElementById('content-area')) {
+    // 6. Swap content via HTMX (skip for blog — it renders client-side)
+    if (slug !== 'blog' && typeof htmx !== 'undefined' && document.getElementById('content-area')) {
         htmx.ajax('GET', partialPath, '#content-area');
     }
 
