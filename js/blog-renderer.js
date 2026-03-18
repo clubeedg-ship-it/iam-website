@@ -83,7 +83,7 @@
         const excerpt = t(post, 'excerpt').replace(/\[&hellip;\]/g, '...');
         const tag = post.tags && post.tags[0] ? (post.tags[0]['name_' + lang] || post.tags[0].name_nl) : labels.news;
         const langParam = lang === 'en' ? '&lang=en' : '';
-        const url = `blog.html?post=${post.slug}${langParam}`;
+        const url = `/blog?post=${post.slug}${langParam}`;
 
         return `
             <div class="featured-card">
@@ -104,7 +104,7 @@
         const title = t(post, 'title');
         const dateStr = formatDate(post.published_at, lang);
         const langParam = lang === 'en' ? '&lang=en' : '';
-        const url = `blog.html?post=${post.slug}${langParam}`;
+        const url = `/blog?post=${post.slug}${langParam}`;
 
         return `
             <a href="${url}" class="grid-card">
@@ -121,7 +121,7 @@
         const post = BLOG_LOCAL_DATA.find(p => p.slug === slug);
 
         if (!post) {
-            container.innerHTML = `<div class="blog-light-wrapper"><div class="blog-content-container" style="padding: 10rem 0; text-align: center;"><h1>Post not found</h1><a href="blog.html" class="back-link">${labels.backToBlog}</a></div></div>`;
+            container.innerHTML = `<div class="blog-light-wrapper"><div class="blog-content-container" style="padding: 10rem 0; text-align: center;"><h1>Post not found</h1><a href="/blog" class="back-link">${labels.backToBlog}</a></div></div>`;
             return;
         }
 
@@ -134,7 +134,7 @@
         let html = `
             <div class="blog-light-wrapper">
                 <article class="blog-content-container single-post-view">
-                    <a href="blog.html${langParam}" class="back-link-top">
+                    <a href="/blog${langParam}" class="back-link-top">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                         ${labels.backToBlog}
                     </a>
