@@ -14,7 +14,7 @@
 
         // Translation helper
         const t = (obj, field) => obj[field + '_' + currentLang] || obj[field + '_nl'] || '';
-        
+
         // Labels
         const labels = {
             blogTitle: isEn ? 'Blog' : 'Blog',
@@ -22,7 +22,13 @@
             backToBlog: isEn ? 'Back' : 'Terug',
             relatedPosts: isEn ? 'Related' : 'Gerelateerd',
             news: isEn ? 'Blog' : 'Blog',
-            publishedOn: isEn ? 'Published on' : 'Gepubliceerd op'
+            publishedOn: isEn ? 'Published on' : 'Gepubliceerd op',
+            readTime: isEn ? 'min read' : 'min leestijd',
+            ctaTitle: isEn ? 'Interested in our solutions?' : 'Geinteresseerd in onze oplossingen?',
+            ctaText: isEn ? 'Get in touch and discover what InterActiveMove can do for your organization.' : 'Neem contact op en ontdek wat InterActiveMove voor uw organisatie kan betekenen.',
+            ctaBtn: isEn ? 'Contact Us' : 'Neem Contact Op',
+            emptyTitle: isEn ? 'No posts yet' : 'Nog geen berichten',
+            emptyText: isEn ? 'Check back soon for new articles.' : 'Kom binnenkort terug voor nieuwe artikelen.'
         };
 
         if (postSlug) {
@@ -42,14 +48,52 @@
         return `${m[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     }
 
-    function renderBlogList(container, lang, labels, t) {
-        const posts = BLOG_LOCAL_DATA;
-        if (!posts || posts.length === 0) return;
+    function estimateReadTime(html) {
+        const text = html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+        const words = text.split(' ').filter(w => w.length > 0).length;
+        return Math.max(1, Math.ceil(words / 200));
+    }
 
-        // Select a random featured post
-        const featuredIndex = Math.floor(Math.random() * posts.length);
-        const featuredPost = posts[featuredIndex];
-        const otherPosts = posts.filter((_, i) => i !== featuredIndex);
+    function stripWordPressArtifacts(html) {
+        // Remove Elementor classes
+        html = html.replace(/\sclass="[^"]*elementor[^"]*"/gi, '');
+        // Remove wp-content URLs in img src/srcset
+        html = html.replace(/<img[^>]*src="[^"]*wp-content\/uploads[^"]*"[^>]*\/?>/gi, '');
+        // Remove srcset attributes
+        html = html.replace(/\s*srcset="[^"]*"/gi, '');
+        // Remove WordPress data-* attributes
+        html = html.replace(/\s*data-(?:widget_type|id|element_type|settings|src)="[^"]*"/gi, '');
+        // Remove empty anchor tags left behind
+        html = html.replace(/<a[^>]*href="[^"]*wp-content\/uploads[^"]*"[^>]*>.*?<\/a>/gi, '');
+        // Remove empty figures
+        html = html.replace(/<figure[^>]*>\s*<\/figure>/gi, '');
+        // Remove empty divs with elementor classes
+        html = html.replace(/<div[^>]*class="[^"]*elementor[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+        return html;
+    }
+
+    function renderBlogList(container, lang, labels, t) {
+        const posts = typeof BLOG_LOCAL_DATA !== 'undefined' ? BLOG_LOCAL_DATA : [];
+        if (!posts || posts.length === 0) {
+            container.innerHTML = `
+                <div class="blog-light-wrapper">
+                    <div class="blog-content-container">
+                        <header class="blog-header">
+                            <h1 class="blog-page-title">${labels.blogTitle}</h1>
+                            <hr class="blog-title-sep">
+                        </header>
+                        <div class="blog-empty-state">
+                            <h2>${labels.emptyTitle}</h2>
+                            <p>${labels.emptyText}</p>
+                        </div>
+                    </div>
+                </div>`;
+            return;
+        }
+
+        // Featured post is the newest (index 0, sorted by date)
+        const featuredPost = posts[0];
+        const otherPosts = posts.slice(1);
 
         let html = `
             <div class="blog-light-wrapper">
@@ -84,12 +128,15 @@
         const tag = post.tags && post.tags[0] ? (post.tags[0]['name_' + lang] || post.tags[0].name_nl) : labels.news;
         const langParam = lang === 'en' ? '&lang=en' : '';
         const url = `/blog?post=${post.slug}${langParam}`;
+        const content = t(post, 'html');
+        const readMin = estimateReadTime(content);
 
         return `
             <div class="featured-card">
                 <div class="featured-card-content">
                     <span class="featured-tag">${tag}</span>
                     <h2 class="featured-title">${title}</h2>
+                    <div class="featured-meta">${formatDate(post.published_at, lang)} &middot; ${readMin} ${labels.readTime}</div>
                     <p class="featured-excerpt">${excerpt.substring(0, 200)}${excerpt.length > 200 ? '...' : ''}</p>
                     <a href="${url}" class="featured-btn">${labels.readMore}</a>
                 </div>
@@ -105,10 +152,12 @@
         const dateStr = formatDate(post.published_at, lang);
         const langParam = lang === 'en' ? '&lang=en' : '';
         const url = `/blog?post=${post.slug}${langParam}`;
+        const content = t(post, 'html');
+        const readMin = estimateReadTime(content);
 
         return `
             <a href="${url}" class="grid-card">
-                <div class="grid-card-date">${dateStr}</div>
+                <div class="grid-card-date">${dateStr} &middot; ${readMin} ${labels.readTime}</div>
                 <div class="grid-card-image">
                     <img src="${post.feature_image}" alt="${title}" loading="lazy">
                 </div>
@@ -118,7 +167,8 @@
     }
 
     function renderSinglePost(container, slug, lang, labels, t) {
-        const post = BLOG_LOCAL_DATA.find(p => p.slug === slug);
+        const posts = typeof BLOG_LOCAL_DATA !== 'undefined' ? BLOG_LOCAL_DATA : [];
+        const post = posts.find(p => p.slug === slug);
 
         if (!post) {
             container.innerHTML = `<div class="blog-light-wrapper"><div class="blog-content-container" style="padding: 10rem 0; text-align: center;"><h1>Post not found</h1><a href="/blog" class="back-link">${labels.backToBlog}</a></div></div>`;
@@ -126,8 +176,10 @@
         }
 
         const title = t(post, 'title');
-        const content = t(post, 'html');
+        const rawContent = t(post, 'html');
+        const content = stripWordPressArtifacts(rawContent);
         const dateStr = formatDate(post.published_at, lang);
+        const readMin = estimateReadTime(content);
         const tag = post.tags && post.tags[0] ? (post.tags[0]['name_' + lang] || post.tags[0].name_nl) : labels.news;
         const langParam = lang === 'en' ? '?lang=en' : '';
 
@@ -138,9 +190,9 @@
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                         ${labels.backToBlog}
                     </a>
-                    
+
                     <header class="post-detail-header">
-                        <div class="post-detail-date">${dateStr}</div>
+                        <div class="post-detail-date">${dateStr} &middot; ${readMin} ${labels.readTime}</div>
                         <h1 class="post-detail-title">${title}</h1>
                     </header>
 
@@ -148,6 +200,12 @@
 
                     <div class="post-detail-content">
                         ${content}
+                    </div>
+
+                    <div class="post-cta">
+                        <h3 class="post-cta-title">${labels.ctaTitle}</h3>
+                        <p class="post-cta-text">${labels.ctaText}</p>
+                        <a href="/index.html#contact" class="post-cta-btn">${labels.ctaBtn}</a>
                     </div>
 
                     ${renderRelatedGrid(post, lang, labels, t)}
@@ -160,7 +218,8 @@
     }
 
     function renderRelatedGrid(currentPost, lang, labels, t) {
-        const related = BLOG_LOCAL_DATA
+        const posts = typeof BLOG_LOCAL_DATA !== 'undefined' ? BLOG_LOCAL_DATA : [];
+        const related = posts
             .filter(p => p.slug !== currentPost.slug)
             .slice(0, 4);
 

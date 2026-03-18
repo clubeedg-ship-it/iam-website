@@ -30,6 +30,25 @@
     margin: 1.5rem 0 2.5rem;
 }
 
+/* Empty State */
+.blog-empty-state {
+    text-align: center;
+    padding: 6rem 2rem;
+    color: #888;
+}
+
+.blog-empty-state h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 0.75rem;
+}
+
+.blog-empty-state p {
+    font-size: 1rem;
+    margin: 0;
+}
+
 /* Featured Card */
 .featured-card {
     display: flex;
@@ -62,7 +81,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--color-primary, #00d4ff);
+    color: #feba04;
     margin-bottom: 1rem;
 }
 
@@ -71,7 +90,17 @@
     font-weight: 700;
     color: #1a1a1a;
     line-height: 1.2;
-    margin: 0 0 1rem;
+    margin: 0 0 0.75rem;
+}
+
+.featured-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #888;
+    font-family: monospace;
+    margin-bottom: 1rem;
 }
 
 .featured-excerpt {
@@ -84,17 +113,18 @@
 .featured-btn {
     display: inline-block;
     padding: 0.75rem 2rem;
-    background: var(--color-primary, #00d4ff);
-    color: #fff !important;
+    background: #feba04;
+    color: #1d1e22 !important;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .featured-btn:hover {
     opacity: 0.85;
+    transform: translateY(-1px);
 }
 
 /* Post Grid */
@@ -113,11 +143,14 @@
 .grid-card {
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 12px;
+    padding: 0.5rem;
 }
 
 .grid-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .grid-card-date {
@@ -143,6 +176,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.grid-card:hover .grid-card-image img {
+    transform: scale(1.03);
 }
 
 .grid-card-title {
@@ -170,7 +208,7 @@
 }
 
 .back-link-top:hover {
-    color: var(--color-primary, #00d4ff);
+    color: #feba04;
 }
 
 .post-detail-header {
@@ -214,6 +252,13 @@
     color: #333;
 }
 
+.post-detail-content h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 2.5rem 0 1rem;
+}
+
 .post-detail-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -244,6 +289,80 @@
 
 .post-detail-content strong {
     color: #1a1a1a;
+}
+
+.post-detail-content a {
+    color: #feba04;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+
+.post-detail-content a:hover {
+    color: #d4a003;
+}
+
+/* Blockquote */
+.post-detail-content blockquote {
+    border-left: 4px solid #feba04;
+    background: #fef9ea;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    color: #444;
+    font-style: italic;
+}
+
+.post-detail-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Horizontal Rule */
+.post-detail-content hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 2rem 0;
+}
+
+/* Post CTA */
+.post-cta {
+    max-width: 760px;
+    margin: 3rem 0;
+    padding: 2rem 2.5rem;
+    background: #1d1e22;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.post-cta-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.5rem;
+}
+
+.post-cta-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin: 0 0 1.25rem;
+    line-height: 1.5;
+}
+
+.post-cta-btn {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    background: #feba04;
+    color: #1d1e22 !important;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.post-cta-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
 }
 
 /* Related Section */
@@ -293,5 +412,9 @@
     .blog-posts-grid,
     .blog-posts-grid.mini {
         grid-template-columns: 1fr;
+    }
+
+    .post-cta {
+        padding: 1.5rem;
     }
 }
