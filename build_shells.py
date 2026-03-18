@@ -13,6 +13,7 @@ TEMPLATE = r'''<!DOCTYPE html>
     <meta name="description" content="%%PAGE_DESCRIPTION%%">
     <link rel="icon" href="%%BASE_PATH%%media/icon.png" type="image/png">
     <link rel="stylesheet" href="%%BASE_PATH%%styles.css">
+%%EXTRA_HEAD%%
     <script src="/js/htmx.min.js"></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KPX78C22');</script>
@@ -36,13 +37,13 @@ TEMPLATE = r'''<!DOCTYPE html>
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Producten</span><span class="lang-en">Products</span></button>
                         <div class="dropdown-menu">
-                            <a href="%%BASE_PATH%%products/2-in-1-vloer-muur.html">2-in-1 Vloer &amp; Muur</a>
-                            <a href="%%BASE_PATH%%products/interactieve-vloer.html">Interactieve Vloer</a>
-                            <a href="%%BASE_PATH%%products/interactieve-muur.html">Interactieve Muur</a>
-                            <a href="%%BASE_PATH%%products/interactieve-zandbak.html">Interactieve Zandbak</a>
-                            <a href="%%BASE_PATH%%products/interactieve-klimwand.html">Interactieve Klimwand</a>
-                            <a href="%%BASE_PATH%%products/mobiele-vloer.html">Mobiele Vloer</a>
-                            <a href="%%BASE_PATH%%products/software-maatwerk.html">Software &amp; Maatwerk</a>
+                            <a href="%%BASE_PATH%%products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                            <a href="%%BASE_PATH%%products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                            <a href="%%BASE_PATH%%products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                            <a href="%%BASE_PATH%%products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                            <a href="%%BASE_PATH%%products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                            <a href="%%BASE_PATH%%products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
+                            <a href="%%BASE_PATH%%products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -87,13 +88,13 @@ TEMPLATE = r'''<!DOCTYPE html>
                     <span class="lang-nl">Producten</span><span class="lang-en">Products</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="%%BASE_PATH%%products/2-in-1-vloer-muur.html">2-in-1 Vloer &amp; Muur</a>
-                    <a href="%%BASE_PATH%%products/interactieve-vloer.html">Interactieve Vloer</a>
-                    <a href="%%BASE_PATH%%products/interactieve-muur.html">Interactieve Muur</a>
-                    <a href="%%BASE_PATH%%products/interactieve-zandbak.html">Interactieve Zandbak</a>
-                    <a href="%%BASE_PATH%%products/interactieve-klimwand.html">Interactieve Klimwand</a>
-                    <a href="%%BASE_PATH%%products/mobiele-vloer.html">Mobiele Vloer</a>
-                    <a href="%%BASE_PATH%%products/software-maatwerk.html">Software &amp; Maatwerk</a>
+                    <a href="%%BASE_PATH%%products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                    <a href="%%BASE_PATH%%products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                    <a href="%%BASE_PATH%%products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                    <a href="%%BASE_PATH%%products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                    <a href="%%BASE_PATH%%products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                    <a href="%%BASE_PATH%%products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
+                    <a href="%%BASE_PATH%%products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                 </div>
             </div>
             <div class="mobile-dropdown">
@@ -129,6 +130,7 @@ TEMPLATE = r'''<!DOCTYPE html>
     </div>
 
     <script src="%%BASE_PATH%%projector.js"></script>
+%%EXTRA_SCRIPTS%%
     <script src="/js/site.js"></script>
     <script src="/js/cookie-consent.js"></script>
     <script src="/js/contact-form.js"></script>
@@ -141,7 +143,8 @@ TEMPLATE = r'''<!DOCTYPE html>
 
 PAGES = [
     # Root pages
-    {"file": "index.html", "slug": "index", "title": "InterActiveMove | Interactieve oplossingen voor beweging, leren en spelen", "partial": "partials/index-nl.html", "base": "", "section": ""},
+    {"file": "index.html", "slug": "index", "title": "InterActiveMove | Interactieve oplossingen voor beweging, leren en spelen", "partial": "partials/index-nl.html", "base": "", "section": "",
+     "extra_scripts": "    <script src=\"js/blog-local-data.js\"></script>\n    <script src=\"js/blog-carousel.js\"></script>"},
     {"file": "over-ons.html", "slug": "over-ons", "title": "Over Ons | InterActiveMove", "partial": "partials/over-ons-nl.html", "base": "", "section": ""},
     {"file": "prijzen.html", "slug": "prijzen", "title": "Prijzen | InterActiveMove", "partial": "partials/prijzen-nl.html", "base": "", "section": ""},
     {"file": "onderwijs.html", "slug": "onderwijs", "title": "Onderwijs | InterActiveMove", "partial": "partials/onderwijs-nl.html", "base": "", "section": ""},
@@ -151,7 +154,9 @@ PAGES = [
     {"file": "zorg-revalidatie.html", "slug": "zorg-revalidatie", "title": "Zorg & Revalidatie | InterActiveMove", "partial": "partials/zorg-revalidatie-nl.html", "base": "", "section": ""},
     {"file": "maak-je-spel.html", "slug": "maak-je-spel", "title": "Maak je eigen spel | InterActiveMove", "partial": "partials/maak-je-spel-nl.html", "base": "", "section": ""},
     {"file": "word-partner.html", "slug": "word-partner", "title": "Word Partner | InterActiveMove", "partial": "partials/word-partner-nl.html", "base": "", "section": ""},
-    {"file": "blog.html", "slug": "content", "title": "Blog | InterActiveMove", "partial": "partials/content-nl.html", "base": "", "section": ""},
+    {"file": "blog.html", "slug": "blog", "title": "Blog | InterActiveMove", "partial": "partials/blog-nl.html", "base": "", "section": "",
+     "extra_head": "    <link rel=\"stylesheet\" href=\"css/blog-styles.css\">",
+     "extra_scripts": "    <script src=\"js/blog-local-data.js\"></script>\n    <script src=\"js/blog-renderer.js\"></script>"},
     {"file": "cookiebeleid.html", "slug": "cookiebeleid", "title": "Cookiebeleid | InterActiveMove", "partial": "partials/cookiebeleid-nl.html", "base": "", "section": ""},
     {"file": "privacybeleid.html", "slug": "privacybeleid", "title": "Privacybeleid | InterActiveMove", "partial": "partials/privacybeleid-nl.html", "base": "", "section": ""},
     {"file": "toegankelijkheid.html", "slug": "toegankelijkheid", "title": "Toegankelijkheid | InterActiveMove", "partial": "partials/toegankelijkheid-nl.html", "base": "", "section": ""},
@@ -198,6 +203,8 @@ for page in PAGES:
     html = html.replace("%%BASE_PATH%%", page["base"])
     html = html.replace("%%SECTION%%", page["section"])
     html = html.replace("%%NL_CONTENT%%", partial_content)
+    html = html.replace("%%EXTRA_HEAD%%", page.get("extra_head", ""))
+    html = html.replace("%%EXTRA_SCRIPTS%%", page.get("extra_scripts", ""))
     
     with open(page["file"], 'w', encoding='utf-8') as f:
         f.write(html)

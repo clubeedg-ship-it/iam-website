@@ -323,6 +323,18 @@ header {
     background: #000;
 }
 
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.85));
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero-video-container video {
     width: 100%;
     height: 100%;
@@ -335,6 +347,36 @@ header {
     z-index: 10;
     text-align: center;
     max-width: 900px;
+}
+
+/* Frosted glass hero content for solution pages */
+.hero-glass .hero-content > * {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-glass .hero-content h1 {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+}
+
+.hero-glass .hero-content .pricing-trust-badges,
+.hero-glass .hero-content > div[style*="display: flex"] {
+    border-radius: 999px;
+    padding: 0.5rem 1.5rem;
+}
+
+.hero-glass .hero-content .hero-cta-group,
+.hero-glass .hero-content > a {
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 /* Buttons (Modern) */
@@ -3865,7 +3907,7 @@ table tbody tr:hover th * {
 }
 
 .financing-card h3 {
-    color: #fff;
+    color: #111;
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
@@ -3878,13 +3920,32 @@ table tbody tr:hover th * {
 }
 
 .financing-highlight {
-    color: var(--color-primary);
+    color: #111;
     font-weight: 600;
     display: block;
     margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
+    .flagship-product-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .flagship-product-copy {
+        padding: 2rem !important;
+        text-align: center;
+    }
+
+    .flagship-product-visual-wrap {
+        order: -1;
+        padding: 1.5rem 2rem 2rem !important;
+    }
+
+    .flagship-product-visual {
+        width: min(100%, 260px);
+        margin: 0 auto;
+    }
+
     .financing-grid {
         grid-template-columns: 1fr;
         max-width: 400px;

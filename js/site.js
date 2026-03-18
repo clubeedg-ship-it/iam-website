@@ -48,9 +48,16 @@ function switchLang(lang) {
         partialPath = basePath + 'partials/' + slug + '-' + lang + '.html';
     }
 
-    // 6. Swap content via HTMX
-    if (typeof htmx !== 'undefined') {
+    // 6. Swap content via HTMX (skip for blog — it renders client-side)
+    if (slug !== 'blog' && typeof htmx !== 'undefined' && document.getElementById('content-area')) {
         htmx.ajax('GET', partialPath, '#content-area');
+    }
+
+    // 6b. Re-render blog if present
+    if (typeof initBlog === 'function') {
+        initBlog();
+    } else if (typeof window.reRenderBlog === 'function') {
+        window.reRenderBlog();
     }
 
     // 7. Close mobile nav
@@ -132,7 +139,30 @@ document.body.addEventListener('htmx:afterSwap', function() {
     setTimeout(function() {
         observeRevealElements();
         initStaggerAnimations();
+        initProductGallery();
     }, 50);
+});
+
+// === Product Gallery ===
+function initProductGallery() {
+    document.querySelectorAll('.thumb[data-image]').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            var gallery = this.closest('.product-gallery');
+            var mainImg = gallery ? gallery.querySelector('#mainProductImage') : null;
+            if (mainImg) {
+                mainImg.src = this.getAttribute('data-image');
+                gallery.querySelectorAll('.thumb').forEach(function(t) {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+            }
+        });
+    });
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded', function() {
+    initProductGallery();
 });
 
 // === Desktop dropdown close on outside click ===
