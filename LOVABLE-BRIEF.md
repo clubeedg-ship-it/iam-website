@@ -318,14 +318,15 @@ These files from the current codebase contain real data and should be migrated i
 - **`SEO-AI-STRATEGY.md`** — SEO strategy document for reference
 
 ### Important Notes
-- No backend. Everything is static/client-side
+- No backend logic in the React app. Everything is static/client-side
+- The only server-side component is the `/api/chat` proxy (Node.js, separate from the React app)
 - No database. Blog posts are in a TS data file
-- Forms: just use mailto: or a simple fetch to an API endpoint placeholder
-- All images are placeholders (gradient boxes with text labels). We'll swap real assets later
-- Cookie consent banner (GDPR) — simple banner at bottom with Accept/Decline
-- SEO: each page should set document.title and meta description via a useEffect or helmet equivalent
+- Contact form: submit to HubSpot form endpoint or simple mailto: fallback
+- All images are placeholders (gradient boxes with text labels) — we'll swap real assets later
+- SEO: each page should set `document.title` and meta description via react-helmet or equivalent
 - Performance: lazy load images, code-split routes
 - The site must feel **finished and professional**, not like a template. Bold typography, confident spacing, polished micro-interactions
+- The chat proxy (`/api/chat`) will run as a separate Node.js service on the VPS, proxied via nginx
 
 ### Company Info (for footer, contact, etc.)
 - **Name**: Inter Active Move B.V.
