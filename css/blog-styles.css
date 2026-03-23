@@ -7,7 +7,7 @@
 .blog-light-wrapper {
     background-color: #fafafa;
     min-height: 100vh;
-    padding: 4rem 1.5rem;
+    padding: 8rem 1.5rem 4rem;
 }
 
 .blog-content-container {
@@ -15,13 +15,33 @@
     margin: 0 auto;
 }
 
-/* Blog Header */
+/* Blog Header — override main header styles */
+.blog-header {
+    text-align: left;
+    width: 100%;
+    position: static;
+    display: block;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+    transform: none;
+    left: auto;
+    top: auto;
+    justify-content: flex-start;
+}
+
 .blog-page-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #1a1a1a;
     margin: 0;
     letter-spacing: -0.02em;
+    text-align: left;
 }
 
 .blog-title-sep {

@@ -25,7 +25,7 @@ IAM has 3 product categories:
 ## Products / Producten
 
 ### 1. Interactieve Vloer / Interactive Floor
-- **Prijs/Price:** Vanaf/From €8.500 (excl. BTW/VAT)
+- **Prijs/Price:** Vanaf/From €8.950 (excl. BTW/VAT)
 - **Projectiegrootte/Projection size:** 2x3 meter (standaard), ruimte voor 4-6 kinderen tegelijk
 - **Spellen/Games:** 60+ spellen
 - **Ideaal voor/Ideal for:** Scholen, Speelhallen / Schools, Arcades
@@ -37,7 +37,7 @@ IAM has 3 product categories:
 - **Schoonmaak:** Geen fysiek oppervlak - gewoon uw bestaande vloer schoonmaken
 
 ### 2. Interactieve Muur / Interactive Wall (POPULAIR/POPULAR)
-- **Prijs/Price:** Vanaf/From €9.500 (excl. BTW/VAT)
+- **Prijs/Price:** Vanaf/From €9.950 (excl. BTW/VAT)
 - **Projectiegrootte:** Flexibel
 - **Spellen/Games:** 60+ spellen
 - **Ideaal voor:** Wachtkamers, Zorg / Waiting rooms, Healthcare
@@ -49,7 +49,7 @@ IAM has 3 product categories:
 - **Installatie:** Door technici, 2-4 uur (montage, kalibratie, software, training)
 
 ### 3. Interactieve Zandbak / Interactive Sandbox
-- **Prijs/Price:** Vanaf/From €12.000 (excl. BTW/VAT)
+- **Prijs/Price:** Vanaf/From €14.950 (excl. BTW/VAT)
 - **Projectiegrootte:** 1x1.5 meter (standaard zandbak 120x90cm)
 - **Spellen/Games:** AR Landschappen / AR Landscapes
 - **Ideaal voor:** Musea, Educatie / Museums, Education
@@ -60,7 +60,7 @@ IAM has 3 product categories:
 - **Garantie:** 2 jaar (Enterprise: 3 jaar). Remote support + 48u onderdelen.
 
 ### 4. Interactieve Klimwand / Interactive Climbing Wall
-- **Prijs/Price:** Vanaf/From €15.000 (excl. BTW/VAT)
+- **Prijs/Price:** Vanaf/From Op aanvraag (excl. BTW/VAT)
 - **Projectiegrootte:** Variabel
 - **Spellen/Games:** Klim Games / Climbing Games
 - **Ideaal voor:** Speelhallen, Sport / Arcades, Sports
@@ -75,23 +75,7 @@ IAM has 3 product categories:
 - **Voordeel:** Bespaart kosten, ruimte en installatie t.o.v. twee aparte systemen
 - **Leeftijden:** Alle leeftijden, peuters tot senioren
 
-### 6. Interactieve Tekeningen / Interactive Drawings
-- **Beschrijving NL:** Projectie op de wand die aanrakingen van klimgrepen detecteert via infrarood sensoren. Werkt met bestaande tekeningen zonder aanpassingen. CE-gecertificeerd, volledig contactloos.
-- **Standaard projectie:** 4x3 meter
-- **Eigen routes:** Mogelijk met Professional/Enterprise pakket
-
-### 7. Mobiele Vloer / Mobile Floor (Verhuur/Rental)
-- **Prijs/Price:** Vanaf/From €500/dag (excl. BTW/VAT)
-- **Projectiegrootte:** 2x3 meter
-- **Spellen/Games:** 60+ spellen
-- **Ideaal voor:** Evenementen, Beurzen / Events, Trade Shows
-- **Beschrijving NL:** Verhuur voor evenementen. Transport, opbouw en begeleiding inbegrepen.
-- **Setup:** 10-15 minuten met snelstartgids
-- **Flightcase bevat:** 4K projector, sensorsysteem, verstelbaar statief, kabels, mini-PC, afstandsbediening, handleiding
-- **Zelfde kwaliteit** als vaste installatie
-- **Buiten:** Best binnenshuis. Overdekt zonder zonlicht mogelijk.
-
-### 8. Software & Maatwerk / Software & Custom
+### 7. Software & Maatwerk / Software & Custom
 - **Prijs/Price:** Op aanvraag / On request
 - **Beschrijving NL:** Bouw eigen interactieve spellen met Game Editor en Animator tools.
 - **Description EN:** Build your own interactive games with Game Editor and Animator tools.
@@ -108,18 +92,17 @@ Alle prijzen zijn indicatief en exclusief BTW / All prices are indicative and ex
 
 | Product | Vanaf Prijs | Projectiegrootte | Spellen | Ideaal Voor |
 |---------|------------|-------------------|---------|-------------|
-| Interactieve Vloer | €8.500 | 2x3 meter | 60+ | Scholen, Speelhallen |
-| Interactieve Muur | €9.500 | Flexibel | 60+ | Wachtkamers, Zorg |
-| Interactieve Zandbak | €12.000 | 1x1.5 meter | AR | Musea, Educatie |
-| Interactieve Klimwand | €15.000 | Variabel | Klim Games | Speelhallen, Sport |
-| Mobiele Vloer (Verhuur) | €500/dag | 2x3 meter | 60+ | Evenementen |
+| Interactieve Vloer | €8.950 | 2x3 meter | 60+ | Scholen, Speelhallen |
+| Interactieve Muur | €9.950 | Flexibel | 60+ | Wachtkamers, Zorg |
+| Interactieve Zandbak | €14.950 | 1x1.5 meter | AR | Musea, Educatie |
+| Interactieve Klimwand | Op aanvraag | Variabel | Klim Games | Speelhallen, Sport |
 | Maatwerk Software | Op aanvraag | - | Eigen spellen | Branding, Corporate |
 
 **Financiering/Financing:** Lease vanaf €299/maand. Betaling in termijnen (0% rente bij 3 termijnen). Subsidie hulp voor scholen.
 **Garantie/Warranty:** 2 jaar garantie. Geen verborgen kosten. Software-updates gratis.
 **Levertijd/Delivery:** Standaard 4-6 weken incl. installatie en training. Spoedlevering mogelijk.
 **Upgraden:** Altijd mogelijk, verschil in pakketprijs wordt verrekend.
-**Demo:** Gratis demo op locatie of in showroom. Mobiele Vloer huren om uit te proberen.
+**Demo:** Gratis demo op locatie of in showroom.
 
 ---
 
@@ -133,9 +116,6 @@ Kinderen (3-12 jaar), volwassenen en senioren. Onderwijs, kinderopvang, zorginst
 
 **Installatie?**
 Plug-and-play systemen: 15-30 minuten. Geen technische kennis vereist. Professionele montageservice beschikbaar.
-
-**Verhuur voor evenement?**
-Ja! Mobiele Vloer speciaal voor verhuur. Transport, opbouw en begeleiding. Perfect voor bedrijfsfeesten, festivals, open dagen, kinderevenementen.
 
 **Hoeveel spellen?**
 60+ kant-en-klare spellen. Educatief tot actieve bewegingsspellen. Game Editor voor eigen spellen.
@@ -171,7 +151,7 @@ Elke situatie is uniek. Prijs hangt af van projectieoppervlak, pakket, installat
 Nee. Volledig transparant. Geen verplichte abonnementskosten. Software-updates gratis. Alleen optionele uitbreidingen extra.
 
 **Eerst uitproberen?**
-Gratis demo op locatie of in showroom. Mobiele Vloer huren voor evenement.
+Gratis demo op locatie of in showroom.
 
 **Budget niet toereikend?**
 Lease vanaf €299/maand, termijnbetaling (0% rente bij 3 termijnen), subsidie hulp voor scholen.
@@ -188,7 +168,6 @@ Ja, verschil in pakketprijs wordt verrekend.
 - **Onderwijs/Education:** Bewegend leren, rekenen, taal, motoriek. 100+ scholen.
 - **Zorg & Revalidatie / Healthcare & Rehabilitation:** Revalidatieoefeningen, activering senioren, therapie. 50+ zorginstellingen, 30+ revalidatiecentra.
 - **Speelhallen & Parken / Arcades & Parks:** Entertainment, actief spelen. 75+ speelparadijzen.
-- **Evenementen/Events:** Verhuur mobiele vloer voor beurzen, festivals, bedrijfsfeesten.
 - **Musea/Museums:** Interactieve educatieve ervaringen.
 - **Bouw een Park / Build a Park:** IAM helpt bij ontwerp en bouw van interactieve parken.
 `;

@@ -2,10 +2,21 @@
     <section class="product-hero-enhanced">
         <div class="container">
             <div class="product-hero-grid">
-                <div style="width: 100%; margin-bottom: 2rem;">
-                    <video autoplay muted loop playsinline style="width: 100%; border-radius: var(--radius-card); display: block;">
-                        <source src="../media/video/interactive-wall.mp4" type="video/mp4">
-                    </video>
+                <div class="product-gallery">
+                    <div class="gallery-main">
+                        <img src="../media/wall1.webp" alt="Interactieve Muur" id="mainProductImage">
+                    </div>
+                    <div class="gallery-thumbs">
+                        <button class="thumb active" data-image="../media/wall1.webp">
+                            <img src="../media/wall1.webp" alt="View 1">
+                        </button>
+                        <button class="thumb" data-image="../media/wall2.webp">
+                            <img src="../media/wall2.webp" alt="View 2">
+                        </button>
+                        <button class="thumb" data-image="../media/wall3.webp">
+                            <img src="../media/wall3.webp" alt="View 3">
+                        </button>
+                    </div>
                 </div>
                 <div class="product-info">
                     <span class="product-badge" style="display: inline-block; background: var(--color-primary); color: #000; padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase">Interactive</span>
@@ -26,7 +37,7 @@
                         <span class="price-amount">On request</span>
                     </div>
                     <div class="product-ctas">
-                        <a href="mailto:info@interactivemove.nl" class="btn btn-primary">
+                        <a href="/#contact" class="btn btn-primary">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                             Request Quote
                         </a>
@@ -80,8 +91,8 @@
                 <p class="section-subtitle">Discover how children and adults play, learn and move with our wall projection</p>
             </div>
             <div style="max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: var(--radius-card);">
-                <video controls muted preload="metadata" style="width: 100%; display: block;">
-                    <source src="../media/video/interactive-wall.mp4" type="video/mp4">
+                <video controls muted preload="metadata" style="width: 100%; display: block;" autoplay loop playsinline>
+                    <source src="../media/wall-video.webm" type="video/webm">
                     Your browser does not support video.
                 </video>
             </div>
@@ -91,7 +102,7 @@
     <!-- Three Use Cases: IAM Learning, IAM Moving, IAM Playing -->
     <section class="section section-opaque-dark">
         <div class="container">
-            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 1rem;">Three Worlds, One Wall</h2>
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 1rem;">Three Applications, One System</h2>
             <p class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">The Interactive Wall serves three core areas for maximum impact</p>
 
             <div class="feature-row">
@@ -306,8 +317,8 @@
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
-                            <strong>Piet Jansen</strong>
-                            <span>PE Teacher, Sports Primary School De Springplank</span>
+                            <strong>Klant</strong>
+                            <span>PE Teacher, Primary School</span>
                             <span class="location">Utrecht</span>
                         </div>
                     </div>
@@ -339,7 +350,7 @@
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 1-year warranty</li>
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Email support</li>
                     </ul>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-outline">More Information</a>
+                    <a href="/#contact" class="btn btn-outline">More Information</a>
                 </div>
                 <div class="package-card package-popular">
                     <div class="popular-badge">Most Popular</div>
@@ -359,7 +370,7 @@
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Training for your team</li>
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Phone support</li>
                     </ul>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-primary">Request Quote</a>
+                    <a href="/#contact" class="btn btn-primary">Request Quote</a>
                 </div>
                 <div class="package-card">
                     <div class="package-header">
@@ -379,10 +390,10 @@
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Custom games available</li>
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Priority support 24/7</li>
                     </ul>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-outline">More Information</a>
+                    <a href="/#contact" class="btn btn-outline">More Information</a>
                 </div>
             </div>
-            <p class="pricing-help">Not sure which package? <a href="mailto:info@interactivemove.nl">We're happy to advise!</a></p>
+            <p class="pricing-help">Not sure which package? <a href="/#contact">We're happy to advise!</a></p>
         </div>
     </section>
 
@@ -477,7 +488,7 @@
                 <h2>Ready to Transform Your Wall?</h2>
                 <p>Schedule a free consultation with our experts and discover the possibilities of the Interactive Wall</p>
                 <div class="cta-buttons">
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-primary btn-large">
+                    <a href="/#contact" class="btn btn-primary btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                         Email Contact
                     </a>
@@ -495,7 +506,7 @@
 <!-- Mobile Sticky CTA -->
 <div class="mobile-sticky-cta">
     <span class="sticky-price">Interactive Wall</span>
-    <a href="mailto:info@interactivemove.nl" class="btn btn-primary btn-sticky">Quote</a>
+    <a href="/#contact" class="btn btn-primary btn-sticky">Quote</a>
 </div>
 
 <footer class="footer-professional">
@@ -503,6 +514,7 @@
         <div class="footer-column footer-brand">
             <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
             <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
             <div class="footer-social">
                 <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
                 <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.668-.072-4.948c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>

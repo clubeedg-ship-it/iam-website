@@ -6,7 +6,7 @@
     <title>Prijzen | InterActiveMove</title>
     <meta name="description" content="Bekijk onze prijzen en vraag een offerte aan voor interactieve vloeren, muren, zandbakken en meer. Maatwerk oplossingen voor elk budget.">
     <link rel="icon" href="media/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1773942644">
 
     <script src="/js/htmx.min.js"></script>
     <!-- Google Tag Manager -->
@@ -25,41 +25,39 @@
     <div id="page-wrapper">
         <!-- NAV (permanent, bilingual) -->
         <header>
-            <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+            <a href="/"><img src="media/logo-final.webp" alt="InterActiveMove" class="logo-img"></a>
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Producten</span><span class="lang-en">Products</span></button>
                         <div class="dropdown-menu">
-                            <a href="products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
-                            <a href="products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
-                            <a href="products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
-                            <a href="products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
-                            <a href="products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
-                            <a href="products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
-                            <a href="products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
+                            <a href="/products/2-in-1-floor-wall"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                            <a href="/products/interactive-floor"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                            <a href="/products/interactive-wall"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                            <a href="/products/interactive-sandbox"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                            <a href="/products/interactive-climbing-wall"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                            <a href="/products/software"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Mogelijkheden</span><span class="lang-en">Solutions</span></button>
                         <div class="dropdown-menu">
-                            <a href="bouw-een-park.html"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
-                            <a href="3d-spellen.html">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
-                            <a href="parken-speelhallen.html"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
-                            <a href="onderwijs.html"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
-                            <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
+                            <a href="/build-a-park"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
+                            <a href="/3d-games">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
+                            <a href="/entertainment"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
+                            <a href="/education"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
+                            <a href="/healthcare"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <button class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></button>
-                        <div class="dropdown-menu">
-                            <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                            <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                            <a href="index.html#contact">Contact</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="/pricing" class="nav-link"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="/about" class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog" class="nav-link">Blog</a>
                     </li>
                 </ul>
                 <div class="lang-toggle">
@@ -70,25 +68,24 @@
                 <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
-                <a href="index.html#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+                <a href="/#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
             </nav>
         </header>
 
         <!-- Mobile Navigation Overlay -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html" onclick="closeMobileNav()">Home</a>
+            <a href="/" onclick="closeMobileNav()">Home</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                     <span class="lang-nl">Producten</span><span class="lang-en">Products</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
-                    <a href="products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
-                    <a href="products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
-                    <a href="products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
-                    <a href="products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
-                    <a href="products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
-                    <a href="products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
+                    <a href="/products/2-in-1-floor-wall"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                    <a href="/products/interactive-floor"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                    <a href="/products/interactive-wall"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                    <a href="/products/interactive-sandbox"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                    <a href="/products/interactive-climbing-wall"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                    <a href="/products/software"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                 </div>
             </div>
             <div class="mobile-dropdown">
@@ -96,44 +93,50 @@
                     <span class="lang-nl">Mogelijkheden</span><span class="lang-en">Solutions</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="bouw-een-park.html"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
-                    <a href="3d-spellen.html">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
-                    <a href="parken-speelhallen.html"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
-                    <a href="onderwijs.html"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
-                    <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
+                    <a href="/build-a-park"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
+                    <a href="/3d-games">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
+                    <a href="/entertainment"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
+                    <a href="/education"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
+                    <a href="/healthcare"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                 </div>
             </div>
-            <div class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                    <span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-                </button>
-                <div class="mobile-dropdown-items">
-                    <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                    <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                    <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
-                </div>
-            </div>
-            <a href="blog.html">Blog</a>
-            <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+            <a href="/pricing" onclick="closeMobileNav()"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
+            <a href="/about" onclick="closeMobileNav()"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+            <a href="/blog">Blog</a>
+            <a href="/#contact" onclick="closeMobileNav()">Contact</a>
         </div>
 
         <!-- Content Area (swapped by HTMX on lang change) -->
         <main id="content-area">
             
         <!-- Hero Section -->
-        <section class="hero" style="min-height: 50vh;">
+        <section class="hero hero-glass" style="min-height: 60vh;">
             <div id="hero-video-container" class="hero-video-container">
-                <img src="media/pricing_hero.png" alt="Pricing Hero"
-                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                <img src="media/pricing_hero.webp" alt="Pricing Hero"
+                    style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Transparante prijzen</h1>
-                <p style="margin-bottom: 2rem; text-shadow: 1px 1px 0 #000">
-                    Kies het pakket dat past bij uw situatie - geen verrassingen
-                </p>
+                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">TRANSPARANTE PRIJZEN</h1>
+                <p class="hero-subtitle">Kies het pakket dat past bij uw situatie — geen verrassingen, geen verborgen kosten</p>
+
+                <div class="pricing-trust-badges" style="margin-bottom: 2rem;">
+                    <div class="trust-badge">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        <span>Geen verborgen kosten</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span>Lease vanaf €199/mnd</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                        <span>Offerte op maat</span>
+                    </div>
+                </div>
+
                 <div class="hero-cta-group">
                     <a href="#vergelijk" class="btn btn-primary">Vergelijk Pakketten</a>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-secondary">Direct Advies</a>
+                    <a href="/#contact" class="btn btn-secondary">Direct Advies</a>
                 </div>
             </div>
         </section>
@@ -200,12 +203,12 @@
                                         <span>Interactieve Vloer</span>
                                     </div>
                                 </td>
-                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€8.500</strong></td>
+                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€8.950</strong></td>
                                 <td data-label="Projectiegrootte">2x3 meter</td>
                                 <td data-label="Spellen">60+ spellen</td>
                                 <td data-label="Ideaal Voor">Scholen, Speelhallen</td>
                                 <td>
-                                    <a href="mailto:info@interactivemove.nl" class="btn btn-small">Offerte</a>
+                                    <a href="/#contact" class="btn btn-small">Offerte</a>
                                 </td>
                             </tr>
                             <tr class="popular-row">
@@ -218,12 +221,12 @@
                                         <span class="popular-tag">Populair</span>
                                     </div>
                                 </td>
-                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€9.500</strong></td>
+                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€9.950</strong></td>
                                 <td data-label="Projectiegrootte">Flexibel</td>
                                 <td data-label="Spellen">60+ spellen</td>
                                 <td data-label="Ideaal Voor">Wachtkamers, Zorg</td>
                                 <td>
-                                    <a href="mailto:info@interactivemove.nl" class="btn btn-danger btn-small">Offerte</a>
+                                    <a href="/#contact" class="btn btn-danger btn-small">Offerte</a>
                                 </td>
                             </tr>
                             <tr>
@@ -235,12 +238,12 @@
                                         <span>Interactieve Zandbak</span>
                                     </div>
                                 </td>
-                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€12.000</strong></td>
+                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€14.950</strong></td>
                                 <td data-label="Projectiegrootte">1x1.5 meter</td>
                                 <td data-label="Spellen">AR Landschappen</td>
                                 <td data-label="Ideaal Voor">Musea, Educatie</td>
                                 <td>
-                                    <a href="mailto:info@interactivemove.nl" class="btn btn-small">Offerte</a>
+                                    <a href="/#contact" class="btn btn-small">Offerte</a>
                                 </td>
                             </tr>
                             <tr>
@@ -252,31 +255,15 @@
                                         <span>Interactieve Klimwand</span>
                                     </div>
                                 </td>
-                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€15.000</strong></td>
+                                <td data-label="Vanaf Prijs"><strong class="price-highlight">Op aanvraag</strong></td>
                                 <td data-label="Projectiegrootte">Variabel</td>
                                 <td data-label="Spellen">Klim Games</td>
                                 <td data-label="Ideaal Voor">Speelhallen, Sport</td>
                                 <td>
-                                    <a href="mailto:info@interactivemove.nl" class="btn btn-small">Offerte</a>
+                                    <a href="/#contact" class="btn btn-small">Offerte</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td data-label="Product">
-                                    <div class="product-cell">
-                                        <svg width="32" height="32" fill="var(--color-primary)" viewBox="0 0 24 24">
-                                            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z" />
-                                        </svg>
-                                        <span>Mobiele Vloer (Verhuur)</span>
-                                    </div>
-                                </td>
-                                <td data-label="Vanaf Prijs"><strong class="price-highlight">€500/dag</strong></td>
-                                <td data-label="Projectiegrootte">2x3 meter</td>
-                                <td data-label="Spellen">60+ spellen</td>
-                                <td data-label="Ideaal Voor">Evenementen, Beurzen</td>
-                                <td>
-                                    <a href="mailto:info@interactivemove.nl" class="btn btn-small">Offerte</a>
-                                </td>
-                            </tr>
+
                             <tr>
                                 <td data-label="Product">
                                     <div class="product-cell">
@@ -291,7 +278,7 @@
                                 <td data-label="Spellen">Eigen spellen</td>
                                 <td data-label="Ideaal Voor">Branding, Corporate</td>
                                 <td>
-                                    <a href="mailto:info@interactivemove.nl" class="btn btn-small">Bespreek</a>
+                                    <a href="/#contact" class="btn btn-small">Bespreek</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -348,7 +335,7 @@
                             </ul>
                         </div>
                         <div class="package-footer">
-                            <a href="mailto:info@interactivemove.nl" class="btn btn-secondary" style="width: 100%;">Meer Informatie</a>
+                            <a href="/#contact" class="btn btn-secondary" style="width: 100%;">Meer Informatie</a>
                         </div>
                     </div>
 
@@ -392,7 +379,7 @@
                             </ul>
                         </div>
                         <div class="package-footer">
-                            <a href="mailto:info@interactivemove.nl" class="btn btn-primary" style="width: 100%;">Offerte Aanvragen</a>
+                            <a href="/#contact" class="btn btn-primary" style="width: 100%;">Offerte Aanvragen</a>
                         </div>
                     </div>
 
@@ -435,7 +422,7 @@
                             </ul>
                         </div>
                         <div class="package-footer">
-                            <a href="mailto:info@interactivemove.nl" class="btn btn-secondary" style="width: 100%;">Neem Contact Op</a>
+                            <a href="/#contact" class="btn btn-secondary" style="width: 100%;">Neem Contact Op</a>
                         </div>
                     </div>
                 </div>
@@ -453,8 +440,8 @@
                         </blockquote>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <strong>Linda Bakker</strong>
-                                <span>Eigenaar, Kinderspeelparadijs De Regenboog</span>
+                                <strong>Directeur</strong>
+                                <span>Eigenaar, Kinderspeelparadijs</span>
                                 <span class="location">Amersfoort</span>
                             </div>
                         </div>
@@ -592,7 +579,7 @@
                     <details class="accordion-item">
                         <summary>Kan ik eerst uitproberen voordat ik koop?</summary>
                         <div class="accordion-content">
-                            Ja! Wij bieden gratis demo's aan op locatie of in onze showroom. Ook kunt u de Mobiele Vloer huren voor een evenement om het systeem in de praktijk te ervaren voordat u een aankoopbeslissing neemt.
+                            Ja! Wij bieden gratis demo's aan op locatie of in onze showroom, zodat u het systeem in de praktijk kunt ervaren voordat u een aankoopbeslissing neemt.
                         </div>
                     </details>
                     <details class="accordion-item">
@@ -626,7 +613,7 @@
                         Neem contact op voor een offerte op maat. Wij denken graag met u mee over de beste oplossing voor uw situatie en budget.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="mailto:info@interactivemove.nl" class="btn btn-large" style="background: #000; color: #fff;">
+                        <a href="/#contact" class="btn btn-large" style="background: #000; color: #fff;">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                             E-mail Direct
                         </a>
@@ -647,7 +634,7 @@
 
     <!-- Mobile Sticky CTA -->
     <div class="mobile-sticky-cta">
-        <a href="mailto:info@interactivemove.nl" class="mobile-cta-btn">
+        <a href="/#contact" class="mobile-cta-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
             Vraag Offerte Aan
         </a>
@@ -657,8 +644,9 @@
     <footer class="footer-professional">
         <div class="footer-container">
             <div class="footer-column footer-brand">
-                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
+                <img src="media/logo-final.webp" alt="InterActiveMove" class="footer-logo" loading="lazy">
                 <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -711,7 +699,7 @@
 
     <script src="projector.js"></script>
 
-    <script src="/js/site.js"></script>
+    <script src="/js/site.js?v=1773933720"></script>
     <script src="/js/cookie-consent.js"></script>
     <script src="/js/contact-form.js"></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49291889.js"></script>

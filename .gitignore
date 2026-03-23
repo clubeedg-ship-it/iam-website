@@ -25,6 +25,7 @@ venv/
 
 # Reference/Development files (optional cleanup)
 # reference/
+media/dump iam/
 
 # Logs
 *.log

@@ -6,7 +6,7 @@
     <title>3D Spellen | InterActiveMove</title>
     <meta name="description" content="Ontdek onze uitgebreide collectie interactieve 3D spellen.">
     <link rel="icon" href="media/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1773942644">
 
     <script src="/js/htmx.min.js"></script>
     <!-- Google Tag Manager -->
@@ -25,41 +25,39 @@
     <div id="page-wrapper">
         <!-- NAV (permanent, bilingual) -->
         <header>
-            <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+            <a href="/"><img src="media/logo-final.webp" alt="InterActiveMove" class="logo-img"></a>
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Producten</span><span class="lang-en">Products</span></button>
                         <div class="dropdown-menu">
-                            <a href="products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
-                            <a href="products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
-                            <a href="products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
-                            <a href="products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
-                            <a href="products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
-                            <a href="products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
-                            <a href="products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
+                            <a href="/products/2-in-1-floor-wall"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                            <a href="/products/interactive-floor"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                            <a href="/products/interactive-wall"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                            <a href="/products/interactive-sandbox"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                            <a href="/products/interactive-climbing-wall"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                            <a href="/products/software"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Mogelijkheden</span><span class="lang-en">Solutions</span></button>
                         <div class="dropdown-menu">
-                            <a href="bouw-een-park.html"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
-                            <a href="3d-spellen.html">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
-                            <a href="parken-speelhallen.html"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
-                            <a href="onderwijs.html"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
-                            <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
+                            <a href="/build-a-park"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
+                            <a href="/3d-games">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
+                            <a href="/entertainment"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
+                            <a href="/education"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
+                            <a href="/healthcare"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <button class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></button>
-                        <div class="dropdown-menu">
-                            <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                            <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                            <a href="index.html#contact">Contact</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="/pricing" class="nav-link"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="/about" class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog" class="nav-link">Blog</a>
                     </li>
                 </ul>
                 <div class="lang-toggle">
@@ -70,25 +68,24 @@
                 <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
-                <a href="index.html#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+                <a href="/#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
             </nav>
         </header>
 
         <!-- Mobile Navigation Overlay -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html" onclick="closeMobileNav()">Home</a>
+            <a href="/" onclick="closeMobileNav()">Home</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                     <span class="lang-nl">Producten</span><span class="lang-en">Products</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
-                    <a href="products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
-                    <a href="products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
-                    <a href="products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
-                    <a href="products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
-                    <a href="products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
-                    <a href="products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
+                    <a href="/products/2-in-1-floor-wall"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                    <a href="/products/interactive-floor"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                    <a href="/products/interactive-wall"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                    <a href="/products/interactive-sandbox"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                    <a href="/products/interactive-climbing-wall"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                    <a href="/products/software"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                 </div>
             </div>
             <div class="mobile-dropdown">
@@ -96,37 +93,58 @@
                     <span class="lang-nl">Mogelijkheden</span><span class="lang-en">Solutions</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="bouw-een-park.html"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
-                    <a href="3d-spellen.html">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
-                    <a href="parken-speelhallen.html"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
-                    <a href="onderwijs.html"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
-                    <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
+                    <a href="/build-a-park"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
+                    <a href="/3d-games">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
+                    <a href="/entertainment"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
+                    <a href="/education"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
+                    <a href="/healthcare"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                 </div>
             </div>
-            <div class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                    <span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-                </button>
-                <div class="mobile-dropdown-items">
-                    <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                    <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                    <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
-                </div>
-            </div>
-            <a href="blog.html">Blog</a>
-            <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+            <a href="/pricing" onclick="closeMobileNav()"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
+            <a href="/about" onclick="closeMobileNav()"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+            <a href="/blog">Blog</a>
+            <a href="/#contact" onclick="closeMobileNav()">Contact</a>
         </div>
 
         <!-- Content Area (swapped by HTMX on lang change) -->
         <main id="content-area">
             
-        <section class="hero" style="height: 40vh; min-height: 300px;">
+        <section class="hero hero-glass" style="min-height: 60vh;">
             <div class="hero-video-container">
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;"><source src="media/3d-games-hero.mp4" type="video/mp4"></video>
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;"><source src="media/3d-games-hero.webm" type="video/webm">
+                <source src="media/3d-games-hero.mp4" type="video/mp4"></video>
             </div>
             <div class="hero-content">
-                <h1 class="industrial-label">3D Spellen</h1>
-                <p>Ontdek onze uitgebreide collectie interactieve 3D games</p>
+                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">INTERACTIEVE 3D SPELLEN</h1>
+                <p class="hero-subtitle">
+                    60+ meeslepende games die beweging, leren en plezier combineren op vloer en muur
+                </p>
+
+                <div class="pricing-trust-badges" style="margin-bottom: 2rem;">
+                    <div class="trust-badge">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>60+ spellen</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        <span>Educatief & Sport</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        <span>Gratis updates</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="/#contact" class="btn btn-primary">Gratis Demo Aanvragen</a>
+                    <a href="#game-categories" class="btn btn-secondary">Bekijk Spellen</a>
+                </div>
             </div>
         </section>
 
@@ -218,7 +236,7 @@
                 <p style="margin-bottom: 2rem; color: var(--color-text-muted);">
                     Benieuwd naar de volledige catalogus of een demo op locatie? Neem contact op.
                 </p>
-                <a href="index.html#contact" class="btn btn-danger" style="border-radius: 999px;">Vraag brochure aan</a>
+                <a href="/#contact" class="btn btn-danger" style="border-radius: 999px;">Vraag brochure aan</a>
             </div>
         </section>
     
@@ -226,8 +244,9 @@
     <footer class="footer-professional">
         <div class="footer-container">
             <div class="footer-column footer-brand">
-                <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
+                <img src="media/logo-final.webp" alt="InterActiveMove" class="footer-logo" loading="lazy">
                 <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -279,7 +298,7 @@
 
     <script src="projector.js"></script>
 
-    <script src="/js/site.js"></script>
+    <script src="/js/site.js?v=1773933720"></script>
     <script src="/js/cookie-consent.js"></script>
     <script src="/js/contact-form.js"></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49291889.js"></script>

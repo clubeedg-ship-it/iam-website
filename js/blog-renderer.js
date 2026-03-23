@@ -205,7 +205,7 @@
                     <div class="post-cta">
                         <h3 class="post-cta-title">${labels.ctaTitle}</h3>
                         <p class="post-cta-text">${labels.ctaText}</p>
-                        <a href="/index.html#contact" class="post-cta-btn">${labels.ctaBtn}</a>
+                        <a href="/#contact" class="post-cta-btn">${labels.ctaBtn}</a>
                     </div>
 
                     ${renderRelatedGrid(post, lang, labels, t)}

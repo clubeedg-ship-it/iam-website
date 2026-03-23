@@ -6,7 +6,7 @@
     <title>Parken & Speelhallen | InterActiveMove</title>
     <meta name="description" content="Complete oplossingen voor indoor parken en speelhallen.">
     <link rel="icon" href="media/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1773942644">
 
     <script src="/js/htmx.min.js"></script>
     <!-- Google Tag Manager -->
@@ -25,41 +25,39 @@
     <div id="page-wrapper">
         <!-- NAV (permanent, bilingual) -->
         <header>
-            <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
+            <a href="/"><img src="media/logo-final.webp" alt="InterActiveMove" class="logo-img"></a>
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Producten</span><span class="lang-en">Products</span></button>
                         <div class="dropdown-menu">
-                            <a href="products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
-                            <a href="products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
-                            <a href="products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
-                            <a href="products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
-                            <a href="products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
-                            <a href="products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
-                            <a href="products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
+                            <a href="/products/2-in-1-floor-wall"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                            <a href="/products/interactive-floor"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                            <a href="/products/interactive-wall"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                            <a href="/products/interactive-sandbox"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                            <a href="/products/interactive-climbing-wall"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                            <a href="/products/software"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <button class="nav-link"><span class="lang-nl">Mogelijkheden</span><span class="lang-en">Solutions</span></button>
                         <div class="dropdown-menu">
-                            <a href="bouw-een-park.html"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
-                            <a href="3d-spellen.html">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
-                            <a href="parken-speelhallen.html"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
-                            <a href="onderwijs.html"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
-                            <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
+                            <a href="/build-a-park"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
+                            <a href="/3d-games">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
+                            <a href="/entertainment"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
+                            <a href="/education"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
+                            <a href="/healthcare"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <button class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></button>
-                        <div class="dropdown-menu">
-                            <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                            <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                            <a href="index.html#contact">Contact</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="/pricing" class="nav-link"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="/about" class="nav-link"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog" class="nav-link">Blog</a>
                     </li>
                 </ul>
                 <div class="lang-toggle">
@@ -70,25 +68,24 @@
                 <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
-                <a href="index.html#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
+                <a href="/#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
             </nav>
         </header>
 
         <!-- Mobile Navigation Overlay -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html" onclick="closeMobileNav()">Home</a>
+            <a href="/" onclick="closeMobileNav()">Home</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                     <span class="lang-nl">Producten</span><span class="lang-en">Products</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="products/2-in-1-vloer-muur.html"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
-                    <a href="products/interactieve-vloer.html"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
-                    <a href="products/interactieve-muur.html"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
-                    <a href="products/interactieve-zandbak.html"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
-                    <a href="products/interactieve-klimwand.html"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
-                    <a href="products/mobiele-vloer.html"><span class="lang-nl">Mobiele Vloer</span><span class="lang-en">Mobile Floor</span></a>
-                    <a href="products/software-maatwerk.html"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
+                    <a href="/products/2-in-1-floor-wall"><span class="lang-nl">2-in-1 Vloer &amp; Muur</span><span class="lang-en">2-in-1 Floor &amp; Wall</span></a>
+                    <a href="/products/interactive-floor"><span class="lang-nl">Interactieve Vloer</span><span class="lang-en">Interactive Floor</span></a>
+                    <a href="/products/interactive-wall"><span class="lang-nl">Interactieve Muur</span><span class="lang-en">Interactive Wall</span></a>
+                    <a href="/products/interactive-sandbox"><span class="lang-nl">Interactieve Zandbak</span><span class="lang-en">Interactive Sandbox</span></a>
+                    <a href="/products/interactive-climbing-wall"><span class="lang-nl">Interactieve Klimwand</span><span class="lang-en">Interactive Climbing Wall</span></a>
+                    <a href="/products/software"><span class="lang-nl">Software &amp; Maatwerk</span><span class="lang-en">Software &amp; Customization</span></a>
                 </div>
             </div>
             <div class="mobile-dropdown">
@@ -96,25 +93,17 @@
                     <span class="lang-nl">Mogelijkheden</span><span class="lang-en">Solutions</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="mobile-dropdown-items">
-                    <a href="bouw-een-park.html"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
-                    <a href="3d-spellen.html">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
-                    <a href="parken-speelhallen.html"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
-                    <a href="onderwijs.html"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
-                    <a href="zorg-revalidatie.html"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
+                    <a href="/build-a-park"><span class="lang-nl">Bouw een Park</span><span class="lang-en">Build a Park</span></a>
+                    <a href="/3d-games">3D <span class="lang-nl">Spellen</span><span class="lang-en">Games</span></a>
+                    <a href="/entertainment"><span class="lang-nl">Parken &amp; Speelhallen</span><span class="lang-en">Parks &amp; Arcades</span></a>
+                    <a href="/education"><span class="lang-nl">Onderwijs</span><span class="lang-en">Education</span></a>
+                    <a href="/healthcare"><span class="lang-nl">Zorg &amp; Revalidatie</span><span class="lang-en">Care &amp; Rehabilitation</span></a>
                 </div>
             </div>
-            <div class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                    <span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span> <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-                </button>
-                <div class="mobile-dropdown-items">
-                    <a href="over-ons.html"><span class="lang-nl">Over InterActiveMove</span><span class="lang-en">About InterActiveMove</span></a>
-                    <a href="prijzen.html"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
-                    <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
-                </div>
-            </div>
-            <a href="blog.html">Blog</a>
-            <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+            <a href="/pricing" onclick="closeMobileNav()"><span class="lang-nl">Prijzen</span><span class="lang-en">Prices</span></a>
+            <a href="/about" onclick="closeMobileNav()"><span class="lang-nl">Over Ons</span><span class="lang-en">About Us</span></a>
+            <a href="/blog">Blog</a>
+            <a href="/#contact" onclick="closeMobileNav()">Contact</a>
         </div>
 
         <!-- Content Area (swapped by HTMX on lang change) -->
@@ -122,7 +111,7 @@
             
     <!-- Hero Section: Entertainment Focus -->
     <section class="hero hero-glass" style="min-height: 60vh; position: relative;">
-        <img src="media/hero_parken_speelhallen.png" alt="Parken & Speelhallen - Interactieve Attracties"
+        <img src="media/hero_parken_speelhallen.webp" alt="Parken & Speelhallen - Interactieve Attracties"
             style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; position: absolute; top: 0; left: 0;">
         <div class="hero-content" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; text-align: center;">
             <h1 class="industrial-label" style="margin-bottom: 1rem">Attracties die Bezoekers Terugbrengen</h1>
@@ -198,7 +187,7 @@
                         <p style="color: var(--color-text-muted);">Kleine speelzaal, wachtruimte</p>
                     </div>
                     <p style="font-weight: 600; margin-bottom: 1.5rem; color: var(--color-text)">Vanaf €9.950</p>
-                    <a href="mailto:info@interactivemove.nl" class="btn" style="width: 100%; text-align: center; border-radius: 999px; background: var(--color-primary); color: #000;">
+                    <a href="/#contact" class="btn" style="width: 100%; text-align: center; border-radius: 999px; background: var(--color-primary); color: #000;">
                         Offerte Aanvragen
                     </a>
                 </div>
@@ -243,7 +232,7 @@
                         <p style="color: rgba(0,0,0,0.8);">Medium indoor playground, trampolinepark</p>
                     </div>
                     <p style="font-weight: 600; margin-bottom: 1.5rem; color: #000">Vanaf €24.950</p>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-danger" style="width: 100%; text-align: center; border-radius: 999px;">
+                    <a href="/#contact" class="btn btn-danger" style="width: 100%; text-align: center; border-radius: 999px;">
                         Offerte Aanvragen
                     </a>
                 </div>
@@ -285,7 +274,7 @@
                         <p style="color: var(--color-text-muted);">Grote parken, entertainment centra</p>
                     </div>
                     <p style="font-weight: 600; margin-bottom: 1.5rem; color: var(--color-text)">Op aanvraag</p>
-                    <a href="mailto:info@interactivemove.nl" class="btn" style="width: 100%; text-align: center; border-radius: 999px; background: var(--color-primary); color: #000;">
+                    <a href="/#contact" class="btn" style="width: 100%; text-align: center; border-radius: 999px; background: var(--color-primary); color: #000;">
                         Neem Contact Op
                     </a>
                 </div>
@@ -301,49 +290,57 @@
                 Ontdek hoe snel een interactief systeem zichzelf terugverdient in uw park
             </p>
 
-            <div class="glass-panel" style="max-width: 700px; margin: 0 auto; padding: 3rem;">
-                <div style="margin-bottom: 2rem;">
-                    <label style="display: block; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
-                        Gemiddeld aantal bezoekers per maand:
-                    </label>
-                    <input type="number" id="visitors-input" placeholder="Bijv. 2000" style="width: 100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff" value="2000">
-                </div>
+            <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                <!-- Inputs -->
+                <div class="glass-panel" style="padding: 2.5rem;">
+                    <h3 style="color: #fff; margin-bottom: 2rem; font-size: 1.1rem;">Uw Gegevens</h3>
 
-                <div style="margin-bottom: 2rem;">
-                    <label style="display: block; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
-                        Entreeprijsverhoging door IAM systeem:
-                    </label>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="color: #fff">€</span>
-                        <input type="number" id="price-input" step="0.50" style="width: 100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff" value="2.50">
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; justify-content: space-between; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.75rem;">
+                            <span>Bezoekers per maand</span>
+                            <span id="visitors-display" style="color: var(--color-primary); font-weight: 800;">2.000</span>
+                        </label>
+                        <input type="range" id="visitors-input" min="500" max="10000" step="100" value="2000" style="width: 100%; accent-color: var(--color-primary);">
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; justify-content: space-between; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.75rem;">
+                            <span>Entreeprijsverhoging</span>
+                            <span id="price-display" style="color: var(--color-primary); font-weight: 800;">€2,50</span>
+                        </label>
+                        <input type="range" id="price-input" min="0.50" max="7.50" step="0.25" value="2.50" style="width: 100%; accent-color: var(--color-primary);">
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: flex; justify-content: space-between; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.75rem;">
+                            <span>Toename herhaalbezoekers</span>
+                            <span id="repeat-display" style="color: var(--color-primary); font-weight: 800;">20%</span>
+                        </label>
+                        <input type="range" id="repeat-input" min="5" max="50" step="5" value="20" style="width: 100%; accent-color: var(--color-primary);">
                     </div>
                 </div>
 
-                <div style="margin-bottom: 2rem;">
-                    <label style="display: block; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
-                        Geschatte toename herhaalbezoekers:
-                    </label>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <input type="number" id="repeat-input" min="0" max="100" style="width: 100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff" value="20">
-                        <span style="color: #fff">%</span>
-                    </div>
-                </div>
-
-                <div style="border-top: 2px solid rgba(255,255,255,0.2); padding-top: 2rem; margin-top: 2rem;">
-                    <div style="text-align: center;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary);">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                            </svg>
+                <!-- Results -->
+                <div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="glass-panel" style="padding: 2rem; text-align: center;">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-bottom: 0.75rem;"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 0.25rem;">Extra maandomzet</p>
+                            <p id="monthly-result" style="font-size: 1.75rem; font-weight: 800; color: #fff;">€5.000</p>
                         </div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem">Geschatte Terugverdientijd</h3>
-                        <p id="roi-result" style="font-weight: 800; color: var(--color-primary); margin-bottom: 1.5rem">18 maanden</p>
-
-                        <h3 style="color: #fff; margin-bottom: 0.5rem">Extra Jaaromzet</h3>
-                        <p id="revenue-result" style="font-weight: 800; color: var(--color-primary); margin-bottom: 2rem">€60.000</p>
+                        <div class="glass-panel" style="padding: 2rem; text-align: center;">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-primary); margin-bottom: 0.75rem;"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 0.25rem;">Extra jaaromzet</p>
+                            <p id="revenue-result" style="font-size: 1.75rem; font-weight: 800; color: #fff;">€60.000</p>
+                        </div>
                     </div>
 
-                    <a href="mailto:info@interactivemove.nl" class="btn" style="width: 100%; text-align: center; border-radius: 999px; padding: 1rem 2rem; background: var(--color-primary); color: #000; font-weight: 700">
+                    <div class="glass-panel" style="padding: 2rem; text-align: center; border: 2px solid var(--color-primary); margin-bottom: 2rem;">
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 0.25rem;">Geschatte terugverdientijd</p>
+                        <p id="roi-result" style="font-size: 2.5rem; font-weight: 900; color: var(--color-primary); line-height: 1;">4 maanden</p>
+                    </div>
+
+                    <a href="/#contact" class="btn" style="width: 100%; text-align: center; border-radius: 999px; padding: 1rem 2rem; background: var(--color-primary); color: #000; font-weight: 700; display: block;">
                         Volledige ROI Analyse Ontvangen
                     </a>
                 </div>
@@ -351,42 +348,7 @@
         </div>
     </section>
 
-    <!-- Park Owner Testimonial -->
-    <section class="section section-opaque-light">
-        <div class="container">
-            <h2 class="industrial-label" style="text-align: center; margin-bottom: 3rem;">Succesverhalen van Parkeigenaren</h2>
-
-            <div class="glass-panel" style="max-width: 900px; margin: 0 auto;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
-                    <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600">
-                        <div style="text-align: center;">
-                            <svg width="64" height="64" fill="currentColor" viewBox="0 0 24 24" style="margin-bottom: 1rem; opacity: 0.8;">
-                                <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                            </svg>
-                            <p>Video Testimonial</p>
-                            <p style="opacity: 0.7">(Placeholder)</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <p style="line-height: 1.8; color: var(--color-text); margin-bottom: 2rem; font-style: italic">
-                            "De investering was binnen 2 jaar terugverdiend. Ouders vertellen vrienden over 'die gave vloer' en boeken verjaardagsfeestjes juist voor deze attractie."
-                        </p>
-                        <div style="border-left: 4px solid var(--color-primary); padding-left: 1rem;">
-                            <p style="font-weight: 700; color: var(--color-text); margin-bottom: 0.25rem">Peter de Groot</p>
-                            <p style="color: var(--color-text-muted);">Eigenaar, Monkey Town Amsterdam</p>
-                        </div>
-                        <a href="mailto:info@interactivemove.nl" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">
-                            Bekijk Case Study
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Content Updates -->
     <section class="section section-opaque-dark">
@@ -449,7 +411,7 @@
                 <a href="/bouw-een-park" class="btn" style="border-radius: 999px; padding: 1rem 2rem; background: var(--color-primary); color: #000">
                     Bouw Uw Park Configurator
                 </a>
-                <a href="mailto:info@interactivemove.nl" class="btn btn-danger" style="border-radius: 999px; padding: 1rem 2rem">
+                <a href="/#contact" class="btn btn-danger" style="border-radius: 999px; padding: 1rem 2rem">
                     Bel Onze Sales
                 </a>
             </div>
@@ -460,7 +422,7 @@
 <!-- Mobile Sticky CTA -->
 <div style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(29, 30, 34, 0.98); backdrop-filter: blur(10px); padding: 1rem; z-index: 999; display: none; box-shadow: 0 -5px 20px rgba(0,0,0,0.3);" id="mobile-cta">
     <div class="container" style="max-width: 100%;">
-        <a href="mailto:info@interactivemove.nl" class="btn" style="width: 100%; text-align: center; border-radius: 999px; padding: 1rem; background: var(--color-primary); color: #000; font-weight: 700">
+        <a href="/#contact" class="btn" style="width: 100%; text-align: center; border-radius: 999px; padding: 1rem; background: var(--color-primary); color: #000; font-weight: 700">
             Start Uw Park Transformatie →
         </a>
     </div>
@@ -469,8 +431,9 @@
 <footer class="footer-professional">
     <div class="footer-container">
         <div class="footer-column footer-brand">
-            <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
+            <img src="media/logo-final.webp" alt="InterActiveMove" class="footer-logo" loading="lazy">
             <p class="footer-tagline">Beweeg, Leer en Speel met InterActiveMove</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
             <div class="footer-social">
                 <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
                         viewBox="0 0 24 24">
@@ -519,36 +482,52 @@
 </footer>
 
 <script>
-// Simple ROI Calculator
+// Enhanced ROI Calculator
 document.addEventListener('DOMContentLoaded', function() {
-    const visitorsInput = document.getElementById('visitors-input');
-    const priceInput = document.getElementById('price-input');
-    const repeatInput = document.getElementById('repeat-input');
-    const roiResult = document.getElementById('roi-result');
-    const revenueResult = document.getElementById('revenue-result');
+    var visitorsInput = document.getElementById('visitors-input');
+    var priceInput = document.getElementById('price-input');
+    var repeatInput = document.getElementById('repeat-input');
+    var roiResult = document.getElementById('roi-result');
+    var revenueResult = document.getElementById('revenue-result');
+    var monthlyResult = document.getElementById('monthly-result');
+    var visitorsDisplay = document.getElementById('visitors-display');
+    var priceDisplay = document.getElementById('price-display');
+    var repeatDisplay = document.getElementById('repeat-display');
 
-    function calculateROI() {
-        const visitors = parseInt(visitorsInput.value) || 2000;
-        const priceIncrease = parseFloat(priceInput.value) || 2.50;
-        const repeatIncrease = parseInt(repeatInput.value) || 20;
+    var isEN = window.location.search.indexOf('lang=en') !== -1 || window.location.pathname.indexOf('-en') !== -1;
 
-        // Simple calculation
-        const monthlyRevenue = visitors * priceIncrease;
-        const yearlyRevenue = monthlyRevenue * 12;
-        const bonusRevenue = (visitors * (repeatIncrease / 100)) * 10 * 12; // Avg €10 per visit
-        const totalYearlyRevenue = yearlyRevenue + bonusRevenue;
-
-        // Assume average system cost of €20,000
-        const systemCost = 20000;
-        const paybackMonths = Math.ceil(systemCost / (totalYearlyRevenue / 12));
-
-        roiResult.textContent = paybackMonths + ' maanden';
-        revenueResult.textContent = '€' + totalYearlyRevenue.toLocaleString('nl-NL');
+    function fmt(n) {
+        return isEN ? n.toLocaleString('en-NL') : n.toLocaleString('nl-NL');
     }
 
-    visitorsInput.addEventListener('input', calculateROI);
-    priceInput.addEventListener('input', calculateROI);
-    repeatInput.addEventListener('input', calculateROI);
+    function calculateROI() {
+        if (!visitorsInput || !priceInput || !repeatInput) return;
+        var visitors = parseInt(visitorsInput.value) || 2000;
+        var priceIncrease = parseFloat(priceInput.value) || 2.50;
+        var repeatIncrease = parseInt(repeatInput.value) || 20;
+
+        // Update displays
+        if (visitorsDisplay) visitorsDisplay.textContent = fmt(visitors);
+        if (priceDisplay) priceDisplay.textContent = '€' + priceIncrease.toFixed(2).replace('.', isEN ? '.' : ',');
+        if (repeatDisplay) repeatDisplay.textContent = repeatIncrease + '%';
+
+        var monthlyRevenue = visitors * priceIncrease;
+        var bonusMonthly = (visitors * (repeatIncrease / 100)) * 10;
+        var totalMonthly = monthlyRevenue + bonusMonthly;
+        var totalYearly = totalMonthly * 12;
+
+        var systemCost = 20000;
+        var paybackMonths = Math.ceil(systemCost / totalMonthly);
+
+        if (monthlyResult) monthlyResult.textContent = '€' + fmt(Math.round(totalMonthly));
+        if (revenueResult) revenueResult.textContent = '€' + fmt(Math.round(totalYearly));
+        if (roiResult) roiResult.textContent = paybackMonths + (isEN ? ' months' : ' maanden');
+    }
+
+    if (visitorsInput) visitorsInput.addEventListener('input', calculateROI);
+    if (priceInput) priceInput.addEventListener('input', calculateROI);
+    if (repeatInput) repeatInput.addEventListener('input', calculateROI);
+    calculateROI();
 
     // Mobile sticky CTA
     const mobileCTA = document.getElementById('mobile-cta');
@@ -577,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <script src="projector.js"></script>
 
-    <script src="/js/site.js"></script>
+    <script src="/js/site.js?v=1773933720"></script>
     <script src="/js/cookie-consent.js"></script>
     <script src="/js/contact-form.js"></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49291889.js"></script>
