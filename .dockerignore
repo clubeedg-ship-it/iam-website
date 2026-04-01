@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+media/final_wlogo.mp4
+aditionals/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node (if using npm/npx for serving)
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+
+# Reference/Development files (optional cleanup)
+# reference/
+media/dump iam/
+
+# Logs
+*.log
+
+# Docker environment
+.env.docker
+api/.env
