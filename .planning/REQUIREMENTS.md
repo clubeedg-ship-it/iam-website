@@ -7,14 +7,14 @@
 
 ### Brand & Messaging
 
-- [ ] **BRND-01**: Visitor sees `IAM mobiel` presented as the umbrella name for the mobile product line on primary selling pages
-- [ ] **BRND-02**: Visitor is not misled into thinking every mobile variant is generically a `2-in-1` product
+- [x] **BRND-01**: Visitor sees `IAM mobiel` presented as the umbrella name for the mobile product line on primary selling pages
+- [x] **BRND-02**: Visitor is not misled into thinking every mobile variant is generically a `2-in-1` product
 - [ ] **BRND-03**: Visitor sees current value language such as `programs` and `no license costs` where the refresh requires it
 
 ### Homepage
 
-- [ ] **HOME-01**: Homepage products section shows the updated real image of the mobile housing instead of the outdated yellow-square visual
-- [ ] **HOME-02**: Homepage FAQ asks how many interactive programs are available and shows the approved answer from the adjustment brief
+- [x] **HOME-01**: Homepage products section shows the updated real image of the mobile housing instead of the outdated yellow-square visual
+- [x] **HOME-02**: Homepage FAQ asks how many interactive programs are available and shows the approved answer from the adjustment brief
 
 ### IAM Mobiel Packages
 
@@ -61,11 +61,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BRND-01 | Phase 2 | Pending |
-| BRND-02 | Phase 2 | Pending |
+| BRND-01 | Phase 2 | Complete |
+| BRND-02 | Phase 2 | Complete |
 | BRND-03 | Phase 2 | Pending |
-| HOME-01 | Phase 2 | Pending |
-| HOME-02 | Phase 2 | Pending |
+| HOME-01 | Phase 2 | Complete |
+| HOME-02 | Phase 2 | Complete |
 | MOBL-01 | Phase 3 | Pending |
 | MOBL-02 | Phase 3 | Pending |
 | MOBL-03 | Phase 3 | Pending |

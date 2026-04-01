@@ -48,7 +48,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Update homepage product imagery and FAQ content
+- [x] 02-01: Update homepage product imagery and FAQ content
 - [ ] 02-02: Apply top-level brand and terminology corrections to the main selling surfaces
 - [ ] 02-03: Sync homepage and core partial variants after the copy shift
 
@@ -108,7 +108,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Safe Update Surface | 0/2 | Not started | - |
-| 2. Brand and Homepage Repositioning | 0/3 | Not started | - |
+| 2. Brand and Homepage Repositioning | 1/3 | In Progress|  |
 | 3. IAM Mobiel Package Refresh | 0/3 | Not started | - |
 | 4. Product Detail Cleanup | 0/3 | Not started | - |
 | 5. Bilingual Release Hardening | 0/3 | Not started | - |
