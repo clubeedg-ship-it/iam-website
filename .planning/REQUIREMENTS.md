@@ -33,8 +33,8 @@
 
 - [ ] **I18N-01**: Visitor sees equivalent updates in both Dutch and English for every refreshed page
 - [ ] **I18N-02**: Language switching continues to work on all updated routes after content changes
-- [ ] **QLTY-01**: Visitor can navigate edited routes without broken internal links, missing assets, or dead-end removals
-- [ ] **QLTY-02**: Legacy claims targeted by the refresh are removed from the affected duplicated file families before release
+- [x] **QLTY-01**: Visitor can navigate edited routes without broken internal links, missing assets, or dead-end removals
+- [x] **QLTY-02**: Legacy claims targeted by the refresh are removed from the affected duplicated file families before release
 
 ## v2 Requirements
 
@@ -75,8 +75,8 @@
 | PROD-04 | Phase 4 | Pending |
 | I18N-01 | Phase 5 | Pending |
 | I18N-02 | Phase 5 | Pending |
-| QLTY-01 | Phase 1 | Pending |
-| QLTY-02 | Phase 1 | Pending |
+| QLTY-01 | Phase 1 | Complete |
+| QLTY-02 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 16 total

@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Build the canonical file inventory for homepage, pricing, mobile-product, and removal targets
+- [x] 01-01: Build the canonical file inventory for homepage, pricing, mobile-product, and removal targets
 - [ ] 01-02: Add phrase-audit and route-check workflow for the requested refresh terms
 
 ### Phase 2: Brand and Homepage Repositioning
