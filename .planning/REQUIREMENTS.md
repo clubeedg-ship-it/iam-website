@@ -18,9 +18,9 @@
 
 ### IAM Mobiel Packages
 
-- [ ] **MOBL-01**: Visitor can understand the three package tiers `IAM mobiel solo`, `IAM mobiel duo`, and `IAM mobiel premium`
-- [ ] **MOBL-02**: Visitor can distinguish single-use floor or wall variants from the dual-use offering and understand expandability where applicable
-- [ ] **MOBL-03**: Visitor sees the approved package pricing and positioning for the mobile line
+- [x] **MOBL-01**: Visitor can understand the three package tiers `IAM mobiel solo`, `IAM mobiel duo`, and `IAM mobiel premium`
+- [x] **MOBL-02**: Visitor can distinguish single-use floor or wall variants from the dual-use offering and understand expandability where applicable
+- [x] **MOBL-03**: Visitor sees the approved package pricing and positioning for the mobile line
 
 ### Product Pages
 
@@ -66,9 +66,9 @@
 | BRND-03 | Phase 2 | Complete |
 | HOME-01 | Phase 2 | Complete |
 | HOME-02 | Phase 2 | Complete |
-| MOBL-01 | Phase 3 | Pending |
-| MOBL-02 | Phase 3 | Pending |
-| MOBL-03 | Phase 3 | Pending |
+| MOBL-01 | Phase 3 | Complete |
+| MOBL-02 | Phase 3 | Complete |
+| MOBL-03 | Phase 3 | Complete |
 | PROD-01 | Phase 4 | Pending |
 | PROD-02 | Phase 4 | Pending |
 | PROD-03 | Phase 5 | Pending |
