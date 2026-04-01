@@ -64,7 +64,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: Restructure package taxonomy and headings for the mobile line
+- [x] 03-01: Restructure package taxonomy and headings for the mobile line
 - [ ] 03-02: Rewrite package descriptions, pricing, and supporting value statements
 - [ ] 03-03: Validate package presentation across pricing and product-related pages
 
@@ -109,6 +109,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Safe Update Surface | 0/2 | Not started | - |
 | 2. Brand and Homepage Repositioning | 1/3 | In Progress|  |
-| 3. IAM Mobiel Package Refresh | 0/3 | Not started | - |
+| 3. IAM Mobiel Package Refresh | 1/3 | In Progress | - |
 | 4. Product Detail Cleanup | 0/3 | Not started | - |
 | 5. Bilingual Release Hardening | 0/3 | Not started | - |
