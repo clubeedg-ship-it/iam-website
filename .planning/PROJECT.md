@@ -15,6 +15,8 @@ Prospective customers should immediately understand what IAM sells now, what the
 - ✓ Bilingual static website with Dutch and English page variants via HTMX partial swaps — existing
 - ✓ Product, sector, pricing, and company information pages are already published — existing
 - ✓ Media-rich marketing presentation with direct contact CTAs is already established — existing
+- ✓ All affected routes and file families inventoried with drift detection — validated in Phase 1
+- ✓ Legacy phrase audit tooling established for the refresh — validated in Phase 1
 
 ### Active
 
@@ -70,4 +72,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-01 after initialization*
+*Last updated: 2026-04-01 after Phase 1 completion*
