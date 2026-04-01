@@ -17,6 +17,8 @@ Prospective customers should immediately understand what IAM sells now, what the
 - ✓ Media-rich marketing presentation with direct contact CTAs is already established — existing
 - ✓ All affected routes and file families inventoried with drift detection — validated in Phase 1
 - ✓ Legacy phrase audit tooling established for the refresh — validated in Phase 1
+- ✓ Homepage and primary selling pages use current "programs" terminology and real product imagery — validated in Phase 2
+- ✓ Homepage FAQ uses approved interactive programs question and answer in NL/EN — validated in Phase 2
 
 ### Active
 
@@ -72,4 +74,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-01 after Phase 1 completion*
+*Last updated: 2026-04-01 after Phase 2 completion*
