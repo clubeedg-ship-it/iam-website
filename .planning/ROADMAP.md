@@ -49,8 +49,8 @@ Plans:
 
 Plans:
 - [x] 02-01: Update homepage product imagery and FAQ content
-- [ ] 02-02: Apply top-level brand and terminology corrections to the main selling surfaces
-- [ ] 02-03: Sync homepage and core partial variants after the copy shift
+- [x] 02-02: Apply top-level brand and terminology corrections to the main selling surfaces
+- [x] 02-03: Sync homepage and core partial variants after the copy shift
 
 ### Phase 3: IAM Mobiel Package Refresh
 **Goal**: Rebuild the mobile-line offer presentation around the approved package ladder and pricing.
