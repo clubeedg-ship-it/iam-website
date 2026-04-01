@@ -1,93 +1,14 @@
-<header>
-    <img src="media/logo-final.png" alt="Inter Active Move" class="logo-img">
-    <nav>
-        <!-- Desktop Navigation -->
-                <ul class="nav-menu">
-            <li class="nav-item dropdown">
-                <button class="nav-link">Products</button>
-                <div class="dropdown-menu">
-                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
-                    <a href="products/interactieve-muur.html">Interactive Wall</a>
-                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-                    <a href="products/interactieve-tekeningen.html">Interactive Drawings</a>
-                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
-                    <a href="products/software-maatwerk.html">Software & Custom</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <button class="nav-link">Solutions</button>
-                <div class="dropdown-menu">
-                    <a href="bouw-een-park.html">Build a Park</a>
-                    <a href="3d-spellen.html">3D Games</a>
-                    <a href="parken-speelhallen.html">Parks & Arcades</a>
-                    <a href="onderwijs.html">Education</a>
-                    <a href="zorg-revalidatie.html">Healthcare & Rehab</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <button class="nav-link">About Us</button>
-                <div class="dropdown-menu">
-                    <a href="over-ons.html">About Inter Active Move</a>
-                    <a href="index.html#contact">Contact</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="products/mobiele-vloer.html" class="nav-link">Rental</a>
-            </li>
-            <li class="nav-item">
-                <a href="prijzen.html" class="nav-link">Prices</a>
-            </li>
-        </ul>
-        <div class="lang-toggle">
-            <button class="lang-btn" hx-get="partials/index-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML"
-                hx-push-url="?lang=nl">NL</button>
-            <span class="divider">|</span>
-            <button class="lang-btn active" hx-get="partials/index-en.html" hx-target="#page-wrapper"
-                hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
-        </div>
 
-        <!-- Hamburger Button (Mobile) -->
-        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <a href="#contact" class="btn"
-            style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
-    </nav>
-</header>
-
-<!-- Mobile Navigation Overlay -->
-<div class="mobile-nav" id="mobileNav">
-    <a href="#" onclick="closeMobileNav()">Home</a>
-    <a href="products/interactieve-vloer.html">Interactive Floor</a>
-    <a href="products/interactieve-muur.html">Interactive Wall</a>
-    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-    <a href="products/interactieve-tekeningen.html">Interactive Drawings</a>
-    <a href="products/mobiele-vloer.html">Mobile Floor</a>
-    <a href="products/software-maatwerk.html">Software & Customization</a>
-    <a href="bouw-een-park.html">Build a Park</a>
-    <a href="3d-spellen.html">3D Games</a>
-    <a href="parken-speelhallen.html">Parks & Arcades</a>
-    <a href="onderwijs.html">Education</a>
-    <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
-    <a href="over-ons.html">About Us</a>
-    <a href="#contact" onclick="closeMobileNav()">Contact</a>
-</div>
-
-<main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div id="hero-video-container" class="hero-video-container">
-            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+            <video autoplay muted loop playsinline>
                 <source src="media/hero-home-page.mp4" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </div>
         <div class="hero-content">
             <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">Bring Any Space to Life</h1>
-            <p class="hero-subtitle">Interactive projection systems that transform THE learning, play and rehabilitation
+            <p class="hero-subtitle">Interactive projection systems that transform the learning, play and rehabilitation
             </p>
             <div class="hero-cta-group">
                 <a href="#products" class="btn-primary">View Products</a>
@@ -192,14 +113,14 @@
     <!-- Playground Section -->
     <section id="playground" class="container">
         <div class="content-wrapper">
-            <h2 class="industrial-label">Interactive Playground</h2>
-            <p style="font-size: 1.2rem; margin: 0;">Move your cursor to interact with the projection.</p>
+            <h2 class="industrial-label">Interactive playground</h2>
+            <p style="margin: 0">Move your cursor to interact with the projection.</p>
         </div>
         <div class="cursor-demo"></div>
     </section>
 
     <!-- Why Choose IAM Section (OPAQUE DARK - No particles visible) -->
-    <section class="section section-opaque-dark section-reveal">
+    <section class="section section-opaque-dark section-reveal" style="margin-bottom: 0;">
         <div class="container">
             <h2 class="industrial-label reveal-fade-up" style="color: #fff;">Why choose Inter Active Move</h2>
 
@@ -210,7 +131,7 @@
                         <path
                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
-                    <h3 class="spec-title">Innovative Technology</h3>
+                    <h3 class="spec-title">Innovative technology</h3>
                     <p class="spec-desc">Advanced interactive systems that detect movement and react instantly.</p>
                 </div>
 
@@ -219,7 +140,7 @@
                     <svg class="spec-icon" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
                     </svg>
-                    <h3 class="spec-title">Various Applications</h3>
+                    <h3 class="spec-title">Various applications</h3>
                     <p class="spec-desc">Education, healthcare facilities, play parks, events etc.</p>
                 </div>
 
@@ -229,7 +150,7 @@
                         <path
                             d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                     </svg>
-                    <h3 class="spec-title">For All Ages</h3>
+                    <h3 class="spec-title">For all ages</h3>
                     <p class="spec-desc">Suitable for children and adults, from 3 to 100 years old.</p>
                 </div>
 
@@ -239,7 +160,7 @@
                         <path
                             d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L5.09 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
                     </svg>
-                    <h3 class="spec-title">Custom Solutions</h3>
+                    <h3 class="spec-title">Custom solutions</h3>
                     <p class="spec-desc">We build interactive parks and custom software.</p>
                 </div>
             </div>
@@ -247,10 +168,34 @@
     </section>
 
     <!-- Products Section (OPAQUE LIGHT - No particles visible) -->
-    <section id="products" class="section section-opaque-light section-reveal">
+    <section id="products" class="section section-opaque-light section-reveal" style="margin-bottom: 0;">
         <div class="container">
             <h2 class="industrial-label reveal-fade-up" style="text-align: center; margin-bottom: 2rem;">Our Products
             </h2>
+
+            <!-- Flagship: 2-in-1 Floor & Wall -->
+            <div class="reveal-fade-up" style="max-width: 900px; margin: 0 auto 3rem; background: linear-gradient(135deg, #1d1e22 0%, #2a2b30 100%); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; align-items: center;">
+                    <div style="padding: 3rem;">
+                        <span style="display: inline-block; background: var(--color-primary); color: #000; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.35rem 1rem; border-radius: 999px; margin-bottom: 1rem">New - Flagship</span>
+                        <h3 style="color: #fff; font-weight: 800; margin-bottom: 1rem; line-height: 1.2">2-in-1 Interactive Floor &amp; Wall</h3>
+                        <p style="color: #ccc; margin-bottom: 1.5rem; line-height: 1.6;">Two systems in one: project interactive games on both the floor and the wall. The ultimate solution for maximum impact in any space.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="/products/2-in-1-floor-wall" class="btn" style="background: var(--color-primary); color: #000; border-radius: 999px; padding: 0.8rem 2rem; font-weight: 600;">Discover the 2-in-1</a>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <div style="background: rgba(254,186,4,0.1); border-radius: 16px; padding: 2.5rem; text-align: center;">
+                            <svg width="80" height="80" fill="var(--color-primary)" viewBox="0 0 24 24">
+                                <path d="M3 5v14h18V5H3zm16 12H5V7h14v10z"/>
+                            </svg>
+                            <div style="color: var(--color-primary); font-weight: 800; margin-top: 0.5rem">2-in-1</div>
+                            <div style="color: #999">Floor + Wall</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="pricing-grid reveal-stagger">
                 <!-- Interactieve Vloer -->
                 <div class="pricing-card">
@@ -262,13 +207,12 @@
                     <h3 class="pricing-title" style="text-align: center;">Interactive Floor</h3>
                     <p style="text-align: center; color: #666; margin-bottom: 2rem;">Projection on the floor that
                         reacts to movement. Perfect for schools and arcades.</p>
-                    <a href="products/interactieve-vloer.html" class="btn"
+                    <a href="/products/interactive-floor" class="btn"
                         style="width: 100%; text-align: center; border-radius: 999px;">More info</a>
                 </div>
 
                 <!-- Interactieve Muur -->
-                <div class="pricing-card popular">
-                    <div class="popular-badge">Popular</div>
+                <div class="pricing-card">
                     <div class="practical-icon" style="margin: 0 auto 1.5rem;">
                         <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -278,7 +222,7 @@
                     <h3 class="pricing-title" style="text-align: center;">Interactive Wall</h3>
                     <p style="text-align: center; color: #666; margin-bottom: 2rem;">Wall projection for sports,
                         education and entertainment. Play, learn and move!</p>
-                    <a href="products/interactieve-muur.html" class="btn btn-danger"
+                    <a href="/products/interactive-wall" class="btn"
                         style="width: 100%; text-align: center; border-radius: 999px;">More info</a>
                 </div>
 
@@ -290,40 +234,10 @@
                                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                         </svg>
                     </div>
-                    <h3 class="pricing-title" style="text-align: center;">Interactive Sandbox</h3>
+                    <h3 class="pricing-title" style="text-align: center;">Interactive sandbox</h3>
                     <p style="text-align: center; color: #666; margin-bottom: 2rem;">Augmented reality sandbox with
                         topographical projections. Learning through play.</p>
-                    <a href="products/interactieve-zandbak.html" class="btn"
-                        style="width: 100%; text-align: center; border-radius: 999px;">More info</a>
-                </div>
-
-                <!-- Interactive Drawings -->
-                <div class="pricing-card">
-                    <div class="practical-icon" style="margin: 0 auto 1.5rem;">
-                        <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a.996.996 0 00-1.41 0L9 12.25 11.75 15l8.96-8.96a.996.996 0 000-1.41z" />
-                        </svg>
-                    </div>
-                    <h3 class="pricing-title" style="text-align: center;">Interactive Drawings</h3>
-                    <p style="text-align: center; color: #666; margin-bottom: 2rem;">Draw and watch your creations come
-                        to life! Stimulates creativity and movement.</p>
-                    <a href="products/interactieve-tekeningen.html" class="btn"
-                        style="width: 100%; text-align: center; border-radius: 999px;">More info</a>
-                </div>
-
-                <!-- Mobiele Vloer -->
-                <div class="pricing-card">
-                    <div class="practical-icon" style="margin: 0 auto 1.5rem;">
-                        <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
-                        </svg>
-                    </div>
-                    <h3 class="pricing-title" style="text-align: center;">Mobile Floor</h3>
-                    <p style="text-align: center; color: #666; margin-bottom: 2rem;">Rental for events. We handles
-                        transport and installation.</p>
-                    <a href="products/mobiele-vloer.html" class="btn"
+                    <a href="/products/interactive-sandbox" class="btn"
                         style="width: 100%; text-align: center; border-radius: 999px;">More info</a>
                 </div>
 
@@ -335,45 +249,27 @@
                                 d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
                         </svg>
                     </div>
-                    <h3 class="pricing-title" style="text-align: center;">Software & Custom</h3>
+                    <h3 class="pricing-title" style="text-align: center;">Software & custom</h3>
                     <p style="text-align: center; color: #666; margin-bottom: 2rem;">Build your own interactive games
                         with our Game Editor and Animator tools.</p>
-                    <a href="products/software-maatwerk.html" class="btn"
+                    <a href="/products/software" class="btn"
                         style="width: 100%; text-align: center; border-radius: 999px;">More info</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section (OPAQUE LIGHT - No particles visible) -->
-    <section id="about" class="section section-opaque-light">
-        <div class="container">
-            <div class="practical-info-section">
-                <h2 class="industrial-label" style="text-align: center; margin-bottom: 1rem;">About Inter Active Move
-                </h2>
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <div style="padding: 2rem;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Our Mission</h3>
-                        <p>We want to inspire people to move and learn in an active and playful way.
-                            By integrating interactive technologies, we create new possibilities for education,
-                            rehabilitation, sports and entertainment.</p>
-                    </div>
-                    <div style="padding: 2rem;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Our Vision</h3>
-                        <p>IAM envisions a world where movement and technology come together seamlessly. We
-                            develop solutions that are not only physically attractive, but also mentally
-                            stimulating and socially interactive.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Practical Info Section -->
     <section id="practical" class="container section">
         <div class="practical-info-section">
-            <h2 class="industrial-label" style="text-align: center; margin-bottom: 1rem;">Practical Information</h2>
+            <h2 class="industrial-label" style="text-align: center; margin-bottom: 1rem;">Practical information</h2>
+            <div style="max-width: 900px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
+                <video autoplay muted loop playsinline style="width: 100%; display: block; background: #000;">
+                    <source src="media/home-page-video.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
             <div class="practical-grid">
                 <!-- Sectors -->
                 <div class="practical-item">
@@ -435,162 +331,65 @@
                     </div>
                 </div>
             </div>
-            <div class="video-container" style="margin-top: 3rem;">
-                <div class="video-wrapper">
-                    <video controls preload="metadata">
-                        <source src="media/home-page-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section section-opaque-light section-reveal">
         <div class="container">
-            <h2 class="industrial-label reveal-fade-up">What Our Customers Say</h2>
+            <h2 class="industrial-label reveal-fade-up">What our customers say</h2>
             <div class="testimonials-grid reveal-stagger">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
                     <div class="testimonial-content">
                         The interactive floor has completely changed our PE lessons. Children can't wait to move and
                         learn. Engagement has increased enormously.
                     </div>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">MV</div>
+                        <div class="testimonial-avatar">★</div>
                         <div class="testimonial-info">
-                            <span class="testimonial-name">Maria de Vries</span>
-                            <span class="testimonial-role">Principal, De Regenboog Primary School</span>
+                            <span class="testimonial-name">Schooldirecteur</span>
+                            <span class="testimonial-role">Principal, Primary School</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
                     <div class="testimonial-content">
                         Patients who initially resisted exercises now ask for more sessions themselves. The interactive
                         wall makes therapy fun and effective.
                     </div>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">AJ</div>
+                        <div class="testimonial-avatar">★</div>
                         <div class="testimonial-info">
-                            <span class="testimonial-name">Dr. Anna Jansen</span>
-                            <span class="testimonial-role">Physiotherapist, Utrecht Rehabilitation Center</span>
+                            <span class="testimonial-name">Physiotherapist</span>
+                            <span class="testimonial-role">Physiotherapist</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
                     <div class="testimonial-content">
                         The investment was recovered within 2 years. Parents tell friends about 'that cool floor' and
                         book parties specifically for this attraction.
                     </div>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">PG</div>
+                        <div class="testimonial-avatar">★</div>
                         <div class="testimonial-info">
-                            <span class="testimonial-name">Peter de Groot</span>
-                            <span class="testimonial-role">Owner, Indoor Play Paradise</span>
+                            <span class="testimonial-name">Ondernemer</span>
+                            <span class="testimonial-role">Owner, Play Paradise</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Preview Section -->
-    <section class="case-studies-section section-opaque-dark section-reveal">
-        <div class="container">
-            <h2 class="industrial-label reveal-fade-up" style="text-align: center; color: #fff; margin-bottom: 1rem;">
-                Success Stories</h2>
-            <p class="reveal-fade-up"
-                style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Discover how our clients use interactive technology to achieve their goals
-            </p>
-            <div class="case-studies-grid reveal-stagger"
-                style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                <!-- Case Study 1: Education -->
-                <div class="case-study-card"
-                    style="background: rgba(255,255,255,0.05); border-radius: var(--radius-card); overflow: hidden; transition: transform 0.3s ease;">
-                    <div
-                        style="height: 160px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
-                        <svg width="64" height="64" fill="rgba(255,255,255,0.9)" viewBox="0 0 24 24">
-                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-                        </svg>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <span
-                            style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Education</span>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin: 0.5rem 0;">De Regenboog Primary School</h3>
-                        <p
-                            style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
-                            "PE class engagement increased by 40% after installing the interactive floor."
-                        </p>
-                        <div style="display: flex; gap: 1rem; font-size: 0.85rem;">
-                            <span style="color: var(--color-primary); font-weight: 600;">+40% engagement</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case Study 2: Healthcare -->
-                <div class="case-study-card"
-                    style="background: rgba(255,255,255,0.05); border-radius: var(--radius-card); overflow: hidden; transition: transform 0.3s ease;">
-                    <div
-                        style="height: 160px; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); display: flex; align-items: center; justify-content: center;">
-                        <svg width="64" height="64" fill="rgba(255,255,255,0.9)" viewBox="0 0 24 24">
-                            <path
-                                d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
-                        </svg>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <span
-                            style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Healthcare</span>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin: 0.5rem 0;">Utrecht Rehabilitation Center</h3>
-                        <p
-                            style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
-                            "Patients now request extra therapy sessions with the interactive wall."
-                        </p>
-                        <div style="display: flex; gap: 1rem; font-size: 0.85rem;">
-                            <span style="color: var(--color-primary); font-weight: 600;">+60% motivation</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case Study 3: Entertainment -->
-                <div class="case-study-card"
-                    style="background: rgba(255,255,255,0.05); border-radius: var(--radius-card); overflow: hidden; transition: transform 0.3s ease;">
-                    <div
-                        style="height: 160px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center;">
-                        <svg width="64" height="64" fill="rgba(255,255,255,0.9)" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                        </svg>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <span
-                            style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Entertainment</span>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin: 0.5rem 0;">Amsterdam Play Paradise</h3>
-                        <p
-                            style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
-                            "Investment recovered in 2 years through more repeat visitors and parties."
-                        </p>
-                        <div style="display: flex; gap: 1rem; font-size: 0.85rem;">
-                            <span style="color: var(--color-primary); font-weight: 600;">+35% revenue</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 2.5rem;">
-                <a href="mailto:info@interactivemove.nl"
-                    class="btn" style="border-radius: 999px; background: var(--color-primary); color: #000;">
-                    View All Success Stories →
-                </a>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works section-opaque-light section-reveal scroll-animated" id="roadmap-section">
+    <section class="how-it-works section-opaque-light scroll-animated" id="roadmap-section">
         <div class="container">
-            <h2 class="industrial-label reveal-fade-up">From First Contact to Installation</h2>
-            <div class="steps-container reveal-stagger">
+            <h2 class="industrial-label reveal-fade-up">From first contact to installation</h2>
+            <div class="steps-container">
                 <div class="step-item">
                     <div class="step-number">1</div>
                     <div>
@@ -628,8 +427,7 @@
     <!-- FAQ Accordion Section -->
     <section class="section section-opaque-dark">
         <div class="container">
-            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Frequently Asked
-                Questions</h2>
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Frequently asked questions</h2>
             <div class="accordion" style="max-width: 800px; margin: 0 auto;">
                 <details class="accordion-item">
                     <summary>What is an interactive projection system?</summary>
@@ -655,14 +453,7 @@
                         permanent installations.
                     </div>
                 </details>
-                <details class="accordion-item">
-                    <summary>Can I rent the systems for an event?</summary>
-                    <div class="accordion-content">
-                        Yes! Our Mobile Floor is specially designed for rental. We handle
-                        transport, setup and supervision. Perfect for company parties, festivals,
-                        open days and children's events.
-                    </div>
-                </details>
+
                 <details class="accordion-item">
                     <summary>How many games are available?</summary>
                     <div class="accordion-content">
@@ -675,20 +466,43 @@
         </div>
     </section>
 
+    <!-- Blog Preview Carousel -->
+    <section class="section section-opaque-dark" id="blog-preview" style="padding: 4rem 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 class="industrial-label" style="margin-bottom: 0;">Latest News</h2>
+                <a href="/blog" style="color: var(--primary, #00d4ff); text-decoration: none; display: flex; align-items: center; gap: 0.4rem">
+                    View all articles <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="blog-carousel-wrapper" style="position: relative;">
+                <button class="blog-carousel-btn blog-carousel-prev" onclick="scrollBlogCarousel(-1)" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div class="blog-carousel" id="blog-carousel">
+                </div>
+                <button class="blog-carousel-btn blog-carousel-next" onclick="scrollBlogCarousel(1)" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+            <div id="blog-carousel-empty" style="display:none; text-align:center; padding:2rem; color:rgba(255,255,255,0.4);">
+                Coming soon: articles about interactive technology and education.
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="final-cta-section">
         <div class="container">
-            <h2 class="industrial-label">Ready to Transform Your Space?</h2>
+            <h2 class="industrial-label">Ready to transform your space?</h2>
             <p class="subtitle">Schedule a free consultation with our experts</p>
             <div class="final-cta-buttons">
-                <a href="mailto:info@interactivemove.nl"
-                    target="_blank" class="cta-whatsapp">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
+                <a href="/#contact"
+                    class="cta-email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                     <span class="cta-text">
-                        <strong>WhatsApp</strong>
-                        <small>Response within 15 min</small>
+                        <strong>E-mail</strong>
+                        <small>Response within 24 hours</small>
                     </span>
                 </a>
                 <a href="tel:+31623998934" class="btn-secondary"
@@ -725,29 +539,29 @@
         </div>
     </section>
 
+    <div style="height: 3rem;"></div>
+
     <!-- Contact Section -->
     <section id="contact" class="form-section container glass-panel" style="margin-bottom: 4rem;">
         <h2 class="industrial-label">Contact us</h2>
-        <form onsubmit="sendToWhatsapp(event)" id="contactForm">
+        <form onsubmit="sendContactEmail(event)" id="contactForm">
+            <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+                <input type="text" name="firstname" placeholder="Name" aria-label="Name" required>
                 <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
             </div>
             <input type="text" name="company" placeholder="Company / Organization" aria-label="Company"
                 style="width: 100%;">
-            <textarea name="details" rows="4" placeholder="How can we help you?" aria-label="Details"></textarea>
+            <textarea name="message" rows="4" placeholder="How can we help you?" aria-label="Details"></textarea>
             <!-- GDPR Consent Checkbox -->
             <div class="form-consent">
                 <input type="checkbox" id="privacy-consent" name="privacy_consent" required>
                 <label for="privacy-consent">
                     I agree to the processing of my data as described in the
-                    <a href="privacybeleid.html" target="_blank">privacy policy</a>. *
+                    <a href="/privacy" target="_blank">privacy policy</a>. *
                 </label>
             </div>
-            <p class="whatsapp-privacy-notice">
-                By contacting us via WhatsApp, your data will be processed by Meta (USA).
-                <a href="privacybeleid.html#whatsapp">More information</a>.
-            </p>
+            <!-- Contact privacy notice removed -->
             <button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 999px;">SEND
                 MESSAGE</button>
         </form>
@@ -757,10 +571,10 @@
             <p>Tel: <a href="tel:+31623998934" style="color: var(--color-primary);">+31 6 2399 8934</a></p>
             <p>Email: <a href="mailto:klantcontact@interactivemove.nl"
                     style="color: var(--color-primary);">klantcontact@interactivemove.nl</a></p>
-            <p style="font-size: 0.85rem; margin-top: 1rem;">KvK: 96157895</p>
+            <p style="margin-top: 1rem">KvK: 96157895</p>
         </div>
     </section>
-</main>
+
 
 <!-- Professional Footer -->
 <footer class="footer-professional">
@@ -768,36 +582,33 @@
         <div class="footer-column footer-brand">
             <img src="media/logo-final.png" alt="Inter Active Move" class="footer-logo" loading="lazy">
             <p class="footer-tagline">Move, Learn and Play with Inter Active Move</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
             <div class="footer-social">
                 <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                     </svg></a>
                 <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path
-                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.668-.072-4.948c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                     </svg></a>
-                <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                        <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                    </svg></a>
+                <a href="https://www.youtube.com/@IAM-InterActiveMove" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
             </div>
         </div>
         <div class="footer-column">
             <h4 class="footer-heading">Quick Links</h4>
             <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bouw-een-park.html">Build a Park</a></li>
-                <li><a href="over-ons.html">About Us</a></li>
-                <li><a href="prijzen.html">Prices</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/bouw-een-park">Build a Park</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/pricing">Prices</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4 class="footer-heading">Legal</h4>
             <ul class="footer-links">
-                <li><a href="privacybeleid.html">Privacy Policy</a></li>
-                <li><a href="cookiebeleid.html">Cookie Policy</a></li>
-                <li><a href="toegankelijkheid.html">Accessibility</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/cookies">Cookie Policy</a></li>
+                <li><a href="/accessibility">Accessibility</a></li>
                 <li><a href="#" onclick="resetCookieConsent(); return false;">Cookie Settings</a></li>
             </ul>
         </div>
@@ -808,11 +619,10 @@
                 <p>Smitspol 15K, 3861RS Nijkerk</p>
                 <p>Tel: <a href="tel:+31623998934">+31 6 23 99 89 34</a></p>
                 <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                <p style="margin-top: 0.5rem">KvK: 96157895</p>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
         <p>&copy; 2026 Inter Active Move B.V. All rights reserved.</p>
-    </div>
-</footer>
+</footer>    </div>

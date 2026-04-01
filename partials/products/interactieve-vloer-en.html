@@ -1,103 +1,35 @@
-<header>
-    <a href="../index.html">
-        <img src="../media/logo-final.png" alt="InterActiveMove" class="logo-img">
-    </a>
-    <nav>
-        <ul class="nav-menu">
-            <li class="nav-item dropdown">
-                <button class="nav-link">Products</button>
-                <div class="dropdown-menu">
-                    <a href="interactieve-vloer.html" class="active">Interactive Floor</a>
-                    <a href="interactieve-muur.html">Interactive Wall</a>
-                    <a href="interactieve-zandbak.html">Interactive Sandbox</a>
-                    <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
-                    <a href="mobiele-vloer.html">Mobile Floor</a>
-                    <a href="software-maatwerk.html">Software & Customization</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <button class="nav-link">Applications</button>
-                <div class="dropdown-menu">
-                    <a href="../bouw-een-park.html">Build a Park</a>
-                    <a href="../3d-spellen.html">3D Games</a>
-                    <a href="../parken-speelhallen.html">Parks & Arcades</a>
-                    <a href="../onderwijs.html">Education</a>
-                    <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
-                </div>
-            </li>
-            <li class="nav-item"><a href="../over-ons.html" class="nav-link">About Us</a></li>
-            <li class="nav-item"><a href="../prijzen.html" class="nav-link">Prices</a></li>
-            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
-        </ul>
 
-        <div class="lang-toggle">
-            <button class="lang-btn" hx-get="../partials/products/interactieve-vloer-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
-            <span class="divider">|</span>
-            <button class="lang-btn active" hx-get="../partials/products/interactieve-vloer-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
-        </div>
-
-        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <a href="../index.html#contact" class="btn"
-            style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
-    </nav>
-</header>
-
-<!-- Mobile Navigation -->
-<div class="mobile-nav" id="mobileNav">
-    <a href="../index.html" onclick="closeMobileNav()">Home</a>
-    <a href="interactieve-vloer.html">Interactive Floor</a>
-    <a href="interactieve-muur.html">Interactive Wall</a>
-    <a href="interactieve-zandbak.html">Interactive Sandbox</a>
-    <a href="interactieve-klimwand.html">Interactive Climbing Wall</a>
-    <a href="mobiele-vloer.html">Mobile Floor</a>
-    <a href="software-maatwerk.html">Software & Customization</a>
-    <a href="../bouw-een-park.html">Build a Park</a>
-    <a href="../3d-spellen.html">3D Games</a>
-    <a href="../parken-speelhallen.html">Parks & Arcades</a>
-    <a href="../onderwijs.html">Education</a>
-    <a href="../zorg-revalidatie.html">Care & Rehabilitation</a>
-    <a href="../over-ons.html">About Us</a>
-    <a href="../prijzen.html">Prices</a>
-    <a href="../index.html#contact" onclick="closeMobileNav()">Contact</a>
-</div>
-
-<main>
     <!-- Enhanced Product Hero -->
     <section class="product-hero-enhanced">
         <div class="container">
             <div class="product-hero-grid">
                 <div class="product-gallery">
                     <div class="gallery-main">
-                        <img src="../media/products/interactieve-vloer.jpg" alt="Interactive Floor in action" id="mainProductImage">
+                        <img src="../media/interactive1.webp" alt="Interactive Floor in action" id="mainProductImage">
                     </div>
                     <div class="gallery-thumbs">
-                        <button class="thumb active" data-image="../media/products/interactieve-vloer.jpg">
-                            <img src="../media/products/interactieve-vloer.jpg" alt="Product view 1">
+                        <button class="thumb active" data-image="../media/interactive1.webp">
+                            <img src="../media/interactive1.webp" alt="Product view 1">
                         </button>
-                        <button class="thumb" data-image="../media/products/interactieve-vloer.jpg">
-                            <img src="../media/products/interactieve-vloer.jpg" alt="Product view 2">
+                        <button class="thumb" data-image="../media/interactive2.webp">
+                            <img src="../media/interactive2.webp" alt="Product view 2">
                         </button>
-                        <button class="thumb" data-image="../media/products/interactieve-vloer.jpg">
-                            <img src="../media/products/interactieve-vloer.jpg" alt="Product view 3">
+                        <button class="thumb" data-image="../media/interactive3.webp">
+                            <img src="../media/interactive3.webp" alt="Product view 3">
                         </button>
                     </div>
                 </div>
                 <div class="product-info">
                     <h1 class="product-title">Interactive Floor</h1>
                     <div class="product-rating">
-                        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
                         <span class="review-count">(47 reviews)</span>
                     </div>
-                    <p class="product-tagline">Transform any floor into a dynamic play surface where children learn and move through play.</p>
+                    <p class="product-tagline">Transform any floor into a dynamic play area where children learn and move through play.</p>
                     <ul class="product-highlights">
                         <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 60+ interactive games included</li>
                         <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Plug & Play installation</li>
-                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 2 year warranty & support</li>
+                        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 2-year warranty & support</li>
                         <li><svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-primary)"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Largest projection surface on the market</li>
                     </ul>
                     <div class="product-price">
@@ -105,14 +37,8 @@
                         <span class="price-amount">On request</span>
                     </div>
                     <div class="product-ctas">
-                        <a href="mailto:info@interactivemove.nl" class="btn btn-primary">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Request Quote
-                        </a>
-                        <a href="#demo-video" class="btn btn-secondary">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            Watch Demo
-                        </a>
+                        <a href="/#contact" class="btn btn-primary">Request Quote</a>
+                        <a href="#demo-video" class="btn btn-secondary">Watch Demo</a>
                     </div>
                 </div>
             </div>
@@ -155,13 +81,14 @@
     <section class="section section-opaque-light" id="demo-video">
         <div class="container">
             <div class="section-header">
-                <h2 class="industrial-label">See the Interactive Floor in Action</h2>
+                <h2 class="industrial-label">See the Interactive floor in action</h2>
                 <p class="section-subtitle">Discover how children learn and move through play with our projection technology</p>
             </div>
             <div class="video-container">
                 <div class="video-wrapper">
-                    <video controls poster="../media/products/interactieve-vloer.jpg" preload="metadata">
-                        <source src="../media/home-page-video.mp4" type="video/mp4">
+                    <video controls poster="../media/products/interactieve-vloer.png" preload="metadata" autoplay muted loop playsinline>
+                        <source src="../media/interactive-floor-video.mp4" type="video/mp4">
+                        <source src="../media/interactive-floor-video.webm" type="video/webm">
                         Your browser does not support video.
                     </video>
                 </div>
@@ -172,14 +99,14 @@
     <!-- Feature Deep Dive -->
     <section class="section section-opaque-dark">
         <div class="container">
-            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 3rem;">Why the Interactive Floor?</h2>
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 3rem;">Why the Interactive floor?</h2>
 
             <div class="feature-row">
                 <div class="feature-image">
-                    <img src="../media/products/interactieve-vloer.png" alt="Multi-touch technology">
+                    <div style="background: linear-gradient(135deg, #feba04 0%, #ff8c00 100%); border-radius: var(--radius-card); padding: 3rem; display: flex; align-items: center; justify-content: center;"><svg width="120" height="120" fill="#fff" viewBox="0 0 24 24"><path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div>
                 </div>
                 <div class="feature-content">
-                    <h3>Multi-Touch Technology</h3>
+                    <h3>Multi-Touch technology</h3>
                     <p>Up to 20 simultaneous touch points for group games and collaborative activities. Multiple children can play at the same time without conflicts.</p>
                     <ul class="feature-benefits">
                         <li>Play simultaneously with groups up to 10 children</li>
@@ -191,10 +118,10 @@
 
             <div class="feature-row feature-row-reverse">
                 <div class="feature-image">
-                    <img src="../media/products/interactieve-vloer.png" alt="Robust construction">
+                    <div style="background: linear-gradient(135deg, #d23234 0%, #ff6b6b 100%); border-radius: var(--radius-card); padding: 3rem; display: flex; align-items: center; justify-content: center;"><svg width="120" height="120" fill="#fff" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
                 </div>
                 <div class="feature-content">
-                    <h3>Robust Construction</h3>
+                    <h3>Robust construction</h3>
                     <p>Industrial quality built to withstand intensive daily use in schools, arcades, and healthcare facilities.</p>
                     <ul class="feature-benefits">
                         <li>Suitable for daily intensive use</li>
@@ -206,10 +133,10 @@
 
             <div class="feature-row">
                 <div class="feature-image">
-                    <img src="../media/products/interactieve-vloer.png" alt="Educational content">
+                    <div style="background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%); border-radius: var(--radius-card); padding: 3rem; display: flex; align-items: center; justify-content: center;"><svg width="120" height="120" fill="#fff" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div>
                 </div>
                 <div class="feature-content">
-                    <h3>Educational Content</h3>
+                    <h3>Educational content</h3>
                     <p>More than 60 games aligned with educational curriculum, from math to motor skill development.</p>
                     <ul class="feature-benefits">
                         <li>Games for math, language, and motor skills</li>
@@ -225,7 +152,7 @@
     <section class="section section-opaque-light">
         <div class="container">
             <div class="section-header">
-                <h2 class="industrial-label">60+ Games Included</h2>
+                <h2 class="industrial-label">60+ games included</h2>
                 <p class="section-subtitle">And new games are regularly added via free updates</p>
             </div>
             <div class="game-categories">
@@ -287,7 +214,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="../3d-spellen.html" class="btn btn-secondary">View All Games</a>
+                <a href="/3d-spellen" class="btn btn-secondary">View All Games</a>
             </div>
         </div>
     </section>
@@ -295,7 +222,7 @@
     <!-- Technical Specifications -->
     <section class="section section-opaque-dark">
         <div class="container">
-            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Technical Specifications</h2>
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Technical specifications</h2>
             <div class="specs-table-container">
                 <table class="specs-table">
                     <tbody>
@@ -349,29 +276,29 @@
     <section class="section section-opaque-light">
         <div class="container">
             <div class="section-header">
-                <h2 class="industrial-label">Where is the Interactive Floor Used?</h2>
+                <h2 class="industrial-label">Where is the Interactive floor used?</h2>
                 <p class="section-subtitle">Discover the versatile applications across various sectors</p>
             </div>
             <div class="use-case-grid">
-                <a href="../onderwijs.html" class="use-case-card">
+                <a href="/education" class="use-case-card">
                     <div class="use-case-image">
                         <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
                     </div>
-                    <h3>Primary Schools</h3>
+                    <h3>Primary schools</h3>
                     <p>Learning through movement for math, language, and motor skills</p>
                 </a>
-                <a href="../zorg-revalidatie.html" class="use-case-card">
+                <a href="/healthcare" class="use-case-card">
                     <div class="use-case-image">
                         <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
                     </div>
-                    <h3>Rehabilitation Centers</h3>
+                    <h3>Rehabilitation centers</h3>
                     <p>Gamified therapy for motor rehabilitation</p>
                 </a>
-                <a href="../parken-speelhallen.html" class="use-case-card">
+                <a href="/entertainment" class="use-case-card">
                     <div class="use-case-image">
                         <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     </div>
-                    <h3>Arcades & Parks</h3>
+                    <h3>Arcades & parks</h3>
                     <p>Attraction with high throughput and low maintenance</p>
                 </a>
             </div>
@@ -389,8 +316,8 @@
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
-                            <strong>Jan van der Berg</strong>
-                            <span>Principal, De Fontein Primary School</span>
+                            <strong>Locatiemanager</strong>
+                            <span>Principal, Primary School</span>
                             <span class="location">Utrecht</span>
                         </div>
                     </div>
@@ -403,7 +330,7 @@
     <section class="section section-opaque-light">
         <div class="container">
             <div class="section-header">
-                <h2 class="industrial-label">Choose Your Package</h2>
+                <h2 class="industrial-label">Choose your package</h2>
                 <p class="section-subtitle">Flexible options for every organization and budget</p>
             </div>
             <div class="pricing-packages">
@@ -422,7 +349,7 @@
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> 1 year warranty</li>
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Email support</li>
                     </ul>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-outline">More Information</a>
+                    <a href="/#contact" class="btn btn-outline">More Information</a>
                 </div>
                 <div class="package-card package-popular">
                     <div class="popular-badge">Most Popular</div>
@@ -442,7 +369,7 @@
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Training for your team</li>
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Phone support</li>
                     </ul>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-primary">Request Quote</a>
+                    <a href="/#contact" class="btn btn-primary">Request Quote</a>
                 </div>
                 <div class="package-card">
                     <div class="package-header">
@@ -462,17 +389,17 @@
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Custom games possible</li>
                         <li><svg width="16" height="16" fill="var(--color-primary)" viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zM8 15l-5-5 1.4-1.4L8 12.2l7.6-7.6L17 6l-9 9z"/></svg> Priority support 24/7</li>
                     </ul>
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-outline">More Information</a>
+                    <a href="/#contact" class="btn btn-outline">More Information</a>
                 </div>
             </div>
-            <p class="pricing-help">Not sure which package? <a href="mailto:info@interactivemove.nl">We're happy to advise!</a></p>
+            <p class="pricing-help">Not sure which package? <a href="/#contact">We're happy to advise!</a></p>
         </div>
     </section>
 
     <!-- FAQ Accordion Section -->
     <section class="section section-opaque-dark">
         <div class="container">
-            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            <h2 class="industrial-label" style="text-align: center; color: #fff; margin-bottom: 2rem;">Frequently asked questions</h2>
             <div class="accordion" style="max-width: 800px; margin: 0 auto;">
                 <details class="accordion-item">
                     <summary>What exactly is the interactive floor?</summary>
@@ -518,37 +445,37 @@
     <section class="section section-opaque-light">
         <div class="container">
             <div class="section-header">
-                <h2 class="industrial-label">Combine with Other Products</h2>
+                <h2 class="industrial-label">Combine with other products</h2>
                 <p class="section-subtitle">Build a complete interactive park with our other systems</p>
             </div>
             <div class="related-products">
-                <a href="interactieve-muur.html" class="related-product-card">
+                <a href="/products/interactive-wall" class="related-product-card">
                     <div class="related-product-image">
                         <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
                     </div>
-                    <h3>Interactive Wall</h3>
+                    <h3>Interactive wall</h3>
                     <p>Wall projection for sports and education</p>
-                    <span class="product-link">View product</span>
+                    <span class="btn btn-secondary" style="border-radius:999px;padding:0.5rem 1.5rem;font-size:0.9rem;">View Product</span>
                 </a>
-                <a href="interactieve-zandbak.html" class="related-product-card">
+                <a href="/products/interactive-sandbox" class="related-product-card">
                     <div class="related-product-image">
                         <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M2 21h20v-2H2v2zm0-4h20v-2H2v2zm0-4h20v-2H2v2zm0-4h20V7H2v2zm0-6v2h20V3H2z"/></svg>
                     </div>
-                    <h3>Interactive Sandbox</h3>
+                    <h3>Interactive sandbox</h3>
                     <p>AR experience with sand and projection</p>
-                    <span class="product-link">View product</span>
+                    <span class="btn btn-secondary" style="border-radius:999px;padding:0.5rem 1.5rem;font-size:0.9rem;">View Product</span>
                 </a>
-                <a href="software-maatwerk.html" class="related-product-card">
+                <a href="/products/software" class="related-product-card">
                     <div class="related-product-image">
                         <svg width="64" height="64" fill="var(--color-primary)" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
                     </div>
-                    <h3>Software & Customization</h3>
+                    <h3>Software & customization</h3>
                     <p>Custom games and branding</p>
-                    <span class="product-link">View product</span>
+                    <span class="btn btn-secondary" style="border-radius:999px;padding:0.5rem 1.5rem;font-size:0.9rem;">View Product</span>
                 </a>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="../bouw-een-park.html" class="btn btn-secondary">Build Your Own Park</a>
+                <a href="/bouw-een-park" class="btn btn-secondary">Build Your Own Park</a>
             </div>
         </div>
     </section>
@@ -557,12 +484,12 @@
     <section class="section cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Space?</h2>
+                <h2>Ready to transform your space?</h2>
                 <p>Schedule a free consultation with our experts and discover the possibilities</p>
                 <div class="cta-buttons">
-                    <a href="mailto:info@interactivemove.nl" class="btn btn-primary btn-large">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        WhatsApp Contact
+                    <a href="/#contact" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                        E-mail Contact
                     </a>
                     <a href="tel:+31623998934" class="btn btn-secondary btn-large">
                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -573,12 +500,12 @@
             </div>
         </div>
     </section>
-</main>
+
 
 <!-- Mobile Sticky CTA -->
 <div class="mobile-sticky-cta">
     <span class="sticky-price">Interactive Floor</span>
-    <a href="mailto:info@interactivemove.nl" class="btn btn-primary btn-sticky">Quote</a>
+    <a href="/#contact" class="btn btn-primary btn-sticky">Quote</a>
 </div>
 
 <footer class="footer-professional">
@@ -586,28 +513,29 @@
         <div class="footer-column footer-brand">
             <img src="../media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
             <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
             <div class="footer-social">
                 <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-                <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/></svg></a>
+                <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.668-.072-4.948c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://www.youtube.com/@IAM-InterActiveMove" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
             </div>
         </div>
         <div class="footer-column">
             <h4 class="footer-heading">Quick Links</h4>
             <ul class="footer-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../bouw-een-park.html">Build a Park</a></li>
-                <li><a href="../over-ons.html">About Us</a></li>
-                <li><a href="../prijzen.html">Prices</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/bouw-een-park">Build a Park</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/pricing">Prices</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4 class="footer-heading">Products</h4>
             <ul class="footer-links">
-                <li><a href="interactieve-vloer.html">Interactive Floor</a></li>
-                <li><a href="interactieve-muur.html">Interactive Wall</a></li>
-                <li><a href="interactieve-zandbak.html">Interactive Sandbox</a></li>
-                <li><a href="interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                <li><a href="/products/interactive-floor">Interactive Floor</a></li>
+                <li><a href="/products/interactive-wall">Interactive Wall</a></li>
+                <li><a href="/products/interactive-sandbox">Interactive Sandbox</a></li>
+                <li><a href="/products/interactive-climbing-wall">Interactive Climbing Wall</a></li>
             </ul>
         </div>
         <div class="footer-column">
@@ -617,7 +545,7 @@
                 <p>Smitspol 15K, 3861RS Nijkerk</p>
                 <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
                 <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                <p style="margin-top: 0.5rem">KvK: 96157895</p>
             </div>
         </div>
     </div>

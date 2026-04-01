@@ -1,91 +1,21 @@
-<header>
-        <a href="index.html"><img src="media/logo-final.png" alt="InterActiveMove" class="logo-img"></a>
-        <nav>
-                    <ul class="nav-menu">
-            <li class="nav-item dropdown">
-                <button class="nav-link">Products</button>
-                <div class="dropdown-menu">
-                    <a href="products/interactieve-vloer.html">Interactive Floor</a>
-                    <a href="products/interactieve-muur.html">Interactive Wall</a>
-                    <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-                    <a href="products/interactieve-tekeningen.html">Interactive Drawings</a>
-                    <a href="products/mobiele-vloer.html">Mobile Floor</a>
-                    <a href="products/software-maatwerk.html">Software & Custom</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <button class="nav-link">Solutions</button>
-                <div class="dropdown-menu">
-                    <a href="bouw-een-park.html">Build a Park</a>
-                    <a href="3d-spellen.html">3D Games</a>
-                    <a href="parken-speelhallen.html">Parks & Arcades</a>
-                    <a href="onderwijs.html">Education</a>
-                    <a href="zorg-revalidatie.html">Healthcare & Rehab</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <button class="nav-link">About Us</button>
-                <div class="dropdown-menu">
-                    <a href="over-ons.html">About Inter Active Move</a>
-                    <a href="index.html#contact">Contact</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="products/mobiele-vloer.html" class="nav-link">Rental</a>
-            </li>
-            <li class="nav-item">
-                <a href="prijzen.html" class="nav-link">Prices</a>
-            </li>
-        </ul>
-            <div class="lang-toggle">
-                <button class="lang-btn" hx-get="partials/bouw-een-park-nl.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=nl">NL</button>
-                <span class="divider">|</span>
-                <button class="lang-btn active" hx-get="partials/bouw-een-park-en.html" hx-target="#page-wrapper" hx-swap="innerHTML" hx-push-url="?lang=en">EN</button>
-            </div>
 
-            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <a href="index.html#contact" class="btn"
-                style="padding: 0.5rem 1.5rem; font-size: 0.9rem; border-radius: 999px;">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" onclick="closeMobileNav()">Home</a>
-        <a href="products/interactieve-vloer.html">Interactive Floor</a>
-        <a href="products/interactieve-muur.html">Interactive Wall</a>
-        <a href="products/interactieve-zandbak.html">Interactive Sandbox</a>
-        <a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a>
-        <a href="products/mobiele-vloer.html">Mobile Floor</a>
-        <a href="products/software-maatwerk.html">Software & Customization</a>
-        <a href="bouw-een-park.html">Build a Park</a>
-        <a href="3d-spellen.html">3D Games</a>
-        <a href="parken-speelhallen.html">Parks & Arcades</a>
-        <a href="onderwijs.html">Education</a>
-        <a href="zorg-revalidatie.html">Care & Rehabilitation</a>
-        <a href="over-ons.html">About Us</a>
-        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
-    </div>
-
-    <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" style="min-height: 50vh;">
+        <section class="hero hero-glass" style="min-height: 60vh;">
             <div id="hero-video-container" class="hero-video-container">
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                    <source src="media/build-park-hero.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;"><source src="media/build-park-hero.mp4?v=2" type="video/mp4"></video>
             </div>
             <div class="hero-content">
-                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">BOUW EEN PARK</h1>
-                <p style="font-size: 1.5rem; margin-bottom: 2rem; text-shadow: 1px 1px 0 #000;">
-                    Ontdek alle interactieve attracties en bouw uw eigen speelpark
-                </p>
+                <h1 class="industrial-label" style="text-shadow: 2px 2px 0 #000;">BUILD YOUR OWN INTERACTIVE PARK</h1>
+                <p class="hero-subtitle">Combine interactive floors, walls, sandboxes and climbing walls into a unique play paradise</p>
+                <div class="pricing-trust-badges" style="margin-bottom: 2rem;">
+                    <div class="trust-badge"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg><span>6+ attractions</span></div>
+                    <div class="trust-badge"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>Fully customizable</span></div>
+                    <div class="trust-badge"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>500+ locations</span></div>
+                </div>
+                <div class="hero-cta-group">
+                    <a href="/#contact" class="btn btn-primary">Free Park Consultation</a>
+                    <a href="#park-map" class="btn btn-secondary">Discover Attractions</a>
+                </div>
             </div>
         </section>
 
@@ -93,8 +23,8 @@
         <section class="section section-opaque-light section-reveal">
             <div class="container">
                 <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h2 class="industrial-label reveal-fade-up" style="margin-bottom: 1.5rem;">Your Own Interactive World</h2>
-                    <p class="reveal-fade-up" style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+                    <h2 class="industrial-label reveal-fade-up" style="margin-bottom: 1.5rem;">Your own Interactive world</h2>
+                    <p class="reveal-fade-up" style="line-height: 1.8; color: var(--color-text-muted)">
                         Compose your ideal play park with our interactive attractions. Each product is designed
                         to combine movement, learning and fun. Click on an attraction to discover more.
                     </p>
@@ -109,75 +39,62 @@
                     <div class="park-map">
                         <div class="park-hotspots reveal-stagger">
                             <!-- Interactieve Vloer -->
-                            <a href="products/interactieve-vloer.html" class="park-hotspot">
+                            <a href="/products/interactive-floor" class="park-hotspot">
                                 <span class="park-hotspot-badge">Popular</span>
                                 <div class="park-hotspot-icon">
                                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M3 5v14h18V5H3zm16 12H5V7h14v10z" />
                                     </svg>
                                 </div>
-                                <h3 class="park-hotspot-title">Interactive Floor</h3>
+                                <h3 class="park-hotspot-title">Interactive floor</h3>
                                 <p class="park-hotspot-desc">Projectie op de grond die reageert op beweging</p>
                             </a>
 
                             <!-- Interactieve Muur -->
-                            <a href="products/interactieve-muur.html" class="park-hotspot">
+                            <a href="/products/interactive-wall" class="park-hotspot">
                                 <div class="park-hotspot-icon">
                                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
                                     </svg>
                                 </div>
-                                <h3 class="park-hotspot-title">Interactive Wall</h3>
+                                <h3 class="park-hotspot-title">Interactive wall</h3>
                                 <p class="park-hotspot-desc">Wandprojectie voor sport en entertainment</p>
                             </a>
 
                             <!-- Interactieve Zandbak -->
-                            <a href="products/interactieve-zandbak.html" class="park-hotspot">
+                            <a href="/products/interactive-sandbox" class="park-hotspot">
                                 <div class="park-hotspot-icon">
                                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
                                     </svg>
                                 </div>
-                                <h3 class="park-hotspot-title">Interactive Sandbox</h3>
+                                <h3 class="park-hotspot-title">Interactive sandbox</h3>
                                 <p class="park-hotspot-desc">AR zandbak met topografische projecties</p>
                             </a>
 
                             <!-- Interactieve Klimwand -->
-                            <a href="products/interactieve-klimwand.html" class="park-hotspot">
+                            <a href="/products/interactive-climbing-wall" class="park-hotspot">
                                 <div class="park-hotspot-icon">
                                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z" />
                                     </svg>
                                 </div>
-                                <h3 class="park-hotspot-title">Interactive Climbing Wall</h3>
+                                <h3 class="park-hotspot-title">Interactive climbing wall</h3>
                                 <p class="park-hotspot-desc">Klimmen wordt een game met projecties</p>
                             </a>
 
-                            <!-- Mobiele Vloer -->
-                            <a href="products/mobiele-vloer.html" class="park-hotspot">
-                                <span class="park-hotspot-badge">Verhuur</span>
-                                <div class="park-hotspot-icon">
-                                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z" />
-                                    </svg>
-                                </div>
-                                <h3 class="park-hotspot-title">Mobile Floor</h3>
-                                <p class="park-hotspot-desc">Verhuur voor events, wij verzorgen alles</p>
-                            </a>
-
                             <!-- Software & Maatwerk -->
-                            <a href="products/software-maatwerk.html" class="park-hotspot">
+                            <a href="/products/software" class="park-hotspot">
                                 <div class="park-hotspot-icon">
                                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
                                     </svg>
                                 </div>
-                                <h3 class="park-hotspot-title">Software & Customization</h3>
+                                <h3 class="park-hotspot-title">Software & customization</h3>
                                 <p class="park-hotspot-desc">Bouw uw eigen interactieve spellen</p>
                             </a>
                         </div>
@@ -190,21 +107,19 @@
         <section class="section section-opaque-dark">
             <div class="container">
                 <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                    <h2 class="industrial-label" style="color: #fff; margin-bottom: 1.5rem;">Klaar om te Bouwen?</h2>
-                    <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem;">
-                        Neem contact met ons op voor een vrijblijvend adviesgesprek. Wij helpen u graag bij
-                        het samenstellen van het perfecte interactieve park voor uw locatie.
+                    <h2 class="industrial-label" style="color: #fff; margin-bottom: 1.5rem;">Ready to Build?</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem">
+                        Contact us for a free consultation. We'll help you design the perfect interactive park for your location.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="index.html#contact" class="btn"
-                            style="border-radius: 999px; background: var(--color-primary); color: #000;">Plan een
-                            gesprek</a>
-                        <a href="prijzen.html" class="btn" style="border-radius: 999px;">Bekijk prijzen</a>
+                        <a href="/#contact" class="btn"
+                            style="border-radius: 999px; background: var(--color-primary); color: #000;">Schedule a Call</a>
+                        <a href="/pricing" class="btn-secondary">View Pricing</a>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
+    
 
     <!-- Professional Footer -->
     <footer class="footer-professional">
@@ -212,6 +127,7 @@
             <div class="footer-column footer-brand">
                 <img src="media/logo-final.png" alt="InterActiveMove" class="footer-logo" loading="lazy">
                 <p class="footer-tagline">Move, Learn and Play with InterActiveMove</p>
+                <div class="footer-credit"><span>Website by </span><a href="https://oopuo.com" target="_blank" rel="noopener noreferrer">OOPUO</a></div>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/interactivemove" target="_blank" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -220,32 +136,27 @@
                     <a href="https://www.instagram.com/interactivemove" target="_blank" aria-label="Instagram"><svg width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
                             <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.668-.072-4.948c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                         </svg></a>
-                    <a href="https://www.youtube.com/@interactivemove" target="_blank" aria-label="YouTube"><svg width="24" height="24" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
-                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-                        </svg></a>
+                    <a href="https://www.youtube.com/@IAM-InterActiveMove" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 </div>
             </div>
             <div class="footer-column">
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bouw-een-park.html">Build a Park</a></li>
-                    <li><a href="over-ons.html">About Us</a></li>
-                    <li><a href="prijzen.html">Prices</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/bouw-een-park">Build a Park</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/pricing">Prices</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4 class="footer-heading">Products</h4>
                 <ul class="footer-links">
-                    <li><a href="products/interactieve-vloer.html">Interactive Floor</a></li>
-                    <li><a href="products/interactieve-muur.html">Interactive Wall</a></li>
-                    <li><a href="products/interactieve-zandbak.html">Interactive Sandbox</a></li>
-                    <li><a href="products/interactieve-klimwand.html">Interactive Climbing Wall</a></li>
+                    <li><a href="/products/interactive-floor">Interactive Floor</a></li>
+                    <li><a href="/products/interactive-wall">Interactive Wall</a></li>
+                    <li><a href="/products/interactive-sandbox">Interactive Sandbox</a></li>
+                    <li><a href="/products/interactive-climbing-wall">Interactive Climbing Wall</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -255,11 +166,10 @@
                     <p>Smitspol 15K, 3861RS Nijkerk</p>
                     <p>Tel: <a href="tel:+31623998934">+31 6 2399 8934</a></p>
                     <p>Email: <a href="mailto:klantcontact@interactivemove.nl">klantcontact@interactivemove.nl</a></p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">KvK: 96157895</p>
+                    <p style="margin-top: 0.5rem">KvK: 96157895</p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 InterActiveMove B.V. Alle rechten voorbehouden.</p>
-        </div>
-    </footer>
+    </footer>        </div>

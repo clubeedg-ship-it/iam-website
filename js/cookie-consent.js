@@ -28,6 +28,13 @@
         return null;
     }
 
+    // Load Google Tag Manager (only after consent)
+    function loadGTM() {
+        if (window._gtmLoaded) return;
+        window._gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KPX78C22');
+    }
+
     // Save consent choice
     function saveConsent(choice) {
         const consentData = {
@@ -55,9 +62,9 @@
             return;
         }
 
-        const isNL = document.documentElement.lang === 'nl' ||
-                     window.location.search.includes('lang=nl') ||
-                     !window.location.search.includes('lang=');
+        const isNL = !(window.location.search.includes('lang=en') ||
+                      document.documentElement.lang === 'en' ||
+                      document.querySelector('.lang-btn.active')?.textContent?.trim() === 'EN');
 
         const texts = isNL ? {
             title: 'Wij respecteren uw privacy',
@@ -84,7 +91,7 @@
             <div class="cookie-consent-container">
                 <div class="cookie-consent-text">
                     <h3 id="cookie-title">${texts.title}</h3>
-                    <p>${texts.description} <a href="/cookiebeleid.html">${texts.learnMore}</a>.</p>
+                    <p>${texts.description} <a href="/cookies">${texts.learnMore}</a>.</p>
                 </div>
                 <div class="cookie-consent-buttons">
                     <button class="cookie-btn cookie-btn-reject" id="cookieReject">${texts.rejectAll}</button>
@@ -103,6 +110,7 @@
         // Event handlers
         document.getElementById('cookieAccept').addEventListener('click', function() {
             saveConsent('all');
+            loadGTM();
             hideBanner();
         });
 
@@ -134,10 +142,18 @@
         return getConsent();
     };
 
-    // Initialize on DOM ready
+    // Initialize after a short delay so HTMX can push ?lang= into URL first
+    function init() {
+        // If user already consented to all, load GTM immediately
+        var existing = getConsent();
+        if (existing && existing.choice === 'all') {
+            loadGTM();
+        }
+        setTimeout(showBanner, 500);
+    }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', showBanner);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        showBanner();
+        init();
     }
 })();

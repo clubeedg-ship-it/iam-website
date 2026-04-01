@@ -27,6 +27,11 @@ venv/
 
 # Reference/Development files (optional cleanup)
 # reference/
+media/dump iam/
 
 # Logs
 *.log
+
+# Docker environment
+.env.docker
+api/.env
