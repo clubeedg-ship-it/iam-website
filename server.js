@@ -24,8 +24,6 @@ const routes = {
   '/products/interactive-floor': '/products/interactieve-vloer.html',
   '/products/interactive-wall': '/products/interactieve-muur.html',
   '/products/interactive-sandbox': '/products/interactieve-zandbak.html',
-  '/products/interactive-climbing-wall': '/products/interactieve-klimwand.html',
-
   '/products/software': '/products/software-maatwerk.html',
 };
 
