@@ -12,9 +12,14 @@ aditionals/
 *.swp
 *.swo
 
-# Node (if using npm/npx for serving)
+# Node
 node_modules/
+api/node_modules/
 package-lock.json
+api/package-lock.json
+
+# Claude Code (dev only)
+CLAUDE.md
 
 # Python
 __pycache__/

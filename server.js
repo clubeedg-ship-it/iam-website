@@ -64,7 +64,20 @@ const server = http.createServer((req, res) => {
   res.setHeader('X-XSS-Protection', '1; mode=block');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
 
-  // 2. Redirects
+  // 2. Proxy /api/chat to chat-proxy service
+  if (url === '/api/chat') {
+    const CHAT_PORT = process.env.CHAT_PORT || 3860;
+    const proxyOpts = { hostname: '127.0.0.1', port: CHAT_PORT, path: '/chat', method: req.method, headers: req.headers };
+    const proxyReq = require('http').request(proxyOpts, (proxyRes) => {
+      res.writeHead(proxyRes.statusCode, proxyRes.headers);
+      proxyRes.pipe(res);
+    });
+    proxyReq.on('error', () => { res.writeHead(502); res.end('Chat service unavailable'); });
+    req.pipe(proxyReq);
+    return;
+  }
+
+  // 3. Redirects
   if (redirects[url]) {
     res.writeHead(301, { 'Location': redirects[url] });
     return res.end();
