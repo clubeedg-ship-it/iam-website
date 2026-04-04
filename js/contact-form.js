@@ -153,64 +153,39 @@
     };
 
     function submitToHubSpot(data, callback) {
-        // Post to HubSpot's collected forms endpoint
-        // This creates the contact and logs the form submission in CRM
+        // HubSpot Forms v2 endpoint — confirmed working with portal 49291889
+        var HUBSPOT_FORM_ID = '82e91e6d-7a36-47a4-8171-9f213e17fcb5';
         var hutk = getCookie('hubspotutk') || '';
-        var collectUrl = 'https://forms.hubspot.com/collected-forms/submit/v1/' + HUBSPOT_PORTAL_ID;
+        var submitUrl = 'https://forms.hubspot.com/uploads/form/v2/'
+            + HUBSPOT_PORTAL_ID + '/' + HUBSPOT_FORM_ID;
 
-        var formData = {
-            collectedFormId: 'contact-form-' + data.page,
-            contact: {
-                email: data.email,
-                firstName: data.firstname,
-                lastName: data.lastname,
-                company: data.company
-            },
-            formSelectorClasses: '.form-section form',
-            formSelectorId: 'contactForm',
-            formValues: {
-                email: data.email,
-                firstname: data.firstname,
-                lastname: data.lastname,
-                company: data.company,
-                message: data.message
-            },
-            labelToNameMap: {
-                Email: 'email',
-                'First Name': 'firstname',
-                'Last Name': 'lastname',
-                Company: 'company',
-                Message: 'message'
-            },
-            pageTitle: document.title,
-            pageUrl: window.location.href,
-            portalId: parseInt(HUBSPOT_PORTAL_ID, 10),
-            type: 'SCRAPED',
-            utk: hutk,
-            uuid: generateUUID(),
-            version: 'collected-forms-1.0'
-        };
+        var params = [
+            'email=' + encodeURIComponent(data.email),
+            'firstname=' + encodeURIComponent(data.firstname),
+            'lastname=' + encodeURIComponent(data.lastname),
+            'company=' + encodeURIComponent(data.company),
+            'message=' + encodeURIComponent(data.message),
+            'hs_context=' + encodeURIComponent(JSON.stringify({
+                hutk: hutk,
+                pageUrl: window.location.href,
+                pageName: document.title
+            }))
+        ].join('&');
 
         try {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', collectUrl, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.open('POST', submitUrl, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.timeout = 10000;
             xhr.onload = function () {
+                // v2 returns 204 on success, 302 on redirect
                 callback(xhr.status >= 200 && xhr.status < 400);
             };
-            xhr.onerror = function () {
-                // Even if the collected forms endpoint fails,
-                // the _hsq identify call above still creates the contact
-                callback(true);
-            };
-            xhr.ontimeout = function () {
-                callback(true);
-            };
-            xhr.send(JSON.stringify(formData));
+            xhr.onerror = function () { callback(false); };
+            xhr.ontimeout = function () { callback(false); };
+            xhr.send(params);
         } catch (err) {
-            // Fallback: _hsq identify already ran, contact is tracked
-            callback(true);
+            callback(false);
         }
     }
 

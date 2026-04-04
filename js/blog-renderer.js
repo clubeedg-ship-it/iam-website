@@ -78,10 +78,10 @@
             container.innerHTML = `
                 <div class="blog-light-wrapper">
                     <div class="blog-content-container">
-                        <header class="blog-header">
+                        <div class="blog-header">
                             <h1 class="blog-page-title">${labels.blogTitle}</h1>
                             <hr class="blog-title-sep">
-                        </header>
+                        </div>
                         <div class="blog-empty-state">
                             <h2>${labels.emptyTitle}</h2>
                             <p>${labels.emptyText}</p>
@@ -98,10 +98,10 @@
         let html = `
             <div class="blog-light-wrapper">
                 <div class="blog-content-container">
-                    <header class="blog-header">
+                    <div class="blog-header">
                         <h1 class="blog-page-title">${labels.blogTitle}</h1>
                         <hr class="blog-title-sep">
-                    </header>
+                    </div>
 
                     <!-- Featured Post -->
                     <section class="featured-post-section">
@@ -184,20 +184,20 @@
         const langParam = lang === 'en' ? '?lang=en' : '';
 
         let html = `
-            <div class="blog-light-wrapper">
+            <div class="blog-light-wrapper single-post-wrapper">
+                <div class="post-hero-banner${post.feature_image ? '' : ' post-hero-no-image'}"${post.feature_image ? ` style="background-image: url('${post.feature_image}')"` : ''}>
+                    <div class="post-hero-overlay"></div>
+                    <div class="post-hero-content">
+                        <a href="/blog${langParam}" class="back-link-hero">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            ${labels.backToBlog}
+                        </a>
+                        <div class="post-hero-meta">${dateStr} &middot; ${readMin} ${labels.readTime}</div>
+                        <h1 class="post-hero-title">${title}</h1>
+                    </div>
+                </div>
+
                 <article class="blog-content-container single-post-view">
-                    <a href="/blog${langParam}" class="back-link-top">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                        ${labels.backToBlog}
-                    </a>
-
-                    <header class="post-detail-header">
-                        <div class="post-detail-date">${dateStr} &middot; ${readMin} ${labels.readTime}</div>
-                        <h1 class="post-detail-title">${title}</h1>
-                    </header>
-
-                    ${post.feature_image ? `<div class="post-detail-hero-img"><img src="${post.feature_image}" alt="${title}"></div>` : ''}
-
                     <div class="post-detail-content">
                         ${content}
                     </div>

@@ -212,57 +212,84 @@
 }
 
 /* Single Post View */
-.single-post-view {
-    padding: 2rem 0 4rem;
+.single-post-wrapper {
+    padding: 0;
+    overflow-x: hidden;
 }
 
-.back-link-top {
+.single-post-view {
+    padding: 3rem 0 4rem;
+}
+
+/* Hero Banner */
+.post-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    min-height: 380px;
+    max-height: 520px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.post-hero-no-image {
+    background: #1d1e22;
+    min-height: 220px;
+    height: auto;
+}
+
+.post-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+}
+
+.post-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.back-link-hero {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    color: #666;
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
     transition: color 0.2s;
 }
 
-.back-link-top:hover {
+.back-link-hero:hover {
     color: #feba04;
 }
 
-.post-detail-header {
-    margin-bottom: 2rem;
-}
-
-.post-detail-date {
+.post-hero-meta {
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #888;
+    color: rgba(255,255,255,0.8);
     font-family: monospace;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
-.post-detail-title {
+.post-hero-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #fff;
     line-height: 1.15;
     margin: 0;
-}
-
-.post-detail-hero-img {
-    margin: 2rem 0;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.post-detail-hero-img img {
-    width: 100%;
-    display: block;
-    border-radius: 12px;
+    max-width: 800px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .post-detail-content {
@@ -270,6 +297,15 @@
     font-size: 1.05rem;
     line-height: 1.7;
     color: #333;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.post-detail-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
 }
 
 .post-detail-content h1 {
@@ -425,8 +461,17 @@
         font-size: 1.5rem;
     }
 
-    .post-detail-title {
-        font-size: 1.75rem;
+    .post-hero-banner {
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .post-hero-title {
+        font-size: 1.5rem;
+    }
+
+    .post-hero-content {
+        padding: 1.5rem 1rem;
     }
 
     .blog-posts-grid,
