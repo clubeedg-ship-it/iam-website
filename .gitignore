@@ -25,13 +25,10 @@ __pycache__/
 api/.env
 venv/
 
-# Reference/Development files (optional cleanup)
-# reference/
+# Development / planning
+.planning/
+tools/
 media/dump iam/
 
 # Logs
 *.log
-
-# Docker environment
-.env.docker
-api/.env
