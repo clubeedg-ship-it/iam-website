@@ -294,6 +294,7 @@
 
 .post-detail-content {
     max-width: 760px;
+    margin: 0 auto;
     font-size: 1.05rem;
     line-height: 1.7;
     color: #333;
@@ -383,7 +384,7 @@
 /* Post CTA */
 .post-cta {
     max-width: 760px;
-    margin: 3rem 0;
+    margin: 3rem auto;
     padding: 2rem 2.5rem;
     background: #1d1e22;
     border-radius: 12px;
