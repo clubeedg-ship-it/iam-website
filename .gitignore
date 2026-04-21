@@ -22,6 +22,7 @@ api/package-lock.json
 CLAUDE.md
 .claude/
 .kiro/
+var/
 
 # Python
 __pycache__/
