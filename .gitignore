@@ -52,6 +52,7 @@ tools/*
 # Allow tracked M2 tools — atomic-deploy script (M2-02 Plan 04) + prepare-clean-repo (M2-05)
 !tools/iam-deploy.sh
 !tools/prepare-clean-repo.sh
+!tools/m3-renames.map
 media/dump iam/
 
 # Logs

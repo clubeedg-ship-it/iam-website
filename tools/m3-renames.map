@@ -1,0 +1,77 @@
+# M3 rename map — English-first disk layout
+# Format: old_path<TAB>new_path  (one rename per line; # comments + blank lines ignored)
+# Consumed by tools/prepare-clean-repo.sh (apply_renames + apply_reference_repair + generate_nginx_redirects).
+# Scope: HTML pages + partials. Media renames are NOT in this map — deferred to post-cutover M3.
+# Naming decision: word-partner → partner (NOT become-partner). See AUDIT.md §9.1.
+#
+# Count: 17 HTML + 37 partials = 54 renames.
+# (Audit §2 lists `partials/{index,content,blog}-nl.html` as unchanged — English-first
+#  convention keeps the `-nl` suffix for the Dutch variant; they stay as-is.)
+#
+# --- Root HTML pages (12) ---
+over-ons.html	about.html
+prijzen.html	pricing.html
+onderwijs.html	education.html
+zorg-revalidatie.html	healthcare.html
+parken-speelhallen.html	entertainment.html
+bouw-een-park.html	build-a-park.html
+3d-spellen.html	3d-games.html
+maak-je-spel.html	create-your-game.html
+word-partner.html	partner.html
+privacybeleid.html	privacy.html
+cookiebeleid.html	cookies.html
+toegankelijkheid.html	accessibility.html
+#
+# --- Product HTML pages (5) ---
+products/2-in-1-vloer-muur.html	products/2-in-1-floor-wall.html
+products/interactieve-vloer.html	products/interactive-floor.html
+products/interactieve-muur.html	products/interactive-wall.html
+products/interactieve-zandbak.html	products/interactive-sandbox.html
+products/software-maatwerk.html	products/software.html
+#
+# --- Partials: meta -en → bare English (3) ---
+partials/index-en.html	partials/index.html
+partials/content-en.html	partials/content.html
+partials/blog-en.html	partials/blog.html
+#
+# --- Partials: root pages -en → bare English (12) ---
+partials/3d-spellen-en.html	partials/3d-games.html
+partials/bouw-een-park-en.html	partials/build-a-park.html
+partials/maak-je-spel-en.html	partials/create-your-game.html
+partials/onderwijs-en.html	partials/education.html
+partials/over-ons-en.html	partials/about.html
+partials/parken-speelhallen-en.html	partials/entertainment.html
+partials/prijzen-en.html	partials/pricing.html
+partials/word-partner-en.html	partials/partner.html
+partials/zorg-revalidatie-en.html	partials/healthcare.html
+partials/cookiebeleid-en.html	partials/cookies.html
+partials/privacybeleid-en.html	partials/privacy.html
+partials/toegankelijkheid-en.html	partials/accessibility.html
+#
+# --- Partials: root pages -nl (Dutch slug) → English-slug-nl (12) ---
+partials/3d-spellen-nl.html	partials/3d-games-nl.html
+partials/bouw-een-park-nl.html	partials/build-a-park-nl.html
+partials/maak-je-spel-nl.html	partials/create-your-game-nl.html
+partials/onderwijs-nl.html	partials/education-nl.html
+partials/over-ons-nl.html	partials/about-nl.html
+partials/parken-speelhallen-nl.html	partials/entertainment-nl.html
+partials/prijzen-nl.html	partials/pricing-nl.html
+partials/word-partner-nl.html	partials/partner-nl.html
+partials/zorg-revalidatie-nl.html	partials/healthcare-nl.html
+partials/cookiebeleid-nl.html	partials/cookies-nl.html
+partials/privacybeleid-nl.html	partials/privacy-nl.html
+partials/toegankelijkheid-nl.html	partials/accessibility-nl.html
+#
+# --- Partials: products -en → bare English (5) ---
+partials/products/2-in-1-vloer-muur-en.html	partials/products/2-in-1-floor-wall.html
+partials/products/interactieve-vloer-en.html	partials/products/interactive-floor.html
+partials/products/interactieve-muur-en.html	partials/products/interactive-wall.html
+partials/products/interactieve-zandbak-en.html	partials/products/interactive-sandbox.html
+partials/products/software-maatwerk-en.html	partials/products/software.html
+#
+# --- Partials: products -nl → English-slug-nl (5) ---
+partials/products/2-in-1-vloer-muur-nl.html	partials/products/2-in-1-floor-wall-nl.html
+partials/products/interactieve-vloer-nl.html	partials/products/interactive-floor-nl.html
+partials/products/interactieve-muur-nl.html	partials/products/interactive-wall-nl.html
+partials/products/interactieve-zandbak-nl.html	partials/products/interactive-sandbox-nl.html
+partials/products/software-maatwerk-nl.html	partials/products/software-nl.html
