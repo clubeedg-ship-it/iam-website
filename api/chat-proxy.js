@@ -5,8 +5,10 @@ const cors = require('cors');
 const { z } = require('zod');
 const pino = require('pino');
 const https = require('https');
+const { PassThrough } = require('stream');
 const { IAM_KNOWLEDGE_BASE } = require('./knowledge-base');
 const { SYSTEM_PROMPT } = require('./system-prompt');
+const budget = require('./token-budget');
 
 const log = pino({ level: process.env.LOG_LEVEL || 'info' });
 
@@ -82,6 +84,14 @@ const BodySchema = z.object({
 app.post('/api/chat', chatLimiter, (req, res) => {
   if (!API_KEY) return res.status(503).json({ error: 'api_key_missing' });
 
+  if (budget.isExhausted()) {
+    log.warn({ period: budget.currentPeriodKey() }, 'budget_exhausted');
+    return res.status(429).json({
+      error: 'budget_exhausted',
+      message: 'Monthly chat budget reached. Please contact klantcontact@interactivemove.nl or retry next month.',
+    });
+  }
+
   const parsed = BodySchema.safeParse(req.body);
   if (!parsed.success) {
     log.warn({ issues: parsed.error.issues, ip: req.ip }, 'validation_failed');
@@ -109,7 +119,27 @@ app.post('/api/chat', chatLimiter, (req, res) => {
     },
   }, (up) => {
     res.writeHead(up.statusCode || 502, up.headers);
-    up.pipe(res);
+    // Tap the upstream stream to capture usage.total_tokens from the final SSE event (D-10).
+    const tap = new PassThrough();
+    let buf = '';
+    tap.on('data', (chunk) => {
+      buf += chunk.toString('utf8');
+      // Keep only the tail — usage lands at end of the stream.
+      if (buf.length > 16_384) buf = buf.slice(-16_384);
+    });
+    tap.on('end', () => {
+      try {
+        const match = buf.match(/"total_tokens"\s*:\s*(\d+)/g);
+        if (match && match.length) {
+          const last = match[match.length - 1];
+          const n = Number(last.match(/(\d+)/)[1]);
+          if (n > 0) budget.recordUsage(n);
+        }
+      } catch (e) {
+        log.warn({ err: e.message }, 'usage_parse_failed');
+      }
+    });
+    up.pipe(tap).pipe(res);
   });
 
   upstream.on('error', (err) => {
