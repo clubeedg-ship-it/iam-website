@@ -150,21 +150,9 @@
   bubble.addEventListener('click', toggle);
   closeBtn.addEventListener('click', toggle);
 
-  const systemPrompt = `You are "IAM Assistant", the official support agent for InterActiveMove (IAM), a Dutch company that makes interactive projection systems.
-
-RULES:
-1. ALWAYS respond in the SAME LANGUAGE the user writes in. Auto-detect: Dutch, English, German, French, Spanish, etc.
-2. Be friendly, concise, and helpful. Use short paragraphs.
-3. ONLY use information from the knowledge base below. NEVER make up information.
-4. When you cannot answer a question, suggest contacting IAM directly: email info@interactivemove.nl or call +31 6 23 99 89 34.
-5. You can help with: product info, pricing, installation, technical support, use cases, demos, financing.
-6. Format prices clearly. Always mention prices are indicative and exclude VAT (BTW).
-7. Keep responses concise — max 3-4 short paragraphs.
-8. Do NOT use markdown headers or bullet points with asterisks. Use plain text with line breaks.
-9. Do NOT start responses with "think" tags or internal reasoning.
-
-KNOWLEDGE BASE:
-${typeof IAM_KNOWLEDGE_BASE !== 'undefined' ? IAM_KNOWLEDGE_BASE : ''}`;
+  // System prompt and knowledge base live server-side in api/system-prompt.js and
+  // api/knowledge-base.js per M2-01 D-09. The proxy prepends them on every request.
+  // Client payload contains only user-authored turns.
 
   async function sendMessage() {
     const text = input.value.trim();
@@ -181,10 +169,7 @@ ${typeof IAM_KNOWLEDGE_BASE !== 'undefined' ? IAM_KNOWLEDGE_BASE : ''}`;
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          messages: [
-            { role: 'system', content: systemPrompt },
-            ...conversationHistory.slice(-10)
-          ]
+          messages: conversationHistory.slice(-10)
         })
       });
 
