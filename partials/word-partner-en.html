@@ -102,13 +102,23 @@
                     <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem">
                         Fill in the form or send us an email. We will contact you within 2 business days to discuss the possibilities.
                     </p>
-                    <div id="hubspot-partner-form" style="margin-bottom: 2rem;">
-                        <!-- HubSpot form will be embedded here -->
-                    </div>
-                    <a href="mailto:klantcontact@interactivemove.nl?subject=Partnership%20InterActiveMove" class="btn"
-                        style="border-radius: 999px; background: var(--color-primary); color: #000;">
-                        Email us about partnership
-                    </a>
+                    <form onsubmit="sendContactEmail(event)" id="partnerContactForm" class="form-section glass-panel" style="text-align: left; padding: 2rem; margin-bottom: 2rem;">
+                        <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <input type="text" name="firstname" placeholder="Name" aria-label="Name" required>
+                            <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
+                        </div>
+                        <input type="text" name="company" placeholder="Organization" aria-label="Organization" style="width: 100%;" required>
+                        <textarea name="message" rows="4" placeholder="Tell us briefly about your organization and your interest in a partnership" aria-label="Message"></textarea>
+                        <div class="form-consent">
+                            <input type="checkbox" id="partner-privacy-consent-en" name="privacy_consent" required>
+                            <label for="partner-privacy-consent-en">
+                                I agree to the processing of my data as described in the
+                                <a href="/privacy" target="_blank">privacy policy</a>. *
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 999px;">SEND APPLICATION</button>
+                    </form>
                 </div>
             </div>
         </section>

@@ -210,13 +210,23 @@
                     <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem">
                         Vul het formulier in of stuur ons een e-mail. Wij nemen binnen 2 werkdagen contact met u op om de mogelijkheden te bespreken.
                     </p>
-                    <div id="hubspot-partner-form" style="margin-bottom: 2rem;">
-                        <!-- HubSpot form will be embedded here -->
-                    </div>
-                    <a href="mailto:klantcontact@interactivemove.nl?subject=Partnerschap%20InterActiveMove" class="btn"
-                        style="border-radius: 999px; background: var(--color-primary); color: #000;">
-                        E-mail ons over partnerschap
-                    </a>
+                    <form onsubmit="sendContactEmail(event)" id="partnerContactForm" class="form-section glass-panel" style="text-align: left; padding: 2rem; margin-bottom: 2rem;">
+                        <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <input type="text" name="firstname" placeholder="Naam" aria-label="Naam" required>
+                            <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
+                        </div>
+                        <input type="text" name="company" placeholder="Organisatie" aria-label="Organisatie" style="width: 100%;" required>
+                        <textarea name="message" rows="4" placeholder="Vertel ons kort over uw organisatie en interesse in een partnerschap" aria-label="Bericht"></textarea>
+                        <div class="form-consent">
+                            <input type="checkbox" id="partner-privacy-consent" name="privacy_consent" required>
+                            <label for="partner-privacy-consent">
+                                Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het
+                                <a href="/privacy" target="_blank">privacybeleid</a>. *
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 999px;">VERSTUUR AANMELDING</button>
+                    </form>
                 </div>
             </div>
         </section>
