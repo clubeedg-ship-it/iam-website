@@ -47,6 +47,7 @@ jobs:
               --exclude='.github' \
               --exclude='.claude' \
               --exclude='.kiro' \
+              --exclude='.env*' \
               -czf "$TARBALL" .
           ls -l "$TARBALL"
           echo "sha=$SHA"         >> "$GITHUB_OUTPUT"
@@ -126,6 +127,7 @@ jobs:
               --exclude='.github' \
               --exclude='.claude' \
               --exclude='.kiro' \
+              --exclude='.env*' \
               -czf "$TARBALL" .
           echo "sha=$SHA"         >> "$GITHUB_OUTPUT"
           echo "tarball=$TARBALL" >> "$GITHUB_OUTPUT"

@@ -121,6 +121,8 @@ If not, debug against staging only. Do NOT proceed until staging deploy is 100% 
 
 ## 8. Flip prod to the new repo
 
+> **STOP if Gate D (§7 staging smoke) last passed more than 24 hours ago.** Staging state drifts — fresh green is the only safe green. Re-run §7 before proceeding.
+
 - [ ] In `oopuo-ship/iam-website`: merge `staging` → `main` (or push directly to main; your call). **Production environment reviewer approves.**
 - [ ] Watch `deploy-prod`. VPS updates prod under `/var/www/iam/current` via `iam-deploy prod <sha>` — atomic symlink flip. Health check green.
 - [ ] Hit `https://interactivemove.nl/` twice — once via Cloudflare (should see `server: cloudflare`), once directly (bypass) if you have raw VPS access.
