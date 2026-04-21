@@ -214,6 +214,19 @@ install_deploy_tool() {
   install -m 755 -o root -g root "$src" /usr/local/bin/iam-deploy
 }
 
+install_sudoers_deploy() {
+  # D-09 (M2-03-cicd): narrow NOPASSWD so the `deploy` user can run iam-deploy
+  # as the `iam` user and reload the three managed services.
+  local src="$REPO_ROOT/config/sudoers.d/iam-deploy"
+  if [[ ! -f "$src" ]]; then
+    warn "config/sudoers.d/iam-deploy not found — CI deploy will fail until installed"
+    return
+  fi
+  log "install /etc/sudoers.d/iam-deploy"
+  install -m 440 -o root -g root "$src" /etc/sudoers.d/iam-deploy
+  visudo -cf /etc/sudoers.d/iam-deploy >/dev/null || die "sudoers drop-in failed validation"
+}
+
 install_git_hooks() {
   log "install system-wide git hooks (safety net)"
   install -d -o root -g root -m 755 /etc/iam-githooks
@@ -265,6 +278,7 @@ main() {
   install_nginx_vhosts
   request_certs
   install_deploy_tool
+  install_sudoers_deploy
   install_git_hooks
   configure_firewall
   print_next_steps
