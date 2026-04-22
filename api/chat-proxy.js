@@ -9,6 +9,7 @@ const { PassThrough } = require('stream');
 const { IAM_KNOWLEDGE_BASE } = require('./knowledge-base');
 const { SYSTEM_PROMPT } = require('./system-prompt');
 const budget = require('./token-budget');
+const { createContactRouter } = require('./contact-route');
 
 const log = pino({ level: process.env.LOG_LEVEL || 'info' });
 
@@ -150,6 +151,9 @@ app.post('/api/chat', chatLimiter, (req, res) => {
   upstream.write(postData);
   upstream.end();
 });
+
+// Mount /api/contact (M2-04). Reuses the top-level CORS allowlist.
+app.use(createContactRouter({ log, allowedOrigins: ALLOWED_ORIGINS }));
 
 // 413 handler for body-parser overflow
 app.use((err, req, res, next) => {
