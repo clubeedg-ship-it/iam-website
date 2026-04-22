@@ -23,6 +23,7 @@ PROD_STATE_DIR="/var/lib/iam-api"
 STAGING_STATE_DIR="/var/lib/iam-api-staging"
 NODE_MAJOR="20"
 NONINTERACTIVE="${BOOTSTRAP_NONINTERACTIVE:-0}"
+STAGING_ONLY="${STAGING_ONLY:-0}"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 log()  { printf '[bootstrap] %s\n' "$*"; }
@@ -57,9 +58,18 @@ preflight_check() {
 
 gather_inputs() {
   log "gather inputs"
+  if [[ "$STAGING_ONLY" == "1" ]]; then
+    log "STAGING_ONLY=1 — will configure only $STAGING_DOMAIN (staging). Prod vhost + cert skipped."
+  fi
   local missing=()
   [[ -n "${LETSENCRYPT_EMAIL:-}" ]] || missing+=("LETSENCRYPT_EMAIL")
-  [[ -n "${OPENROUTER_API_KEY:-}" ]] || missing+=("OPENROUTER_API_KEY")
+  if [[ "$STAGING_ONLY" != "1" ]]; then
+    [[ -n "${OPENROUTER_API_KEY:-}" ]] || missing+=("OPENROUTER_API_KEY")
+  else
+    # Prod key not used on a staging-only VM; placeholder suppresses downstream warnings.
+    OPENROUTER_API_KEY="${OPENROUTER_API_KEY:-STAGING_ONLY_NO_PROD_KEY}"
+    export OPENROUTER_API_KEY
+  fi
   [[ -n "${OPENROUTER_API_KEY_STAGING:-}" ]] || missing+=("OPENROUTER_API_KEY_STAGING")
 
   if (( ${#missing[@]} > 0 )); then
@@ -153,46 +163,63 @@ _render_env_file() {
 
 render_env() {
   log "render env files"
-  _render_env_file "$REPO_ROOT/tools/env-template" \
-    "$PROD_ENV_DIR/env" "$OPENROUTER_API_KEY"
+  if [[ "$STAGING_ONLY" != "1" ]]; then
+    _render_env_file "$REPO_ROOT/tools/env-template" \
+      "$PROD_ENV_DIR/env" "$OPENROUTER_API_KEY"
+  else
+    log "STAGING_ONLY=1 — skipping prod env file"
+  fi
   _render_env_file "$REPO_ROOT/tools/env-staging-template" \
     "$STAGING_ENV_DIR/env" "$OPENROUTER_API_KEY_STAGING"
 }
 
 install_systemd_units() {
   log "install systemd units"
-  install -m 644 "$REPO_ROOT/config/systemd/iam-api.service" \
-    /etc/systemd/system/iam-api.service
   install -m 644 "$REPO_ROOT/config/systemd/iam-api-staging.service" \
     /etc/systemd/system/iam-api-staging.service
   systemctl daemon-reload
-  systemctl enable iam-api.service iam-api-staging.service
-  log "systemd units installed and enabled; will start after first deploy."
+  if [[ "$STAGING_ONLY" == "1" ]]; then
+    systemctl enable iam-api-staging.service
+    log "systemd units installed and enabled (staging only); will start after first deploy."
+  else
+    install -m 644 "$REPO_ROOT/config/systemd/iam-api.service" \
+      /etc/systemd/system/iam-api.service
+    systemctl enable iam-api.service iam-api-staging.service
+    log "systemd units installed and enabled; will start after first deploy."
+  fi
 }
 
 install_nginx_vhosts() {
   log "install nginx vhosts"
-  install -m 644 "$REPO_ROOT/config/nginx/interactivemove.nl.conf" \
-    /etc/nginx/sites-available/interactivemove.nl.conf
   install -m 644 "$REPO_ROOT/config/nginx/iam.abbamarkt.nl.conf" \
     /etc/nginx/sites-available/iam.abbamarkt.nl.conf
-  ln -sf /etc/nginx/sites-available/interactivemove.nl.conf \
-    /etc/nginx/sites-enabled/interactivemove.nl.conf
   ln -sf /etc/nginx/sites-available/iam.abbamarkt.nl.conf \
     /etc/nginx/sites-enabled/iam.abbamarkt.nl.conf
+  if [[ "$STAGING_ONLY" != "1" ]]; then
+    install -m 644 "$REPO_ROOT/config/nginx/interactivemove.nl.conf" \
+      /etc/nginx/sites-available/interactivemove.nl.conf
+    ln -sf /etc/nginx/sites-available/interactivemove.nl.conf \
+      /etc/nginx/sites-enabled/interactivemove.nl.conf
+  else
+    log "STAGING_ONLY=1 — skipping prod vhost"
+  fi
   nginx -t
   systemctl reload nginx
 }
 
 request_certs() {
   log "request certs"
-  if [[ ! -e "/etc/letsencrypt/live/$DOMAIN/fullchain.pem" ]]; then
-    certbot --nginx --non-interactive --agree-tos \
-      --email "$LETSENCRYPT_EMAIL" \
-      --domains "$DOMAIN,www.$DOMAIN" \
-      --redirect --keep-until-expiring
+  if [[ "$STAGING_ONLY" != "1" ]]; then
+    if [[ ! -e "/etc/letsencrypt/live/$DOMAIN/fullchain.pem" ]]; then
+      certbot --nginx --non-interactive --agree-tos \
+        --email "$LETSENCRYPT_EMAIL" \
+        --domains "$DOMAIN,www.$DOMAIN" \
+        --redirect --keep-until-expiring
+    else
+      log "prod cert already present for $DOMAIN — skipping"
+    fi
   else
-    log "prod cert already present for $DOMAIN — skipping"
+    log "STAGING_ONLY=1 — skipping prod cert for $DOMAIN"
   fi
   if [[ ! -e "/etc/letsencrypt/live/$STAGING_DOMAIN/fullchain.pem" ]]; then
     certbot --nginx --non-interactive --agree-tos \
