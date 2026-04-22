@@ -1,9 +1,8 @@
-// Contact Form — HubSpot CRM Lead Capture
-// Portal ID: 49291889
+// Contact Form — posts to backend /api/contact per M2-04 D-09.
+// Portal ID and form GUID live server-side now (api/contact-route.js).
 (function () {
     'use strict';
 
-    var HUBSPOT_PORTAL_ID = '49291889';
     var MAX_FIELD_LENGTH = 500;
     var MAX_MESSAGE_LENGTH = 5000;
     var SUBMIT_COOLDOWN_MS = 5000;
@@ -153,37 +152,33 @@
     };
 
     function submitToHubSpot(data, callback) {
-        // HubSpot Forms v2 endpoint — confirmed working with portal 49291889
-        var HUBSPOT_FORM_ID = '82e91e6d-7a36-47a4-8171-9f213e17fcb5';
-        var hutk = getCookie('hubspotutk') || '';
-        var submitUrl = 'https://forms.hubspot.com/uploads/form/v2/'
-            + HUBSPOT_PORTAL_ID + '/' + HUBSPOT_FORM_ID;
-
-        var params = [
-            'email=' + encodeURIComponent(data.email),
-            'firstname=' + encodeURIComponent(data.firstname),
-            'lastname=' + encodeURIComponent(data.lastname),
-            'company=' + encodeURIComponent(data.company),
-            'message=' + encodeURIComponent(data.message),
-            'hs_context=' + encodeURIComponent(JSON.stringify({
-                hutk: hutk,
-                pageUrl: window.location.href,
-                pageName: document.title
-            }))
-        ].join('&');
-
+        // Posts to same-origin /api/contact; backend forwards to HubSpot v3 server-to-server.
+        var payload = {
+            firstname: data.firstname,
+            lastname:  data.lastname,
+            email:     data.email,
+            company:   data.company,
+            message:   data.message,
+            consent:   !!data.consent,
+            pageUri:   window.location.href,
+            pageName:  document.title,
+            language:  data.language || (isEN() ? 'en' : 'nl'),
+            // Honeypot — must stay empty; bots fill it. Backend silently 200s if non-empty.
+            website_url: ''
+        };
         try {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', submitUrl, true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.open('POST', '/api/contact', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.timeout = 10000;
             xhr.onload = function () {
-                // v2 returns 204 on success, 302 on redirect
-                callback(xhr.status >= 200 && xhr.status < 400);
+                var ok = false;
+                try { ok = JSON.parse(xhr.responseText || '{}').ok === true; } catch (_) {}
+                callback(ok && xhr.status >= 200 && xhr.status < 300);
             };
             xhr.onerror = function () { callback(false); };
             xhr.ontimeout = function () { callback(false); };
-            xhr.send(params);
+            xhr.send(JSON.stringify(payload));
         } catch (err) {
             callback(false);
         }

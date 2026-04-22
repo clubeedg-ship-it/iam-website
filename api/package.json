@@ -4,7 +4,9 @@
   "description": "",
   "main": "chat-proxy.js",
   "scripts": {
-    "test": "node test/smoke.test.js"
+    "test": "node test/smoke.test.js && node test/contact.smoke.test.js",
+    "test:chat": "node test/smoke.test.js",
+    "test:contact": "node test/contact.smoke.test.js"
   },
   "keywords": [],
   "author": "",
