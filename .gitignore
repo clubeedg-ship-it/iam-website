@@ -18,8 +18,11 @@ api/node_modules/
 package-lock.json
 api/package-lock.json
 
-# Claude Code (dev only)
+# AI workflow artifacts (D-03)
 CLAUDE.md
+.claude/
+.kiro/
+var/
 
 # Python
 __pycache__/

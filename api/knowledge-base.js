@@ -1,4 +1,5 @@
-// IAM Knowledge Base - Used by IAM Chat Widget for AI-powered support
+// Server-side IAM knowledge base — moved from js/iam-knowledge-base.js per M2-01 D-09.
+// Never ship to client.
 const IAM_KNOWLEDGE_BASE = `
 # Inter Active Move (IAM) Knowledge Base
 
@@ -137,3 +138,5 @@ Gemiddelde levertijd: ca. 1 week.
 - **Musea/Museums:** Interactieve educatieve ervaringen.
 - **Bouw een Park / Build a Park:** IAM helpt bij ontwerp en bouw van interactieve parken.
 `;
+
+module.exports = { IAM_KNOWLEDGE_BASE };
