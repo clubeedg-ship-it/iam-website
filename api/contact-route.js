@@ -1,12 +1,15 @@
-// M2-04: /api/contact — server-to-server HubSpot Forms v3 submission.
+// /api/contact — server-to-server HubSpot Forms v3 submission + redundant email notification.
 // Mounted by api/chat-proxy.js. Reuses the hardened CORS allowlist.
 // Env:
 //   HUBSPOT_PORTAL_ID              — required, numeric portal id
 //   HUBSPOT_CONTACT_FORM_GUID      — required, UUID of the contact form
-//   HUBSPOT_FORMS_API_URL          — default https://api.hsforms.com; override
-//                                    to a local mock for D-13 smoke tests
+//   HUBSPOT_FORMS_API_URL          — default https://api.hsforms.com
 //   CONTACT_RATE_LIMIT_MAX         — default 5
-//   CONTACT_RATE_LIMIT_WINDOW_MS   — default 600_000 (10 min) per D-04
+//   CONTACT_RATE_LIMIT_WINDOW_MS   — default 600_000 (10 min)
+//   RESEND_API_KEY                 — optional; when set, a direct email is sent on every
+//                                    validated submission (redundant to HubSpot notifications)
+//   NOTIFY_EMAIL_TO                — recipient for the redundant email (comma-separated allowed)
+//   NOTIFY_EMAIL_FROM              — verified Resend sender address
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const { z } = require('zod');
@@ -57,6 +60,45 @@ function buildBody(parsed) {
       },
     } : undefined,
   };
+}
+
+async function sendRedundantEmail(data, log) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return;
+  const to = (process.env.NOTIFY_EMAIL_TO || '').split(',').map(s => s.trim()).filter(Boolean);
+  const from = process.env.NOTIFY_EMAIL_FROM;
+  if (!to.length || !from) return;
+
+  const subject = `Contact form — ${data.firstname}${data.lastname ? ' ' + data.lastname : ''}${data.company ? ' (' + data.company + ')' : ''}`;
+  const lines = [
+    `Name: ${data.firstname} ${data.lastname || ''}`.trim(),
+    `Email: ${data.email}`,
+    data.company ? `Company: ${data.company}` : null,
+    data.pageUri ? `Page: ${data.pageUri}` : null,
+    data.formType ? `Form: ${data.formType}` : null,
+    '',
+    data.message || '(no message)',
+  ].filter(l => l !== null);
+
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 8_000);
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from, to, subject, reply_to: data.email, text: lines.join('\n') }),
+      signal: ctrl.signal,
+    });
+    clearTimeout(t);
+    if (!r.ok) {
+      const body = await r.text().catch(() => '');
+      log.warn({ status: r.status, body: body.slice(0, 200) }, 'notify_email_non_ok');
+    } else {
+      log.info('notify_email_sent');
+    }
+  } catch (err) {
+    log.warn({ err: err.message }, 'notify_email_failed');
+  }
 }
 
 function createContactRouter({ log, allowedOrigins }) {
@@ -116,6 +158,7 @@ function createContactRouter({ log, allowedOrigins }) {
       clearTimeout(timeout);
       if (r.ok) {
         log.info({ ip: req.ip, pageUri: parsed.data.pageUri }, 'contact_submitted');
+        sendRedundantEmail(parsed.data, log);
         return res.status(200).json({ ok: true });
       }
       const text = await r.text().catch(() => '');
@@ -131,4 +174,4 @@ function createContactRouter({ log, allowedOrigins }) {
   return router;
 }
 
-module.exports = { createContactRouter, ContactSchema };
+module.exports = { createContactRouter, ContactSchema, sendRedundantEmail };
