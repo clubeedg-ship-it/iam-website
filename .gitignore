@@ -35,7 +35,10 @@ venv/
 
 # Development / planning
 .planning/
-tools/
+tools/*
+# Allow M2 env templates (no secrets; placeholders only) — per M2-02 Plan 01
+!tools/env-template
+!tools/env-staging-template
 media/dump iam/
 
 # Logs
