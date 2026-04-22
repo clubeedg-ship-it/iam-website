@@ -68,7 +68,7 @@ ln -sfn "$NEW_DIR" "$CURRENT_LINK"
 
 # 5. Restart the unit
 log "restarting $UNIT"
-systemctl restart "$UNIT"
+sudo -n systemctl restart "$UNIT"
 # small settle window for Node to bind the port
 sleep 2
 
@@ -78,7 +78,7 @@ if ! curl -fsS --max-time 5 -o /dev/null -X OPTIONS "http://127.0.0.1:${PORT}/ap
   log "health check FAILED — rolling back"
   if [[ -n "$PREV_TARGET" && -d "$PREV_TARGET" ]]; then
     ln -sfn "$PREV_TARGET" "$CURRENT_LINK"
-    systemctl restart "$UNIT"
+    sudo -n systemctl restart "$UNIT"
     die "rolled back to $PREV_TARGET"
   else
     die "no previous release to roll back to"
