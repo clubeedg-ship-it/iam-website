@@ -43,10 +43,7 @@ jobs:
           TARBALL="/tmp/iam-deploy-${SHA}.tar.gz"
           tar --exclude='.git' \
               --exclude='node_modules' \
-              --exclude='.planning' \
               --exclude='.github' \
-              --exclude='.claude' \
-              --exclude='.kiro' \
               --exclude='.env*' \
               -czf "$TARBALL" .
           ls -l "$TARBALL"
@@ -123,10 +120,7 @@ jobs:
           TARBALL="/tmp/iam-deploy-${SHA}.tar.gz"
           tar --exclude='.git' \
               --exclude='node_modules' \
-              --exclude='.planning' \
               --exclude='.github' \
-              --exclude='.claude' \
-              --exclude='.kiro' \
               --exclude='.env*' \
               -czf "$TARBALL" .
           echo "sha=$SHA"         >> "$GITHUB_OUTPUT"

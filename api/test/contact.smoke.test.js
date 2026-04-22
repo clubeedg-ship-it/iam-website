@@ -77,9 +77,9 @@ async function main() {
         headers: { 'Content-Type': 'application/json', 'Origin': ALLOWED },
         body: JSON.stringify({
           firstname: 'Otto',
-          email: 'claude-test@example.com',
+          email: 'smoke-test@example.com',
           company: 'TEST-IGNORE',
-          message: 'Autonomous smoke test',
+          message: 'Smoke test submission',
           consent: true,
           pageUri: 'https://interactivemove.nl/',
           pageName: 'Home',
@@ -91,7 +91,7 @@ async function main() {
 
       const last = hsMock.receivedRequests[hsMock.receivedRequests.length - 1];
       const pathOk = !!last && last.url === `/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`;
-      const hasFields = !!last && last.body.includes('"firstname"') && last.body.includes('claude-test@example.com');
+      const hasFields = !!last && last.body.includes('"firstname"') && last.body.includes('smoke-test@example.com');
       record('(a) mock received correct v3 path', pathOk, last ? last.url : '(no request)');
       record('(a) mock received fields array with firstname+email', hasFields, '');
     }
