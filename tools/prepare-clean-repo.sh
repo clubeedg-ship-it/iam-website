@@ -78,9 +78,10 @@ mkdir -p "$TARGET"
 
 # List of paths to EXCLUDE (per D-06).
 #   - git history
-#   - AI workflow artifacts
+#   - internal workflow artifacts
 #   - large / draft assets
 #   - node_modules (rebuilt on deploy)
+#   - migration-only tooling (not needed in the delivered repo)
 rsync -a --delete \
   --exclude='.git' \
   --exclude='.planning/' \
@@ -102,6 +103,9 @@ rsync -a --delete \
   --exclude='*.pem' \
   --exclude='*.key' \
   --exclude='var/' \
+  --exclude='tools/prepare-clean-repo.sh' \
+  --exclude='tools/m3-renames.map' \
+  --exclude='tools/vm-check.sh' \
   "$SRC"/ "$TARGET"/
 
 # --- 1b. M3 English-first restructure (rename + sed + nginx redirects) ---
