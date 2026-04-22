@@ -203,6 +203,17 @@ install_nginx_vhosts() {
   else
     log "STAGING_ONLY=1 — skipping prod vhost"
   fi
+
+  # If a Cloudflare-origin cert is already installed at /etc/ssl/iam/,
+  # rewrite the staging vhost to use those paths instead of Let's Encrypt.
+  if [[ -f /etc/ssl/iam/iam.abbamarkt.nl.crt && -f /etc/ssl/iam/iam.abbamarkt.nl.key ]]; then
+    log "origin cert detected at /etc/ssl/iam/ — patching staging vhost to use it"
+    sed -i \
+      -e 's#ssl_certificate     /etc/letsencrypt/live/iam.abbamarkt.nl/fullchain.pem;#ssl_certificate     /etc/ssl/iam/iam.abbamarkt.nl.crt;#' \
+      -e 's#ssl_certificate_key /etc/letsencrypt/live/iam.abbamarkt.nl/privkey.pem;#ssl_certificate_key /etc/ssl/iam/iam.abbamarkt.nl.key;#' \
+      /etc/nginx/sites-available/iam.abbamarkt.nl.conf
+  fi
+
   nginx -t
   systemctl reload nginx
 }
@@ -221,7 +232,9 @@ request_certs() {
   else
     log "STAGING_ONLY=1 — skipping prod cert for $DOMAIN"
   fi
-  if [[ ! -e "/etc/letsencrypt/live/$STAGING_DOMAIN/fullchain.pem" ]]; then
+  if [[ -f /etc/ssl/iam/iam.abbamarkt.nl.crt ]]; then
+    log "staging uses Cloudflare origin cert at /etc/ssl/iam/ — skipping certbot for $STAGING_DOMAIN"
+  elif [[ ! -e "/etc/letsencrypt/live/$STAGING_DOMAIN/fullchain.pem" ]]; then
     certbot --nginx --non-interactive --agree-tos \
       --email "$LETSENCRYPT_EMAIL" \
       --domains "$STAGING_DOMAIN" \
