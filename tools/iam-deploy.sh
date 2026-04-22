@@ -86,10 +86,12 @@ if ! curl -fsS --max-time 5 -o /dev/null -X OPTIONS "http://127.0.0.1:${PORT}/ap
 fi
 log "health check OK"
 
-# 7. Prune old releases (keep last $KEEP)
+# 7. Prune old releases (keep last $KEEP).
+# Sort by filename reverse = chronological newest-first (names are timestamped).
+# mtime sort is unreliable because tar preserves tarball mtimes across extractions.
 log "pruning old releases (keeping $KEEP)"
-# shellcheck disable=SC2012  # ls -t is fine here; filenames are timestamped, no spaces
-ls -1t "$RELEASES_DIR" | tail -n +$((KEEP + 1)) | while read -r old; do
+# shellcheck disable=SC2012  # filenames are timestamped, no spaces
+ls -1 "$RELEASES_DIR" | sort -r | tail -n +$((KEEP + 1)) | while read -r old; do
   [[ -n "$old" ]] || continue
   log "removing $RELEASES_DIR/$old"
   rm -rf "${RELEASES_DIR:?}/${old}"
