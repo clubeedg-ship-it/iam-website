@@ -43,9 +43,9 @@ function switchLang(lang) {
 
     var partialPath;
     if (section === 'products') {
-        partialPath = basePath + 'partials/products/' + slug + '-' + lang + '.html';
+        partialPath = basePath + 'partials/products/' + slug + (lang === 'en' ? '' : '-' + lang) + '.html';
     } else {
-        partialPath = basePath + 'partials/' + slug + '-' + lang + '.html';
+        partialPath = basePath + 'partials/' + slug + (lang === 'en' ? '' : '-' + lang) + '.html';
     }
 
     // 6. Swap content via HTMX (skip for blog — it renders client-side)
