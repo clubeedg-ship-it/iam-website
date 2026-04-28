@@ -47,6 +47,9 @@ tools/*
 !tools/iam-deploy.sh
 !tools/prepare-clean-repo.sh
 !tools/m3-renames.map
+# Allow Plesk-target tools (M3-Plesk port)
+!tools/bootstrap-plesk.sh
+!tools/iam-deploy-plesk.sh
 media/dump iam/
 
 # Logs

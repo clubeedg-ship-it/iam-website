@@ -357,3 +357,130 @@ DNS.
 
 *Version: 1 — written at initial handover to IAM dev, after staging
 (`iam.abbamarkt.nl`) verified end-to-end green.*
+
+---
+
+## 13. Plesk + AlmaLinux 9 deployment (recommended production target)
+
+The Ubuntu / manual-systemd path documented in §1–§12 above is one option.
+The recommended production target going forward is **AlmaLinux 9 (or
+Rocky 9) with Plesk Obsidian**. Plesk owns nginx, SSL, the Node.js process
+supervisor (Phusion Passenger), and the local mail server (Postfix). The
+deploy automation is thinner because Plesk does most of the heavy lifting.
+
+### 13.1 Prerequisites
+
+- Server running AlmaLinux 9 or Rocky 9 (CentOS 8 is EOL — don't use it).
+- Plesk Obsidian licensed and installed; Node.js extension enabled.
+- Domain added as a Plesk subscription (creates the per-subscription
+  system user and `/var/www/vhosts/<domain>/`).
+- DNS A/AAAA pointed at the server.
+- Postfix running (default on Plesk; verify `systemctl status postfix`).
+
+### 13.2 One-time bootstrap
+
+```bash
+sudo DOMAIN=interactivemove.nl \
+     SUBSCRIPTION_USER=interactivemove_xxxxx \
+     OPENROUTER_API_KEY=... \
+     HUBSPOT_PORTAL_ID=... \
+     HUBSPOT_CONTACT_FORM_GUID=... \
+     bash tools/bootstrap-plesk.sh
+```
+
+The script:
+- Verifies AlmaLinux/Rocky 9 + Plesk are present.
+- Creates `/var/www/vhosts/<domain>/iam-releases/` and `private/`.
+- Renders the env file at `/var/www/vhosts/<domain>/private/iam-api.env`
+  (mode 0640, owner = subscription user). Includes
+  `NOTIFY_EMAIL_TO` / `NOTIFY_EMAIL_FROM` for the local-MTA email path —
+  no SMTP creds needed because Plesk's Postfix runs on the same box.
+- Verifies `localhost:25` is reachable.
+- Prints a panel checklist (see §13.3) — these steps cannot be
+  automated because they live in Plesk's database.
+
+### 13.3 Plesk panel checklist (manual, one-time)
+
+1. **Node.js**: Plesk → Domains → `<domain>` → Node.js. Set:
+   - Application Mode: `production`
+   - Application Root: `/var/www/vhosts/<domain>/iam-current`
+   - Application Startup File: `server.js`
+   - Click "Enable Node.js", then "NPM install".
+2. **Environment variables**: same panel, "Custom environment variables"
+   field. Paste the lines from `private/iam-api.env` (skip the comment
+   lines).
+3. **Nginx custom directives**: Plesk → Domains → `<domain>` →
+   Apache & nginx Settings → "Additional nginx directives" (HTTPS box).
+   Paste the contents of `config/nginx/plesk-additional-directives.conf`.
+   This injects: 51 legacy-URL redirects, security headers, /api/* proxy.
+4. **SSL**: Plesk → Domains → `<domain>` → SSL/TLS Certificates → install
+   Let's Encrypt via the panel. Plesk handles renewal — do NOT run
+   certbot manually.
+5. **Mail**: confirm `nc -zv localhost 25` returns "succeeded". Optionally
+   create the `notifications@<domain>` mailbox in Plesk → Mail if you
+   want a real bounce address (otherwise Postfix rewrites it).
+
+### 13.4 First deploy
+
+From a workstation with SSH access to the Plesk box:
+
+```bash
+SHA=$(git rev-parse --short HEAD)
+git archive --format=tar.gz -o /tmp/iam-deploy-$SHA.tar.gz HEAD
+scp /tmp/iam-deploy-$SHA.tar.gz \
+    interactivemove_xxxxx@<server>:/tmp/
+
+ssh interactivemove_xxxxx@<server> \
+    "/usr/local/bin/iam-deploy-plesk interactivemove.nl $SHA /tmp/iam-deploy-$SHA.tar.gz"
+```
+
+The script extracts, runs `npm ci --omit=dev`, flips the
+`iam-current` symlink, and restarts the Passenger app via
+`passenger-config restart-app`. Health check is the same OPTIONS
+probe against the local Node port; on failure it rolls the symlink
+back automatically.
+
+### 13.5 Subsequent deploys
+
+Same command — `iam-deploy-plesk <domain> <sha> <tarball>` — runs
+both the symlink flip and the restart. No sudo required (Passenger
+restarts are user-scoped under Plesk).
+
+**Rollback:** repoint the symlink at a previous release dir under
+`iam-releases/` and run `passenger-config restart-app
+/var/www/vhosts/<domain>/iam-current`.
+
+### 13.6 Ops cheat sheet (Plesk variant)
+
+| What | How |
+| --- | --- |
+| Tail Node logs | Plesk → Domains → `<domain>` → Logs |
+| Tail Passenger | `passenger-config print-instance-state` |
+| Restart app | `passenger-config restart-app /var/www/vhosts/<domain>/iam-current` |
+| Rotate env | Plesk panel → Node.js → "Custom environment variables" |
+| Renew SSL | Automatic via Plesk Let's Encrypt extension |
+| Check mail queue | `mailq` (or `postqueue -p`) |
+
+### 13.7 Differences from the Ubuntu path
+
+| Concern | Ubuntu (§1–§12) | Plesk + AlmaLinux 9 |
+| --- | --- | --- |
+| Process manager | systemd unit `iam-api.service` | Plesk Node.js extension (Passenger) |
+| Restart | `sudo systemctl restart iam-api` | `passenger-config restart-app` |
+| Sudoers drop-in | Required for `deploy` user | Not needed |
+| Nginx vhost | `config/nginx/<domain>.conf` deployed manually | Plesk-generated; paste-ready directives snippet |
+| SSL | certbot via systemd timer | Plesk Let's Encrypt extension |
+| Email | None on the box (no local MTA) | Local Postfix on the same box, no auth |
+| Deploy user | hand-rolled `deploy` user | Per-subscription Plesk user |
+| Release root | `/var/www/iam[-staging]/` | `/var/www/vhosts/<domain>/iam-releases/` |
+
+The release-tree shape (`releases/<ts>-<sha>/`, `current` symlink,
+keep-last-5 prune) is identical between the two scripts. If you
+already understand the Ubuntu deploy, the Plesk version is the same
+mental model with different paths and a different restart hook.
+
+---
+
+*Version: 2 — added §13 covering Plesk + AlmaLinux 9 as the
+recommended production target. Ubuntu path retained for staging
+and any operator who prefers manual nginx + systemd.*
