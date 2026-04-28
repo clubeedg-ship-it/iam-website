@@ -18,3 +18,8 @@ LOG_LEVEL=info
 HUBSPOT_PORTAL_ID=REPLACE_ME_HUBSPOT_PORTAL_ID
 HUBSPOT_CONTACT_FORM_GUID=REPLACE_ME_HUBSPOT_CONTACT_FORM_GUID
 HUBSPOT_PARTNER_FORM_GUID=REPLACE_ME_HUBSPOT_PARTNER_FORM_GUID
+
+# Local-MTA email notification — leave unset on staging (no Postfix on this VM).
+# Production (Plesk) sets both to enable direct-email redundancy via localhost:25.
+# NOTIFY_EMAIL_TO=
+# NOTIFY_EMAIL_FROM=

@@ -1,4 +1,4 @@
-// /api/contact — server-to-server HubSpot Forms v3 submission.
+// /api/contact — server-to-server HubSpot Forms v3 submission + local-MTA notification.
 // Mounted by api/chat-proxy.js. Reuses the hardened CORS allowlist.
 // Env:
 //   HUBSPOT_PORTAL_ID              — required, numeric portal id
@@ -6,9 +6,54 @@
 //   HUBSPOT_FORMS_API_URL          — default https://api.hsforms.com
 //   CONTACT_RATE_LIMIT_MAX         — default 5
 //   CONTACT_RATE_LIMIT_WINDOW_MS   — default 600_000 (10 min)
+//   NOTIFY_EMAIL_TO                — optional; recipient(s), comma-separated. When set
+//                                    together with NOTIFY_EMAIL_FROM, every validated
+//                                    submission also sends a direct email through the
+//                                    local MTA (localhost:25, no auth — relies on the
+//                                    host machine running its own mail server, e.g. the
+//                                    Plesk-managed Postfix on the production box).
+//   NOTIFY_EMAIL_FROM              — optional; verified sender address on the local MTA
 const express = require('express');
 const rateLimit = require('express-rate-limit');
+const nodemailer = require('nodemailer');
 const { z } = require('zod');
+
+const NOTIFY_TO = (process.env.NOTIFY_EMAIL_TO || '').split(',').map(s => s.trim()).filter(Boolean);
+const NOTIFY_FROM = process.env.NOTIFY_EMAIL_FROM || '';
+const mailer = (NOTIFY_TO.length && NOTIFY_FROM)
+  ? nodemailer.createTransport({
+      host: process.env.SMTP_HOST || '127.0.0.1',
+      port: Number(process.env.SMTP_PORT || 25),
+      secure: false,
+      ignoreTLS: true,
+      pool: true,
+      maxConnections: 2,
+    })
+  : null;
+
+function sendNotificationEmail(data, log) {
+  if (!mailer) return;
+  const subject = `Contact form — ${data.firstname}${data.lastname ? ' ' + data.lastname : ''}${data.company ? ' (' + data.company + ')' : ''}`;
+  const lines = [
+    `Name: ${data.firstname} ${data.lastname || ''}`.trim(),
+    `Email: ${data.email}`,
+    data.company ? `Company: ${data.company}` : null,
+    data.pageUri ? `Page: ${data.pageUri}` : null,
+    data.formType ? `Form: ${data.formType}` : null,
+    '',
+    data.message || '(no message)',
+  ].filter(l => l !== null);
+  mailer.sendMail({
+    from: NOTIFY_FROM,
+    to: NOTIFY_TO,
+    replyTo: data.email,
+    subject,
+    text: lines.join('\n'),
+  }).then(
+    () => log.info('notify_email_sent'),
+    (err) => log.warn({ err: err.message }, 'notify_email_failed'),
+  );
+}
 
 const FORMS_API_URL = new URL(process.env.HUBSPOT_FORMS_API_URL || 'https://api.hsforms.com');
 const PORTAL_ID = process.env.HUBSPOT_PORTAL_ID;
@@ -115,6 +160,7 @@ function createContactRouter({ log, allowedOrigins }) {
       clearTimeout(timeout);
       if (r.ok) {
         log.info({ ip: req.ip, pageUri: parsed.data.pageUri }, 'contact_submitted');
+        sendNotificationEmail(parsed.data, log);
         return res.status(200).json({ ok: true });
       }
       const text = await r.text().catch(() => '');

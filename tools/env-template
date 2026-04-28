@@ -26,3 +26,12 @@ LOG_LEVEL=info
 HUBSPOT_PORTAL_ID=REPLACE_ME_HUBSPOT_PORTAL_ID
 HUBSPOT_CONTACT_FORM_GUID=REPLACE_ME_HUBSPOT_CONTACT_FORM_GUID
 HUBSPOT_PARTNER_FORM_GUID=REPLACE_ME_HUBSPOT_PARTNER_FORM_GUID
+
+# --- Contact-form direct email notification (local MTA) ---
+# When both vars are set, every validated contact submission also sends a
+# direct email through the host's local mail server (localhost:25, no auth).
+# Designed for the Plesk production target where Postfix runs on the same box
+# (same delivery path WordPress + Elementor uses). On a host with no local MTA
+# this is a silent no-op — leave the vars unset on staging.
+NOTIFY_EMAIL_TO=klantcontact@interactivemove.nl
+NOTIFY_EMAIL_FROM=notifications@interactivemove.nl
